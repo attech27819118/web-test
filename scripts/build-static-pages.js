@@ -1,0 +1,974 @@
+const fs = require('fs');
+const path = require('path');
+
+const rootDir = path.resolve(__dirname, '..');
+const templatePath = path.join(rootDir, 'index.html');
+const configPath = path.join(rootDir, 'config.json');
+const DOMAIN = 'https://www.attech.com.tw';
+
+if (!fs.existsSync(templatePath) || !fs.existsSync(configPath)) {
+    console.error('Missing index.html or config.json');
+    process.exit(1);
+}
+
+const templateHtml = fs.readFileSync(templatePath, 'utf8');
+const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+
+// Helper to escape HTML
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+// 讀取所有品牌產品庫
+const allProductsCache = {};
+for (const [brandKey, brandObj] of Object.entries(config)) {
+    if (brandObj.masterPath) {
+        const masterFilePath = path.join(rootDir, brandObj.masterPath.replace(/^\.?\//, ''));
+        if (fs.existsSync(masterFilePath)) {
+            const masterData = JSON.parse(fs.readFileSync(masterFilePath, 'utf8'));
+            allProductsCache['mpi_master'] = masterData;
+            for (const file of brandObj.files) {
+                allProductsCache[file.key] = masterData.filter(p => p.applications_data && p.applications_data[file.key]);
+            }
+        }
+    } else if (brandObj.files) {
+        for (const file of brandObj.files) {
+            if (file.jsonPath) {
+                const jsonFilePath = path.join(rootDir, file.jsonPath.replace(/^\.?\//, ''));
+                if (fs.existsSync(jsonFilePath)) {
+                    try {
+                        const data = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
+                        allProductsCache[file.key] = Array.isArray(data) ? data : (data.products || []);
+                    } catch (e) {
+                        allProductsCache[file.key] = [];
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 依各品牌規則解析產品適合的應用領域 (Suitable Applications)
+ * 1. MPI: 看 json/mpi/mpiall.json 中的 application_title_zh
+ * 2. dorfketal: 看 json/dorfketal 中的 featured_categories
+ * 3. orion: 看 json/orion 中的 featured_categories
+ * 4. others: 看 config.json 怎麼分類與各 JSON 的 featured_categories
+ */
+function getProductApplications(p, partnerKey, lineKey, configData) {
+    const apps = [];
+    const pLower = (partnerKey || '').toLowerCase();
+    const pName = p.product_name || p.name || '';
+    const safeName = encodeURIComponent(pName);
+
+    // 1. 若有 applications_data (如 MPI 等)
+    if (p.applications_data && typeof p.applications_data === 'object') {
+        for (const [appKey, appObj] of Object.entries(p.applications_data)) {
+            if (appObj && appObj.application_title_zh) {
+                const title = String(appObj.application_title_zh).trim();
+                if (title && !apps.some(a => a.title === title)) {
+                    apps.push({
+                        title: title,
+                        key: appKey,
+                        categoryUrl: `/products/${pLower}/${appKey}/`,
+                        singleUrl: `/products/${pLower}/${appKey}/${safeName}/`,
+                        url: `/products/${pLower}/${appKey}/`,
+                        productUrl: `/products/${pLower}/${appKey}/?product=${safeName}`,
+                        isCurrent: (appKey === lineKey)
+                    });
+                }
+            }
+        }
+    }
+
+    // 2. 若有 featured_categories (如 Dorf Ketal, Orion, Others 等)
+    const cats = Array.isArray(p.featured_categories) ? p.featured_categories : [];
+    if (cats.length > 0) {
+        for (const cat of cats) {
+            const title = String(cat).trim();
+            if (title && !apps.some(a => a.title === title)) {
+                apps.push({
+                    title: title,
+                    key: lineKey,
+                    categoryUrl: `/products/${pLower}/${lineKey}/?category=${encodeURIComponent(title)}`,
+                    singleUrl: `/products/${pLower}/${lineKey}/?category=${encodeURIComponent(title)}&product=${safeName}`,
+                    url: `/products/${pLower}/${lineKey}/?category=${encodeURIComponent(title)}`,
+                    productUrl: `/products/${pLower}/${lineKey}/?product=${safeName}`,
+                    isCurrent: true
+                });
+            }
+        }
+    }
+
+    // 3. 若皆無，預設採用當前產品線名稱
+    if (apps.length === 0) {
+        const partnerConfig = configData?.[pLower];
+        const fileConf = (partnerConfig?.files || []).find(f => f.key === lineKey);
+        const lineName = fileConf?.titleZh || fileConf?.titleEn || '特化材料助劑';
+        apps.push({
+            title: lineName,
+            key: lineKey,
+            categoryUrl: `/products/${pLower}/${lineKey}/`,
+            singleUrl: `/products/${pLower}/${lineKey}/${safeName}/`,
+            url: `/products/${pLower}/${lineKey}/`,
+            productUrl: `/products/${pLower}/${lineKey}/?product=${safeName}`,
+            isCurrent: true
+        });
+    }
+
+    return apps;
+}
+
+/**
+ * 提取各品牌產品的詳細描述與特點性能
+ */
+function getProductDescription(p, partnerKey, lineKey) {
+    const pLower = (partnerKey || '').toLowerCase();
+    let desc = p.properties || p.performance || '';
+
+    if (!desc && pLower === 'mpi') {
+        // MPI: 若 properties 為空，由 applications_data 中提取性能描述
+        const lines = [];
+        if (p.applications_data && typeof p.applications_data === 'object') {
+            const currentAppData = p.applications_data[lineKey] || Object.values(p.applications_data)[0];
+            if (currentAppData && currentAppData.performance_descriptions_zh) {
+                for (const [, val] of Object.entries(currentAppData.performance_descriptions_zh)) {
+                    if (val && typeof val === 'string' && !lines.includes(val.trim())) {
+                        lines.push(val.trim());
+                    }
+                }
+            }
+        }
+        if (lines.length > 0) {
+            desc = lines.join('\n');
+        } else if (p.application_fields_zh) {
+            desc = `主要應用領域：${p.application_fields_zh}`;
+        }
+    } else if (!desc && pLower === 'orion') {
+        // Orion 碳黑：依製程方式、黑度、粒徑與應用組合出完整規格描述
+        const methodMap = {
+            'HCF': '高色素爐黑 (High Color Furnace Black)',
+            'MCF': '中色素爐黑 (Medium Color Furnace Black)',
+            'RCF': '標準色素爐黑 (Regular Color Furnace Black)',
+            'Gas Black': '特級氣黑 (Gas Black)',
+            'Lamp Black': '燈黑 (Lamp Black)',
+            'Furnace Black': '爐法碳黑 (Furnace Black)'
+        };
+        const method = methodMap[p.production_method] || p.production_method || '特級碳黑製程';
+        const cats = Array.isArray(p.featured_categories) ? p.featured_categories.join('、') : '';
+        const typical = p.typical_properties || {};
+        const pName = p.product_name || p.name || '';
+        desc = `${pName} 為 Orion Engineered Carbons 頂級碳黑材料，採用 ${method}。具備優良著色力與分散穩定性，黑度值 (My) 達 ${typical.blackness_my || '—'}，原生平均粒徑約 ${typical.average_primary_particle_size_nm || '—'} nm。廣泛應用於 ${cats || '工業塗料與油墨'} 等高性能著色體系。`;
+    } else if (!desc && pLower === 'others') {
+        if (lineKey === 'silane') {
+            desc = `高性能矽烷偶合劑（${p.composition_zh || '有機矽烷'}），能顯著改善無機填料與有機基體間之相容性，提升界面附著力、耐水性與力學機械強度。`;
+        } else if (lineKey === 'polyester_polyol') {
+            desc = `Kuller 高性能聚酯多元醇（${p.composition_zh}），物態呈${p.appearance}，分子量約 ${p.typical_properties?.molecular_weight || '—'}，羥值 ${p.typical_properties?.hydroxyl_value || '—'} mgKOH/g。主要應用於${p.application_fields_zh || '聚氨酯熱熔膠與彈性體'}等體系，具備優異的黏著強度、耐溫性與耐候水解性能。`;
+        } else if (lineKey === 'modified_polyol') {
+            desc = `Kuller 特種改性多元醇（${p.composition_zh}），物態呈${p.appearance}，分子量約 ${p.typical_properties?.molecular_weight || '—'}，羥值 ${p.typical_properties?.hydroxyl_value || '—'} mgKOH/g。專為${p.application_fields_zh || '聚氨酯熱熔膠'}開發，具備優越的接著力、柔韌性與反應相容性。`;
+        } else if (lineKey === 'polyester_resin') {
+            desc = `Kuller 高分子量飽和聚酯樹脂（${p.composition_zh}），物態呈${p.appearance}，玻璃化溫度 Tg 達 ${p.typical_properties?.glass_transition_temp_c ?? '—'}°C，分子量約 ${p.typical_properties?.molecular_weight || '—'}。廣泛應用於${p.application_fields_zh || '印刷油墨、粘合劑、罐頭塗料'}等，賦予塗層卓越的附著力、耐化學品性與加工成型性。`;
+        }
+    }
+
+    return desc || '提供卓越的加工相容性、表面改質效果與穩定物性，完整配方諮詢與規格建議請洽宏威應用材料技術團隊。';
+}
+
+/**
+ * 提取代表性物性表格數據 (Typical Properties)
+ */
+function getTypicalPropertiesRows(p) {
+    const t = p.typical_properties || {};
+    const rows = [];
+
+    const addRow = (label, val) => {
+        if (val !== undefined && val !== null && String(val).trim() !== '' && String(val).trim() !== '—' && String(val).trim() !== 'N/A') {
+            rows.push({ label, val: String(val).trim() });
+        }
+    };
+
+    // 微粉蠟、樹脂與化學品通用物性
+    addRow('熔點 / 軟化點 (°C)', t.melt_point_c || t.softening_point_c || p.softening_point);
+    addRow('玻璃化溫度 Tg (°C)', t.glass_transition_temp_c || p.glass_transition_temp_c);
+    addRow('羥值 (mg KOH/g)', t.hydroxyl_value || p.hydroxyl_value);
+    addRow('平均粒徑 (µm)', t.mean_particle_size_um || p.particle_size);
+    addRow('最大粒徑 (µm)', t.max_particle_size_um);
+    addRow('密度 / 比重 (g/cm³)', t.density_g_cc_25c || p.density || p.specific_gravity);
+    addRow('酸價 (mg KOH/g)', t.acid_value || p.acid_value);
+    addRow('閃點 (°C)', t.flash_point || p.flash_point);
+    addRow('分子量 (Mw / Mn)', t.molecular_weight);
+    addRow('外觀 / 狀態', p.appearance);
+    addRow('固成份 / 活性物含量 (%)', t.solid_content || t.active_content || p.active_content);
+    addRow('黏度 (mPa·s / cSt)', t.viscosity || p.viscosity);
+
+    // 碳黑專用物性指標
+    addRow('黑度值 (My)', t.blackness_my);
+    addRow('著色力 (% vs. IRB 3)', t.tinting_strength);
+    addRow('吸油量 (OAN, ml/100g)', t.oil_absorption_number);
+    addRow('pH 值', t.ph_value);
+    addRow('灰分含量 (%)', t.ash_content);
+    addRow('BET 比表面積 (m²/g)', t.bet_surface_area);
+    addRow('原生粒徑 (nm)', t.average_primary_particle_size_nm);
+    addRow('揮發份 950°C (%)', t.volatile_matter_950c);
+
+    return rows;
+}
+
+// 產生單一產品規格詳細卡片 HTML (無漸層底色、純白/極簡現代風格、無全域搜尋、引導至官網比較)
+function renderProductDetailTableHtml(product, partnerKey, lineKey, brandName, lineTitle = '', configData, seoInfo = null) {
+    const p = product;
+    const name = (p.product_name || p.name || '').trim();
+    const safeName = encodeURIComponent(name);
+    const comp = p.composition_zh || p.chemical_component || p.composition_en || p.chemistry || '特用化學品材料';
+    const props = getProductDescription(p, partnerKey, lineKey);
+    const applications = getProductApplications(p, partnerKey, lineKey, configData);
+
+    const isMpi = (partnerKey || '').toLowerCase() === 'mpi';
+    const displayBrandBadge = seoInfo ? seoInfo.brandDisplay : (brandName === 'Others' ? '特化材料' : brandName);
+    const displayCategoryBadge = seoInfo ? seoInfo.categoryTag : lineTitle;
+
+    // 適合應用標籤 HTML (方案 A：點擊非當前標籤時直接跳轉至該產品在該應用下的專屬單頁)
+    const usageTagsHtml = applications.map(app => {
+        const href = app.isCurrent ? (app.categoryUrl || app.url) : (app.singleUrl || app.url);
+        const titleText = app.isCurrent
+            ? `點擊至官網檢視 ${escapeHtml(app.title)} 應用領域之所有規格與比較表`
+            : `切換至檢視 ${escapeHtml(name)} 在【${escapeHtml(app.title)}】之應用特點與規格`;
+        return `
+        <a href="${href}" 
+           title="${titleText}"
+           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 ${app.isCurrent ? 'bg-blue-900 text-white font-bold cursor-default' : 'bg-white hover:bg-blue-50 text-slate-800 hover:text-blue-950 font-semibold border border-slate-300'} rounded-lg text-xs transition-colors shadow-xs">
+            <i class="fa-solid fa-tag text-[10px] ${app.isCurrent ? 'text-blue-200' : 'text-blue-600'}"></i>
+            <span>${escapeHtml(app.title)}</span>
+            ${app.isCurrent ? '<span class="text-[10px] opacity-75 font-normal">(當前系列)</span>' : ''}
+        </a>`;
+    }).join('');
+
+    // 物性參數表行
+    const propRows = getTypicalPropertiesRows(p);
+    const extraRowsHtml = propRows.map(r => `
+        <tr class="border-b border-slate-100">
+            <td class="py-2.5 px-4 font-bold text-slate-700 bg-slate-50/80 w-2/5">${escapeHtml(r.label)}</td>
+            <td class="py-2.5 px-4 text-slate-900 font-semibold">${escapeHtml(r.val)}</td>
+        </tr>
+    `).join('');
+
+    // 僅 MPI 提及 TDS，其餘品牌完全不提及 TDS
+    const quickSpecText = isMpi ? '官網完整規格與 TDS' : '官網完整規格與特性';
+    const serviceCardDesc = isMpi
+        ? `宏威應用材料為 ${escapeHtml(displayBrandBadge)} 在台灣之專業特用化學代理商，備有原廠技術規格書 (TDS)、樣品庫存與應用技術諮詢服務。`
+        : `宏威應用材料為 ${escapeHtml(displayBrandBadge)} 在台灣之專業特用化學代理商，備有原廠技術規格、樣品庫存與應用技術諮詢服務。`;
+    const serviceCardTdsItem = isMpi
+        ? `<i class="fa-solid fa-check text-emerald-600"></i> <span>備有原廠正式技術規格書 (TDS)</span>`
+        : `<i class="fa-solid fa-check text-emerald-600"></i> <span>原廠正品保證與技術支援</span>`;
+
+    const bannerHeading = isMpi ? '需要檢視完整技術數據或 TDS 下載？' : '需要檢視完整技術數據？';
+    const bannerDesc = isMpi
+        ? `原廠技術資料表（TDS）與全品項規格資料已收錄於官網。點擊按鈕前往官網，查看 ${escapeHtml(name)} 之詳細規格與技術資料。`
+        : `完整產品物性數據與規格資料已收錄於官網。點擊按鈕前往官網，查看 ${escapeHtml(name)} 之詳細規格與技術資料。`;
+    const bannerButtonText = isMpi ? 'TDS 與完整規格' : '詳細規格與技術資料';
+
+    return `
+    <div class="product-seo-detail bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 mb-8 text-slate-900">
+        <!-- 頂部產品基本資訊與快速操作 (純白卡片無漸層) -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-6 border-b border-slate-200">
+            <div>
+                <div class="flex flex-wrap items-center gap-2 mb-2.5">
+                    <span class="inline-block px-3 py-1 rounded-md text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200">${escapeHtml(displayBrandBadge)}</span>
+                    ${displayCategoryBadge ? `<span class="inline-block px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">${escapeHtml(displayCategoryBadge)}</span>` : ''}
+                </div>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex flex-wrap items-baseline gap-2">
+                    <span>${escapeHtml(name)}</span>
+                    ${seoInfo && seoInfo.categorySubTitle ? `<span class="text-base sm:text-2xl font-bold text-blue-900">${escapeHtml(seoInfo.categorySubTitle)}</span>` : ''}
+                </h1>
+                <p class="text-sm text-slate-600 mt-2 font-medium">
+                    主要化學成分：<span class="text-slate-900 font-semibold">${escapeHtml(comp)}</span>
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+                <a href="/contact/?product=${safeName}" 
+                    onclick="if(typeof gtag==='function'){gtag('event','request_sample_click',{event_category:'Lead_Engagement',event_label:'${escapeHtml(name)}',product_name:'${escapeHtml(name)}',source:'product_detail'});}"
+                    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-sm font-bold shadow-xs transition-colors active:scale-95">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>索取樣品與技術諮詢</span>
+                </a>
+                <a href="/products/${partnerKey}/${lineKey}/?product=${safeName}" 
+                    class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-50 text-blue-900 border border-blue-300 rounded-xl text-sm font-bold transition-colors">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>${quickSpecText}</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 產品核心內容區塊 -->
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- 左側 2 欄：應用領域、特點描述與代表物性 -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- 適合在哪些應用與主要用途 (純色背景無漸層) -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                    <h2 class="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-blue-900"></i> 適合在哪些應用與主要用途
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        ${usageTagsHtml || `<span class="text-sm text-slate-700">${escapeHtml(lineTitle || '特用化學品工業應用')}</span>`}
+                    </div>
+
+                    ${(p.application_fields_zh || p.recommended_system_type_zh || p.suggested_use_level_zh) ? `
+                    <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-2 leading-relaxed">
+                        ${p.application_fields_zh ? `<div><span class="font-bold text-slate-900">詳細應用範疇：</span>${escapeHtml(p.application_fields_zh)}</div>` : ''}
+                        ${p.recommended_system_type_zh ? `<div><span class="font-bold text-slate-900">建議適用系統：</span>${escapeHtml(p.recommended_system_type_zh)}</div>` : ''}
+                        ${p.suggested_use_level_zh ? `<div><span class="font-bold text-slate-900">建議添加量：</span>${escapeHtml(p.suggested_use_level_zh)}</div>` : ''}
+                    </div>` : ''}
+
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 text-xs text-slate-500 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-info text-blue-700 shrink-0"></i>
+                        <span>提示：點擊任一標籤可直接切換至該應用領域之產品專屬單頁；當前系列標籤可前往比較表。</span>
+                    </div>
+                </div>
+
+                <!-- 性質與特點描述 (單一色底無漸層) -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                    <h2 class="text-sm font-bold text-slate-900 mb-2.5 flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-500"></i> 產品描述與性能特點
+                    </h2>
+                    <p class="text-sm text-slate-800 leading-relaxed whitespace-pre-line">${escapeHtml(props)}</p>
+                </div>
+
+                <!-- 代表性物性摘要表格 (若有) -->
+                ${extraRowsHtml ? `
+                <div class="border border-slate-200 rounded-xl overflow-hidden shadow-xs">
+                    <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 font-bold text-xs text-slate-700 uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-chart-simple text-blue-900"></i> 代表性物性摘要 (Typical Properties)
+                    </div>
+                    <table class="w-full text-left text-sm">
+                        <tbody>
+                            ${extraRowsHtml}
+                        </tbody>
+                    </table>
+                </div>` : ''}
+            </div>
+
+            <!-- 右側 1 欄：官網產品比較導流與原廠支援 (單一色底無漸層，統一風格) -->
+            <div class="space-y-6">
+                <!-- 導流卡片 1：線上產品比較 -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                    <div class="flex items-center gap-2 text-blue-900 text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-scale-balanced"></i> 產品線上對比功能
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">需要比較同系列其他產品？</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        宏威應用材料官網提供完整的特用化學品物性規格，您可同時比較 ${escapeHtml(brandName)} ${escapeHtml(lineTitle)} 各產品的物性規格與適用系統。
+                    </p>
+                    <a href="/products/${partnerKey}/${lineKey}/" 
+                       class="inline-flex items-center justify-center gap-1.5 w-full px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold transition-colors">
+                        <span>進入 ${escapeHtml(lineTitle || '此系列')} 完整規格比較表</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- 導流卡片 2：原廠正品技術保證 (單一色底無漸層，統一風格) -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                    <div class="flex items-center gap-2 text-blue-900 text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-shield-halved text-blue-800"></i> 原廠正品技術支援
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">宏威應用材料 專業技術</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        ${serviceCardDesc}
+                    </p>
+                    <div class="pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-2.5">
+                        <div class="flex items-center gap-2">
+                            ${serviceCardTdsItem}
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-emerald-600"></i> <span>樣品齊全，支援快速樣品申請</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-emerald-600"></i> <span>提供完整產品物性與技術諮詢</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-500 leading-relaxed">
+                        電話諮詢：04-2239-8056<br>
+                        技術信箱：atservice@attech.com.tw
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部大橫幅：官網深入互動導流 (純深石板灰底色無漸層) -->
+        <div class="mt-8 bg-slate-900 text-white rounded-xl p-6 sm:p-8 border border-slate-800 shadow-sm">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div>
+                    <div class="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">
+                        <i class="fa-solid fa-building"></i> 宏威應用材料 官方產品資料庫
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">
+                        ${bannerHeading}
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-1.5 max-w-2xl leading-relaxed">
+                        ${bannerDesc}
+                    </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-2.5 shrink-0 w-full lg:w-auto">
+                    <a href="/products/${partnerKey}/${lineKey}/?product=${safeName}" 
+                       class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-sm transition-colors active:scale-95">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>${bannerButtonText}</span>
+                    </a>
+                    <a href="/contact/?product=${safeName}" 
+                       class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-100 text-slate-900 rounded-xl text-sm font-bold transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>申請樣品</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+
+// 產生完整 HTML 頁面
+function buildPageHtml({
+    title,
+    description,
+    canonicalPath,
+    activeTab = 'about',
+    preRenderedContent = '',
+    schemaJson = null,
+    isProductDetailPage = false,
+    productMeta = null,
+    categoryMeta = null
+}) {
+    let html = templateHtml;
+
+    // 1. 替換 Title
+    html = html.replace(/<title id="web-title">.*?<\/title>/, `<title id="web-title">${escapeHtml(title)}</title>`);
+
+    // 2. 替換 Meta Description
+    html = html.replace(/<meta name="description"\s+content=".*?">/s, `<meta name="description" content="${escapeHtml(description)}">`);
+
+    // 3. 替換 Canonical
+    const fullCanonical = `${DOMAIN}${canonicalPath === '/' ? '/' : canonicalPath}`;
+    html = html.replace(/<link rel="canonical"\s+href=".*?">/, `<link rel="canonical" href="${fullCanonical}">`);
+
+    // 4. 替換 OpenGraph & Twitter
+    html = html.replace(/<meta property="og:title"\s+content=".*?">/, `<meta property="og:title" content="${escapeHtml(title)}">`);
+    html = html.replace(/<meta property="og:description"\s+content=".*?">/, `<meta property="og:description" content="${escapeHtml(description)}">`);
+    html = html.replace(/<meta property="og:url"\s+content=".*?">/, `<meta property="og:url" content="${fullCanonical}">`);
+    html = html.replace(/<meta name="twitter:title"\s+content=".*?">/, `<meta name="twitter:title" content="${escapeHtml(title)}">`);
+    html = html.replace(/<meta name="twitter:description"\s+content=".*?">/, `<meta name="twitter:description" content="${escapeHtml(description)}">`);
+    html = html.replace(/<meta name="twitter:url"\s+content=".*?">/, `<meta name="twitter:url" content="${fullCanonical}">`);
+
+    // 5. 設定 Active Tab
+    const tabs = ['about', 'products', 'partners', 'contact'];
+    tabs.forEach(t => {
+        if (t === activeTab) {
+            html = html.replace(new RegExp(`id="tab-${t}" class="tab-content.*?"`), `id="tab-${t}" class="tab-content active"`);
+            html = html.replace(new RegExp(`id="nav-${t}".*?aria-selected=".*?"`), `id="nav-${t}" role="tab" aria-selected="true"`);
+            html = html.replace(new RegExp(`id="mobile-nav-${t}".*?aria-selected=".*?"`), `id="mobile-nav-${t}" role="tab" aria-selected="true"`);
+        } else {
+            html = html.replace(new RegExp(`id="tab-${t}" class="tab-content active"`), `id="tab-${t}" class="tab-content"`);
+            html = html.replace(new RegExp(`id="nav-${t}".*?aria-selected="true"`), `id="nav-${t}" role="tab" aria-selected="false"`);
+            html = html.replace(new RegExp(`id="mobile-nav-${t}".*?aria-selected="true"`), `id="mobile-nav-${t}" role="tab" aria-selected="false"`);
+        }
+    });
+
+    // 6. 實體產品專屬頁面 (Product Detail Pages)：
+    // - 移除桌面與行動版全域搜尋框 (使用者需求：不需要全域搜尋)
+    // - 移除 1.請選擇品牌、資料建置中提示與樹狀側邊欄
+    // - 頂部替換為麵包屑與返回系列產品比較表按鈕
+    // - 注入完整的產品詳情卡片
+    if (isProductDetailPage) {
+        html = html.replace('<body class="', '<body class="is-product-detail bg-slate-50 ');
+
+        // 移除桌面版與行動版全域搜尋容器
+        html = html.replace(/<div class="flex-1 max-w-sm mx-2 hidden sm:block">[\s\S]*?<\/form>\s*<\/div>/, '<!-- 全域搜尋已在獨立產品頁移除 -->');
+        html = html.replace(/<div class="block sm:hidden pb-2\.5">[\s\S]*?<\/form>\s*<\/div>/, '<!-- 行動版全域搜尋已在獨立產品頁移除 -->');
+
+        let breadcrumbBarHtml = '';
+        if (productMeta) {
+            const bName = productMeta.brandNameDisplay || (productMeta.brandName === 'Others' ? '特化材料' : productMeta.brandName);
+            breadcrumbBarHtml = `
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-3 border-b border-slate-200">
+                <a href="${productMeta.backUrl}" class="inline-flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-blue-900 transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i> 返回 ${escapeHtml(bName)} ${escapeHtml(productMeta.lineTitle)} 產品列表與規格比較
+                </a>
+                <nav class="flex items-center gap-1.5 text-xs text-slate-500 font-medium" aria-label="麵包屑導航">
+                    <a href="/" class="hover:underline">首頁</a>
+                    <span>/</span>
+                    <a href="/products/" class="hover:underline">產品</a>
+                    <span>/</span>
+                    <a href="/products/${productMeta.partnerSlug}/" class="hover:underline">${escapeHtml(bName)}</a>
+                    <span>/</span>
+                    <a href="${productMeta.backUrl}" class="hover:underline">${escapeHtml(productMeta.lineTitle)}</a>
+                    <span>/</span>
+                    <span class="text-slate-900 font-bold">${escapeHtml(productMeta.name)}</span>
+                </nav>
+            </div>`;
+        }
+
+        // 將 <main> 完整置換為獨立產品頁核心內容，徹底剔除重複的 about, partners, contact 區塊 (減重 80% 以上，解決 GSC 未收錄痛點)
+        const productMainHtml = `<main class="min-h-[80vh]">
+        <section id="tab-products" class="tab-content active" role="tabpanel" aria-labelledby="nav-products">
+            <div class="optimized-container px-4 py-6">
+                <div id="section-product-detail" class="w-full">
+${breadcrumbBarHtml}
+${preRenderedContent}
+                </div>
+            </div>
+        </section>
+    </main>`;
+
+        html = html.replace(/<main class="min-h-\[80vh\]">[\s\S]*?<\/main>/, productMainHtml);
+
+        // 移除獨立產品頁不需使用的 TDS modal 與浮動比較 dock 及比較彈窗
+        html = html.replace(/<!-- TDS 技術文件預覽彈窗 -->[\s\S]*?(?=<!--\s*={5,})/, '');
+    } else if (preRenderedContent) {
+        // 列表頁預渲染注入
+        html = html.replace(
+            /<tbody id="directory-matrix-body"[\s\S]*?<\/tbody>/,
+            `<tbody id="directory-matrix-body" class="divide-y divide-gray-200 text-slate-800 f-weight-normal">${preRenderedContent}</tbody>`
+        );
+        if (categoryMeta) {
+            const brandSlug = categoryMeta.partnerSlug || "";
+            const lineSlug = categoryMeta.lineSlug || "";
+            const brandLink = brandSlug ? `/products/${brandSlug}/` : '/products/';
+            const lineLink = (brandSlug && lineSlug) ? `/products/${brandSlug}/${lineSlug}/` : brandLink;
+            const breadcrumbHtml = `<a href="/products/" class="text-slate-500 hover:text-blue-900 hover:underline transition-colors font-medium">產品</a> <i class="fa-solid fa-chevron-right f-size-xs mx-1 text-slate-400"></i> <a href="${brandLink}" class="text-slate-600 hover:text-blue-900 hover:underline transition-colors font-semibold">${escapeHtml(categoryMeta.brandName)}</a> <i class="fa-solid fa-chevron-right f-size-xs mx-1 text-slate-400"></i> <a href="${lineLink}" class="text-slate-700 hover:text-blue-900 hover:underline transition-colors font-semibold">${escapeHtml(categoryMeta.lineTitle)}</a> <i class="fa-solid fa-chevron-right f-size-xs mx-1 text-slate-400"></i> <span class="f-weight-bold text-blue-950">全部</span>`;
+            html = html.replace(/<span id="dir-current-path"[^>]*>.*?<\/span>/, `<span id="dir-current-path" class="text-blue-950 f-weight-bold">${breadcrumbHtml}</span>`);
+            html = html.replace(/<span id="dir-match-count"[^>]*>.*?<\/span>/, `<span id="dir-match-count" class="bg-blue-100 text-blue-900 f-size-xs px-2 py-0.5 rounded-full f-weight-bold">${categoryMeta.matchCount}</span>`);
+        }
+    }
+
+    // 7. 注入專屬 Schema.org JSON-LD
+    if (schemaJson) {
+        const schemaString = `\n    <script type="application/ld+json">\n${JSON.stringify(schemaJson, null, 2)}\n    </script>`;
+        html = html.replace('</head>', `${schemaString}\n</head>`);
+    }
+
+    // 8. 確保所有 doc 文件下載連結皆為根目錄絕對路徑，防止深層目錄 404
+    html = html.replace(/href="\.\/doc\//g, 'href="/doc/');
+
+    return html;
+}
+
+// 建立資料夾並寫入 index.html
+function writeStaticHtmlFile(relativePath, htmlContent) {
+    const targetDir = path.join(rootDir, relativePath.replace(/^\//, ''));
+    if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir, { recursive: true });
+    }
+    const filePath = path.join(targetDir, 'index.html');
+    fs.writeFileSync(filePath, htmlContent, 'utf8');
+}
+
+console.log('🚀 開始建置靜態預渲染 (SSG) 頁面...');
+let generatedCount = 0;
+
+// 1. 核心頁面
+const corePages = [
+    {
+        path: '/about/',
+        title: '宏威應用材料 Discover The Link To Life | 專業特用化學品供應商',
+        description: '宏威應用材料 Discover The Link To Life - 專業特用化學品供應商，提供PTFE取代方案、Micro Powders微粉蠟、Dorf Ketal鈦鋯酸酯、Orion特級碳黑等高性能材料與免費索樣服務。',
+        tab: 'about'
+    },
+    {
+        path: '/products/',
+        title: '特用化學品目錄 | 宏威應用材料 ATTech Materials',
+        description: '宏威應用材料特用化學品完整產品目錄，涵蓋微粉蠟、PTFE取代、鈦酸酯/鋯酸酯、特級碳黑、矽烷偶合劑與塗料助劑，支援線上多維度篩選與規格比對。',
+        tab: 'products'
+    },
+    {
+        path: '/partners/',
+        title: '合作夥伴品牌 | 宏威應用材料 Discover The Link To Life',
+        description: '宏威應用材料代理銷售 Micro Powders、Dorf Ketal、Orion 等國際領導化學品牌，提供正品保證與原廠技術支援。',
+        tab: 'partners'
+    },
+    {
+        path: '/contact/',
+        title: '樣品索取與技術諮詢 | 宏威應用材料 Discover The Link To Life',
+        description: '線上索取特用化學品樣品與配方技術諮詢，提供快速詢價與詳細應用需求評估雙模式表單，自動產製正式 PDF 需求單。',
+        tab: 'contact'
+    }
+];
+
+corePages.forEach(page => {
+    const html = buildPageHtml({
+        title: page.title,
+        description: page.description,
+        canonicalPath: page.path,
+        activeTab: page.tab
+    });
+    writeStaticHtmlFile(page.path, html);
+    generatedCount++;
+});
+
+/**
+ * 依各品牌與產品屬性生成最佳化 SEO 資訊 (Title, H1副標, 結構化資訊)
+ * 解決短型號、代號與非化工生活商品混淆，以及無意義 (Others) 標籤問題
+ */
+function getProductSeoInfo(p, partnerSlug, lineSlug, brandName, lineTitle) {
+    const pName = (p.product_name || p.name || '').trim();
+    const pLower = (partnerSlug || '').toLowerCase();
+    const lLower = (lineSlug || '').toLowerCase();
+    const comp = p.composition_zh || p.chemical_component || p.composition_en || p.chemistry || '';
+    const cats = Array.isArray(p.featured_categories) ? p.featured_categories : [];
+
+    let brandDisplay = brandName;
+    let categorySubTitle = '';
+    let categoryTag = lineTitle;
+
+    if (pLower === 'others' || brandName === 'Others') {
+        brandDisplay = '宏威特化';
+        if (lLower === 'matting_agent') {
+            categoryTag = '二氧化矽消光粉';
+            if (cats.some(c => c.includes('表面處理') && !c.includes('無'))) {
+                categorySubTitle = '表面處理型二氧化矽消光粉 (耐磨抗刮/透明度佳)';
+            } else if (cats.some(c => c.includes('無表面處理'))) {
+                categorySubTitle = '無表面處理型二氧化矽消光粉 (深層消光/細膩手感)';
+            } else {
+                categorySubTitle = '高純度二氧化矽消光粉 (塗料/油墨專用)';
+            }
+        } else if (lLower === 'maleic_acid_resin') {
+            categoryTag = '馬林酸樹脂';
+            if (pName.includes('醇溶') || cats.some(c => c.includes('醇溶'))) {
+                categorySubTitle = '醇溶型馬林酸樹脂 (季戊四醇松香酯/印刷油墨)';
+            } else if (pName.includes('改質') || cats.some(c => c.includes('改質'))) {
+                categorySubTitle = '改質馬林酸樹脂 (高附著耐黃變/接著劑)';
+            } else if (pName.includes('松香') || pName.startsWith('R') || cats.some(c => c.includes('松香'))) {
+                categorySubTitle = '松香改性馬林酸樹脂 (酯化松香/增黏增光)';
+            } else {
+                categorySubTitle = '松香改性馬林酸樹脂 (印刷油墨與工業塗料)';
+            }
+        } else if (lLower === 'coating_additive') {
+            categoryTag = '粉體塗料助劑';
+            if (pName.startsWith('W') || pName.startsWith('SW') || cats.some(c => c.includes('砂紋') || c.includes('紋理'))) {
+                categorySubTitle = '粉體塗料砂紋劑 (細紋/粗紋紋理劑)';
+            } else if (pName.startsWith('M') || pName === 'K7216' || cats.some(c => c.includes('消光'))) {
+                categorySubTitle = '粉體塗料戶外消光劑 (TGIC/PES耐候消光)';
+            } else if (pName.startsWith('A') || cats.some(c => c.includes('附著') || c.includes('密著'))) {
+                categorySubTitle = '粉體塗料附著力改進劑 (金屬密著促進劑)';
+            } else if (pName.startsWith('H') || cats.some(c => c.includes('增硬'))) {
+                categorySubTitle = '粉體塗料增硬劑 (提高漆膜硬度耐磨抗刮)';
+            } else {
+                categorySubTitle = '粉體塗料功能性助劑';
+            }
+        } else if (lLower === 'silane') {
+            categoryTag = '矽烷偶合劑';
+            if (comp.includes('氨基') || pName === 'AMEO' || pName === 'DAMO-T' || pName === '1189') {
+                categorySubTitle = '氨基官能基矽烷偶合劑 (接著/防蝕/偶合)';
+            } else if (comp.includes('環氧') || pName === 'GLYMO') {
+                categorySubTitle = '環氧基矽烷偶合劑 (增進附著與耐水性)';
+            } else if (comp.includes('甲基丙烯醯') || pName === 'MEMO') {
+                categorySubTitle = '甲基丙烯醯氧基矽烷偶合劑 (UV與壓克力體系)';
+            } else if (comp.includes('乙烯基') || pName.startsWith('VT')) {
+                categorySubTitle = '乙烯基矽烷偶合劑 (交聯與耐水防潮)';
+            } else if (comp.includes('烷基') || pName === 'MTES' || pName === 'IBTEO' || pName === 'OCTEO') {
+                categorySubTitle = '烷基官能基矽烷 (疏水防潮防護劑)';
+            } else if (pName.startsWith('Sivo')) {
+                categorySubTitle = 'Sivo 改質多官能低VOC矽烷偶合劑';
+            } else if (pName.startsWith('Hydrosil')) {
+                categorySubTitle = 'Hydrosil 水性無溶劑矽烷低聚物 (環保偶合劑)';
+            } else {
+                categorySubTitle = '特用有機矽烷偶合劑 (Dynasylan 規格)';
+            }
+        } else if (lLower === 'cpo_adhesion_promoter') {
+            categoryTag = 'CPO 密著促進劑';
+            categorySubTitle = '氯化聚丙烯 CPO 樹脂 (PP/TPO難附著塑膠底材)';
+        } else if (lLower === 'adhesion_promoter') {
+            categoryTag = '特用密著促進劑';
+            categorySubTitle = '非氯系特用密著促進劑 (金屬與工程塑膠塗層)';
+        } else if (lLower === 'polyester_polyol') {
+            brandDisplay = 'Kuller';
+            categoryTag = '聚酯多元醇';
+            categorySubTitle = '高性能聚酯多元醇 (熱熔膠/彈性體/UV樹脂)';
+        } else if (lLower === 'modified_polyol') {
+            brandDisplay = 'Kuller';
+            categoryTag = '改性多元醇';
+            categorySubTitle = '特種改性多元醇 (聚氨酯熱熔膠/軟包裝)';
+        } else if (lLower === 'polyester_resin') {
+            brandDisplay = 'Kuller';
+            categoryTag = '聚酯樹酯';
+            categorySubTitle = '高分子量飽和聚酯樹脂 (印刷油墨/粘合劑/罐頭塗料)';
+        } else {
+            categorySubTitle = lineTitle;
+        }
+    } else if (pLower === 'dorfketal') {
+        brandDisplay = 'Dorf Ketal';
+        if (lLower === 'tyzor') {
+            categoryTag = 'Tyzor® 鈦/鋯酸酯';
+            if (pName.includes('TPT')) {
+                categorySubTitle = '鈦酸四異丙酯 (酯化/縮聚/交聯催化劑)';
+            } else if (pName.includes('AA')) {
+                categorySubTitle = '乙醯丙酮鈦螯合物 (油墨塗料密著促進劑)';
+            } else if (pName.includes('TE')) {
+                categorySubTitle = '三乙醇胺鈦螯合物 (水性系統交聯劑)';
+            } else if (pName.includes('TOT') || pName.includes('OGT')) {
+                categorySubTitle = '鈦酸四辛酯 (耐水解高溫酯化催化劑)';
+            } else if (pName.includes('BTP')) {
+                categorySubTitle = '鈦酸四丁酯 (聚酯合成與玻璃金屬表面處理)';
+            } else if (pName.includes('212') || pName.includes('215') || pName.includes('217') || pName.includes('223')) {
+                categorySubTitle = '有機鋯酸酯交聯劑 (低色度耐黃變高活性)';
+            } else if (pName.includes('LA')) {
+                categorySubTitle = '乳酸鈦銨鹽 (水性體系環保交聯劑)';
+            } else {
+                categorySubTitle = '有機鈦酸酯與鋯酸酯催化劑 (Tyzor®)';
+            }
+        } else if (lLower === 'px') {
+            categoryTag = 'PX 潤滑油添加劑';
+            if (pName === 'PX 3811') {
+                categorySubTitle = '二苯胺型高溫抗氧潤滑油添加劑 (抗氧化防沉積)';
+            } else {
+                categorySubTitle = '高性能潤滑油功能添加劑 (抗氧/防腐蝕/抗磨損)';
+            }
+        } else if (lLower === 'chain') {
+            categoryTag = '擴鏈劑';
+            if (pName.includes('ClearLink')) {
+                categorySubTitle = '脂肪族二胺擴鏈劑 (聚脲耐候防黃變)';
+            } else {
+                categorySubTitle = '芳香族二胺擴鏈劑 (聚氨酯/聚脲高強度固化劑)';
+            }
+        }
+    } else if (pLower === 'orion') {
+        brandDisplay = 'Orion 碳黑';
+        if (lLower === 'coating') {
+            categoryTag = 'Orion 塗料碳黑';
+            if (pName.includes('NEROX')) {
+                categorySubTitle = 'NEROX® 塗料特級碳黑 (高黑度/藍相/優異流動)';
+            } else if (pName.includes('SPECIAL BLACK')) {
+                categorySubTitle = 'SPECIAL BLACK 氧化特級著色碳黑 (高光澤流平)';
+            } else if (pName.includes('COLOUR BLACK')) {
+                categorySubTitle = 'COLOUR BLACK 頂級汽車漆碳黑 (極致深黑底漆)';
+            } else if (pName.includes('HIBLACK')) {
+                categorySubTitle = 'HIBLACK® 高性能著色特用碳黑 (耐磨消光)';
+            } else {
+                categorySubTitle = '塗料專用特級著色碳黑 (汽車漆/工業漆)';
+            }
+        } else if (lLower === 'ink_impact') {
+            categoryTag = 'Orion 油墨碳黑';
+            if (pName.includes('PRINTEX')) {
+                categorySubTitle = 'PRINTEX® 印刷油墨特級碳黑 (高著色力/良好光澤)';
+            } else if (pName.includes('Nipex')) {
+                categorySubTitle = 'Nipex® 高純度印刷與噴墨專用碳黑';
+            } else {
+                categorySubTitle = '印刷油墨與碳粉特級碳黑 (UV/凹版/平版)';
+            }
+        }
+    } else if (pLower === 'mpi') {
+        brandDisplay = 'Micro Powders';
+        categoryTag = '微粉蠟';
+        if (lLower === 'ptfe') {
+            categorySubTitle = '奈米複合耐磨耐刮微粉蠟 (PTFE取代方案)';
+        } else if (lLower === 'powder') {
+            categorySubTitle = '粉體塗料專用耐磨消光微粉蠟';
+        } else if (lLower === 'industrial') {
+            categorySubTitle = '工業塗料高耐磨滑爽微粉蠟';
+        } else if (lLower === 'ink') {
+            categorySubTitle = '印刷油墨與過印光油耐磨防刮微粉蠟';
+        } else if (lLower === 'industrial_floor') {
+            categorySubTitle = '地坪塗料止滑耐磨骨材 (PropylTex/NyloTex)';
+        } else if (lLower === 'wood') {
+            categorySubTitle = '木器漆耐磨抗刮消光柔感微粉蠟';
+        } else if (lLower === 'leather') {
+            categorySubTitle = '皮革塗飾柔感消光耐磨特用蠟';
+        } else if (lLower === 'automotive_polishes') {
+            categorySubTitle = '汽車蠟保護與高光澤微粉蠟';
+        } else {
+            categorySubTitle = '高性能微粉蠟與特用微粒助劑';
+        }
+    }
+
+    return {
+        pName,
+        brandDisplay,
+        categoryTag,
+        categorySubTitle,
+        seoTitle: `${pName} ${categorySubTitle} | ${brandDisplay} 宏威應用材料`,
+        seoH1Sub: categorySubTitle
+    };
+}
+
+// 2. 品牌與產品線頁面
+for (const [brandKey, brandObj] of Object.entries(config)) {
+    const partnerSlug = brandKey.toLowerCase();
+    const brandName = brandObj.brandName || brandKey;
+
+    // 品牌首頁
+    const partnerPath = `/products/${partnerSlug}/`;
+    const isMpi = partnerSlug === 'mpi';
+    const isOthers = partnerSlug === 'others';
+    const partnerDisplayTitle = isOthers ? '特化材料助劑系列 (消光粉/馬林酸樹脂/矽烷/密著促進劑)' : `${brandName} 特用化學品系列`;
+    const partnerDesc = isMpi
+        ? `宏威應用材料代理銷售 ${brandName} 全系列特用化學品，提供規格對比、TDS技術資料下載與樣品申請服務。`
+        : (isOthers
+            ? `宏威應用材料精選特化材料助劑系列，涵蓋二氧化矽消光粉、馬林酸樹脂、矽烷偶合劑、粉體塗料功能性助劑、CPO密著促進劑等，提供規格對比、詳細物性參數與免費索樣服務。`
+            : `宏威應用材料代理銷售 ${brandName} 全系列特用化學品，提供規格對比、產品詳細參數與樣品申請服務。`);
+    const partnerHtml = buildPageHtml({
+        title: `${partnerDisplayTitle} | 宏威應用材料 ATTech Materials`,
+        description: partnerDesc,
+        canonicalPath: partnerPath,
+        activeTab: 'products'
+    });
+    writeStaticHtmlFile(partnerPath, partnerHtml);
+    generatedCount++;
+
+    // 產品線頁面
+    for (const file of (brandObj.files || [])) {
+        const lineSlug = file.key;
+        const lineTitle = file.titleZh || file.titleEn || lineSlug;
+        const linePath = `/products/${partnerSlug}/${lineSlug}/`;
+        const products = allProductsCache[lineSlug] || [];
+
+        const tableContentHtml = products.map((p, idx) => {
+            const name = p.product_name || p.name || '';
+            const comp = p.composition_zh || p.chemical_component || p.composition_en || p.chemistry || '—';
+            const props = getProductDescription(p, partnerSlug, lineSlug);
+            const appList = getProductApplications(p, partnerSlug, lineSlug, config);
+            const usageText = appList.map(a => a.title).join('、') || p.main_usage || p.application_fields_zh || '—';
+            const safeUrl = `/products/${partnerSlug}/${lineSlug}/${encodeURIComponent(name)}/`;
+            return `
+            <tr class="hover:bg-blue-50/50 border-b border-gray-200 text-sm transition-colors">
+                <td class="py-3 px-3.5 font-bold text-slate-900 align-top w-[25%]">
+                    <a href="${safeUrl}" class="text-blue-950 font-extrabold text-sm hover:underline block leading-snug">
+                        ${escapeHtml(name)}
+                    </a>
+                    <div class="text-xs text-slate-500 font-normal mt-0.5">${escapeHtml(comp)}</div>
+                </td>
+                <td class="py-3 px-3.5 text-slate-800 font-normal align-top leading-relaxed whitespace-pre-line w-[40%]">${escapeHtml(props)}</td>
+                <td class="py-3 px-3.5 text-slate-800 font-normal align-top leading-relaxed whitespace-pre-line w-[25%]">${escapeHtml(usageText)}</td>
+                <td class="py-3 px-3.5 text-center align-top w-[10%]">
+                    <a href="${safeUrl}" class="px-2.5 py-1 bg-white hover:bg-blue-50 border border-blue-300 text-blue-950 rounded font-bold text-xs shadow-xs inline-flex items-center gap-1 transition-all">
+                        <span>規格詳情</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </td>
+            </tr>`;
+        }).join('');
+
+        const itemListSchema = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": `${brandName === 'Others' ? '特化材料' : brandName} ${lineTitle} 產品目錄`,
+            "description": `${brandName === 'Others' ? '特化材料' : brandName} ${lineTitle} 特用化學品規格表，共 ${products.length} 項品項。`,
+            "url": `${DOMAIN}${linePath}`,
+            "numberOfItems": products.length,
+            "itemListElement": products.map((p, idx) => ({
+                "@type": "ListItem",
+                "position": idx + 1,
+                "name": p.product_name || p.name,
+                "url": `${DOMAIN}${linePath}${encodeURIComponent((p.product_name || p.name || '').trim())}/`
+            }))
+        };
+
+        const linePageTitle = isOthers
+            ? `${lineTitle} 特化材料系列 | 宏威應用材料 ATTech Materials`
+            : `${lineTitle} (${brandName}) | 宏威應用材料 ATTech Materials`;
+        const linePageDesc = isOthers
+            ? `宏威應用材料精選特化材料 ${lineTitle}，提供 ${products.map(p => p.product_name || p.name).slice(0, 8).join(', ')} 等規格之物性參數比對與樣品申請。`
+            : `宏威應用材料精選 ${brandName} ${lineTitle} 特用化學品，提供 ${products.map(p => p.product_name || p.name).slice(0, 8).join(', ')} 等品項之物性參數與免費索樣。`;
+
+        const lineHtml = buildPageHtml({
+            title: linePageTitle,
+            description: linePageDesc,
+            canonicalPath: linePath,
+            activeTab: 'products',
+            preRenderedContent: tableContentHtml,
+            schemaJson: itemListSchema,
+            categoryMeta: {
+                brandName: brandName === 'Others' ? '特化材料' : brandName,
+                lineTitle: lineTitle,
+                matchCount: products.length,
+                partnerSlug: partnerSlug,
+                lineSlug: lineSlug
+            }
+        });
+        writeStaticHtmlFile(linePath, lineHtml);
+        generatedCount++;
+
+        // 3. 單一產品獨立頁面 (Product Detail Pages)
+        for (const p of products) {
+            const pName = (p.product_name || p.name || '').trim();
+            if (!pName) continue;
+
+            const seoInfo = getProductSeoInfo(p, partnerSlug, lineSlug, brandName, lineTitle);
+            const productPath = `/products/${partnerSlug}/${lineSlug}/${encodeURIComponent(pName)}/`;
+            const comp = p.composition_zh || p.chemical_component || p.composition_en || p.chemistry || '';
+            const props = getProductDescription(p, partnerSlug, lineSlug);
+            const appList = getProductApplications(p, partnerSlug, lineSlug, config);
+            const usageText = appList.map(a => a.title).join('、') || lineTitle;
+
+            const productDetailHtml = renderProductDetailTableHtml(p, partnerSlug, lineSlug, brandName, lineTitle, config, seoInfo);
+
+            const productSchema = {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "首頁", "item": `${DOMAIN}/` },
+                            { "@type": "ListItem", "position": 2, "name": "產品", "item": `${DOMAIN}/products/` },
+                            { "@type": "ListItem", "position": 3, "name": (brandName === 'Others' ? '特化材料' : brandName), "item": `${DOMAIN}/products/${partnerSlug}/` },
+                            { "@type": "ListItem", "position": 4, "name": lineTitle, "item": `${DOMAIN}/products/${partnerSlug}/${lineSlug}/` },
+                            { "@type": "ListItem", "position": 5, "name": `${pName} ${seoInfo.categorySubTitle}`, "item": `${DOMAIN}${productPath}` }
+                        ]
+                    },
+                    {
+                        "@type": "Product",
+                        "name": `${pName} ${seoInfo.categorySubTitle}`,
+                        "alternateName": [pName, seoInfo.categorySubTitle],
+                        "category": seoInfo.categoryTag,
+                        "image": `${DOMAIN}/img/MCP-Logo.png`,
+                        "description": `${seoInfo.brandDisplay} ${pName} ${seoInfo.categorySubTitle}：主要成分：${comp || '特用化學材料'}。適用體系與應用領域：${usageText}。特性說明：${props.replace(/\n/g, ' ')}。宏威應用材料提供原廠規格書 TDS 下載、樣品申請與技術諮詢。`,
+                        "brand": {
+                            "@type": "Brand",
+                            "name": seoInfo.brandDisplay
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "url": `${DOMAIN}${productPath}`,
+                            "price": "0",
+                            "priceCurrency": "TWD",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "https://schema.org/NewCondition",
+                            "seller": {
+                                "@type": "Organization",
+                                "name": "宏威應用材料 ATTech Materials"
+                            }
+                        }
+                    }
+                ]
+            };
+
+            const isMpiProd = (partnerSlug === 'mpi');
+            const prodDescSuffix = isMpiProd ? '提供產品規格比較、TDS技術資料與樣品申請。' : '提供產品規格比較、詳細物性參數與樣品申請。';
+            const prodPageHtml = buildPageHtml({
+                title: seoInfo.seoTitle,
+                description: `${seoInfo.brandDisplay} ${pName} ${seoInfo.categorySubTitle}：${comp ? comp + '，' : ''}${props ? props.replace(/\n/g, ' ').slice(0, 110) + '... ' : ''}適合應用：${usageText}。${prodDescSuffix}`,
+                canonicalPath: productPath,
+                activeTab: 'products',
+                preRenderedContent: productDetailHtml,
+                schemaJson: productSchema,
+                isProductDetailPage: true,
+                productMeta: {
+                    name: pName,
+                    brandName,
+                    brandNameDisplay: seoInfo.brandDisplay,
+                    lineTitle,
+                    partnerSlug,
+                    lineSlug,
+                    backUrl: `/products/${partnerSlug}/${lineSlug}/`
+                }
+            });
+
+            // Windows 與 Linux 檔案路徑：以安全名稱作為資料夾名
+            writeStaticHtmlFile(`/products/${partnerSlug}/${lineSlug}/${pName}`, prodPageHtml);
+            generatedCount++;
+        }
+    }
+}
+
+console.log(`✅ 靜態預渲染完成！共產出 ${generatedCount} 個實體 index.html 頁面。`);

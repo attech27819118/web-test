@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.local
+.idea/
+.DS_Store
+*.log
+*.csv
+*.zip
+_archive/
+GSC/
+
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
