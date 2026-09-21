@@ -175,7 +175,7 @@ function getProductDescription(p, partnerKey, lineKey) {
             } else if (subCat === '改性多元醇' || lineKey === 'modified_polyol') {
                 desc = `Kuller 特種改性多元醇（${p.composition_zh || '改性多元醇'}），物態呈${p.appearance}，分子量約 ${p.typical_properties?.molecular_weight || '—'}，羥值 ${p.typical_properties?.hydroxyl_value || '—'} mgKOH/g。專為${p.application_fields_zh || '聚氨酯熱熔膠'}開發，具備優越的接著力、柔韌性與反應相容性。`;
             } else {
-                desc = `Kuller 高分子量飽和聚酯樹脂（${p.composition_zh || '聚酯樹脂'}），物態呈${p.appearance}，玻璃化溫度 Tg 達 ${p.typical_properties?.glass_transition_temp_c ?? '—'}°C，分子量約 ${p.typical_properties?.molecular_weight || '—'}。廣泛應用於${p.application_fields_zh || '印刷油墨、粘合劑、罐頭塗料'}等，賦予塗層卓越的附著力、耐化學品性與加工成型性。`;
+                desc = `Kuller 高分子量聚酯樹脂（${p.composition_zh || '聚酯樹脂'}），物態呈${p.appearance}，玻璃化溫度 Tg 達 ${p.typical_properties?.glass_transition_temp_c ?? '—'}°C，分子量約 ${p.typical_properties?.molecular_weight || '—'}。廣泛應用於${p.application_fields_zh || '印刷油墨、粘合劑、罐頭塗料'}等，賦予塗層卓越的附著力、耐化學品性與加工成型性。`;
             }
         }
     }
@@ -690,13 +690,13 @@ function getProductSeoInfo(p, partnerSlug, lineSlug, brandName, lineTitle) {
             const subCat = (p.featured_categories && p.featured_categories[0]) || '';
             if (subCat === '低分子量聚酯樹脂' || lLower === 'polyester_polyol') {
                 categoryTag = '低分子量聚酯樹脂';
-                categorySubTitle = '高性能低分子量聚酯樹脂 / 聚酯多元醇 (熱熔膠/彈性體/UV樹脂)';
+                categorySubTitle = '低分子量聚酯樹脂 / 聚酯多元醇 (熱熔膠/彈性體/UV樹脂)';
             } else if (subCat === '改性多元醇' || lLower === 'modified_polyol') {
                 categoryTag = '改性多元醇';
                 categorySubTitle = '特種改性多元醇 (聚氨酯熱熔膠/軟包裝)';
             } else {
                 categoryTag = '高分子量聚酯樹脂';
-                categorySubTitle = '高分子量聚酯樹脂 (印刷油墨/粘合劑/罐頭塗料/熱密封)';
+                categorySubTitle = '高分子量聚酯樹脂 (DYNAPOL/DYNACOLL替代品)';
             }
         } else {
             categorySubTitle = lineTitle;
