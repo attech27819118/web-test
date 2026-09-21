@@ -204,37 +204,14 @@
         "categoryMap": {}
       },
       {
-        "key": "polyester_polyol",
-        "jsonPath": "./json/kuller/polyester_polyol.json",
-        "titleZh": "聚酯多元醇",
-        "titleEn": "Polyester Polyols",
-        "categoryMap": {
-          "聚氨酯熱熔膠": "PU Hot Melt Adhesive",
-          "軟包裝": "Flexible Packaging",
-          "聚氨酯彈性體": "PU Elastomer",
-          "UV 樹脂": "UV Resin"
-        }
-      },
-      {
-        "key": "modified_polyol",
-        "jsonPath": "./json/kuller/modified_polyol.json",
-        "titleZh": "改性多元醇",
-        "titleEn": "Modified Polyols",
-        "categoryMap": {
-          "聚氨酯熱熔膠": "PU Hot Melt Adhesive",
-          "軟包裝": "Flexible Packaging"
-        }
-      },
-      {
         "key": "polyester_resin",
         "jsonPath": "./json/kuller/polyester_resin.json",
-        "titleZh": "聚酯樹酯",
+        "titleZh": "聚酯樹脂",
         "titleEn": "Polyester Resin",
         "categoryMap": {
-          "印刷油墨": "Printing Inks",
-          "粘合劑": "Adhesives",
-          "罐頭塗料": "Can Coating",
-          "熱密封塗料": "Heat Seal Coating"
+          "低分子量聚酯樹脂": "Low Molecular Weight Polyester Resin",
+          "改性多元醇": "Modified Polyols",
+          "高分子量樹脂": "High Molecular Weight Polyester Resin"
         }
       }
     ]

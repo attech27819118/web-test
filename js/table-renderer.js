@@ -716,24 +716,21 @@ const DynamicTableRenderer = {
         polyester_resin: {
             headerRows: [
                 [
-                    { title: '<span class="th-title">產品名稱</span>', class: 'min-w-[120px] text-center' },
+                    { title: '<span class="th-title">產品名稱</span>', class: 'min-w-[125px] text-center' },
+                    { title: '<span class="th-title">子分類</span>', class: 'min-w-[110px] text-center' },
                     { title: '<span class="th-title">外觀 / 形態</span>', class: 'min-w-[85px] text-center' },
-                    { title: '<span class="th-title">固含量</span><span class="th-unit">(%)</span>', class: 'min-w-[65px] text-center' },
                     { title: '<span class="th-title">玻璃化溫度</span><span class="th-unit">Tg (°C)</span>', class: 'min-w-[75px] text-center' },
                     { title: '<span class="th-title">分子量</span><span class="th-unit">Mn</span>', class: 'min-w-[70px] text-center' },
                     { title: '<span class="th-title">羥值</span><span class="th-unit">(mgKOH/g)</span>', class: 'min-w-[80px] text-center' },
                     { title: '<span class="th-title">酸值</span><span class="th-unit">(mgKOH/g)</span>', class: 'min-w-[75px] text-center' },
-                    { title: '<span class="th-title">軟化點</span><span class="th-unit">(°C)</span>', class: 'min-w-[65px] text-center' },
-                    { title: '<span class="th-app">印刷油墨</span>', class: 'min-w-[42px] px-1 text-center' },
-                    { title: '<span class="th-app">粘合劑</span>', class: 'min-w-[42px] px-1 text-center' },
-                    { title: '<span class="th-app">罐頭塗料</span>', class: 'min-w-[42px] px-1 text-center' },
-                    { title: '<span class="th-app">熱密封</span>', class: 'min-w-[42px] px-1 text-center' }
+                    { title: '<span class="th-title">熔點/軟化點</span><span class="th-unit">(°C)</span>', class: 'min-w-[85px] text-center' },
+                    { title: '<span class="th-title">主要應用領域</span>', class: 'min-w-[150px] text-center' }
                 ]
             ],
             columns: [
                 {
                     id: 'product_name',
-                    class: 'min-w-[120px]',
+                    class: 'min-w-[125px]',
                     getValue: p => p.product_name,
                     render: p => `
                     <div class="flex flex-col items-start gap-1 w-full py-0.5">
@@ -742,14 +739,22 @@ const DynamicTableRenderer = {
                     </div>`
                 },
                 {
+                    id: 'sub_category',
+                    class: 'min-w-[110px] text-center',
+                    getValue: p => (p.featured_categories && p.featured_categories[0]) || '—',
+                    render: p => {
+                        const cat = (p.featured_categories && p.featured_categories[0]) || '';
+                        let badgeColor = 'bg-blue-50 text-blue-800 border-blue-200';
+                        if (cat === '低分子量聚酯樹脂') badgeColor = 'bg-teal-50 text-teal-800 border-teal-200';
+                        else if (cat === '改性多元醇') badgeColor = 'bg-amber-50 text-amber-800 border-amber-200';
+                        else if (cat === '高分子量樹脂') badgeColor = 'bg-indigo-50 text-indigo-800 border-indigo-200';
+                        return `<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full border ${badgeColor}">${cat || '—'}</span>`;
+                    }
+                },
+                {
                     id: 'appearance',
                     class: 'min-w-[85px] text-center f-weight-medium text-slate-900',
                     getValue: p => p.appearance || p.typical_properties?.physical_form || '—'
-                },
-                {
-                    id: 'solid_content',
-                    class: 'min-w-[65px] text-center f-weight-medium text-slate-900',
-                    getValue: p => p.typical_properties?.solid_content ?? '—'
                 },
                 {
                     id: 'tg',
@@ -772,29 +777,32 @@ const DynamicTableRenderer = {
                     getValue: p => p.typical_properties?.acid_value ?? '—'
                 },
                 {
-                    id: 'sp',
-                    class: 'min-w-[65px] text-center f-weight-medium text-slate-900',
-                    getValue: p => p.typical_properties?.softening_point_c ?? '—'
+                    id: 'temp_point',
+                    class: 'min-w-[85px] text-center f-weight-medium text-slate-900',
+                    getValue: p => {
+                        const mp = p.typical_properties?.melt_point_c;
+                        const sp = p.typical_properties?.softening_point_c;
+                        if (mp !== undefined && mp !== null && mp !== '—') return mp;
+                        if (sp !== undefined && sp !== null && sp !== '—') return sp;
+                        return '—';
+                    },
+                    render: p => {
+                        const mp = p.typical_properties?.melt_point_c;
+                        const sp = p.typical_properties?.softening_point_c;
+                        if (mp !== undefined && mp !== null && mp !== '—') {
+                            return `<span title="熔點">${mp} <span class="text-[10px] text-slate-600">(熔)</span></span>`;
+                        }
+                        if (sp !== undefined && sp !== null && sp !== '—') {
+                            return `<span title="軟化點">${sp} <span class="text-[10px] text-slate-600">(軟)</span></span>`;
+                        }
+                        return '—';
+                    }
                 },
                 {
-                    id: 'printing_inks',
-                    class: 'min-w-[42px] px-1 text-center f-weight-bold text-blue-950 f-size-sm',
-                    getValue: p => (p.applications?.printing_inks) ? '✓' : ' '
-                },
-                {
-                    id: 'adhesives',
-                    class: 'min-w-[42px] px-1 text-center f-weight-bold text-blue-950 f-size-sm',
-                    getValue: p => (p.applications?.adhesives) ? '✓' : ' '
-                },
-                {
-                    id: 'can_coating',
-                    class: 'min-w-[42px] px-1 text-center f-weight-bold text-blue-950 f-size-sm',
-                    getValue: p => (p.applications?.can_coating) ? '✓' : ' '
-                },
-                {
-                    id: 'heat_seal_coating',
-                    class: 'min-w-[42px] px-1 text-center f-weight-bold text-blue-950 f-size-sm',
-                    getValue: p => (p.applications?.heat_seal_coating) ? '✓' : ' '
+                    id: 'applications',
+                    class: 'min-w-[150px] text-left text-xs f-weight-normal text-slate-800 break-words',
+                    getValue: p => p.application_fields_zh || '—',
+                    render: p => `<span class="whitespace-pre-line leading-relaxed">${p.application_fields_zh || '—'}</span>`
                 }
             ]
         }
