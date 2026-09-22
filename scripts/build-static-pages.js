@@ -806,11 +806,11 @@ for (const [brandKey, brandObj] of Object.entries(config)) {
     const partnerPath = `/products/${partnerSlug}/`;
     const isMpi = partnerSlug === 'mpi';
     const isOthers = partnerSlug === 'others';
-    const partnerDisplayTitle = isOthers ? '特化材料助劑系列 (消光粉/馬林酸樹脂/矽烷/密著促進劑)' : `${brandName} 特用化學品系列`;
+    const partnerDisplayTitle = isOthers ? '特化材料助劑系列 (聚酯樹脂/消光粉/馬林酸樹脂/矽烷/密著促進劑)' : `${brandName} 特用化學品系列`;
     const partnerDesc = isMpi
         ? `宏威應用材料代理銷售 ${brandName} 全系列特用化學品，提供規格對比、TDS技術資料下載與樣品申請服務。`
         : (isOthers
-            ? `宏威應用材料精選特化材料助劑系列，涵蓋二氧化矽消光粉、馬林酸樹脂、矽烷偶合劑、粉體塗料功能性助劑、CPO密著促進劑等，提供規格對比、詳細物性參數與免費索樣服務。`
+            ? `宏威應用材料精選特化材料助劑系列，涵蓋聚酯樹脂、二氧化矽消光粉、馬林酸樹脂、矽烷偶合劑、粉體塗料功能性助劑、CPO密著促進劑等，提供規格對比、詳細物性參數與免費索樣服務。`
             : `宏威應用材料代理銷售 ${brandName} 全系列特用化學品，提供規格對比、產品詳細參數與樣品申請服務。`);
     const partnerHtml = buildPageHtml({
         title: `${partnerDisplayTitle} | 宏威應用材料 ATTech Materials`,

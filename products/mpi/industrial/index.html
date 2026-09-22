@@ -65,12 +65,27 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
     <!-- Google tag (gtag.js) - Google Analytics 4 (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC6CHE673V"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-RC6CHE673V');
+        (function () {
+            var hostname = window.location.hostname;
+            var isLocal = ['localhost', '127.0.0.1', ''].indexOf(hostname) !== -1 ||
+                window.location.protocol === 'file:' ||
+                hostname.endsWith('.local') ||
+                /^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(hostname);
+            if (isLocal) {
+                window['ga-disable-G-RC6CHE673V'] = true;
+                console.log('[GA4] 本地開發環境，已自動停用 Google Analytics 追蹤 (G-RC6CHE673V)');
+                return;
+            }
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-RC6CHE673V';
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-RC6CHE673V');
+        })();
     </script>
 
     <!-- Schema.org 結構化資料 (Organization + WebSite + Catalog ItemList) -->
@@ -136,8 +151,8 @@
                         {
                             "@type": "ListItem",
                             "position": 4,
-                            "name": "其他特化材料 (矽烷偶合劑 / 消光粉 / 馬林酸樹脂 / 密著樹脂)",
-                            "url": "https://www.attech.com.tw/products/others/coating_additive/"
+                            "name": "其他特化材料 (聚酯樹脂 / 矽烷偶合劑 / 消光粉 / 馬林酸樹脂)",
+                            "url": "https://www.attech.com.tw/products/others/polyester_resin/"
                         }
                     ]
                 }
@@ -1039,7 +1054,7 @@
                                 class="fallback-img max-h-full max-w-full object-contain">
                         </a>
 
-                        <a href="products/others/coating_additive/" id="btn-partner-Others" aria-label="其他品牌"
+                        <a href="products/others/polyester_resin/" id="btn-partner-Others" aria-label="其他品牌"
                             class="group relative flex h-14 items-center justify-center overflow-hidden rounded border border-slate-700 bg-slate-950 opacity-50 shadow-sm transition-all duration-200 hover:border-slate-500 hover:opacity-100 active:scale-95 no-underline">
                             <img src="img/others.jpg" alt="其他特化材料" width="160" height="50" loading="lazy"
                                 decoding="async" onError="handleImageFallback(this, 'img/others.jpg');"

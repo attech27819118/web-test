@@ -1205,7 +1205,7 @@ const DynamicTableRenderer = {
                     return this.layoutDefinitions.polyester_polyol;
                 } else if (AppState.category === '改性多元醇') {
                     return this.layoutDefinitions.modified_polyol;
-                } else if (AppState.category === '高分子量樹脂' || AppState.category === '高分子量聚酯樹脂') {
+                } else if (AppState.category === '高分子量聚酯樹脂') {
                     return this.layoutDefinitions.polyester_resin;
                 }
                 return this.layoutDefinitions.polyester_resin_all;
