@@ -197,7 +197,8 @@ function getTypicalPropertiesRows(p) {
     };
 
     // 微粉蠟、樹脂與化學品通用物性
-    addRow('熔點 / 軟化點 (°C)', t.melt_point_c || t.softening_point_c || p.softening_point);
+    if (t.melt_point_c) addRow('熔點 (°C)', t.melt_point_c);
+    if (t.softening_point_c || p.softening_point) addRow('軟化點 (°C)', t.softening_point_c || p.softening_point);
     addRow('玻璃化溫度 Tg (°C)', t.glass_transition_temp_c || p.glass_transition_temp_c);
     addRow('羥值 (mg KOH/g)', t.hydroxyl_value || p.hydroxyl_value);
     addRow('平均粒徑 (µm)', t.mean_particle_size_um || p.particle_size);
