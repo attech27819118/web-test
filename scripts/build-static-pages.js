@@ -175,7 +175,7 @@ function getProductDescription(p, partnerKey, lineKey) {
             } else if (subCat === '改性多元醇' || lineKey === 'modified_polyol') {
                 desc = `Kuller 特種改性多元醇（${p.composition_zh || '改性多元醇'}），物態呈${p.appearance}，分子量約 ${p.typical_properties?.molecular_weight || '—'}，羥值 ${p.typical_properties?.hydroxyl_value || '—'} mgKOH/g。專為${p.application_fields_zh || '聚氨酯熱熔膠'}開發，具備優越的接著力、柔韌性與反應相容性。`;
             } else {
-                desc = `Kuller 高分子量聚酯樹脂（${p.composition_zh || '聚酯樹脂'}），物態呈${p.appearance}，玻璃化溫度 Tg 達 ${p.typical_properties?.glass_transition_temp_c ?? '—'}°C，分子量約 ${p.typical_properties?.molecular_weight || '—'}。廣泛應用於${p.application_fields_zh || '印刷油墨、粘合劑、罐頭塗料'}等，賦予塗層卓越的附著力、耐化學品性與加工成型性。`;
+                desc = `Kuller 高分子量聚酯樹脂（${p.composition_zh || '聚酯樹脂'}），物態呈${p.appearance}，玻璃化溫度 Tg 達 ${p.typical_properties?.glass_transition_temp_c ?? '—'}°C，分子量約 ${p.typical_properties?.molecular_weight || '—'}。廣泛應用於${p.application_fields_zh || '印刷油墨、接著劑、罐頭塗料'}等，賦予塗層卓越的附著力、耐化學品性與加工成型性。`;
             }
         }
     }
@@ -279,14 +279,14 @@ function renderProductDetailTableHtml(product, partnerKey, lineKey, brandName, l
 
     const isPolyester = (lineKey === 'polyester_resin' || lineKey === 'polyester_polyol' || lineKey === 'modified_polyol');
     const benchmarkCardHtml = isPolyester ? `
-                <!-- 導流卡片：歐系同級對標支援與索樣 (保密型) -->
+                <!-- 導流卡片：歐系同級規格比較支援與索樣 (保密型) -->
                 <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                     <div class="flex items-center gap-2 text-blue-900 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fa-solid fa-flask-vial"></i> 同級規格對標與測試
+                        <i class="fa-solid fa-flask-vial"></i> 同級規格比較與測試
                     </div>
-                    <h3 class="text-base font-bold text-slate-900 mb-2">歐系同級規格平替評估</h3>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">歐系同級規格替代評估</h3>
                     <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                        本品具備優異耐熱、附著與耐候特性，適用於評估對標歐系知名飽和聚酯與結晶多元醇（如 DYNAPOL® / DYNACOLL® 同級應用）。為保護客戶配方機密，完整對照型號不對外公開，歡迎申請樣品進行平行比對測試。
+                        本品具備優異耐熱、附著與耐候特性，適用於評估替代歐系知名飽和聚酯與結晶多元醇（如 DYNAPOL® / DYNACOLL® 同級應用）。為保護客戶配方機密，完整對照型號不對外公開，歡迎申請樣品進行平行比對測試。
                     </p>
                     <a href="/contact/?product=${safeName}" 
                        class="inline-flex items-center justify-center gap-1.5 w-full px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold transition-colors">
@@ -570,23 +570,23 @@ ${preRenderedContent}
                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <div class="space-y-1">
                                 <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 text-xs font-bold">
-                                    <i class="fa-solid fa-flask-vial"></i> 技術對標與選型支援
+                                    <i class="fa-solid fa-flask-vial"></i> 技術比較與型號支援
                                 </div>
                                 <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
-                                    歐系高階聚酯樹脂 / 結晶多元醇 同級平替與配方評估
+                                    歐系高階聚酯樹脂 / 結晶多元醇 同級替代與配方評估
                                 </h4>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
-                                    針對業界歐系熱塑性飽和共聚酯（<strong>DYNAPOL®</strong> 同級）及反應型結晶多元醇（<strong>DYNACOLL®</strong> 同級）之應用需求，宏威材料提供物性平行比對、相容性評估與高品質平替方案。為保護客戶配方機密，完整對標清單不對外公開，歡迎聯繫技術團隊索取一對一選型建議與測試樣品。
+                                    針對業界歐系熱塑性飽和共聚酯（<strong>DYNAPOL®</strong> 同級）及反應型結晶多元醇（<strong>DYNACOLL®</strong> 同級）之應用需求，宏威材料提供物性平行比對、相容性評估與高品質替代方案。為保護客戶配方機密，完整比較清單不對外公開，歡迎聯繫技術團隊索取一對一型號建議與測試樣品。
                                 </p>
                                 <div class="text-[11px] text-slate-400 mt-1">
-                                    * DYNAPOL® 與 DYNACOLL® 為 Evonik 註冊商標，文中所述型號僅用於同級性能選型參考。
+                                    * DYNAPOL® 與 DYNACOLL® 為 Evonik 註冊商標，文中所述型號僅用於同級性能型號選擇參考。
                                 </div>
                             </div>
                             <div class="shrink-0 w-full sm:w-auto">
                                 <a href="/contact/?mode=detailed" 
                                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-colors active:scale-95 whitespace-nowrap">
                                     <i class="fa-solid fa-vial"></i>
-                                    <span>申請對標諮詢 / 索取樣品</span>
+                                    <span>申請同級規格諮詢 / 索取樣品</span>
                                 </a>
                             </div>
                         </div>
@@ -637,8 +637,8 @@ const corePages = [
     },
     {
         path: '/technology/',
-        title: '技術專區與應用方案 | 宏威應用材料 Discover The Link To Life',
-        description: '宏威應用材料特用化學品技術專區，涵蓋微粉蠟抗磨 PTFE 取代、高分子聚酯樹脂/多元醇同級平替、有機鈦鋯催化偶合與特級碳黑分散等應用方案。',
+        title: '技術專區與應用範圍 | 宏威應用材料 Discover The Link To Life',
+        description: '宏威應用材料特用化學品技術專區，涵蓋微粉蠟抗磨 PTFE 取代、高分子聚酯樹脂/多元醇同級替代、有機鈦鋯催化偶合與特級碳黑分散等應用方案。',
         tab: 'technology'
     },
     {
@@ -938,7 +938,7 @@ for (const [brandKey, brandObj] of Object.entries(config)) {
                                 "name": "宏威材料是否提供對應 DYNAPOL® 或 DYNACOLL® 的同級聚酯樹脂產品？",
                                 "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "是的，宏威應用材料提供多款性能對標歐系熱塑性飽和共聚酯（DYNAPOL® 同級）與反應型結晶多元醇（DYNACOLL® 同級）之高性能產品。為保護客戶配方機密，具體型號對照清單不對外公開，歡迎聯繫我們的技術人員索取一對一選型建議與樣品進行平行測試。"
+                                    "text": "是的，宏威應用材料提供多款性能同級歐系熱塑性飽和共聚酯（DYNAPOL® 同級）與反應型結晶多元醇（DYNACOLL® 同級）之高性能產品。為保護客戶配方機密，具體型號對照清單不對外公開，歡迎聯繫我們的技術人員索取一對一型號建議與樣品進行平行測試。"
                                 }
                             }
                         ]
@@ -952,7 +952,7 @@ for (const [brandKey, brandObj] of Object.entries(config)) {
             : `${lineTitle} (${brandName}) | 宏威應用材料 ATTech Materials`;
         const linePageDesc = isOthers
             ? (lineSlug === 'polyester_resin'
-                ? `宏威應用材料精選特化材料 聚酯樹脂系列，對標歐系知名高分子量共聚酯 (DYNAPOL®) 與反應型結晶聚酯多元醇 (DYNACOLL®)，提供 RS 6059, RS 6067, RS 6069, RS 6073 等規格之物性參數比對與樣品申請。`
+                ? `宏威應用材料精選特化材料 聚酯樹脂系列，涵蓋歐系知名高分子量共聚酯 (DYNAPOL®) 與反應型結晶聚酯多元醇 (DYNACOLL®) 同級替代品，提供 RS 6059, RS 6067, RS 6069, RS 6073 等規格之物性參數比對與樣品申請。`
                 : `宏威應用材料精選特化材料 ${lineTitle}，提供 ${products.map(p => p.product_name || p.name).slice(0, 8).join(', ')} 等規格之物性參數比對與樣品申請。`)
             : `宏威應用材料精選 ${brandName} ${lineTitle} 特用化學品，提供 ${products.map(p => p.product_name || p.name).slice(0, 8).join(', ')} 等品項之物性參數與免費索樣。`;
 

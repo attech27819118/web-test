@@ -19,7 +19,7 @@ def build_gallery_tech_section():
                             技術專區 (Technology)
                         </h1>
                         <p class="text-sm sm:text-base text-slate-600 mt-2 font-medium leading-relaxed max-w-3xl">
-                            宏威應用材料特化產品技術方案，涵蓋 11 大品類之材料特性、化學機理、配方建議、對標評估與原廠技術支援。
+                            宏威應用材料特化產品技術方案，涵蓋 11 大品類之材料特性、化學機理、配方建議、比較評估與原廠技術支援。
                         </p>
                     </div>
                     <div class="shrink-0 flex items-center gap-3">
@@ -319,7 +319,7 @@ def build_gallery_tech_section():
                             <a href="contact/?mode=detailed&inquiry=Silane"
                                class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                 <i class="fa-solid fa-file-shield"></i>
-                                <span>索取矽烷選型手冊</span>
+                                <span>索取矽烷型號手冊</span>
                             </a>
                         </div>
                     </div>
@@ -328,7 +328,7 @@ def build_gallery_tech_section():
                     <div class="bg-slate-50/70 border border-dashed border-slate-300 rounded-2xl p-6 sm:p-8">
                         <div class="max-w-xl mx-auto text-center mb-5 pb-3 border-b border-slate-200">
                             <span class="text-xs font-bold text-blue-700 tracking-wider uppercase">原廠技術圖解與機理展位</span>
-                            <h4 class="text-base font-bold text-slate-900 mt-1">矽烷水解縮合機理與各底材配方對標表</h4>
+                            <h4 class="text-base font-bold text-slate-900 mt-1">矽烷水解縮合機理與各底材配方比較表</h4>
                         </div>
                         <div class="max-w-md mx-auto bg-white rounded-xl border border-slate-200 p-6 text-center shadow-xs">
                             <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3 text-lg">
@@ -384,7 +384,7 @@ def build_gallery_tech_section():
                     <div class="bg-slate-50/70 border border-dashed border-slate-300 rounded-2xl p-6 sm:p-8">
                         <div class="max-w-xl mx-auto text-center mb-5 pb-3 border-b border-slate-200">
                             <span class="text-xs font-bold text-blue-700 tracking-wider uppercase">原廠技術圖解與機理展位</span>
-                            <h4 class="text-base font-bold text-slate-900 mt-1">聚脲/聚氨酯擴鏈配方動力學曲線與對標指引</h4>
+                            <h4 class="text-base font-bold text-slate-900 mt-1">聚脲/聚氨酯擴鏈配方動力學曲線與比較指引</h4>
                         </div>
                         <div class="max-w-md mx-auto bg-white rounded-xl border border-slate-200 p-6 text-center shadow-xs">
                             <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3 text-lg">
@@ -506,7 +506,7 @@ def build_gallery_tech_section():
                                 暫無資料
                             </div>
                             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                                原廠技術資料整理中，暫無資料。<br>如需 PTFE-Free 無氟環保微粉蠟替代對標數據或耐磨耗測試報告，歡迎直接洽詢。
+                                原廠技術資料整理中，暫無資料。<br>如需 PTFE-Free 無氟環保微粉蠟替代測試數據或耐磨耗測試報告，歡迎直接洽詢。
                             </p>
                             <a href="contact/?mode=detailed&inquiry=PTFE-Free-Guide"
                                class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition-colors">
@@ -543,7 +543,7 @@ def build_gallery_tech_section():
                             <a href="contact/?mode=detailed&inquiry=Matting-Agent"
                                class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                 <i class="fa-solid fa-file-shield"></i>
-                                <span>索取消光粉對標評估手冊</span>
+                                <span>索取消光粉規格比較手冊</span>
                             </a>
                         </div>
                     </div>
@@ -730,7 +730,7 @@ def build_gallery_tech_section():
                                 暫無資料
                             </div>
                             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                                原廠技術資料整理中，暫無資料。<br>如需大/中/細砂紋立體質感樣板、消光固化劑對標或擠出工藝調整建議，歡迎聯繫技術專家。
+                                原廠技術資料整理中，暫無資料。<br>如需大/中/細砂紋立體質感樣板、消光固化劑比較或擠出工藝調整建議，歡迎聯繫技術專家。
                             </p>
                             <a href="contact/?mode=detailed&inquiry=Powder-Texture"
                                class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition-colors">
@@ -808,10 +808,10 @@ def build_gallery_tech_section():
                             </div>
                             <h3 class="text-xl sm:text-2xl font-extrabold text-blue-950 flex items-center gap-2.5">
                                 <span class="w-2.5 h-6 bg-blue-700 rounded-full inline-block"></span>
-                                飽和共聚聚酯樹脂與多元醇對標技術 (Polyester Resin)
+                                飽和共聚聚酯樹脂與多元醇比較技術 (Polyester Resin)
                             </h3>
                             <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-3xl leading-relaxed">
-                                全系列飽和共聚聚酯，專為卷材塗料、食品罐頭內外壁塗料及 PUR 熱熔膠量身打造，具備極致衝壓柔韌性、耐蒸煮性與國際 FDA 食品接觸合規性，精準對標國際一線品牌。
+                                全系列飽和共聚聚酯，專為卷材塗料、食品罐頭內外壁塗料及 PUR 熱熔膠量身打造，具備極致衝壓柔韌性、耐蒸煮性與國際 FDA 食品接觸合規性，同級比照國際一線品牌。
                             </p>
                         </div>
                         <div class="shrink-0 flex items-center gap-2">
@@ -823,7 +823,7 @@ def build_gallery_tech_section():
                             <a href="contact/?mode=detailed&inquiry=Polyester-Resin"
                                class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                 <i class="fa-solid fa-file-shield"></i>
-                                <span>索取聚酯對標選型對照表</span>
+                                <span>索取聚酯型號規格比較對照表</span>
                             </a>
                         </div>
                     </div>
@@ -842,11 +842,11 @@ def build_gallery_tech_section():
                                 暫無資料
                             </div>
                             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                                原廠技術資料整理中，暫無資料。<br>如需 DYNAPOL / DYNACOLL 替代選型對標表、FDA 食品接觸認證或 PUR 熱熔膠初黏力曲線，歡迎洽詢。
+                                原廠技術資料整理中，暫無資料。<br>如需 DYNAPOL / DYNACOLL 替代型號比較表、FDA 食品接觸認證或 PUR 熱熔膠初黏力曲線，歡迎洽詢。
                             </p>
                             <a href="contact/?mode=detailed&inquiry=Polyester-Benchmark"
                                class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition-colors">
-                                <i class="fa-solid fa-envelope-open-text"></i> 索取對標選型手冊
+                                <i class="fa-solid fa-envelope-open-text"></i> 索取型號規格比較手冊
                             </a>
                         </div>
                     </div>

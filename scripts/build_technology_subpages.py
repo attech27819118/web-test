@@ -24,8 +24,8 @@ TECH_ITEMS = [
     {
         "slug": "tyzor",
         "item_no": "01",
-        "menu_name": "有機鈦／鋯酸酯 (Tyzor®)",
-        "menu_sub": "Dorf Ketal 原廠催化・交聯・密著",
+        "menu_name": "Organic Titanates and Zirconates",
+        "menu_sub": "鈦酸酯與鋯酸酯, Tyzor",
         "title_zh": "鈦酸酯與鋯酸酯四大核心技術應用 (Tyzor®)",
         "title_en": "Organic Titanates & Zirconates",
         "category_name": "鈦酸酯與鋯酸酯 (Tyzor®)",
@@ -43,8 +43,8 @@ TECH_ITEMS = [
     {
         "slug": "silane",
         "item_no": "02",
-        "menu_name": "矽烷偶合劑系列 (Silane)",
-        "menu_sub": "Evonik Dynasylan® 偶合改性",
+        "menu_name": "Silane / 矽烷偶合劑",
+        "menu_sub": "Dynasylan / hydrosil 系列",
         "title_zh": "矽烷偶合劑系列技術應用 (Silane)",
         "title_en": "Silane / 矽烷偶合劑",
         "category_name": "矽烷偶合劑 (Silane)",
@@ -56,14 +56,14 @@ TECH_ITEMS = [
         "has_data": False,
         "inquiry_param": "Silane-Technology",
         "meta_desc": "宏威應用材料矽烷偶合劑系列技術專題，包含 Dynasylan 與 Hydrosil 水性及溶劑型矽烷之無機/有機介面架橋、玻璃金屬表面處理與水解縮合應用指引。",
-        "placeholder_subtitle": "矽烷水解縮合機理與各底材配方對標表整理中",
+        "placeholder_subtitle": "矽烷水解縮合機理與各底材配方比較表整理中",
         "placeholder_text": "本專題之原廠技術資料、水解工藝說明與填料表面處理數據目前正在編整中，暫無公開資料。如需特定樹脂（如水性 PU、環氧重防腐）之添加比例與催化指引，歡迎直接聯繫技術團隊。"
     },
     {
         "slug": "chain",
         "item_no": "03",
-        "menu_name": "擴鏈劑改性技術 (Chain Extender)",
-        "menu_sub": "Unilink® & Clearlink® 彈性體",
+        "menu_name": "Chain Extender / 擴鏈劑",
+        "menu_sub": "Unilink & Clearlink 系列",
         "title_zh": "擴鏈劑高性能彈性體改性技術 (Chain Extender)",
         "title_en": "Chain Extender / 擴鏈劑",
         "category_name": "擴鏈劑 (Chain Extender)",
@@ -75,14 +75,14 @@ TECH_ITEMS = [
         "has_data": False,
         "inquiry_param": "Chain-Extender",
         "meta_desc": "宏威應用材料 Dorf Ketal Unilink & Clearlink 系列受阻二胺擴鏈劑技術專題，適用於噴塗聚脲、彈性體改性與聚氨酯固化速度調控。",
-        "placeholder_subtitle": "聚脲/聚氨酯擴鏈配方動力學曲線與對標指引整理中",
+        "placeholder_subtitle": "聚脲/聚氨酯擴鏈配方動力學曲線與比較指引整理中",
         "placeholder_text": "本專題之原廠動力學反應曲線、凝膠時間對照表與高低溫拉伸強度測試資料整理中，暫無公開資料。如需特定受阻胺反應速率、配比或固化試樣，歡迎聯繫宏威工程師。"
     },
     {
         "slug": "carbon-black",
         "item_no": "04",
-        "menu_name": "特級碳黑與導電碳黑 (Carbon Black)",
-        "menu_sub": "Orion 高黑度色相與抗靜電",
+        "menu_name": "Special Carbon Black",
+        "menu_sub": "特級碳黑 / 導電碳黑",
         "title_zh": "特級碳黑高黑度與色相調控技術 (Carbon Black)",
         "title_en": "Special Carbon Black / 特級碳黑",
         "category_name": "特級碳黑 (Carbon Black)",
@@ -100,8 +100,8 @@ TECH_ITEMS = [
     {
         "slug": "wax",
         "item_no": "05",
-        "menu_name": "微粉蠟耐磨抗刮技術 (Micronized Wax)",
-        "menu_sub": "MPI 無氟 PTFE 耐磨替代",
+        "menu_name": "Micronized Wax / 微粉蠟",
+        "menu_sub": "PTFE 取代 / 耐磨耐刮助劑",
         "title_zh": "微粉化蠟極致耐磨耐刮與抗擦傷技術 (Micronized Wax)",
         "title_en": "Micronized Wax / 微粉蠟",
         "category_name": "微粉蠟 (Micronized Wax)",
@@ -119,8 +119,8 @@ TECH_ITEMS = [
     {
         "slug": "matting",
         "item_no": "06",
-        "menu_name": "二氧化矽消光粉 (Matting Agent)",
-        "menu_sub": "高孔容透明度與防沉降",
+        "menu_name": "Matting Agent / 消光粉",
+        "menu_sub": "二氧化矽 / 表面處理消光",
         "title_zh": "二氧化矽精密消光與表面紋理調控 (Matting Agent)",
         "title_en": "Matting Agent / 消光粉",
         "category_name": "消光粉 (Matting Agent)",
@@ -133,13 +133,13 @@ TECH_ITEMS = [
         "inquiry_param": "Matting-Agent-Tech",
         "meta_desc": "宏威應用材料二氧化矽消光粉技術專題，包含有機表面處理與無處理消光粉之吸油量、孔隙率、重塗附著力及防沉降流變技術指南。",
         "placeholder_subtitle": "二氧化矽消光機理、孔容吸油量與手感評估圖整理中",
-        "placeholder_text": "原廠技術資料整理中，暫無公開資料。如需對標德固賽 Acematt 系列、孔容與吸油量檢驗報告或薄塗高透消光粉樣品，歡迎向宏威團隊索取。"
+        "placeholder_text": "原廠技術資料整理中，暫無公開資料。如需比較德固賽 Acematt 系列、孔容與吸油量檢驗報告或薄塗高透消光粉樣品，歡迎向宏威團隊索取。"
     },
     {
         "slug": "maleic",
         "item_no": "07",
-        "menu_name": "松香改性馬林酸樹脂 (Maleic Resin)",
-        "menu_sub": "醇溶水性油墨與光油改性",
+        "menu_name": "Maleic Resin / 馬林酸樹脂",
+        "menu_sub": "松香改性馬林酸樹脂",
         "title_zh": "馬林酸樹脂快乾高光與環保醇溶改性技術 (Maleic Resin)",
         "title_en": "Maleic Resin / 馬林酸樹脂",
         "category_name": "馬林酸樹脂 (Maleic Resin)",
@@ -157,8 +157,8 @@ TECH_ITEMS = [
     {
         "slug": "adhesion",
         "item_no": "08",
-        "menu_name": "密著促進劑架橋技術 (Adhesion)",
-        "menu_sub": "CPO 氯化 / 環保非氯系 PP 底材",
+        "menu_name": "Adhesion Resin / 密著樹脂",
+        "menu_sub": "氯化聚烯烴 (CPO) & 非氯系",
         "title_zh": "密著促進劑與難附著非極性底材架橋技術 (Adhesion Promoters)",
         "title_en": "Adhesion Resin / 密著樹脂",
         "category_name": "密著促進劑 (Adhesion)",
@@ -176,8 +176,8 @@ TECH_ITEMS = [
     {
         "slug": "powder",
         "item_no": "09",
-        "menu_name": "粉體塗料功能性助劑 (Powder Additives)",
-        "menu_sub": "戶外耐候消光與砂紋紋理",
+        "menu_name": "Powder Coating Additive",
+        "menu_sub": "粉體塗料專用功能性助劑",
         "title_zh": "粉體塗料專用功能性紋理與消光助劑技術 (Powder Additives)",
         "title_en": "Powder Additives / 粉體助劑",
         "category_name": "粉體塗料助劑 (Powder Additives)",
@@ -195,8 +195,8 @@ TECH_ITEMS = [
     {
         "slug": "px",
         "item_no": "10",
-        "menu_name": "PX 潤滑油添加劑 (PX Lubricants)",
-        "menu_sub": "原 ExxonMobil 高溫抗磨極壓",
+        "menu_name": "PX Lubricant Additives",
+        "menu_sub": "潤滑油添加劑 (原 ExxonMobil)",
         "title_zh": "PX 潤滑油特用抗磨與熱氧化穩定添加劑 (PX Lubricants)",
         "title_en": "PX Lubricants / 潤滑油添加劑",
         "category_name": "PX 潤滑油添加劑",
@@ -214,21 +214,21 @@ TECH_ITEMS = [
     {
         "slug": "polyester",
         "item_no": "11",
-        "menu_name": "飽和共聚聚酯樹脂 (Polyester Resin)",
-        "menu_sub": "對標 DYNAPOL® / DYNACOLL®",
-        "title_zh": "飽和共聚聚酯樹脂與多元醇對標技術 (Polyester Resin)",
+        "menu_name": "Polyester Resin / 聚酯樹脂",
+        "menu_sub": "聚酯樹脂 (DYNAPOL/DYNACOLL替代品)",
+        "title_zh": "飽和共聚聚酯樹脂與多元醇技術應用 (Polyester Resin)",
         "title_en": "Polyester Resin / 聚酯樹脂",
         "category_name": "聚酯樹脂 (Polyester Resin)",
         "brand_name": "特用化學品技術專區",
         "brand_tag": "其他特化",
         "product_link": "products/others/polyester_resin/",
         "product_link_text": "瀏覽 37 款聚酯規格",
-        "description": "高分子量共聚聚酯與特用多元醇，專為卷材塗料、罐頭塗料、軟包裝複合膠與 PUR 熱熔膠開發，具備對標 DYNAPOL® / DYNACOLL® 之抗深衝延伸率、耐熱性與 FDA 食品接觸符合性。",
+        "description": "高分子量共聚聚酯與特用多元醇，專為卷材塗料、罐頭塗料、軟包裝複合膠與 PUR 熱熔膠開發，具備與 DYNAPOL® / DYNACOLL® 同級之抗深衝延伸率、耐熱性與 FDA 食品接觸符合性。",
         "has_data": False,
         "inquiry_param": "Polyester-Resin-Tech",
-        "meta_desc": "宏威應用材料飽和共聚聚酯樹脂技術專題，對標 DYNAPOL® 與 DYNACOLL®，適用於金屬卷材烤漆、食品罐內外塗料、軟包裝複合膠與 PUR 熱熔膠。",
+        "meta_desc": "宏威應用材料飽和共聚聚酯樹脂技術專題，同級 DYNAPOL® 與 DYNACOLL® 替代方案，適用於金屬卷材烤漆、食品罐內外塗料、軟包裝複合膠與 PUR 熱熔膠。",
         "placeholder_subtitle": "共聚聚酯玻璃化轉變溫度 (Tg) 與柔韌深衝性能關聯圖整理中",
-        "placeholder_text": "原廠技術資料整理中，暫無公開資料。如需 DYNAPOL / DYNACOLL 替代選型對標表、FDA 食品接觸認證或 PUR 熱熔膠初黏力曲線，歡迎洽詢宏威技術團隊。"
+        "placeholder_text": "原廠技術資料整理中，暫無公開資料。如需 DYNAPOL / DYNACOLL 替代型號比較表、FDA 食品接觸認證或 PUR 熱熔膠初黏力曲線，歡迎洽詢宏威技術團隊。"
     }
 ]
 
@@ -246,12 +246,12 @@ def build_category_switcher(current_slug, is_index=False):
         menu_sub = item.get("menu_sub", item["brand_tag"])
 
         if is_active:
-            card = f'''                        <a href="{url}" class="group flex items-center justify-between p-3 rounded-xl bg-blue-50/90 border-2 border-blue-600/80 text-blue-950 no-underline shadow-xs transition-all">
-                            <div class="flex items-center gap-2.5 min-w-0 pr-2">
+            card = f'''                        <a href="{url}" class="group flex items-center p-3 rounded-xl bg-blue-50/90 border-2 border-blue-600/80 text-blue-950 no-underline shadow-xs transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
                                 <span class="w-6 h-6 rounded-md bg-blue-900 text-white text-xs font-black flex items-center justify-center shrink-0 shadow-2xs">
                                     {item_no}
                                 </span>
-                                <div class="min-w-0">
+                                <div class="min-w-0 flex-1">
                                     <div class="text-xs sm:text-sm font-extrabold text-blue-950 truncate leading-snug">
                                         {menu_name}
                                     </div>
@@ -260,25 +260,14 @@ def build_category_switcher(current_slug, is_index=False):
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-1.5 shrink-0 pl-1">
-                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-900 text-white shadow-2xs shrink-0">
-                                    目前專題
-                                </span>
-                                <i class="fa-solid fa-chevron-right text-blue-900 text-xs"></i>
-                            </div>
                         </a>'''
         else:
-            if item["has_data"]:
-                status_badge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">圖解機理</span>'
-            else:
-                status_badge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-normal bg-slate-50 text-slate-500 border border-slate-200 shrink-0">暫無資料</span>'
-
-            card = f'''                        <a href="{url}" class="group flex items-center justify-between p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
-                            <div class="flex items-center gap-2.5 min-w-0 pr-2">
+            card = f'''                        <a href="{url}" class="group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
                                 <span class="w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">
                                     {item_no}
                                 </span>
-                                <div class="min-w-0">
+                                <div class="min-w-0 flex-1">
                                     <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">
                                         {menu_name}
                                     </div>
@@ -286,10 +275,6 @@ def build_category_switcher(current_slug, is_index=False):
                                         {menu_sub}
                                     </div>
                                 </div>
-                            </div>
-                            <div class="flex items-center gap-1.5 shrink-0 pl-1">
-                                {status_badge}
-                                <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-blue-600 text-xs transition-transform group-hover:translate-x-0.5"></i>
                             </div>
                         </a>'''
         cards_html.append(card)
@@ -301,14 +286,11 @@ def build_category_switcher(current_slug, is_index=False):
                             <span class="w-2.5 h-6 bg-blue-900 rounded-full inline-block shrink-0"></span>
                             <div>
                                 <h2 class="text-sm sm:text-base font-extrabold text-blue-950 leading-tight">
-                                    技術分類切換
+                                    技術分類
                                 </h2>
                             </div>
                         </div>
-                        <span class="text-[10px] text-blue-900 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200 font-bold hidden sm:inline-block">獨立專頁</span>
-                    </div>
-                    <div class="text-[11px] text-slate-500 mb-2.5 hidden lg:block">
-                        11 大特用化學品專題 (點選切換獨立專頁)：
+                        
                     </div>
                     <!-- 條列式導覽清單：純單欄垂直條列，寬度充裕不被壓縮 -->
                     <nav class="tech-sidebar-list" aria-label="11大技術專題產品分類導覽">
@@ -324,44 +306,36 @@ def build_tyzor_content_section():
     return '''            <!-- Tyzor 鈦酸酯與鋯酸酯四大核心技術應用專題區 (統一白色風格) -->
             <div class="space-y-6">
                 <section class="bg-white border border-slate-200 rounded-2xl shadow-xs p-5 sm:p-7 space-y-6">
-                    <!-- 專題標題與簡介區 -->
-                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-5 border-b border-gray-100">
-                        <div class="space-y-2 max-w-2xl">
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-900 uppercase tracking-wider">
-                                <span class="px-2.5 py-0.5 rounded bg-blue-50 border border-blue-100">Dorf Ketal 原廠專用技術</span>
-                                <span>Tyzor® 系列有機鈦／鋯</span>
+                    <!-- 專題標題與簡介區 (排版流暢無右側懸空空白) -->
+                    <div class="pb-5 border-b border-gray-100 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="space-y-1.5 min-w-0">
+                                <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-900 uppercase tracking-wider">
+                                    <span class="px-2.5 py-0.5 rounded bg-blue-50 border border-blue-100">Dorf Ketal 原廠專用技術</span>
+                                    <span>Tyzor® 系列有機鈦／鋯</span>
+                                </div>
+                                <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-950 flex items-center gap-2.5">
+                                    <span class="w-2.5 h-6 bg-blue-900 rounded-full inline-block shrink-0"></span>
+                                    <span>鈦酸酯與鋯酸酯四大核心技術應用 (Tyzor®)</span>
+                                </h1>
                             </div>
-                            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-950 flex items-center gap-2.5">
-                                <span class="w-2.5 h-6 bg-blue-900 rounded-full inline-block shrink-0"></span>
-                                <span>鈦酸酯與鋯酸酯四大核心技術應用 (Tyzor®)</span>
-                            </h1>
-                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed pt-1">
-                                Tyzor® 有機鈦（鋯）化合物具備高反應性與特殊配位多重功能，針對高分子合成催化、三維網絡交聯、異質基材介面結合力提升及 Sol-Gel 表面改性，提供全面工業化解決方案。
-                            </p>
+                            <div class="shrink-0 flex items-center gap-2 sm:gap-3">
+                                <a href="products/dorfketal/tyzor/"
+                                   class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-bold transition-colors">
+                                    <i class="fa-solid fa-table-list"></i>
+                                    <span>瀏覽 Tyzor 產品</span>
+                                </a>
+                                <a href="contact/?mode=detailed&inquiry=Tyzor"
+                                   class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-colors active:scale-95">
+                                    <i class="fa-solid fa-file-shield"></i>
+                                    <span>技術諮詢</span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="shrink-0 flex flex-wrap items-center gap-2 sm:gap-3">
-                            <a href="products/dorfketal/tyzor/"
-                               class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-bold transition-colors">
-                                <i class="fa-solid fa-table-list"></i>
-                                <span>瀏覽 Tyzor 產品</span>
-                            </a>
-                            <a href="contact/?mode=detailed&inquiry=Tyzor"
-                               class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-colors active:scale-95">
-                                <i class="fa-solid fa-file-shield"></i>
-                                <span>申請技術評估與索樣</span>
-                            </a>
-                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed pt-0.5 w-full">
+                            Tyzor® 有機鈦（鋯）化合物具備高反應性與特殊配位多重功能，針對高分子合成催化、三維網絡交聯、異質基材介面結合力提升及 Sol-Gel 表面改性，提供全面工業化解決方案。
+                        </p>
                     </div>
-
-                    <!-- 原廠說明橫幅 (統一淺白風格) -->
-                    <div class="flex items-center justify-between gap-2 text-xs text-slate-600 bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-200">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-lock text-slate-500"></i>
-                            <span><strong>原廠技術圖表（點擊縮圖可放大檢視，畫面依視窗自動最適化，不開放存取下載）</strong></span>
-                        </div>
-                        <span class="text-slate-400 hidden sm:inline text-[11px]">共 4 項技術機理圖解</span>
-                    </div>
-
                     <!-- 畫廊縮圖展開區 (Gallery Grid，統一白色卡片) -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                         <!-- 縮圖卡片 1: 催化應用 -->
@@ -455,38 +429,40 @@ def build_placeholder_content_section(item):
     """
     為未有原廠技術資料的 10 個產品線建立專業「暫無資料」獨立專頁內容 (統一白色風格)。
     """
-    subtitle = item["placeholder_subtitle"] if item["placeholder_subtitle"] else f'{item["category_name"]}技術資料與配方對標表整理中'
+    subtitle = item["placeholder_subtitle"] if item["placeholder_subtitle"] else f'{item["category_name"]}技術資料與配方比較表整理中'
     desc = item["placeholder_text"] if item["placeholder_text"] else "原廠技術資料整理中，暫無公開資料。如需具體配方、添加比例、試樣或技術諮詢，歡迎隨時聯繫宏威技術團隊。"
     return f'''            <!-- {item["title_zh"]} 專題獨立專頁 (統一白色風格) -->
             <div class="space-y-6">
                 <section class="bg-white border border-slate-200 rounded-2xl shadow-xs p-5 sm:p-7 space-y-6">
-                    <!-- 標題與簡介區 -->
-                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-5 border-b border-gray-100">
-                        <div class="space-y-2 max-w-2xl">
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-900 uppercase tracking-wider">
-                                <span class="px-2.5 py-0.5 rounded bg-blue-50 border border-blue-100">{item["brand_name"]}</span>
-                                <span>{item["title_en"]}</span>
+                    <!-- 標題與簡介區 (排版流暢無右側懸空空白) -->
+                    <div class="pb-5 border-b border-gray-100 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="space-y-1.5 min-w-0">
+                                <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-900 uppercase tracking-wider">
+                                    <span class="px-2.5 py-0.5 rounded bg-blue-50 border border-blue-100">{item["brand_name"]}</span>
+                                    <span>{item["title_en"]}</span>
+                                </div>
+                                <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-950 flex items-center gap-2.5">
+                                    <span class="w-2.5 h-6 bg-blue-900 rounded-full inline-block shrink-0"></span>
+                                    <span>{item["title_zh"]}</span>
+                                </h1>
                             </div>
-                            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-950 flex items-center gap-2.5">
-                                <span class="w-2.5 h-6 bg-blue-900 rounded-full inline-block shrink-0"></span>
-                                <span>{item["title_zh"]}</span>
-                            </h1>
-                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed pt-1">
-                                {item["description"]}
-                            </p>
+                            <div class="shrink-0 flex items-center gap-2 sm:gap-3">
+                                <a href="{item["product_link"]}"
+                                   class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-bold transition-colors">
+                                    <i class="fa-solid fa-table-list"></i>
+                                    <span>{item["product_link_text"]}</span>
+                                </a>
+                                <a href="contact/?mode=detailed&inquiry={item["inquiry_param"]}"
+                                   class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-colors active:scale-95">
+                                    <i class="fa-solid fa-flask-vial"></i>
+                                    <span>技術諮詢</span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="shrink-0 flex flex-wrap items-center gap-2 sm:gap-3">
-                            <a href="{item["product_link"]}"
-                               class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-bold transition-colors">
-                                <i class="fa-solid fa-table-list"></i>
-                                <span>{item["product_link_text"]}</span>
-                            </a>
-                            <a href="contact/?mode=detailed&inquiry={item["inquiry_param"]}"
-                               class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-colors active:scale-95">
-                                <i class="fa-solid fa-flask-vial"></i>
-                                <span>預約技術諮詢</span>
-                            </a>
-                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed pt-0.5 w-full">
+                            {item["description"]}
+                        </p>
                     </div>
 
                     <!-- 專業「暫無資料」展位看板 (統一白色淺灰風格) -->
@@ -542,7 +518,7 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
 
     # Breadcrumb
     breadcrumb_item = f'''                    <a href="technology/" class="hover:text-blue-900 hover:underline">技術專區</a>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
                     <span class="text-blue-950 font-bold">{item["category_name"]}</span>''' if not is_index else '''                    <span class="text-blue-950 font-bold">技術專區</span>'''
 
     # Build Category Switcher & Content
@@ -612,31 +588,11 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
         }}
         </style>
         <div class="optimized-container px-4 py-8">
-            <!-- 頂部導航與標題 -->
-            <div class="mb-8 pb-6 border-b border-gray-200">
-                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-500 mb-2">
-                    <a href="./" class="hover:text-blue-900 hover:underline">首頁</a>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+            <!-- 頂部麵包屑導航 (字體適中易讀、簡約高雅) -->
+            <div class="mb-5 flex flex-wrap items-center gap-2.5 text-sm font-semibold text-slate-500">
+                <a href="./" class="hover:text-blue-900 hover:underline">首頁</a>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
 {breadcrumb_item}
-                </div>
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-                            <span class="w-2.5 h-8 bg-blue-900 rounded-full inline-block"></span>
-                            技術專區與應用方案
-                        </div>
-                        <p class="text-sm sm:text-base text-slate-600 mt-2 font-medium leading-relaxed max-w-3xl">
-                            宏威應用材料特化產品技術方案，涵蓋 11 大品類之材料特性、化學機理、配方建議、對標評估與原廠技術支援。
-                        </p>
-                    </div>
-                    <div class="shrink-0 flex items-center gap-3">
-                        <a href="contact/?mode=detailed"
-                           class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-sm font-bold shadow-xs transition-all active:scale-95">
-                            <i class="fa-solid fa-flask-vial"></i>
-                            <span>預約配方技術諮詢</span>
-                        </a>
-                    </div>
-                </div>
             </div>
 
             <!-- 左右兩欄格局：左側技術分類切換導覽 (條列式)，右側資料顯示區 -->
@@ -662,9 +618,7 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
                 <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                     <i class="fa-solid fa-file-image" style="color: #60a5fa; font-size: 15px; flex-shrink: 0;"></i>
                     <h3 id="tech-image-modal-title" style="font-size: 13px; font-weight: bold; color: white; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 320px;">原廠技術說明圖表</h3>
-                    <span style="font-size: 11px; color: #fde047; background: rgba(113, 63, 18, 0.5); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(161, 98, 7, 0.5); white-space: nowrap; flex-shrink: 0;" class="hidden sm:inline-block">
-                        <i class="fa-solid fa-lock" style="font-size: 9px;"></i> 原廠機密，不可下載
-                    </span>
+                    
                 </div>
                 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                     <!-- 視窗最適化切換 / 放大閱讀按鈕 -->
@@ -694,7 +648,7 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
                 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto;">
                     <a id="tech-image-modal-inquiry-btn" href="contact/?mode=detailed"
                        style="padding: 6px 14px; background: #1e3a8a; color: white; border-radius: 8px; font-weight: bold; font-size: 12px; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
-                        <i class="fa-solid fa-envelope" style="font-size: 11px;"></i> 諮詢此技術配方
+                        <i class="fa-solid fa-envelope" style="font-size: 11px;"></i> 技術諮詢
                     </a>
                     <button type="button" onclick="closeTechImageModal()"
                             style="padding: 6px 14px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; border-radius: 8px; font-size: 12px; cursor: pointer; transition: all 0.2s;">

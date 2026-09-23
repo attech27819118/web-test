@@ -19,7 +19,7 @@ def build_tech_section_html():
                             技術專區 (Technology)
                         </h1>
                         <p class="text-sm sm:text-base text-slate-600 mt-2 font-medium leading-relaxed max-w-3xl">
-                            宏威應用材料特化產品技術方案，涵蓋 11 大品類之材料特性、化學機理、配方建議、對標評估與原廠技術支援。
+                            宏威應用材料特化產品技術方案，涵蓋 11 大品類之材料特性、化學機理、配方建議、比較評估與原廠技術支援。
                         </p>
                     </div>
                     <div class="shrink-0 flex items-center gap-3">
@@ -384,7 +384,7 @@ def build_tech_section_html():
                                 <a href="contact/?mode=detailed&inquiry=Silane"
                                    class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                     <i class="fa-solid fa-file-shield"></i>
-                                    <span>索取矽烷選型手冊</span>
+                                    <span>索取矽烷型號手冊</span>
                                 </a>
                             </div>
                         </div>
@@ -426,7 +426,7 @@ def build_tech_section_html():
                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center mx-auto mb-3 text-lg">
                             <i class="fa-solid fa-file-waveform"></i>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-800 mb-1">矽烷水解縮合機理與各底材配方對標表</h4>
+                        <h4 class="text-sm font-bold text-slate-800 mb-1">矽烷水解縮合機理與各底材配方比較表</h4>
                         <p class="text-xs text-slate-500 max-w-lg mx-auto mb-4">
                             原廠專用技術文檔與各基材附著力對照數據整理中。如需特定樹脂（如水性聚氨酯、環氧重防腐）之添加比例與催化指引，歡迎直接聯繫技術團隊。
                         </p>
@@ -505,7 +505,7 @@ def build_tech_section_html():
                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center mx-auto mb-3 text-lg">
                             <i class="fa-solid fa-microscope"></i>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-800 mb-1">聚脲/聚氨酯擴鏈配方動力學曲線與對標指引</h4>
+                        <h4 class="text-sm font-bold text-slate-800 mb-1">聚脲/聚氨酯擴鏈配方動力學曲線與比較指引</h4>
                         <p class="text-xs text-slate-500 max-w-lg mx-auto mb-4">
                             原廠受阻胺擴鏈劑反應速率與凝膠時間實驗圖表建置中。如需特定固化劑配比諮詢，請與我們聯絡。
                         </p>
@@ -663,13 +663,13 @@ def build_tech_section_html():
                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center mx-auto mb-3 text-lg">
                             <i class="fa-solid fa-file-contract"></i>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-800 mb-1">MPI 微粉蠟耐刮痕測試與 PTFE 對標性能雷達圖</h4>
+                        <h4 class="text-sm font-bold text-slate-800 mb-1">MPI 微粉蠟耐刮痕測試與 PTFE 比較性能雷達圖</h4>
                         <p class="text-xs text-slate-500 max-w-lg mx-auto mb-4">
-                            原廠耐刮擦、動摩擦係數與重塗附著力評估圖表建置中。如需特定塗料系統之無氟替代選型推薦，歡迎預約諮詢。
+                            原廠耐刮擦、動摩擦係數與重塗附著力評估圖表建置中。如需特定塗料系統之無氟替代型號推薦，歡迎預約諮詢。
                         </p>
                         <a href="contact/?mode=detailed&inquiry=Wax-PTFE-Compare"
                            class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition-colors">
-                            <i class="fa-solid fa-envelope-open-text"></i> 索取 PTFE 平替測試數據
+                            <i class="fa-solid fa-envelope-open-text"></i> 索取 PTFE 替代測試數據
                         </a>
                     </div>
                 </section>
@@ -702,7 +702,7 @@ def build_tech_section_html():
                                 <a href="contact/?mode=detailed&inquiry=Matting-Agent"
                                    class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                     <i class="fa-solid fa-file-shield"></i>
-                                    <span>索取消光選型手冊</span>
+                                    <span>索取消光型號手冊</span>
                                 </a>
                             </div>
                         </div>
@@ -744,11 +744,11 @@ def build_tech_section_html():
                         </div>
                         <h4 class="text-sm font-bold text-slate-800 mb-1">ACEMATT® 消光粉粒徑、孔容與黏度關聯曲線</h4>
                         <p class="text-xs text-slate-500 max-w-lg mx-auto mb-4">
-                            原廠消光效率與耐刮傷平衡指南整理中。如需特定漆膜厚度之選型推薦，歡迎聯絡技術工程師。
+                            原廠消光效率與耐刮傷平衡指南整理中。如需特定漆膜厚度之型號推薦，歡迎聯絡技術工程師。
                         </p>
                         <a href="contact/?mode=detailed&inquiry=Matting-Particle-Select"
                            class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition-colors">
-                            <i class="fa-solid fa-envelope-open-text"></i> 索取消光選型指導
+                            <i class="fa-solid fa-envelope-open-text"></i> 索取消光型號建議
                         </a>
                     </div>
                 </section>
@@ -781,7 +781,7 @@ def build_tech_section_html():
                                 <a href="contact/?mode=detailed&inquiry=Maleic-Resin"
                                    class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                     <i class="fa-solid fa-file-shield"></i>
-                                    <span>索取混溶性與選型指引</span>
+                                    <span>索取相容性與型號指引</span>
                                 </a>
                             </div>
                         </div>
@@ -1077,14 +1077,14 @@ def build_tech_section_html():
                         <div>
                             <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-700 uppercase tracking-wider mb-1.5">
                                 <span class="px-2 py-0.5 rounded bg-blue-50 border border-blue-100">昆勒 / 宏威特化技術</span>
-                                <span>對標 DYNAPOL® / DYNACOLL® 歐美一線</span>
+                                <span>同級 DYNAPOL® / DYNACOLL® 歐美一線</span>
                             </div>
                             <h3 class="text-xl sm:text-2xl font-extrabold text-blue-950 flex items-center gap-2.5">
                                 <span class="w-2.5 h-6 bg-blue-700 rounded-full inline-block"></span>
-                                飽和共聚聚酯樹脂與多元醇對標技術 (Polyester Resin)
+                                飽和共聚聚酯樹脂與多元醇比較技術 (Polyester Resin)
                             </h3>
                             <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-3xl leading-relaxed">
-                                提供食品級包裝罐頭塗料、捲材烤漆與反應型 PUR 熱熔膠專用高分子量飽和聚酯樹脂及低分子量端羥基聚酯多元醇，嚴格對標歐美一線同級規格。
+                                提供食品級包裝罐頭塗料、捲材烤漆與反應型 PUR 熱熔膠專用高分子量飽和聚酯樹脂及低分子量端羥基聚酯多元醇，嚴格比照歐美一線同級規格。
                             </p>
                         </div>
                         <div class="shrink-0 flex flex-col sm:items-end gap-2">
@@ -1097,7 +1097,7 @@ def build_tech_section_html():
                                 <a href="contact/?mode=detailed&inquiry=Polyester-Benchmark"
                                    class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors active:scale-95">
                                     <i class="fa-solid fa-file-shield"></i>
-                                    <span>索取歐美平替對照表</span>
+                                    <span>索取歐美替代對照表</span>
                                 </a>
                             </div>
                         </div>
@@ -1137,13 +1137,13 @@ def build_tech_section_html():
                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center mx-auto mb-3 text-lg">
                             <i class="fa-solid fa-code-compare"></i>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-800 mb-1">聚酯樹脂 DYNAPOL® / DYNACOLL® 歐美對標型號全量對照手冊</h4>
+                        <h4 class="text-sm font-bold text-slate-800 mb-1">聚酯樹脂 DYNAPOL® / DYNACOLL® 歐美同級型號全量對照手冊</h4>
                         <p class="text-xs text-slate-500 max-w-lg mx-auto mb-4">
-                            分子量 (Mw)、玻璃化轉變溫度 (Tg) 與羥值對照清單整理中。如需索取對標樣品進行上機驗證，歡迎聯絡。
+                            分子量 (Mw)、玻璃化轉變溫度 (Tg) 與羥值對照清單整理中。如需索取測試樣品進行上機驗證，歡迎聯絡。
                         </p>
                         <a href="contact/?mode=detailed&inquiry=Polyester-Sample-Request"
                            class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition-colors">
-                            <i class="fa-solid fa-envelope-open-text"></i> 索取對標樣品與選型指引
+                            <i class="fa-solid fa-envelope-open-text"></i> 索取測試樣品與型號指引
                         </a>
                     </div>
                 </section>
