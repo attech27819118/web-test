@@ -46,8 +46,12 @@ function switchTab(tabId, updateUrl = true, shouldUpdatePartnerUI = true) {
         if (shouldUpdatePartnerUI && typeof updatePartnerUI === 'function') {
             updatePartnerUI();
         }
-    } else if (tabId === 'contact') {
-        if (typeof prewarmBackendServer === 'function') prewarmBackendServer();
+        if (typeof updateProductLineNotice === 'function') updateProductLineNotice();
+    } else {
+        if (typeof updateProductLineNotice === 'function') updateProductLineNotice();
+        if (tabId === 'contact') {
+            if (typeof prewarmBackendServer === 'function') prewarmBackendServer();
+        }
     }
     if (typeof updateCompareUI === 'function') updateCompareUI();
     if (updateUrl) updateUrlRoute(true);
@@ -310,7 +314,7 @@ function parseUrlRoute() {
     if (window.location.hash && window.location.hash.length > 1) {
         const legacyHash = window.location.hash.replace(/^#\/?/, '');
         const [hTab, hQuery] = legacyHash.split('?');
-        if (['products', 'partners', 'contact', 'about'].includes(hTab)) {
+        if (['products', 'technology', 'partners', 'contact', 'about'].includes(hTab)) {
             const hParams = new URLSearchParams(hQuery || '');
 
             let cleanMigratedPath = '/';
@@ -326,6 +330,8 @@ function parseUrlRoute() {
                 if (hParams.get('q')) {
                     cleanMigratedPath = `/products/?q=${encodeURIComponent(hParams.get('q'))}`;
                 }
+            } else if (hTab === 'technology') {
+                cleanMigratedPath = '/technology/';
             } else if (hTab === 'partners') {
                 cleanMigratedPath = '/partners/';
             } else if (hTab === 'contact') {
@@ -363,6 +369,21 @@ function parseUrlRoute() {
     if (!rootSegment || rootSegment === 'about' || rootSegment === 'index.html') {
         switchTab('about', false, false);
         updatePageMeta('about');
+        return;
+    }
+
+    // 技術專區 (Technology)
+    if (rootSegment === 'technology' || rootSegment === 'tech') {
+        switchTab('technology', false, false);
+        updatePageMeta('technology');
+        if (window.location.hash) {
+            setTimeout(() => {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 120);
+        }
         return;
     }
 
@@ -548,6 +569,9 @@ function updateUrlRoute(usePush = false) {
     if (activeTab === 'about') {
         cleanPath = '/';
         updatePageMeta('about');
+    } else if (activeTab === 'technology') {
+        cleanPath = '/technology/';
+        updatePageMeta('technology');
     } else if (activeTab === 'partners') {
         cleanPath = '/partners/';
         updatePageMeta('partners');
@@ -619,6 +643,8 @@ function updatePageMeta(type, extra = '') {
 
     if (type === 'about') {
         titleEl.innerText = `${baseTitle} | 專業特用化學品供應商`;
+    } else if (type === 'technology') {
+        titleEl.innerText = `技術專區與應用方案 | ${baseTitle}`;
     } else if (type === 'partners') {
         titleEl.innerText = `合作夥伴品牌 | ${baseTitle}`;
     } else if (type === 'contact') {

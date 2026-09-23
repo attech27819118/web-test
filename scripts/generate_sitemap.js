@@ -50,6 +50,7 @@ function addUrl(loc, changefreq = 'weekly', priority = '0.8') {
 // 1. Core Static Pages (authoritative canonical URLs)
 addUrl(`${DOMAIN}/`, 'daily', '1.0');
 addUrl(`${DOMAIN}/products/`, 'daily', '0.95');
+addUrl(`${DOMAIN}/technology/`, 'weekly', '0.9');
 addUrl(`${DOMAIN}/partners/`, 'monthly', '0.8');
 addUrl(`${DOMAIN}/contact/`, 'monthly', '0.9');
 
