@@ -51,6 +51,8 @@ function addUrl(loc, changefreq = 'weekly', priority = '0.8') {
 addUrl(`${DOMAIN}/`, 'daily', '1.0');
 addUrl(`${DOMAIN}/products/`, 'daily', '0.95');
 addUrl(`${DOMAIN}/technology/`, 'weekly', '0.9');
+const techSlugs = ['tyzor', 'silane', 'chain', 'carbon-black', 'wax', 'matting', 'maleic', 'adhesion', 'powder', 'px', 'polyester'];
+techSlugs.forEach(slug => addUrl(`${DOMAIN}/technology/${slug}/`, 'weekly', '0.85'));
 addUrl(`${DOMAIN}/partners/`, 'monthly', '0.8');
 addUrl(`${DOMAIN}/contact/`, 'monthly', '0.9');
 

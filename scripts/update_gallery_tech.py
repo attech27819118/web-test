@@ -857,43 +857,51 @@ def build_gallery_tech_section():
 
     <!-- 技術圖檔全螢幕 Lightbox 放大檢視彈窗 (配合視窗自動調整 100% 完整畫面大小，無下載、保護原廠機密) -->
     <div id="tech-image-modal"
-         class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 select-none"
+         class="hidden select-none"
+         style="position: fixed; inset: 0; z-index: 99999; background: rgba(2, 6, 23, 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 12px; box-sizing: border-box; user-select: none;"
          onclick="closeTechImageModal(event)">
-        <div class="relative flex flex-col bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700/60 max-h-[96vh] max-w-[95vw] w-fit h-fit transition-all duration-200"
+        <div style="position: relative; display: flex; flex-direction: column; width: 100%; max-width: 920px; height: calc(100vh - 24px); max-height: calc(100vh - 24px); background: #0f172a; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); overflow: hidden; border: 1px solid rgba(51, 65, 85, 0.8); margin: auto;"
              onclick="event.stopPropagation()">
-            <!-- Modal Header (高度緊湊 44px) -->
-            <div class="h-11 sm:h-12 px-3.5 sm:px-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0 gap-3">
-                <div class="flex items-center gap-2 min-w-0">
-                    <i class="fa-solid fa-file-image text-blue-400 shrink-0 text-xs sm:text-sm"></i>
-                    <h3 id="tech-image-modal-title" class="text-xs sm:text-sm font-bold text-white truncate max-w-[200px] sm:max-w-md">原廠技術說明圖表</h3>
-                    <span class="text-[10px] sm:text-xs text-amber-300 bg-amber-950/70 px-2 py-0.5 rounded border border-amber-800/60 hidden md:inline-flex items-center gap-1 shrink-0">
-                        <i class="fa-solid fa-lock text-[9px]"></i> 原廠機密，不可存取下載
+            <!-- Modal Header (高度 48px) -->
+            <div style="height: 48px; min-height: 48px; padding: 0 16px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1e293b; flex-shrink: 0; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+                    <i class="fa-solid fa-file-image" style="color: #60a5fa; font-size: 15px; flex-shrink: 0;"></i>
+                    <h3 id="tech-image-modal-title" style="font-size: 13px; font-weight: bold; color: white; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 320px;">原廠技術說明圖表</h3>
+                    <span style="font-size: 11px; color: #fde047; background: rgba(113, 63, 18, 0.5); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(161, 98, 7, 0.5); white-space: nowrap; flex-shrink: 0;" class="hidden sm:inline-block">
+                        <i class="fa-solid fa-lock" style="font-size: 9px;"></i> 原廠機密，不可下載
                     </span>
                 </div>
-                <div class="flex items-center gap-2 shrink-0">
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                    <button type="button" id="tech-modal-zoom-btn" onclick="toggleTechModalZoom()"
+                            style="height: 32px; padding: 0 10px; border-radius: 8px; background: #1e293b; border: 1px solid #334155; color: #93c5fd; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s;"
+                            title="切換檢視模式">
+                        <i id="tech-modal-zoom-icon" class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span id="tech-modal-zoom-text" class="hidden sm:inline">放大滾動閱讀</span>
+                    </button>
                     <button type="button" onclick="closeTechImageModal()"
-                            class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                            style="width: 32px; height: 32px; border-radius: 8px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;"
                             title="關閉 (ESC)">
-                        <i class="fa-solid fa-xmark text-sm sm:text-base"></i>
+                        <i class="fa-solid fa-xmark" style="font-size: 16px;"></i>
                     </button>
                 </div>
             </div>
-            <!-- Modal Image Body (依視窗高度自動貼合 100% 完整畫面，無多餘捲軸) -->
-            <div class="flex-1 min-h-0 min-w-0 p-1 sm:p-2 bg-slate-950/95 flex items-center justify-center overflow-hidden">
+            <!-- Modal Image Body (依視窗高度 100% 完整貼合顯示全圖) -->
+            <div id="tech-image-container"
+                 style="flex: 1 1 auto; min-height: 0; min-width: 0; width: 100%; height: calc(100% - 96px); padding: 8px; box-sizing: border-box; background: #020617; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                 <img id="tech-image-modal-img" src="" alt="技術說明圖"
-                     class="max-w-full max-h-[calc(96vh-88px)] w-auto h-auto object-contain block rounded select-none pointer-events-auto shadow-md"
+                     style="max-width: 100%; max-height: calc(100vh - 120px); width: auto; height: auto; object-fit: contain; display: block; border-radius: 6px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); pointer-events: auto; user-select: none;"
                      oncontextmenu="return false;" draggable="false">
             </div>
-            <!-- Modal Footer (高度緊湊 44px) -->
-            <div class="h-11 sm:h-12 px-3.5 sm:px-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between gap-3 text-[11px] sm:text-xs text-slate-400 shrink-0">
-                <span class="truncate hidden sm:inline">宏威應用材料原廠特化技術資料</span>
-                <div class="flex items-center gap-2 shrink-0 ml-auto sm:ml-0">
+            <!-- Modal Footer (高度 48px) -->
+            <div style="height: 48px; min-height: 48px; padding: 0 16px; background: #0f172a; border-top: 1px solid #1e293b; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 11px; color: #94a3b8; flex-shrink: 0;">
+                <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" class="hidden sm:inline">宏威應用材料原廠特化技術資料</span>
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto;">
                     <a id="tech-image-modal-inquiry-btn" href="contact/?mode=detailed"
-                       class="px-3 py-1 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-xs transition-colors flex items-center gap-1.5 shadow-xs">
-                        <i class="fa-solid fa-envelope text-[11px]"></i> 諮詢此技術配方
+                       style="padding: 6px 14px; background: #1e3a8a; color: white; border-radius: 8px; font-weight: bold; font-size: 12px; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
+                        <i class="fa-solid fa-envelope" style="font-size: 11px;"></i> 諮詢此技術配方
                     </a>
                     <button type="button" onclick="closeTechImageModal()"
-                            class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg font-medium text-xs transition-colors">
+                            style="padding: 6px 14px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; border-radius: 8px; font-size: 12px; cursor: pointer; transition: all 0.2s;">
                         關閉
                     </button>
                 </div>
@@ -935,5 +943,6 @@ def update_file(file_path, is_technology_page=False):
     return True
 
 if __name__ == '__main__':
-    update_file('technology/index.html', is_technology_page=True)
     update_file('index.html', is_technology_page=False)
+    import subprocess
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), 'build_technology_subpages.py')])
