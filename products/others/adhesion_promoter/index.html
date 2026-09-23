@@ -1260,7 +1260,7 @@
         </div>
     </section>
 
-                <!-- Tab: 技術專區 (Technology) - 11 大產品系列分類完備呈現 (畫廊展開型) -->
+                    <!-- Tab: 技術專區 (Technology) - 11 大產品系列分類完備呈現 (畫廊展開型) -->
     <section id="tab-technology" class="tab-content" role="tabpanel" aria-labelledby="nav-technology">
         <div class="optimized-container px-4 py-8">
             <!-- 頂部技術專區標題列 (比照產品專區頂部結構) -->
@@ -2113,45 +2113,45 @@
         </div>
     </section>
 
-    <!-- 技術圖檔全螢幕 Lightbox 放大檢視彈窗 (無下載、保護原廠機密) -->
+    <!-- 技術圖檔全螢幕 Lightbox 放大檢視彈窗 (配合視窗自動調整 100% 完整畫面大小，無下載、保護原廠機密) -->
     <div id="tech-image-modal"
-         class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+         class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 select-none"
          onclick="closeTechImageModal(event)">
-        <div class="relative max-w-5xl w-full max-h-[95vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-700/50"
+        <div class="relative flex flex-col bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700/60 max-h-[96vh] max-w-[95vw] w-fit h-fit transition-all duration-200"
              onclick="event.stopPropagation()">
-            <!-- Modal Header -->
-            <div class="px-5 py-3.5 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
-                <div class="flex items-center gap-2.5">
-                    <i class="fa-solid fa-file-image text-blue-400"></i>
-                    <h3 id="tech-image-modal-title" class="text-sm sm:text-base font-bold text-white">原廠技術說明圖表</h3>
-                    <span class="text-xs text-amber-400 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/80 hidden sm:inline-flex items-center gap-1">
-                        <i class="fa-solid fa-lock text-[10px]"></i> 原廠機密技術，不可直接存取下載
+            <!-- Modal Header (高度緊湊 44px) -->
+            <div class="h-11 sm:h-12 px-3.5 sm:px-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0 gap-3">
+                <div class="flex items-center gap-2 min-w-0">
+                    <i class="fa-solid fa-file-image text-blue-400 shrink-0 text-xs sm:text-sm"></i>
+                    <h3 id="tech-image-modal-title" class="text-xs sm:text-sm font-bold text-white truncate max-w-[200px] sm:max-w-md">原廠技術說明圖表</h3>
+                    <span class="text-[10px] sm:text-xs text-amber-300 bg-amber-950/70 px-2 py-0.5 rounded border border-amber-800/60 hidden md:inline-flex items-center gap-1 shrink-0">
+                        <i class="fa-solid fa-lock text-[9px]"></i> 原廠機密，不可存取下載
                     </span>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 shrink-0">
                     <button type="button" onclick="closeTechImageModal()"
-                            class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                            class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
                             title="關閉 (ESC)">
-                        <i class="fa-solid fa-xmark text-lg"></i>
+                        <i class="fa-solid fa-xmark text-sm sm:text-base"></i>
                     </button>
                 </div>
             </div>
-            <!-- Modal Image Body -->
-            <div class="flex-1 overflow-auto p-4 sm:p-6 bg-slate-100 flex items-center justify-center custom-scrollbar">
+            <!-- Modal Image Body (依視窗高度自動貼合 100% 完整畫面，無多餘捲軸) -->
+            <div class="flex-1 min-h-0 min-w-0 p-1 sm:p-2 bg-slate-950/95 flex items-center justify-center overflow-hidden">
                 <img id="tech-image-modal-img" src="" alt="技術說明圖"
-                     class="max-w-full max-h-[78vh] object-contain rounded-lg shadow-md select-none pointer-events-auto"
+                     class="max-w-full max-h-[calc(96vh-88px)] w-auto h-auto object-contain block rounded select-none pointer-events-auto shadow-md"
                      oncontextmenu="return false;" draggable="false">
             </div>
-            <!-- Modal Footer -->
-            <div class="px-5 py-3 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600 shrink-0">
-                <span>© 宏威應用材料 Alan & Thomas Technologies. All rights reserved.</span>
-                <div class="flex items-center gap-3">
+            <!-- Modal Footer (高度緊湊 44px) -->
+            <div class="h-11 sm:h-12 px-3.5 sm:px-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between gap-3 text-[11px] sm:text-xs text-slate-400 shrink-0">
+                <span class="truncate hidden sm:inline">宏威應用材料原廠特化技術資料</span>
+                <div class="flex items-center gap-2 shrink-0 ml-auto sm:ml-0">
                     <a id="tech-image-modal-inquiry-btn" href="contact/?mode=detailed"
-                       class="px-3.5 py-1.5 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-xs transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-envelope"></i> 諮詢此技術配方
+                       class="px-3 py-1 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-xs transition-colors flex items-center gap-1.5 shadow-xs">
+                        <i class="fa-solid fa-envelope text-[11px]"></i> 諮詢此技術配方
                     </a>
                     <button type="button" onclick="closeTechImageModal()"
-                            class="px-3.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg font-semibold text-xs transition-colors">
+                            class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg font-medium text-xs transition-colors">
                         關閉
                     </button>
                 </div>
