@@ -550,11 +550,11 @@ function updateProductLineNotice() {
                             </h4>
                             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-4xl">
                                 針對業界歐系同級飽和聚酯樹脂（<strong>DYNAPOL®</strong>）及聚酯多元醇（<strong>DYNACOLL®</strong>）之應用需求，宏威材料提供物性平行比對、相容性評估與高品質替代方案。為保護客戶配方機密，完整比較清單不對外公開，歡迎<a
-                                    href="contact/?mode=detailed"
+                                    href="/contact/?mode=detailed"
                                     class="text-blue-900 font-bold hover:underline">聯繫技術團隊</a>索取一對一型號建議與測試樣品。
                             </p>
                             <div class="text-[11px] text-slate-400 mt-1">
-                                * DYNAPOL® 與 DYNACOLL® 為 Evonik 註冊商標，文中所述型號僅用於同級性能型號參考。
+                                * DYNAPOL® 與 DYNACOLL® 為 Evonik 註冊商標，文中所述型號僅用於同級性能對照參考。
                             </div>
                         </div>
                     </div>`;
