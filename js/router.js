@@ -331,7 +331,7 @@ function parseUrlRoute() {
                     cleanMigratedPath = `/products/?q=${encodeURIComponent(hParams.get('q'))}`;
                 }
             } else if (hTab === 'technology') {
-                cleanMigratedPath = '/technology/';
+                cleanMigratedPath = '/products/';
             } else if (hTab === 'partners') {
                 cleanMigratedPath = '/partners/';
             } else if (hTab === 'contact') {
@@ -372,18 +372,12 @@ function parseUrlRoute() {
         return;
     }
 
-    // 技術專區 (Technology)
+    // 舊技術專區網址轉址 (已整合至產品專區)
     if (rootSegment === 'technology' || rootSegment === 'tech') {
-        switchTab('technology', false, false);
-        updatePageMeta('technology');
-        if (window.location.hash) {
-            setTimeout(() => {
-                const target = document.querySelector(window.location.hash);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 120);
-        }
+        const basePath = getAppBasePath();
+        const fullRedirectPath = basePath ? ('/' + basePath + '/products/') : '/products/';
+        history.replaceState(null, '', fullRedirectPath);
+        switchTab('products', false, false);
         return;
     }
 
@@ -569,9 +563,6 @@ function updateUrlRoute(usePush = false) {
     if (activeTab === 'about') {
         cleanPath = '/';
         updatePageMeta('about');
-    } else if (activeTab === 'technology') {
-        cleanPath = '/technology/';
-        updatePageMeta('technology');
     } else if (activeTab === 'partners') {
         cleanPath = '/partners/';
         updatePageMeta('partners');
@@ -643,8 +634,6 @@ function updatePageMeta(type, extra = '') {
 
     if (type === 'about') {
         titleEl.innerText = `${baseTitle} | 專業特用化學品供應商`;
-    } else if (type === 'technology') {
-        titleEl.innerText = `技術專區與應用方案 | ${baseTitle}`;
     } else if (type === 'partners') {
         titleEl.innerText = `合作夥伴品牌 | ${baseTitle}`;
     } else if (type === 'contact') {
