@@ -443,6 +443,10 @@
                         </div>
                     </div>
                 </div>
+                <a href="technology/tyzor/" id="nav-technology" role="tab" aria-selected="false" aria-controls="tab-technology"
+                   class="nav-btn text-slate-700 hover:text-blue-900 border-b-2 border-transparent hover:border-gray-400 px-1 pt-1 h-16 inline-flex items-center">
+                    技術
+                </a>
                 <a href="partners/" id="nav-partners" role="tab" aria-selected="true" aria-controls="tab-partners"
                    class="nav-btn text-slate-700 hover:text-blue-900 border-b-2 border-transparent hover:border-gray-400 px-1 pt-1 h-16 inline-flex items-center">
                     合作夥伴
@@ -464,6 +468,10 @@
             <a href="products/" id="mobile-nav-products" role="tab" aria-selected="false"
                class="mobile-nav-btn flex-1 py-1.5 px-2 text-center rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-100 transition-all">
                 產品專區
+            </a>
+            <a href="technology/tyzor/" id="mobile-nav-technology" role="tab" aria-selected="false"
+               class="mobile-nav-btn flex-1 py-1.5 px-2 text-center rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-100 transition-all">
+                技術
             </a>
             <a href="partners/" id="mobile-nav-partners" role="tab" aria-selected="true"
                class="mobile-nav-btn flex-1 py-1.5 px-2 text-center rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-100 transition-all">
@@ -922,6 +930,302 @@
             </div>
         </div>
     </section>
+
+    <!-- Tab: 技術專區 (Technology) - 11 大特用化學品專題，依圖示順序排列，支援單頁模式與 2x2 排版模式 -->
+    <section id="tab-technology" class="tab-content" role="tabpanel" aria-labelledby="nav-technology">
+        <style>
+        .tech-layout-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .tech-sidebar {
+            width: 100%;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+        }
+        .tech-sidebar-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            width: 100% !important;
+        }
+        .tech-content-main {
+            flex: 1 1 0%;
+            min-width: 0;
+            width: 100%;
+        }
+        @media (min-width: 1024px) {
+            .tech-layout-container {
+                flex-direction: row;
+                gap: 1.75rem;
+                align-items: flex-start;
+            }
+            .tech-sidebar {
+                width: 370px;
+                position: sticky;
+                top: 5.5rem;
+                max-height: calc(100vh - 6.5rem);
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+            }
+            .tech-sidebar::-webkit-scrollbar {
+                width: 4px;
+            }
+            .tech-sidebar::-webkit-scrollbar-track {
+                background: #f8fafc;
+            }
+            .tech-sidebar::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 4px;
+            }
+        }
+        </style>
+        <div class="optimized-container px-4 py-8">
+            <!-- 頂部麵包屑導航 -->
+            <div class="mb-5 flex flex-wrap items-center gap-2.5 text-sm font-semibold text-slate-500">
+                <a href="./" class="hover:text-blue-900 hover:underline">首頁</a>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                <a href="technology/" class="hover:text-blue-900 hover:underline">技術專區</a>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                <span id="tech-breadcrumb-current" class="text-blue-950 font-bold">Organic Titanates and Zirconates</span>
+            </div>
+
+            <!-- 頂部技術專區標題列 -->
+            <div class="mb-8 pb-6 border-b border-gray-200">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+                            <span class="w-2.5 h-8 bg-blue-900 rounded-full inline-block"></span>
+                            技術專區 (Technology)
+                        </h1>
+                        <p class="text-sm sm:text-base text-slate-600 mt-2 font-medium leading-relaxed max-w-3xl">
+                            宏威應用材料特化產品技術方案，涵蓋 11 大品類之材料特性、化學機理、配方建議、比較評估與原廠技術支援。
+                        </p>
+                    </div>
+                    <div class="shrink-0 flex items-center gap-3">
+                        <a href="contact/?mode=detailed"
+                           class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-sm font-bold shadow-xs transition-all active:scale-95">
+                            <i class="fa-solid fa-flask-vial"></i>
+                            <span>預約配方技術諮詢</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 左右兩欄格局：左側技術分類切換導覽 (條列式)，右側資料顯示區 -->
+            <div class="tech-layout-container">
+                <!-- 左側：技術專題產品分類 (統一白色風格，條列式清晰呈現) -->
+                <aside class="tech-sidebar bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs shrink-0">
+                    <div class="flex items-center justify-between pb-3 mb-2.5 border-b border-slate-100">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-6 bg-blue-900 rounded-full inline-block shrink-0"></span>
+                            <div>
+                                <h2 class="text-sm sm:text-base font-extrabold text-blue-950 leading-tight">
+                                    技術分類
+                                </h2>
+                            </div>
+                        </div>
+                        <span class="text-[11px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">11 大專題</span>
+                    </div>
+                    <!-- 條列式導覽清單：純單欄垂直條列，依照圖示順序排列 -->
+                    <nav class="tech-sidebar-list" aria-label="11大技術專題產品分類導覽">
+                        <!-- 01 Tyzor (Active by default) -->
+                        <a href="technology/tyzor/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('tyzor');}" data-tech-slug="tyzor"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-blue-50/90 border-2 border-blue-600/80 text-blue-950 no-underline shadow-xs transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-blue-900 text-white text-xs font-black flex items-center justify-center shrink-0 shadow-2xs">01</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-extrabold text-blue-950 truncate leading-snug">Organic Titanates and Zirconates</div>
+                                    <div class="tech-btn-sub text-[11px] font-semibold text-blue-800/80 truncate">鈦酸酯與鋯酸酯, Tyzor</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 02 Special Carbon Black -->
+                        <a href="technology/carbon-black/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('carbon-black');}" data-tech-slug="carbon-black"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">02</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Special Carbon Black</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">特級碳黑 / 導電碳黑</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 03 Maleic Resin -->
+                        <a href="technology/maleic/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('maleic');}" data-tech-slug="maleic"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">03</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Maleic Resin / 馬林酸樹脂</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">松香改性馬林酸樹脂</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 04 PX Lubricant Additives -->
+                        <a href="technology/px/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('px');}" data-tech-slug="px"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">04</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">PX Lubricant Additives</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">潤滑油添加劑 (原 ExxonMobil)</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 05 Silane -->
+                        <a href="technology/silane/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('silane');}" data-tech-slug="silane"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">05</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Silane / 矽烷偶合劑</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">Dynasylan / hydrosil 系列</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 06 Micronized Wax -->
+                        <a href="technology/wax/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('wax');}" data-tech-slug="wax"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">06</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Micronized Wax / 微粉蠟</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">PTFE 取代 / 耐磨耐刮助劑</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 07 Adhesion Resin -->
+                        <a href="technology/adhesion/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('adhesion');}" data-tech-slug="adhesion"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">07</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Adhesion Resin / 密著樹脂</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">氯化聚烯烴 (CPO) & 非氯系</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 08 Polyester Resin -->
+                        <a href="technology/polyester/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('polyester');}" data-tech-slug="polyester"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">08</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Polyester Resin / 聚酯樹脂</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">聚酯樹脂 (DYNAPOL/DYNACOLL替代品)</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 09 Chain Extender -->
+                        <a href="technology/chain/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('chain');}" data-tech-slug="chain"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">09</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Chain Extender / 擴鏈劑</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">Unilink & Clearlink 系列</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 10 Matting Agent -->
+                        <a href="technology/matting/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('matting');}" data-tech-slug="matting"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">10</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Matting Agent / 消光粉</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">二氧化矽 / 表面處理消光</div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- 11 Powder Coating Additive -->
+                        <a href="technology/powder/" onclick="if(event.button===0&&!event.ctrlKey&&!event.metaKey){event.preventDefault();switchTechCategory('powder');}" data-tech-slug="powder"
+                           class="tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all">
+                            <div class="flex items-center gap-2.5 min-w-0 w-full">
+                                <span class="tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors">11</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">Powder Coating Additive</div>
+                                    <div class="tech-btn-sub text-[11px] font-normal text-slate-500 group-hover:text-slate-600 truncate">粉體塗料專用功能性助劑</div>
+                                </div>
+                            </div>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- 右側：資料顯示區 (統一白色風格，由 technology.js 控制渲染) -->
+                <main class="tech-content-main">
+                    <div id="tech-content-display">
+                        <!-- Tyzor 4 大核心技術預渲染區塊 -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技術圖檔全螢幕 Lightbox 放大檢視彈窗 -->
+    <div id="tech-image-modal"
+         class="hidden select-none"
+         style="position: fixed; inset: 0; z-index: 99999; background: rgba(2, 6, 23, 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 12px; box-sizing: border-box; user-select: none;"
+         onclick="closeTechImageModal(event)">
+        <div id="tech-image-modal-content"
+             style="position: relative; display: flex; flex-direction: column; width: 100%; max-width: 920px; height: calc(100vh - 24px); max-height: calc(100vh - 24px); background: #0f172a; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); overflow: hidden; border: 1px solid rgba(51, 65, 85, 0.8); margin: auto;"
+             onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div style="height: 48px; min-height: 48px; padding: 0 16px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1e293b; flex-shrink: 0; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+                    <i class="fa-solid fa-file-image" style="color: #60a5fa; font-size: 15px; flex-shrink: 0;"></i>
+                    <h3 id="tech-image-modal-title" style="font-size: 13px; font-weight: bold; color: white; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px;">原廠技術說明圖表</h3>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                    <a id="tech-image-modal-pdf-btn" href="" target="_blank" download=""
+                       style="height: 32px; padding: 0 10px; border-radius: 8px; background: #dc2626; color: white; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.2s;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span class="hidden sm:inline">下載 PDF</span>
+                    </a>
+                    <button type="button" id="tech-modal-zoom-btn" onclick="toggleTechModalZoom()"
+                            style="height: 32px; padding: 0 10px; border-radius: 8px; background: #1e293b; border: 1px solid #334155; color: #93c5fd; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s;"
+                            title="切換檢視模式">
+                        <i id="tech-modal-zoom-icon" class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span id="tech-modal-zoom-text" class="hidden sm:inline">放大滾動閱讀</span>
+                    </button>
+                    <button type="button" onclick="closeTechImageModal()"
+                            style="width: 32px; height: 32px; border-radius: 8px; background: #1e293b; border: 1px solid #334155; color: #cbd5e1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;"
+                            title="關閉 (ESC)">
+                        <i class="fa-solid fa-xmark" style="font-size: 16px;"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Modal Image Body -->
+            <div id="tech-image-container"
+                 style="flex: 1 1 auto; min-height: 0; min-width: 0; width: 100%; height: calc(100% - 96px); padding: 8px; box-sizing: border-box; background: #020617; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img id="tech-image-modal-img" src="" alt="技術說明圖"
+                     style="max-width: 100%; max-height: calc(100vh - 120px); width: auto; height: auto; object-fit: contain; display: block; border-radius: 6px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); pointer-events: auto; user-select: none;"
+                     oncontextmenu="return false;" draggable="false">
+            </div>
+            <!-- Modal Footer -->
+            <div style="height: 48px; min-height: 48px; padding: 0 16px; background: #0f172a; border-top: 1px solid #1e293b; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 11px; color: #94a3b8; flex-shrink: 0;">
+                <span class="hidden sm:inline">宏威應用材料原廠特化技術資料</span>
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto;">
+                    <a href="contact/?mode=detailed&inquiry=Tyzor"
+                       style="padding: 6px 14px; background: #1e3a8a; color: white; border-radius: 8px; font-weight: bold; font-size: 12px; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
+                        <i class="fa-solid fa-flask-vial"></i>
+                        <span>索樣與配方諮詢</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Tab 3: 合作夥伴 -->
     <section id="tab-partners" class="tab-content active" role="tabpanel" aria-labelledby="nav-partners">
         <div class="optimized-container px-4 py-12 text-center">
@@ -2019,6 +2323,7 @@
 <script src="js/table-renderer.js?v=20260929_v2"></script>
 <script src="js/compare.js?v=20260929_v2"></script>
 <script src="js/contact.js?v=20260929_v2"></script>
+<script src="js/technology.js?v=20261001_v1"></script>
 <script src="js/router.js?v=20260929_v2"></script>
 <script src="js/app.js?v=20260929_v2"></script>
 
