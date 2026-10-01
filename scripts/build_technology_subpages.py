@@ -221,10 +221,10 @@ def build_category_switcher(current_slug, is_index=False):
                                     {item_no}
                                 </span>
                                 <div class="min-w-0 flex-1">
-                                    <div class="tech-btn-title text-xs sm:text-sm font-extrabold text-blue-950 truncate leading-snug">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-extrabold text-blue-950  leading-snug">
                                         {menu_name}
                                     </div>
-                                    <div class="tech-btn-sub text-xs font-semibold text-blue-800/80 truncate">
+                                    <div class="tech-btn-sub text-xs font-semibold text-blue-800/80 ">
                                         {menu_sub}
                                     </div>
                                 </div>
@@ -238,10 +238,10 @@ def build_category_switcher(current_slug, is_index=False):
                                     {item_no}
                                 </span>
                                 <div class="min-w-0 flex-1">
-                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug">
+                                    <div class="tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950  leading-snug">
                                         {menu_name}
                                     </div>
-                                    <div class="tech-btn-sub text-xs font-normal text-slate-500 group-hover:text-slate-600 truncate">
+                                    <div class="tech-btn-sub text-xs font-normal text-slate-500 group-hover:text-slate-600 ">
                                         {menu_sub}
                                     </div>
                                 </div>
@@ -260,7 +260,7 @@ def build_category_switcher(current_slug, is_index=False):
                                 </h2>
                             </div>
                         </div>
-                        <span class="text-[11px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">11 大專題</span>
+                        
                     </div>
                     <!-- 條列式導覽清單：純單欄垂直條列，寬度充裕不被壓縮 -->
                     <nav class="tech-sidebar-list" aria-label="11大技術專題產品分類導覽">

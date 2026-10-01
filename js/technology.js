@@ -246,13 +246,13 @@ function switchTechCategory(slug, updateUrl = true) {
         if (btnSlug === slug) {
             btn.className = "tech-sidebar-btn group flex items-center p-3 rounded-xl bg-blue-50/90 border-2 border-blue-600/80 text-blue-950 no-underline shadow-xs transition-all";
             if (numBadge) numBadge.className = "tech-num-badge w-6 h-6 rounded-md bg-blue-900 text-white text-xs font-black flex items-center justify-center shrink-0 shadow-2xs";
-            if (titleEl) titleEl.className = "tech-btn-title text-xs sm:text-sm font-extrabold text-blue-950 truncate leading-snug";
-            if (subEl) subEl.className = "tech-btn-sub text-xs font-semibold text-blue-800/80 truncate";
+            if (titleEl) titleEl.className = "tech-btn-title text-xs sm:text-sm font-extrabold text-blue-950  leading-snug";
+            if (subEl) subEl.className = "tech-btn-sub text-xs font-semibold text-blue-800/80 ";
         } else {
             btn.className = "tech-sidebar-btn group flex items-center p-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all";
             if (numBadge) numBadge.className = "tech-num-badge w-6 h-6 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors";
-            if (titleEl) titleEl.className = "tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug";
-            if (subEl) subEl.className = "tech-btn-sub text-xs font-normal text-slate-500 group-hover:text-slate-600 truncate";
+            if (titleEl) titleEl.className = "tech-btn-title text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-950  leading-snug";
+            if (subEl) subEl.className = "tech-btn-sub text-xs font-normal text-slate-500 group-hover:text-slate-600 ";
         }
     });
 
