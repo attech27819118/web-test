@@ -349,12 +349,6 @@ function renderSinglePageItem(idx) {
         }
     });
 
-    // 更新圖片
-    const imgEl = document.getElementById('tyzor-single-img');
-    if (imgEl) {
-        imgEl.src = resolveAssetUrl(item.img);
-        imgEl.alt = item.title;
-    }
 
     // 更新標題與分類 (乾淨簡約，去除過小微型英文字體)
     const catTagEl = document.getElementById('tyzor-single-category-tag');
@@ -390,13 +384,6 @@ function renderSinglePageItem(idx) {
         `).join('');
     }
 
-    // 更新放大彈窗綁定
-    const zoomTrigger = document.getElementById('tyzor-single-img-container');
-    if (zoomTrigger) {
-        zoomTrigger.onclick = function () {
-            openTechImageModal(item.img, item.title, item.pdf);
-        };
-    }
 }
 
 /**
@@ -454,64 +441,49 @@ function buildTyzorContentHtml() {
                     ${pillsHtml}
                 </div>
 
-                <!-- 單頁核心展示區 (簡約清晰：左側為說明、應用與優點；右側為原廠技術圖表) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
-                    <!-- 左欄：資料內容 -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div>
-                            <span id="tyzor-single-category-tag" class="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs font-bold mb-2.5">
-                                ${TYZOR_TECH_ITEMS[0].categoryTag}
-                            </span>
-                            <h2 id="tyzor-single-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
-                                ${TYZOR_TECH_ITEMS[0].title}
-                            </h2>
-                        </div>
+                <!-- 單頁核心展示區 (簡約清晰：說明、應用與主要優點) -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
+                    <div>
+                        <span id="tyzor-single-category-tag" class="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs font-bold mb-2.5">
+                            ${TYZOR_TECH_ITEMS[0].categoryTag}
+                        </span>
+                        <h2 id="tyzor-single-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                            ${TYZOR_TECH_ITEMS[0].title}
+                        </h2>
+                    </div>
 
-                        <!-- 說明文字 (大方排版，字體清晰舒適，去除冗餘小標題與框線) -->
-                        <div>
-                            <p id="tyzor-single-desc" class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-                                ${TYZOR_TECH_ITEMS[0].desc}
-                            </p>
-                        </div>
+                    <!-- 說明文字 (大方排版，字體清晰舒適，去除冗餘小標題與框線) -->
+                    <div>
+                        <p id="tyzor-single-desc" class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                            ${TYZOR_TECH_ITEMS[0].desc}
+                        </p>
+                    </div>
 
-                        <!-- 應用範圍 (清晰標籤，去除 9px 微型圖標) -->
-                        <div class="space-y-2.5">
-                            <h3 class="text-sm font-bold text-slate-900">應用範圍</h3>
-                            <div id="tyzor-single-apps" class="flex flex-wrap gap-2">
-                                ${TYZOR_TECH_ITEMS[0].applications.map(app => `
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">
-                                        ${app}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <!-- 主要優點 (清晰條列，圓形數字徽章不變形) -->
-                        <div class="space-y-2.5">
-                            <h3 class="text-sm font-bold text-slate-900">主要優點</h3>
-                            <ul id="tyzor-single-advantages" class="space-y-3">
-                                ${TYZOR_TECH_ITEMS[0].advantages.map((adv, aIdx) => `
-                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                                        <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">
-                                            ${aIdx + 1}
-                                        </span>
-                                        <span class="font-normal">${adv}</span>
-                                    </li>
-                                `).join('')}
-                            </ul>
+                    <!-- 應用範圍 (清晰標籤，去除 9px 微型圖標) -->
+                    <div class="space-y-2.5">
+                        <h3 class="text-sm font-bold text-slate-900">應用範圍</h3>
+                        <div id="tyzor-single-apps" class="flex flex-wrap gap-2">
+                            ${TYZOR_TECH_ITEMS[0].applications.map(app => `
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">
+                                    ${app}
+                                </span>
+                            `).join('')}
                         </div>
                     </div>
 
-                    <!-- 右欄：大尺寸高解析度圖表展示區 (保持清晰比例) -->
-                    <div class="lg:col-span-6 flex flex-col items-center">
-                        <div id="tyzor-single-img-container"
-                             class="relative w-full max-w-[500px] aspect-[1/1.414] rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm cursor-pointer group flex items-center justify-center p-3 transition-all hover:border-blue-400 hover:shadow-md"
-                             title="點擊全螢幕放大檢視">
-                            <img id="tyzor-single-img" src="${resolveAssetUrl(TYZOR_TECH_ITEMS[0].img)}" alt="鈦（鋯）酸酯技術圖表"
-                                 class="w-full h-full object-contain select-none transition-transform duration-300 group-hover:scale-[1.02]"
-                                 loading="lazy" oncontextmenu="return false;" draggable="false">
-                        </div>
-                        
+                    <!-- 主要優點 (清晰條列，圓形數字徽章不變形) -->
+                    <div class="space-y-2.5">
+                        <h3 class="text-sm font-bold text-slate-900">主要優點</h3>
+                        <ul id="tyzor-single-advantages" class="space-y-3">
+                            ${TYZOR_TECH_ITEMS[0].advantages.map((adv, aIdx) => `
+                                <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                    <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">
+                                        ${aIdx + 1}
+                                    </span>
+                                    <span class="font-normal">${adv}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
                     </div>
                 </div>
             </div>

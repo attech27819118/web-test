@@ -167,9 +167,8 @@
         }
     </script>
 
-    <!-- 正式編譯產出的 CSS 檔案 (含版本號快取破壞) -->
-    <link rel="stylesheet" href="css/output.css?v=20260929_v2">
-    <link rel="stylesheet" href="css/style.css?v=20260929_v2">
+    <link rel="stylesheet" href="css/output.css?v=20261002_v1">
+    <link rel="stylesheet" href="css/style.css?v=20261002_v1">
 
     <!-- 搜尋即時排版與全幅展示樣式 & 隱藏 reCAPTCHA 浮動徽章 -->
     <style>
@@ -497,10 +496,186 @@
                         </div>
                     </div>
                 </div>
-                <a href="technology/tyzor/" id="nav-technology" role="tab" aria-selected="false" aria-controls="tab-technology"
-                   class="nav-btn text-slate-700 hover:text-blue-900 border-b-2 border-transparent hover:border-gray-400 px-1 pt-1 h-16 inline-flex items-center">
-                    技術
-                </a>
+                <!-- 導覽列技術項目 (包含 Mega Menu) -->
+                <div class="relative group">
+                    <a href="technology/tyzor/" id="nav-technology" role="tab" aria-selected="false" aria-controls="tab-technology"
+                       class="nav-btn text-slate-700 hover:text-blue-900 border-b-2 border-transparent hover:border-gray-400 px-1 pt-1 inline-flex items-center gap-1.5 h-16">
+                        技術
+                    </a>
+
+                    <!-- Mega Menu 下拉容器 (技術專區 - 100%不透明淺色冷灰淡藍底以資區別) -->
+                    <div
+                            class="tech-mega-menu hidden group-hover:block fixed left-0 right-0 top-16 w-full shadow-2xl z-50 transition-all"
+                            style="background-color: #e8edf5 !important; border-bottom: 2px solid #cbd5e1 !important; opacity: 1 !important; backdrop-filter: none !important;">
+                        <div class="optimized-container max-w-7xl mx-auto px-6 py-7">
+                            <div class="flex items-center justify-between pb-3 mb-5 border-b border-slate-300">
+                                <span class="text-xl font-bold uppercase tracking-widest text-slate-600">技術專題目錄</span>
+                                <a class="text-xl text-blue-900 font-bold hover:underline cursor-pointer"
+                                   href="technology/tyzor/">
+                                    瀏覽所有技術專題 →
+                                </a>
+                            </div>
+
+                            <!-- 4 欄式技術網格 -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                                <!-- Column 1 -->
+                                <div class="space-y-4">
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/tyzor/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Organic Titanates and Zirconates
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">鈦酸酯與鋯酸酯,
+                                            Tyzor
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/silane/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Silane / 矽烷偶合劑
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">Dynasylan /
+                                            hydrosil 系列
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/chain/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Chain Extender / 擴鏈劑
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">Unilink &
+                                            Clearlink 系列
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="space-y-4">
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/carbon-black/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Special Carbon Black
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">特級碳黑 /
+                                            導電碳黑
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/wax/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Micronized Wax / 微粉蠟
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">PTFE 取代 /
+                                            耐磨耐刮助劑
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/matting/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Matting Agent / 消光粉
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">二氧化矽 /
+                                            表面處理消光
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Column 3 -->
+                                <div class="space-y-4">
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/maleic/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Maleic Resin / 馬林酸樹脂
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">
+                                            松香改性馬林酸樹脂
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/adhesion/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Adhesion Resin / 密著樹脂
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">氯化聚烯烴 (CPO) &
+                                            非氯系
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/powder/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Powder Coating Additive
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">
+                                            粉體塗料專用功能性助劑
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Column 4 -->
+                                <div class="space-y-4">
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/px/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            PX Lubricant Additives
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">潤滑油添加劑 (原
+                                            ExxonMobil)
+                                        </div>
+                                    </a>
+
+                                    <a class="mega-item group/item cursor-pointer p-2.5 rounded-lg hover:bg-slate-200/70 transition-colors block"
+                                       href="technology/polyester/">
+                                        <div
+                                                class="text-lg font-bold text-blue-950 group-hover/item:text-blue-700 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                            Polyester Resin / 聚酯樹脂
+                                        </div>
+                                        <div class="text-base text-slate-500 font-medium mt-0.5 pl-3">
+                                            聚酯樹脂 <br>(DYNAPOL/DYNACOLL替代品)
+                                        </div>
+                                    </a>
+
+                                    <div
+                                            class="bg-white rounded-xl p-4 border border-slate-300 shadow-sm mt-2">
+                                        <div class="text-base font-bold text-blue-950 mb-1">技術應用與配方支援</div>
+                                        <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                            尋求工藝改進或特化材料配方建議？由宏威技術專案團隊為您評估。</p>
+                                        <a href="contact/?mode=detailed&inquiry=technology"
+                                           class="block w-full text-center py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-sm font-bold transition-all shadow-xs">
+                                            填寫技術諮詢
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="partners/" id="nav-partners" role="tab" aria-selected="false" aria-controls="tab-partners"
                    class="nav-btn text-slate-700 hover:text-blue-900 border-b-2 border-transparent hover:border-gray-400 px-1 pt-1 h-16 inline-flex items-center">
                     合作夥伴
@@ -1701,8 +1876,8 @@
 <script src="js/table-renderer.js?v=20260929_v2"></script>
 <script src="js/compare.js?v=20260929_v2"></script>
 <script src="js/contact.js?v=20260929_v2"></script>
-<script src="js/technology.js?v=20261001_v1"></script>
-<script src="js/router.js?v=20260929_v2"></script>
+<script src="js/technology.js?v=20261001_v4"></script>
+<script src="js/router.js?v=20261001_v4"></script>
 <script src="js/app.js?v=20260929_v2"></script>
 
 </body>

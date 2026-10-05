@@ -314,76 +314,61 @@ def build_tyzor_content_section():
                         <button type="button" id="tyzor-tab-pill-3" onclick="setTechSinglePageIndex(3)" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all">4. 表面改性</button>
                     </div>
 
-                    <!-- 單頁核心展示區 (簡約清晰：左側為說明、應用與優點；右側為原廠技術圖表) -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
-                        <!-- 左欄：資料內容 -->
-                        <div class="lg:col-span-6 space-y-6">
-                            <div>
-                                <span id="tyzor-single-category-tag" class="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs font-bold mb-2.5">
-                                    類別一・催化反應
-                                </span>
-                                <h2 id="tyzor-single-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
-                                    鈦（鋯）酸酯作為催化劑
-                                </h2>
-                            </div>
+                    <!-- 單頁核心展示區 (簡約清晰：說明、應用與主要優點) -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
+                        <div>
+                            <span id="tyzor-single-category-tag" class="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs font-bold mb-2.5">
+                                類別一・催化反應
+                            </span>
+                            <h2 id="tyzor-single-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                                鈦（鋯）酸酯作為催化劑
+                            </h2>
+                        </div>
 
-                            <!-- 說明文字 (大方排版，字體清晰舒適，去除冗餘小標題與框線) -->
-                            <div>
-                                <p id="tyzor-single-desc" class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-                                    Tyzor有機鈦（鋯）在許多反應中，如酯合成、酯交換、縮合和加成反應，都表現出高效良好的催化性能。
-                                </p>
-                            </div>
+                        <!-- 說明文字 (大方排版，字體清晰舒適，去除冗餘小標題與框線) -->
+                        <div>
+                            <p id="tyzor-single-desc" class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                                Tyzor有機鈦（鋯）在許多反應中，如酯合成、酯交換、縮合和加成反應，都表現出高效良好的催化性能。
+                            </p>
+                        </div>
 
-                            <!-- 應用範圍 (清晰標籤，去除 9px 微型圖標) -->
-                            <div class="space-y-2.5">
-                                <h3 class="text-sm font-bold text-slate-900">應用範圍</h3>
-                                <div id="tyzor-single-apps" class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">可塑劑</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">（不）飽和聚酯</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">PET</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">PBT</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">聚酯多元醇等</span>
-                                </div>
-                            </div>
-
-                            <!-- 主要優點 (清晰條列，圓形數字徽章不變形) -->
-                            <div class="space-y-2.5">
-                                <h3 class="text-sm font-bold text-slate-900">主要優點</h3>
-                                <ul id="tyzor-single-advantages" class="space-y-3">
-                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                                        <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">1</span>
-                                        <span class="font-normal">不含任何有機錫，最終產品具有良好環保性，符合歐美環保標準。</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                                        <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">2</span>
-                                        <span class="font-normal">克服普通鈦酸酯催化劑不耐水等缺陷，在280℃下依舊可以保持較高催化活性（Tyzor 422, Tyzor 436）</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                                        <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">3</span>
-                                        <span class="font-normal">可縮短聚酯合成反應時間。</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                                        <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">4</span>
-                                        <span class="font-normal">克服普通鈦酸酯催化劑易黃變缺陷，Tyzor 436具有低黃變特點。</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                                        <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">5</span>
-                                        <span class="font-normal">在水、醇和單體中有良好的分散性。</span>
-                                    </li>
-                                </ul>
+                        <!-- 應用範圍 (清晰標籤，去除 9px 微型圖標) -->
+                        <div class="space-y-2.5">
+                            <h3 class="text-sm font-bold text-slate-900">應用範圍</h3>
+                            <div id="tyzor-single-apps" class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">可塑劑</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">（不）飽和聚酯</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">PET</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">PBT</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-sm font-medium border border-slate-200/60">聚酯多元醇等</span>
                             </div>
                         </div>
 
-                        <!-- 右欄：大尺寸高解析度圖表展示區 (保持清晰比例) -->
-                        <div class="lg:col-span-6 flex flex-col items-center">
-                            <div id="tyzor-single-img-container"
-                                 class="relative w-full max-w-[500px] aspect-[1/1.414] rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm cursor-pointer group flex items-center justify-center p-3 transition-all hover:border-blue-400 hover:shadow-md"
-                                 title="點擊全螢幕放大檢視">
-                                <img id="tyzor-single-img" src="techdata/tyzor/catalyst.webp" alt="鈦（鋯）酸酯技術圖表"
-                                     class="w-full h-full object-contain select-none transition-transform duration-300 group-hover:scale-[1.02]"
-                                     loading="lazy" oncontextmenu="return false;" draggable="false">
-                            </div>
-                            
+                        <!-- 主要優點 (清晰條列，圓形數字徽章不變形) -->
+                        <div class="space-y-2.5">
+                            <h3 class="text-sm font-bold text-slate-900">主要優點</h3>
+                            <ul id="tyzor-single-advantages" class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                    <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">1</span>
+                                    <span class="font-normal">不含任何有機錫，最終產品具有良好環保性，符合歐美環保標準。</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                    <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">2</span>
+                                    <span class="font-normal">克服普通鈦酸酯催化劑不耐水等缺陷，在280℃下依舊可以保持較高催化活性（Tyzor 422, Tyzor 436）</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                    <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">3</span>
+                                    <span class="font-normal">可縮短聚酯合成反應時間。</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                    <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">4</span>
+                                    <span class="font-normal">克服普通鈦酸酯催化劑易黃變缺陷，Tyzor 436具有低黃變特點。</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                    <span class="w-6 h-6 min-w-[24px] aspect-square rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs border border-emerald-300">5</span>
+                                    <span class="font-normal">在水、醇和單體中有良好的分散性。</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
