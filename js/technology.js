@@ -634,7 +634,7 @@ function buildTyzorContentHtml() {
                             <tr class="text-slate-700 font-bold">
                                 <th class="py-2.5 px-3 whitespace-nowrap">產品型號</th>
                                 <th class="py-2.5 px-3">主要化學成分</th>
-                                <th class="py-2.5 px-3">原廠主要應用領域</th>
+                                <th class="py-2.5 px-3">主要應用領域</th>
                                 <th class="py-2.5 px-3 text-center whitespace-nowrap">操作</th>
                             </tr>
                         </thead>
