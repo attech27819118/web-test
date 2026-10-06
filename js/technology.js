@@ -588,7 +588,7 @@ function buildTyzorContentHtml() {
                     <div class="space-y-1.5 pl-0 sm:pl-2.5">
                         <div class="flex items-center gap-1.5 text-sm font-bold text-blue-950">
                             <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
-                            <span>原廠主要優點與技術特點：</span>
+                            <span>主要優點與技術特點：</span>
                         </div>
                         <ul id="tyzor-single-advantages" class="space-y-1.5 text-sm text-slate-700 leading-relaxed">
                             ${TYZOR_TECH_ITEMS[0].advantages.map((adv, aIdx) => `
