@@ -620,10 +620,7 @@ function buildTyzorContentHtml() {
                  ========================================== -->
             <div id="tech-panel-catalog" class="${TechState.activeSubTab === 'catalog' ? '' : 'hidden '}space-y-2.5">
                 <div class="flex flex-wrap items-center justify-between gap-2 pb-1">
-                    <div class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
-                        <span class="w-1.5 h-3.5 bg-blue-900 rounded-full inline-block"></span>
-                        <span>Tyzor® 原廠 23 款規格對照（可快速搜尋型號或成分）</span>
-                    </div>
+                    
                     <div class="relative w-full sm:w-56">
                         <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-xs text-slate-400"></i>
                         <input type="text" placeholder="搜尋型號 (如 TPT, TE)..." oninput="filterTechCatalog(this.value)"
@@ -655,10 +652,7 @@ function buildTyzorContentHtml() {
                  分頁三：應用技術 (Applications) - 4 大範疇 2x2 雙欄卡片
                  ========================================== -->
             <div id="tech-panel-applications" class="${TechState.activeSubTab === 'applications' ? '' : 'hidden '}space-y-2">
-                <div class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
-                    <span class="w-1.5 h-3.5 bg-blue-900 rounded-full inline-block"></span>
-                    <span>Dorf Ketal 原廠技術手冊四大應用領域速覽</span>
-                </div>
+                
 
                 <div class="tech-apps-grid">
                     <!-- 領域 1 -->
