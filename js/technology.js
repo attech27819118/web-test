@@ -154,8 +154,6 @@ const TYZOR_TECH_ITEMS = [
         title: '鈦（鋯）酸酯作為催化劑',
         titleEn: 'Tyzor® Catalysts',
         mechImg: 'techdata/tyzor/catalyst_mech.webp',
-        img: 'techdata/tyzor/catalyst.webp',
-        pdf: 'techdata/tyzor/鈦（鋯）酸酯作為催化劑.pdf',
         desc: 'Tyzor有機鈦（鋯）在許多反應中，如酯合成、酯交換、縮合和加成反應，都表現出高效良好的催化性能。',
         applications: ['可塑劑', '（不）飽和聚酯', 'PET', 'PBT', '聚酯多元醇等'],
         advantages: [
@@ -173,8 +171,6 @@ const TYZOR_TECH_ITEMS = [
         title: '鈦（鋯）酸酯作為交聯劑',
         titleEn: 'Tyzor® Crosslinkers',
         mechImg: 'techdata/tyzor/crosslinker_mech.webp',
-        img: 'techdata/tyzor/crosslinker.webp',
-        pdf: 'techdata/tyzor/鈦（鋯）酸酯作為交聯劑.pdf',
         desc: 'Tyzor 有機鈦（鋯）作為交聯劑，以提高油漆、油墨、膠黏劑、聚合物（PVA等）的物理化學性能。',
         applications: ['油漆', '油墨', '膠黏劑', '聚合物（PVA等）'],
         advantages: [
@@ -190,8 +186,6 @@ const TYZOR_TECH_ITEMS = [
         title: '鈦（鋯）酸酯提高附著力',
         titleEn: 'Tyzor® Adhesion Promoters',
         mechImg: 'techdata/tyzor/adhesion_mech.webp',
-        img: 'techdata/tyzor/adhesion.webp',
-        pdf: 'techdata/tyzor/鈦（鋯）酸酯提高附著力.pdf',
         desc: 'Tyzor有機鈦（鋯）能夠提高油漆、塗料、油墨、密封膠等產品對於不同基材，如金屬、塑膠、玻璃等基材的附著力。Tyzor產品通過在兩種不同的基材架“橋”，從而將兩種不同的基材在介面處連結起來。如無/有機材料和高分子。',
         applications: ['油漆', '塗料', '油墨', '密封膠'],
         advantages: [
@@ -207,8 +201,6 @@ const TYZOR_TECH_ITEMS = [
         title: '鈦（鋯）酸酯作為表面改性',
         titleEn: 'Tyzor® Surface Modification',
         mechImg: 'techdata/tyzor/surface_mech.webp',
-        img: 'techdata/tyzor/surface_treatment.webp',
-        pdf: 'techdata/tyzor/鈦（鋯）酸酯作為表面改性.pdf',
         desc: 'Tyzor有機鈦（鋯）能用於改善無機和有機材料的表面性能。Tyzor系列產品被單獨或者混合其他材料一同加入到溶膠-凝膠Sol-Gel體系，會形成一個連續的金屬氧化物塗層，從而改善產品表面性能。',
         applications: ['紡織整理劑', '鋁銀漿表面處理', '顏料表面處理等'],
         advantages: [
@@ -466,8 +458,10 @@ function renderSinglePageItem(idx) {
         mechImgEl.src = resolveAssetUrl(item.mechImg);
         mechImgEl.alt = `${item.title} 反應機制圖`;
     }
+    // 移除燈箱功能：圖片僅靜態顯示
     if (mechBoxEl) {
-        mechBoxEl.onclick = () => openTechImageModal(item.img, item.title, item.pdf);
+        mechBoxEl.style.cursor = 'default';
+        mechBoxEl.onclick = null;
     }
 
     const appsEl = document.getElementById('tyzor-single-apps');
@@ -573,24 +567,19 @@ function buildTyzorContentHtml() {
                             ${TYZOR_TECH_ITEMS[0].desc}
                         </p>
 
-                        <!-- 原廠反應機制示意圖 (點擊可放大檢視) -->
-                        <div class="space-y-1 pt-0.5">
-                            <div class="flex items-center justify-between text-xs text-slate-700 font-bold">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-atom text-blue-900"></i>
-                                    <span>反應機制：</span>
-                                </span>
-                                <span class="text-slate-400 font-normal text-xs flex items-center gap-1">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i>點擊放大
-                                </span>
+                            <!-- 原廠反應機制示意圖 -->
+                            <div class="space-y-1 pt-0.5">
+                                <div class="flex items-center text-xs text-slate-700 font-bold">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-atom text-blue-900"></i>
+                                        <span>反應機制：</span>
+                                    </span>
+                                </div>
+                                <div id="tyzor-single-mech-box" class="relative bg-white rounded-xl border border-slate-200 p-2 sm:p-2.5 shadow-2xs flex items-center justify-center overflow-hidden">
+                                    <img id="tyzor-single-mech-img" src="${resolveAssetUrl(TYZOR_TECH_ITEMS[0].mechImg)}" alt="${TYZOR_TECH_ITEMS[0].title} 反應機制圖"
+                                         class="w-full max-h-[145px] sm:max-h-[165px] object-contain rounded">
+                                </div>
                             </div>
-                            <div id="tyzor-single-mech-box" class="relative group cursor-pointer bg-white rounded-xl border border-slate-200 p-2 sm:p-2.5 shadow-2xs hover:border-blue-400 hover:shadow-xs transition-all flex items-center justify-center overflow-hidden"
-                                 onclick="openTechImageModal('${TYZOR_TECH_ITEMS[0].img}', '${TYZOR_TECH_ITEMS[0].title}', '${TYZOR_TECH_ITEMS[0].pdf}')">
-                                <img id="tyzor-single-mech-img" src="${resolveAssetUrl(TYZOR_TECH_ITEMS[0].mechImg)}" alt="${TYZOR_TECH_ITEMS[0].title} 反應機制圖"
-                                     class="w-full max-h-[145px] sm:max-h-[165px] object-contain rounded transition-transform group-hover:scale-[1.01]">
-                                <div class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/5 transition-colors pointer-events-none rounded-xl"></div>
-                            </div>
-                        </div>
 
                         
                     </div>
@@ -919,104 +908,9 @@ function buildPlaceholderContentHtml(cat) {
 }
 
 /**
- * 全螢幕 Lightbox 燈箱開關與縮放功能
- */
-function openTechImageModal(imgSrc, title, pdfUrl) {
-    const modal = document.getElementById('tech-image-modal');
-    const modalImg = document.getElementById('tech-image-modal-img');
-    const modalTitle = document.getElementById('tech-image-modal-title');
-    const modalPdfBtn = document.getElementById('tech-image-modal-pdf-btn');
-
-    if (!modal || !modalImg) return;
-
-    modalImg.src = resolveAssetUrl(imgSrc);
-    modalImg.alt = title || '技術說明圖表';
-
-    if (modalTitle) modalTitle.innerText = title || '原廠技術說明圖表';
-
-    if (modalPdfBtn) {
-        if (pdfUrl) {
-            modalPdfBtn.href = resolveAssetUrl(pdfUrl);
-            modalPdfBtn.download = `${title || 'tech_doc'}.pdf`;
-            modalPdfBtn.classList.remove('hidden');
-        } else {
-            modalPdfBtn.classList.add('hidden');
-        }
-    }
-
-    TechState.isZoomed = false;
-    resetTechModalZoom();
-
-    modal.style.display = 'flex';
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeTechImageModal(e) {
-    if (e && e.target && e.target.closest('#tech-image-modal-content')) return;
-
-    const modal = document.getElementById('tech-image-modal');
-    if (!modal) return;
-
-    modal.style.display = 'none';
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-}
-
-function toggleTechModalZoom() {
-    TechState.isZoomed = !TechState.isZoomed;
-    const modalImg = document.getElementById('tech-image-modal-img');
-    const container = document.getElementById('tech-image-container');
-    const zoomText = document.getElementById('tech-modal-zoom-text');
-    const zoomIcon = document.getElementById('tech-modal-zoom-icon');
-
-    if (!modalImg || !container) return;
-
-    if (TechState.isZoomed) {
-        container.style.overflow = 'auto';
-        modalImg.style.maxHeight = 'none';
-        modalImg.style.maxWidth = 'none';
-        modalImg.style.width = '100%';
-        modalImg.style.height = 'auto';
-        modalImg.style.cursor = 'zoom-out';
-        if (zoomText) zoomText.innerText = "最適視窗檢視";
-        if (zoomIcon) zoomIcon.className = "fa-solid fa-compress";
-    } else {
-        resetTechModalZoom();
-    }
-}
-
-function resetTechModalZoom() {
-    TechState.isZoomed = false;
-    const modalImg = document.getElementById('tech-image-modal-img');
-    const container = document.getElementById('tech-image-container');
-    const zoomText = document.getElementById('tech-modal-zoom-text');
-    const zoomIcon = document.getElementById('tech-modal-zoom-icon');
-
-    if (container) container.style.overflow = 'hidden';
-    if (modalImg) {
-        modalImg.style.maxHeight = 'calc(100vh - 120px)';
-        modalImg.style.maxWidth = '100%';
-        modalImg.style.width = 'auto';
-        modalImg.style.height = 'auto';
-        modalImg.style.cursor = 'zoom-in';
-    }
-    if (zoomText) zoomText.innerText = "放大滾動閱讀";
-    if (zoomIcon) zoomIcon.className = "fa-solid fa-magnifying-glass-plus";
-}
-
-/**
- * 鍵盤左右鍵切換單頁模式、ESC 關閉彈窗
+ * 鍵盤左右鍵切換單頁模式
  */
 window.addEventListener('keydown', (e) => {
-    const modal = document.getElementById('tech-image-modal');
-    if (modal && !modal.classList.contains('hidden') && modal.style.display !== 'none') {
-        if (e.key === 'Escape' || e.key === 'Esc') {
-            closeTechImageModal();
-            return;
-        }
-    }
-
     const activeTab = document.querySelector('.tab-content.active');
     if (activeTab && activeTab.id === 'tab-technology') {
         if (TechState.activeCategory === 'tyzor' && TechState.activeSubTab === 'principles') {

@@ -201,64 +201,7 @@ TECH_ITEMS = [
     }
 ]
 
-TECH_IMAGE_MODAL_HTML = '''    <!-- ==========================================
-         技術專頁：原廠技術圖表全螢幕燈箱 (Tech Image Lightbox Modal)
-         ========================================== -->
-    <div id="tech-image-modal" onclick="closeTechImageModal(event)"
-         class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 transition-all opacity-100 hidden"
-         style="display: none;" role="dialog" aria-modal="true" aria-labelledby="tech-image-modal-title">
-        <div id="tech-image-modal-content" onclick="event.stopPropagation()"
-             class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-5xl max-h-[95vh] flex flex-col overflow-hidden animate-fadeIn">
-            <!-- Modal Header -->
-            <div class="px-4 py-3 bg-slate-900 text-white flex items-center justify-between gap-3 shrink-0">
-                <div class="flex items-center gap-2.5 min-w-0">
-                    <span class="w-2 h-4 bg-blue-500 rounded-full shrink-0"></span>
-                    <h3 id="tech-image-modal-title" class="text-sm sm:text-base font-bold text-white truncate">
-                        原廠技術說明圖表
-                    </h3>
-                </div>
-                <div class="flex items-center gap-2 shrink-0">
-                    <button type="button" onclick="toggleTechModalZoom()"
-                            class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
-                            title="切換縮放模式">
-                        <i id="tech-modal-zoom-icon" class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span id="tech-modal-zoom-text" class="hidden sm:inline">放大滾動閱讀</span>
-                    </button>
-                    <a id="tech-image-modal-pdf-btn" href="#" target="_blank"
-                       class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition-colors shadow-2xs"
-                       title="下載原廠 PDF 文件">
-                        <i class="fa-solid fa-file-pdf"></i>
-                        <span class="hidden sm:inline">下載原廠 PDF</span>
-                    </a>
-                    <button type="button" onclick="closeTechImageModal()"
-                            class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors"
-                            aria-label="關閉視窗">
-                        <i class="fa-solid fa-xmark text-lg"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Modal Body (Image Container) -->
-            <div id="tech-image-container"
-                 class="flex-1 bg-slate-100 flex items-center justify-center p-3 sm:p-5 overflow-hidden select-none">
-                <img id="tech-image-modal-img" src="" alt="技術說明圖表"
-                     onclick="toggleTechModalZoom()"
-                     class="max-w-full max-h-[calc(100vh-140px)] object-contain rounded-lg shadow-sm transition-all cursor-zoom-in">
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="px-4 py-2 bg-white border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 shrink-0">
-                <span class="flex items-center gap-1.5">
-                    <i class="fa-solid fa-circle-info text-blue-800"></i>
-                    <span>提示：點擊圖片可放大；或按鍵盤 ESC 鍵關閉視窗</span>
-                </span>
-                <button type="button" onclick="closeTechImageModal()"
-                        class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-md transition-colors">
-                    關閉
-                </button>
-            </div>
-        </div>
-    </div>'''
+TECH_IMAGE_MODAL_HTML = ""
 
 def get_tyzor_products():
     """讀取 23 款真實 Tyzor 產品資訊"""
@@ -452,15 +395,11 @@ def build_tyzor_content_section():
                                         <i class="fa-solid fa-atom text-blue-900"></i>
                                         <span>反應機制：</span>
                                     </span>
-                                    <span class="text-slate-400 font-normal text-xs flex items-center gap-1">
-                                        <i class="fa-solid fa-magnifying-glass-plus"></i>點擊放大
-                                    </span>
+                                    
                                 </div>
-                                <div id="tyzor-single-mech-box" class="relative group cursor-pointer bg-white rounded-xl border border-slate-200 p-2 sm:p-2.5 shadow-2xs hover:border-blue-400 hover:shadow-xs transition-all flex items-center justify-center overflow-hidden"
-                                     onclick="openTechImageModal('techdata/tyzor/catalyst.webp', '鈦（鋯）酸酯作為催化劑', 'techdata/tyzor/鈦（鋯）酸酯作為催化劑.pdf')">
+                                <div id="tyzor-single-mech-box" class="bg-white rounded-xl border border-slate-200 p-2 sm:p-2.5 shadow-2xs flex items-center justify-center overflow-hidden">
                                     <img id="tyzor-single-mech-img" src="techdata/tyzor/catalyst_mech.webp" alt="鈦（鋯）酸酯作為催化劑 反應機制圖"
-                                         class="w-full max-h-[145px] sm:max-h-[165px] object-contain rounded transition-transform group-hover:scale-[1.01]">
-                                    <div class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/5 transition-colors pointer-events-none rounded-xl"></div>
+                                         class="w-full max-h-[145px] sm:max-h-[165px] object-contain rounded">
                                 </div>
                             </div>
 
@@ -1017,8 +956,8 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
     )
 
     # 快取版本破壞
-    page_html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261005_v2', page_html)
-    page_html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261005_v2', page_html)
+    page_html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261006_v1', page_html)
+    page_html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261006_v1', page_html)
 
     # Update Title, Meta Description & Canonical
     page_title = f"{title_zh} | 宏威應用材料 ATTech Materials"
@@ -1032,8 +971,14 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
     # Set data-tech-slug on body
     page_html = page_html.replace('<body class="', f'<body data-tech-slug="{slug}" class="')
 
-    if 'id="tech-image-modal"' not in page_html:
-        page_html = page_html.replace('</body>', f"{TECH_IMAGE_MODAL_HTML}\n\n</body>")
+    # 完全移除燈箱視窗 HTML
+    if 'id="tech-image-modal"' in page_html:
+        m_start = page_html.find('<!-- ==========================================\n         技術專頁：原廠技術圖表全螢幕燈箱')
+        if m_start == -1:
+            m_start = page_html.find('<div id="tech-image-modal"')
+        m_end = page_html.find('</body>', m_start)
+        if m_start != -1 and m_end != -1:
+            page_html = page_html[:m_start] + page_html[m_end:]
 
     return page_html
 
@@ -1106,8 +1051,8 @@ def sync_root_index_technology():
     html = html.replace('href="technology/" id="mobile-nav-technology"', 'href="technology/tyzor/" id="mobile-nav-technology"')
 
     # 確保快取版本破壞
-    html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261005_v2', html)
-    html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261005_v2', html)
+    html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261006_v1', html)
+    html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261006_v1', html)
 
     # 替換 tab-technology 為最新緊湊一頁式版本
     tyzor_item = TECH_ITEMS[0]
@@ -1279,8 +1224,14 @@ def sync_root_index_technology():
     if replace_start != -1 and replace_end != -1:
         html = html[:replace_start] + tech_section_inactive + "\n\n        " + html[replace_end:]
 
-    if 'id="tech-image-modal"' not in html:
-        html = html.replace('</body>', f"{TECH_IMAGE_MODAL_HTML}\n\n</body>")
+    # 完全移除燈箱視窗 HTML
+    if 'id="tech-image-modal"' in html:
+        m_start = html.find('<!-- ==========================================\n         技術專頁：原廠技術圖表全螢幕燈箱')
+        if m_start == -1:
+            m_start = html.find('<div id="tech-image-modal"')
+        m_end = html.find('</body>', m_start)
+        if m_start != -1 and m_end != -1:
+            html = html[:m_start] + html[m_end:]
 
     with open(root_index_path, 'w', encoding='utf-8') as f:
         f.write(html)
