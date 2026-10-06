@@ -305,8 +305,8 @@ def build_subtab_nav(has_data=True, active_key="principles"):
                     </button>'''
         buttons.append(btn)
 
-    return f'''                <!-- 五大核心維度純單行標籤列 (1 行排版結束，無小細節干擾，極致爭取展示空間) -->
-                <div class="tech-subtab-strip mb-2.5" role="tablist" aria-label="技術專題五大核心維度導覽">
+    return f'''                <!-- 瀏覽器書籤樣式：五大核心維度標籤列 -->
+                <div class="tech-subtab-strip" role="tablist" aria-label="技術專題五大核心維度導覽">
 {chr(10).join(buttons)}
                 </div>'''
 
@@ -360,19 +360,22 @@ def build_tyzor_content_section():
                     </div>
                 </div>
 
+                <!-- 瀏覽器書籤風格：標籤列與內容容器一體化 -->
+                <div class="tech-bookmark-wrapper mt-1">
 {subtab_nav_html}
 
-                <!-- ==========================================
-                     分頁一：原理 (Principles) - 左右雙欄極致一目了然 (重要資訊首屏完全可見)
-                     ========================================== -->
-                <div id="tech-panel-principles" class="space-y-2">
-                    <!-- 4 大機制快捷標籤 (高度僅28px) -->
-                    <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto">
-                        <button type="button" id="tyzor-tab-pill-0" onclick="setTechSinglePageIndex(0)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-blue-900 text-white shadow-2xs transition-all whitespace-nowrap">1. 催化劑</button>
-                        <button type="button" id="tyzor-tab-pill-1" onclick="setTechSinglePageIndex(1)" class="px-2.5 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all whitespace-nowrap">2. 交聯劑</button>
-                        <button type="button" id="tyzor-tab-pill-2" onclick="setTechSinglePageIndex(2)" class="px-2.5 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all whitespace-nowrap">3. 提高附著力</button>
-                        <button type="button" id="tyzor-tab-pill-3" onclick="setTechSinglePageIndex(3)" class="px-2.5 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all whitespace-nowrap">4. 表面改性</button>
-                    </div>
+                    <div class="tech-bookmark-body">
+                        <!-- ==========================================
+                             分頁一：原理 (Principles) - 左右雙欄極致一目了然 (重要資訊首屏完全可見)
+                             ========================================== -->
+                        <div id="tech-panel-principles" class="space-y-2">
+                            <!-- 4 大機制快捷標籤 (高度僅28px) -->
+                            <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto">
+                                <button type="button" id="tyzor-tab-pill-0" onclick="setTechSinglePageIndex(0)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-blue-900 text-white shadow-2xs transition-all whitespace-nowrap">1. 催化劑</button>
+                                <button type="button" id="tyzor-tab-pill-1" onclick="setTechSinglePageIndex(1)" class="px-2.5 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all whitespace-nowrap">2. 交聯劑</button>
+                                <button type="button" id="tyzor-tab-pill-2" onclick="setTechSinglePageIndex(2)" class="px-2.5 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all whitespace-nowrap">3. 提高附著力</button>
+                                <button type="button" id="tyzor-tab-pill-3" onclick="setTechSinglePageIndex(3)" class="px-2.5 py-1 rounded-md text-xs font-semibold text-slate-600 hover:text-blue-900 hover:bg-slate-100 transition-all whitespace-nowrap">4. 表面改性</button>
+                            </div>
 
                     <!-- 左右雙欄核心展示區 (左欄簡介與範疇，右欄核心優點清單，重要資訊首屏一眼望盡) -->
                     <div id="tyzor-view-single" class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
@@ -410,7 +413,7 @@ def build_tyzor_content_section():
                         <div class="space-y-1.5 pl-0 sm:pl-2.5">
                             <div class="flex items-center gap-1.5 text-sm font-bold text-blue-950">
                                 <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
-                                <span>主要優點與技術特點：</span>
+                                <span>主要優點與特色：</span>
                             </div>
                             <ul id="tyzor-single-advantages" class="space-y-1.5 text-sm text-slate-700 leading-relaxed">
                                 <li class="flex items-start gap-1.5">
@@ -619,10 +622,13 @@ def build_placeholder_content_section(item):
                     </div>
                 </div>
 
+                <!-- 瀏覽器書籤風格：標籤列與內容容器一體化 -->
+                <div class="tech-bookmark-wrapper mt-1">
 {subtab_nav_html}
 
-                <!-- 分頁一：原理 -->
-                <div id="tech-panel-principles" class="space-y-2">
+                    <div class="tech-bookmark-body">
+                        <!-- 分頁一：原理 -->
+                        <div id="tech-panel-principles" class="space-y-2">
                     <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
                         <div class="flex items-center justify-center gap-2">
                             <i class="fa-solid fa-atom text-blue-900 text-sm"></i>
@@ -730,6 +736,8 @@ def build_placeholder_content_section(item):
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
             </section>'''
 
 def build_full_tech_page_html(item, template_shell, is_index=False):
@@ -808,19 +816,30 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
                 border-radius: 4px;
             }}
         }}
-        /* 五大核心維度純單行標籤列 (嚴格 1 行 5 等分，乾淨俐落無雜訊) */
+        /* 瀏覽器書籤風格容器與標籤列 (一體化設計：當前頁籤為白底無縫融入下方內容區) */
+        .tech-bookmark-wrapper {{
+            position: relative;
+            width: 100%;
+        }}
         .tech-subtab-strip {{
             display: grid !important;
             grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
             gap: 0.375rem;
             width: 100%;
+            position: relative;
+            z-index: 10;
+            margin-bottom: -1px !important;
         }}
-        @media (max-width: 580px) {{
+        @media (max-width: 640px) {{
             .tech-subtab-strip {{
                 display: flex !important;
                 overflow-x: auto;
-                gap: 0.375rem;
-                padding-bottom: 2px;
+                gap: 0.25rem;
+                padding-bottom: 0;
+                scrollbar-width: none;
+            }}
+            .tech-subtab-strip::-webkit-scrollbar {{
+                display: none;
             }}
             .tech-subtab-btn {{
                 flex: 0 0 auto;
@@ -832,28 +851,55 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
             align-items: center;
             justify-content: center;
             gap: 0.375rem;
-            padding: 0.45rem 0.5rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 700;
+            padding: 0.55rem 0.5rem 0.45rem 0.5rem;
+            border-top-left-radius: 0.625rem !important;
+            border-top-right-radius: 0.625rem !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            font-size: 0.8125rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.15s ease;
-            border: 1px solid #cbd5e1;
-            background: #ffffff;
-            color: #334155;
+            border: 1px solid #cbd5e1 !important;
+            border-bottom: 1px solid #cbd5e1 !important;
+            background: #f1f5f9 !important;
+            color: #475569 !important;
             text-align: center;
             white-space: nowrap;
+            position: relative;
+            z-index: 5;
         }}
         .tech-subtab-btn:hover {{
-            background: #f1f5f9;
-            border-color: #94a3b8;
-            color: #0f172a;
+            background: #e2e8f0 !important;
+            border-color: #94a3b8 !important;
+            color: #0f172a !important;
         }}
         .tech-subtab-btn.active {{
-            background: #1e3a8a !important;
-            border-color: #1e3a8a !important;
-            color: #ffffff !important;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            background: #ffffff !important;
+            color: #1e3a8a !important;
+            font-weight: 800 !important;
+            border-top: 3px solid #1e3a8a !important;
+            border-left: 1px solid #cbd5e1 !important;
+            border-right: 1px solid #cbd5e1 !important;
+            border-bottom: 2px solid #ffffff !important;
+            margin-bottom: -1px !important;
+            position: relative;
+            z-index: 20 !important;
+            box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.04) !important;
+        }}
+        .tech-bookmark-body {{
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 0 0 0.875rem 0.875rem;
+            padding: 1rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+        }}
+        @media (max-width: 640px) {{
+            .tech-bookmark-body {{
+                padding: 0.75rem;
+            }}
         }}
         /* 核心原理 2-Column Split 左右分欄雙翼佈局 (重要資訊首屏完全可見) */
         .tech-principles-grid {{
@@ -950,8 +996,8 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
     )
 
     # 快取版本破壞
-    page_html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261006_v1', page_html)
-    page_html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261006_v1', page_html)
+    page_html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261006_v2', page_html)
+    page_html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261006_v2', page_html)
 
     # Update Title, Meta Description & Canonical
     page_title = f"{title_zh} | 宏威應用材料 ATTech Materials"
@@ -1045,8 +1091,8 @@ def sync_root_index_technology():
     html = html.replace('href="technology/" id="mobile-nav-technology"', 'href="technology/tyzor/" id="mobile-nav-technology"')
 
     # 確保快取版本破壞
-    html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261006_v1', html)
-    html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261006_v1', html)
+    html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261006_v2', html)
+    html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261006_v2', html)
 
     # 替換 tab-technology 為最新緊湊一頁式版本
     tyzor_item = TECH_ITEMS[0]
@@ -1113,19 +1159,30 @@ def sync_root_index_technology():
                 border-radius: 4px;
             }}
         }}
-        /* 五大核心維度純單行標籤列 (嚴格 1 行 5 等分，乾淨俐落無雜訊) */
+        /* 瀏覽器書籤風格容器與標籤列 (一體化設計：當前頁籤為白底無縫融入下方內容區) */
+        .tech-bookmark-wrapper {{
+            position: relative;
+            width: 100%;
+        }}
         .tech-subtab-strip {{
             display: grid !important;
             grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
             gap: 0.375rem;
             width: 100%;
+            position: relative;
+            z-index: 10;
+            margin-bottom: -1px !important;
         }}
-        @media (max-width: 580px) {{
+        @media (max-width: 640px) {{
             .tech-subtab-strip {{
                 display: flex !important;
                 overflow-x: auto;
-                gap: 0.375rem;
-                padding-bottom: 2px;
+                gap: 0.25rem;
+                padding-bottom: 0;
+                scrollbar-width: none;
+            }}
+            .tech-subtab-strip::-webkit-scrollbar {{
+                display: none;
             }}
             .tech-subtab-btn {{
                 flex: 0 0 auto;
@@ -1137,28 +1194,55 @@ def sync_root_index_technology():
             align-items: center;
             justify-content: center;
             gap: 0.375rem;
-            padding: 0.45rem 0.5rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 700;
+            padding: 0.55rem 0.5rem 0.45rem 0.5rem;
+            border-top-left-radius: 0.625rem !important;
+            border-top-right-radius: 0.625rem !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            font-size: 0.8125rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.15s ease;
-            border: 1px solid #cbd5e1;
-            background: #ffffff;
-            color: #334155;
+            border: 1px solid #cbd5e1 !important;
+            border-bottom: 1px solid #cbd5e1 !important;
+            background: #f1f5f9 !important;
+            color: #475569 !important;
             text-align: center;
             white-space: nowrap;
+            position: relative;
+            z-index: 5;
         }}
         .tech-subtab-btn:hover {{
-            background: #f1f5f9;
-            border-color: #94a3b8;
-            color: #0f172a;
+            background: #e2e8f0 !important;
+            border-color: #94a3b8 !important;
+            color: #0f172a !important;
         }}
         .tech-subtab-btn.active {{
-            background: #1e3a8a !important;
-            border-color: #1e3a8a !important;
-            color: #ffffff !important;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            background: #ffffff !important;
+            color: #1e3a8a !important;
+            font-weight: 800 !important;
+            border-top: 3px solid #1e3a8a !important;
+            border-left: 1px solid #cbd5e1 !important;
+            border-right: 1px solid #cbd5e1 !important;
+            border-bottom: 2px solid #ffffff !important;
+            margin-bottom: -1px !important;
+            position: relative;
+            z-index: 20 !important;
+            box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.04) !important;
+        }}
+        .tech-bookmark-body {{
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 0 0 0.875rem 0.875rem;
+            padding: 1rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+        }}
+        @media (max-width: 640px) {{
+            .tech-bookmark-body {{
+                padding: 0.75rem;
+            }}
         }}
         /* 核心原理 2-Column Split 左右分欄雙翼佈局 (重要資訊首屏完全可見) */
         .tech-principles-grid {{

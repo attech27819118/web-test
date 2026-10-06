@@ -311,7 +311,7 @@ function buildSubTabNavHtml(activeKey, hasData = true) {
     ];
 
     return `
-        <div class="tech-subtab-strip mb-2.5" role="tablist" aria-label="技術專題五大核心維度導覽">
+        <div class="tech-subtab-strip" role="tablist" aria-label="技術專題五大核心維度導覽">
             ${tabs.map(tab => {
                 const isActive = (tab.key === activeKey);
                 const activeCls = isActive ? "active" : "";
@@ -541,13 +541,15 @@ function buildTyzorContentHtml() {
                 </div>
             </div>
 
-            <!-- 五大維度子分頁導航 (單行橫向標籤列) -->
-            ${buildSubTabNavHtml(TechState.activeSubTab, true)}
+            <!-- 瀏覽器書籤風格：標籤列與內容容器一體化 -->
+            <div class="tech-bookmark-wrapper mt-1">
+                ${buildSubTabNavHtml(TechState.activeSubTab, true)}
 
-            <!-- ==========================================
-                 分頁一：原理 (Principles) - 左右雙欄極致一目了然
-                 ========================================== -->
-            <div id="tech-panel-principles" class="${TechState.activeSubTab === 'principles' ? '' : 'hidden '}space-y-2">
+                <div class="tech-bookmark-body">
+                    <!-- ==========================================
+                         分頁一：原理 (Principles) - 左右雙欄極致一目了然
+                         ========================================== -->
+                    <div id="tech-panel-principles" class="${TechState.activeSubTab === 'principles' ? '' : 'hidden '}space-y-2">
                 <!-- 4 大機制快捷標籤 (高度僅28px) -->
                 <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto">
                     ${pillsHtml}
@@ -588,7 +590,7 @@ function buildTyzorContentHtml() {
                     <div class="space-y-1.5 pl-0 sm:pl-2.5">
                         <div class="flex items-center gap-1.5 text-sm font-bold text-blue-950">
                             <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
-                            <span>主要優點與技術特點：</span>
+                            <span>主要優點與特色：</span>
                         </div>
                         <ul id="tyzor-single-advantages" class="space-y-1.5 text-sm text-slate-700 leading-relaxed">
                             ${TYZOR_TECH_ITEMS[0].advantages.map((adv, aIdx) => `
@@ -758,6 +760,8 @@ function buildTyzorContentHtml() {
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
         </section>
     `;
 }
@@ -785,11 +789,13 @@ function buildPlaceholderContentHtml(cat) {
                 </div>
             </div>
 
-            <!-- 五大維度子分頁導航 -->
-            ${buildSubTabNavHtml(TechState.activeSubTab, false)}
+            <!-- 瀏覽器書籤風格：標籤列與內容容器一體化 -->
+            <div class="tech-bookmark-wrapper mt-1">
+                ${buildSubTabNavHtml(TechState.activeSubTab, false)}
 
-            <!-- 分頁一：原理 -->
-            <div id="tech-panel-principles" class="${TechState.activeSubTab === 'principles' ? '' : 'hidden '}space-y-2">
+                <div class="tech-bookmark-body">
+                    <!-- 分頁一：原理 -->
+                    <div id="tech-panel-principles" class="${TechState.activeSubTab === 'principles' ? '' : 'hidden '}space-y-2">
                 <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
                     <div class="flex items-center justify-center gap-2">
                         <i class="fa-solid fa-atom text-blue-900 text-sm"></i>
@@ -895,6 +901,8 @@ function buildPlaceholderContentHtml(cat) {
                             <span>申請配方諮詢與樣品</span>
                         </a>
                     </div>
+                </div>
+            </div>
                 </div>
             </div>
         </section>
