@@ -2840,11 +2840,8 @@ function buildCategoryContentHtml(cat) {
                 </div>
             </div>
 
-            <!-- 專題核心技術簡介說明 -->
-            ${cat.desc ? `
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
-                ${cat.desc}
-            </p>` : ''}
+           
+            
 
             <!-- 瀏覽器書籤風格容器 -->
             <div class="tech-bookmark-wrapper mt-1">
