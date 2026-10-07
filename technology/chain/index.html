@@ -34,7 +34,7 @@
     </script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/MCP-Logo.png">
-    <title id="web-title">擴鏈劑技術應用 (Chain Extender) | 宏威應用材料 ATTech Materials</title>
+    <title id="web-title">Chain Extender / 擴鏈劑 | 宏威應用材料 ATTech Materials</title>
 
     <!-- SEO & Metadata -->
     <meta name="google-site-verification" content="Qh-v0xNgiYGwqRPK7ew3VTJmxopJivHruUclmmA6TOQ" />
@@ -48,7 +48,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="宏威應用材料 ATTech Materials">
     <meta property="og:url" content="https://www.attech.com.tw/technology/chain/">
-    <meta property="og:title" content="擴鏈劑技術應用 (Chain Extender) | 宏威應用材料 ATTech Materials">
+    <meta property="og:title" content="Chain Extender / 擴鏈劑 | 宏威應用材料 ATTech Materials">
     <meta property="og:description" content="宏威應用材料 Dorf Ketal Unilink & Clearlink 系列受阻二胺擴鏈劑技術專題與諮詢。">
     <meta property="og:image" content="https://www.attech.com.tw/img/MCP-Logo.png">
     <meta property="og:locale" content="zh_TW">
@@ -1102,7 +1102,7 @@
             </div>
         </section>
 
-                                                                                            <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
+                                                                                                                                                            <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
     <section id="tab-technology" class="tab-content active" role="tabpanel" aria-labelledby="nav-technology">
         <style>
         .tech-layout-container {
@@ -1128,12 +1128,33 @@
             gap: 0.375rem !important;
             width: 100% !important;
         }
+        .tech-sidebar-btn {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        .tech-sidebar-btn .min-w-0.flex-1 {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            min-width: 0 !important;
+        }
+        .tech-btn-title {
+            display: block !important;
+            width: 100% !important;
+        }
+        .tech-btn-sub {
+            display: block !important;
+            width: 100% !important;
+        }
         .tech-content-main {
             flex: 1 1 0%;
             min-width: 0;
             width: 100%;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 900px) {
             .tech-layout-container {
                 flex-direction: row;
                 gap: 1.25rem;
@@ -1159,7 +1180,26 @@
                 border-radius: 4px;
             }
         }
-        /* 瀏覽器書籤風格容器與標籤列 (一體化設計：當前頁籤為白底無縫融入下方內容區) */
+        /* 瀏覽器書籤風格容器與標籤列 */
+                /* 優化快捷標籤列滾動條樣式 */
+        .tech-pills-container {
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+            -webkit-overflow-scrolling: touch;
+        }
+        .tech-pills-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        .tech-pills-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .tech-pills-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .tech-pills-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
         .tech-bookmark-wrapper {
             position: relative;
             width: 100%;
@@ -1245,25 +1285,51 @@
             }
         }
         /* 核心原理 2-Column Split 左右分欄雙翼佈局 (重要資訊首屏完全可見) */
-        .tech-principles-grid {
+                /* 全螢幕技術文件預覽模態視窗 (全畫面滿版沉浸式閱讀，絕不被任何元素遮擋) */
+        #tech-pdf-fullscreen-modal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            z-index: 99999 !important;
+            background: #0f172a !important;
+            display: flex !important;
+            flex-direction: column !important;
+            box-sizing: border-box !important;
+        }
+        #tech-pdf-fullscreen-modal.hidden {
+            display: none !important;
+        }
+        #tech-pdf-fullscreen-modal .tech-modal-inner {
+            position: relative !important;
+            z-index: 100000 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            background: #0f172a !important;
+            overflow: hidden !important;
+        }
+.tech-principles-grid {
             display: grid;
-            grid-template-columns: 44% 56%;
+            grid-template-columns: 50% 50%;
             gap: 0.875rem;
             align-items: start;
         }
         @media (max-width: 900px) {
             .tech-principles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* 應用技術 2x2 雙欄緊湊卡片網格 */
-        .tech-apps-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.625rem;
-        }
-        @media (max-width: 768px) {
-            .tech-apps-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1478,14 +1544,15 @@
                 <main class="tech-content-main">
                     <div id="tech-content-display">
             <section class="bg-white border border-slate-200 rounded-xl shadow-xs p-3 sm:p-4 space-y-2.5">
-                <!-- 專題標題列 (超緊湊單行化) -->
+                <!-- 專題標題與頂部操作列 (依圖 1 指示：改成產品類別名稱) -->
                 <div class="flex items-center justify-between gap-3 pb-2 border-b border-slate-100">
                     <div class="flex items-center gap-2 min-w-0">
                         <span class="w-1.5 h-4 bg-blue-900 rounded-full inline-block shrink-0"></span>
                         <h1 class="text-base sm:text-lg font-bold text-blue-950 tracking-tight truncate">
-                            擴鏈劑技術應用 (Chain Extender)
+                            Chain Extender / 擴鏈劑
                         </h1>
                     </div>
+                    
                     <div class="shrink-0 flex items-center">
                         <a href="products/dorfketal/chain/"
                            class="inline-flex items-center gap-1 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-xs font-bold transition-colors">
@@ -1495,17 +1562,23 @@
                     </div>
                 </div>
 
-                <!-- 瀏覽器書籤風格：標籤列與內容容器一體化 -->
+                
+                <!-- 專題核心技術簡介說明 -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
+                    Dorf Ketal Unilink® 與 Clearlink® 受阻二級二胺擴鏈劑技術，專用於聚脲 (Polyurea) 與高性能聚氨酯彈性體體系。
+                </p>
+
+                <!-- 瀏覽器書籤風格容器 -->
                 <div class="tech-bookmark-wrapper mt-1">
                 <!-- 瀏覽器書籤樣式：五大核心維度標籤列 -->
                 <div class="tech-subtab-strip" role="tablist" aria-label="技術專題五大核心維度導覽">
                     <button type="button" onclick="switchTechSubTab('principles')" id="tech-subtab-principles"
-                            class="tech-subtab-btn active">
+                            class="tech-subtab-btn ">
                         <i class="fa-solid fa-atom text-xs"></i>
                         <span>1. 原理</span>
                     </button>
                     <button type="button" onclick="switchTechSubTab('catalog')" id="tech-subtab-catalog"
-                            class="tech-subtab-btn ">
+                            class="tech-subtab-btn active">
                         <i class="fa-solid fa-list-check text-xs"></i>
                         <span>2. 目錄</span>
                     </button>
@@ -1527,115 +1600,304 @@
                 </div>
 
                     <div class="tech-bookmark-body">
-                        <!-- 分頁一：原理 -->
-                        <div id="tech-panel-principles" class="space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-atom text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開資料</span>
+                    <div id="tech-panel-principles" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開原理機制</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/dorfketal/chain/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
+                    </div>
+
+                    <div id="tech-panel-catalog" class="space-y-2">
+                        <!-- 快捷標籤列 (單行滾動) -->
+                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
+                            <button type="button" id="pill-chain-catalog-0" onclick="selectTechDoc('chain', 'catalog', 0)"
+                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
+                                1. 擴鏈劑塗料線手冊
+                            </button>
                         </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            如需了解相關產品反應機制、索取原廠技術手冊或申請測試樣品，歡迎直接聯繫宏威業務團隊。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Chain-Extender"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <i class="fa-solid fa-paper-plane text-xs"></i>
-                                <span>聯繫業務索取資料</span>
-                            </a>
-                            <a href="products/dorfketal/chain/"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
-                                <span>瀏覽擴鏈劑規格</span>
-                            </a>
-                        </div>
+
+                        <!-- 雙欄核心展示區 -->
+                        <div id="viewer-chain-catalog">
+        <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
+            <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
+            <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
+            <div class="h-full flex flex-col justify-center">
+                <div id="pdf-canvas-viewer-chain-catalog"
+                     class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
+                     data-pdf-url="techdatadb/3.unilink/2.Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E7%9B%AE%E9%8C%84/Brochure%20DK%20Unilink%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0"
+                     data-pdf-title="Unilink® / Clearlink® 擴鏈劑塗料產品線型錄"
+                     onclick="openPdfFullscreenModal('techdatadb/3.unilink/2.Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E7%9B%AE%E9%8C%84/Brochure%20DK%20Unilink%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0', 'Unilink® / Clearlink® 擴鏈劑塗料產品線型錄')"
+                     title="點擊全螢幕放大閱讀"
+                     oncontextmenu="return false;"
+                     onselectstart="return false;">
+                    
+                    <div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2">
+                        <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
+                        <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
+                    </div>
+
+                    </div>
+            </div>
+            </div>
+
+            <!-- 右欄：文件檔案屬性與技術重點摘要 (依圖 1 指示：移除被劃掉的語言/版本標籤與檔案名字串) -->
+            <div class="space-y-2 pl-0 sm:pl-2.5">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                        Unilink® / Clearlink® 擴鏈劑塗料產品線型錄
+                    </h3>
+                </div>
+
+                <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+                    Dorf Ketal Unilink® 芳香族與 Clearlink® 脂肪族液態受阻二級二胺擴鏈劑產品手冊，專用於聚脲與高性能聚氨酯彈性體體系。
+                </p>
+
+                <!-- 主要技術特點 -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-1.5 text-xs font-bold text-blue-950">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
+                        <span>主要內容與技術特點：</span>
+                    </div>
+                    <ul class="space-y-1 text-sm text-slate-700">
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
+                            <span>液態常溫操作，徹底解決固態 MOCA / DETDA 操作粉塵危害與低溫結晶問題</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
+                            <span>二級胺受阻分子結構，有效減緩與異氰酸酯之反應速度，延長凝膠時間 (Gel Time) 至數分鐘</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
+                            <span>消除塗層針孔 (Pinholes) 與橘皮缺陷，賦予塗膜優異流平性與平整外觀</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
+                            <span>顯著提升彈性體拉伸強度 (> 25 MPa)、斷裂伸長率與耐磨耗機械性能</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 適用範疇標籤 -->
+                <div class="space-y-1 pt-0.5">
+                    <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
+                    <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">噴塗聚脲</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">防水防腐地坪</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">彈性體零件</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">RIM反應注射模塑</span>
                     </div>
                 </div>
 
-                <!-- 分頁二：目錄 -->
-                <div id="tech-panel-catalog" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-list-check text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 text-xs font-bold">產品目錄</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">瀏覽 擴鏈劑技術應用 (Chain Extender) 完整產品清單與規格</span>
+                <!-- 諮詢動作列 -->
+                <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
+                    <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91-Unilink%C2%AE%20/%20Clearlink%C2%AE%20%E6%93%B4%E9%8F%88%E5%8A%91%E5%A1%97%E6%96%99%E7%94%A2%E5%93%81%E7%B7%9A%E5%9E%8B%E9%8C%84"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                        <i class="fa-solid fa-envelope text-xs"></i>
+                        <span>索取規格諮詢 / 申請樣品</span>
+                    </a>
+                    <a href="products/dorfketal/chain/"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                        <i class="fa-solid fa-table-list text-xs"></i>
+                        <span>查看相關產品列表</span>
+                    </a>
+                    <button type="button" onclick="copyFileAttachmentPath('techdatadb/3.unilink/2.Unilink Clearlink擴鏈劑目錄/Brochure DK Unilink Plus Coatings Line EN 202512.pdf', 'Unilink%C2%AE%20/%20Clearlink%C2%AE%20%E6%93%B4%E9%8F%88%E5%8A%91%E5%A1%97%E6%96%99%E7%94%A2%E5%93%81%E7%B7%9A%E5%9E%8B%E9%8C%84')"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95 cursor-pointer"
+                       title="複製檔案路徑，至 Outlook 附加檔案視窗直接 Ctrl+V 貼上即可掛載">
+                        <i class="fa-solid fa-copy text-xs text-emerald-600"></i>
+                        <span>複製路徑 (Outlook用)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
                         </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            宏威應用材料官網提供完整的產品規格表、物性參數對照與樣品申請服務。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="products/dorfketal/chain/"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <i class="fa-solid fa-table-list text-xs"></i>
-                                <span>瀏覽擴鏈劑規格</span>
-                            </a>
-                            <a href="contact/?mode=detailed&inquiry=Chain-Extender"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
-                                <span>申請規格諮詢</span>
-                            </a>
+                    </div>
+
+                    <div id="tech-panel-applications" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開應用技術資料</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/dorfketal/chain/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
+                    </div>
+
+                    <div id="tech-panel-single" class="hidden space-y-2">
+                        <!-- 快捷標籤列 (單行滾動) -->
+                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
+                            <button type="button" id="pill-chain-single-0" onclick="selectTechDoc('chain', 'single', 0)"
+                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
+                                1. Clearlink 1000 聚脲
+                            </button>
+                            <button type="button" id="pill-chain-single-1" onclick="selectTechDoc('chain', 'single', 1)"
+                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
+                                2. Unilink 1030 彈性體
+                            </button>
+                            <button type="button" id="pill-chain-single-2" onclick="selectTechDoc('chain', 'single', 2)"
+                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
+                                3. Unilink 4200 軟質泡棉
+                            </button>
+                            <button type="button" id="pill-chain-single-3" onclick="selectTechDoc('chain', 'single', 3)"
+                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
+                                4. Unilink 4200 彈性體塗層
+                            </button>
                         </div>
+
+                        <!-- 雙欄核心展示區 -->
+                        <div id="viewer-chain-single">
+        <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
+            <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
+            <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
+            <div class="h-full flex flex-col justify-center">
+                <div id="pdf-canvas-viewer-chain-single"
+                     class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
+                     data-pdf-url="techdatadb/3.unilink/4.%20Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99/TI%20Clearlink%201000/TI%20DK%20Clearlink%201000%20for%20Polyurea%20Coatings%20EN%20201707.pdf#toolbar=0&navpanes=0"
+                     data-pdf-title="Clearlink® 1000 脂肪族擴鏈劑技術資料"
+                     onclick="openPdfFullscreenModal('techdatadb/3.unilink/4.%20Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99/TI%20Clearlink%201000/TI%20DK%20Clearlink%201000%20for%20Polyurea%20Coatings%20EN%20201707.pdf#toolbar=0&navpanes=0', 'Clearlink® 1000 脂肪族擴鏈劑技術資料')"
+                     title="點擊全螢幕放大閱讀"
+                     oncontextmenu="return false;"
+                     onselectstart="return false;">
+                    
+                    <div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2">
+                        <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
+                        <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
+                    </div>
+
+                    </div>
+            </div>
+            </div>
+
+            <!-- 右欄：文件檔案屬性與技術重點摘要 (依圖 1 指示：移除被劃掉的語言/版本標籤與檔案名字串) -->
+            <div class="space-y-2 pl-0 sm:pl-2.5">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                        Clearlink® 1000 脂肪族擴鏈劑技術資料
+                    </h3>
+                </div>
+
+                <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+                    液態脂肪族受阻二級二胺擴鏈劑，耐黃變、耐候性極佳，專為脂肪族純聚脲塗料與光學清漆設計。
+                </p>
+
+                <!-- 主要技術特點 -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-1.5 text-xs font-bold text-blue-950">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
+                        <span>主要內容與技術特點：</span>
+                    </div>
+                    <ul class="space-y-1 text-sm text-slate-700">
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
+                            <span>與脂肪族異氰酸酯 (如 HDI, IPDI 預聚體) 反應溫和，常溫固化流平施工窗口佳</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
+                            <span>QUV-A 3000 小時加速老化測試完全不黃變 (ΔE < 1.0)，保持高透明與光澤</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
+                            <span>塗層具備優越之耐化學品（耐酸鹼、耐機油、耐煞車油）與抗衝擊抗穿刺韌性</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
+                            <span>顯著提升塗層伸長率 (伸長率可達 200%~500%)，低溫不脆裂</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 適用範疇標籤 -->
+                <div class="space-y-1 pt-0.5">
+                    <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
+                    <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">耐候聚脲面漆</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高耐磨地坪</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">清漆塗層</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">彈性防水膜</span>
                     </div>
                 </div>
 
-                <!-- 分頁三：應用技術 -->
-                <div id="tech-panel-applications" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-industry text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            目前原廠尚未提供此品項之公開技術應用白皮書。如需特定產業應用評估，歡迎直接聯繫宏威技術顧問。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Chain-Extender"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <span>聯繫業務索取資料</span>
-                            </a>
+                <!-- 諮詢動作列 -->
+                <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
+                    <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91-Clearlink%C2%AE%201000%20%E8%84%82%E8%82%AA%E6%97%8F%E6%93%B4%E9%8F%88%E5%8A%91%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                        <i class="fa-solid fa-envelope text-xs"></i>
+                        <span>索取規格諮詢 / 申請樣品</span>
+                    </a>
+                    <a href="products/dorfketal/chain/"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                        <i class="fa-solid fa-table-list text-xs"></i>
+                        <span>查看相關產品列表</span>
+                    </a>
+                    <button type="button" onclick="copyFileAttachmentPath('techdatadb/3.unilink/4. Unilink Clearlink擴鏈劑單一產品應用技術資料/TI Clearlink 1000/TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf', 'Clearlink%C2%AE%201000%20%E8%84%82%E8%82%AA%E6%97%8F%E6%93%B4%E9%8F%88%E5%8A%91%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99')"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95 cursor-pointer"
+                       title="複製檔案路徑，至 Outlook 附加檔案視窗直接 Ctrl+V 貼上即可掛載">
+                        <i class="fa-solid fa-copy text-xs text-emerald-600"></i>
+                        <span>複製路徑 (Outlook用)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 分頁四：單一產品技術 -->
-                <div id="tech-panel-single" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-flask-vial text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            如需索取個別產品技術資料表 (TDS) 或安全資料表 (SDS)，請聯繫宏威業務團隊。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Chain-Extender"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <span>聯繫業務索取 TDS</span>
-                            </a>
-                        </div>
+                    <div id="tech-panel-formulation" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開配方指南</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/dorfketal/chain/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
                     </div>
-                </div>
-
-                <!-- 分頁五：配方 -->
-                <div id="tech-panel-formulation" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-clipboard-list text-amber-700 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">原廠無公開配方</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠未提供公開參考配方，暫無資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            特用化學品配方取決於樹脂與固化體系，原廠未提供通用公開配方。如需特定系統配方評估與樣品測試，歡迎聯繫宏威技術服務團隊。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Chain-Extender"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <span>申請配方諮詢與樣品</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
                     </div>
                 </div>
             </section>
@@ -2563,7 +2825,13 @@
                 </h3>
 
                 <div class="flex items-center gap-3">
-                    <a id="tds-download-btn" href="#" target="_blank" rel="noopener noreferrer" download
+                    <button id="tds-copy-path-btn" onclick="copyCurrentTdsPath()" type="button"
+                        class="f-size-sm f-weight-bold bg-emerald-50 text-emerald-800 border border-emerald-300 px-2.5 py-1 rounded hover:bg-emerald-100 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer active:scale-95"
+                        title="複製檔案路徑，至 Outlook 附加檔案視窗直接 Ctrl+V 貼上即可掛載">
+                        <i class="fa-solid fa-copy text-emerald-700" aria-hidden="true"></i>
+                        <span>複製路徑 (Outlook用)</span>
+                    </button>
+                    <a id="tds-download-btn"  href="#" target="_blank" rel="noopener noreferrer" download
                         class="f-size-sm f-weight-bold bg-blue-50 text-blue-900 border border-blue-200 px-2.5 py-1 rounded hover:bg-blue-100 flex items-center gap-1.5">
                         <i class="fa-solid fa-download" aria-hidden="true"></i> 直接下載檔案
                     </a>
@@ -2732,11 +3000,12 @@
     <script src="js/search-engine.js?v=20260929_v2"></script>
     <script src="js/data-repo.js?v=20260929_v2"></script>
     <script src="js/filter-engine.js?v=20260929_v2"></script>
-    <script src="js/table-renderer.js?v=20260929_v2"></script>
+    <script src="js/table-renderer.js?v=20261007_outlook2"></script>
     <script src="js/compare.js?v=20260929_v2"></script>
     <script src="js/contact.js?v=20260929_v2"></script>
-    <script src="js/technology.js?v=20261006_v2"></script>
-    <script src="js/router.js?v=20261006_v2"></script>
+    <script src="js/vendor/pdf.min.js"></script>
+    <script src="js/technology.js?v=20261007_outlook2"></script>
+    <script src="js/router.js?v=20261007_outlook2"></script>
     <script src="js/app.js?v=20260929_v2"></script>
 
 </body>

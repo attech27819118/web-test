@@ -2615,7 +2615,13 @@
             </h3>
 
             <div class="flex items-center gap-3">
-                <a id="tds-download-btn" href="#" target="_blank" rel="noopener noreferrer" download
+                <button id="tds-copy-path-btn" onclick="copyCurrentTdsPath()" type="button"
+                        class="f-size-sm f-weight-bold bg-emerald-50 text-emerald-800 border border-emerald-300 px-2.5 py-1 rounded hover:bg-emerald-100 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer active:scale-95"
+                        title="複製檔案路徑，至 Outlook 附加檔案視窗直接 Ctrl+V 貼上即可掛載">
+                        <i class="fa-solid fa-copy text-emerald-700" aria-hidden="true"></i>
+                        <span>複製路徑 (Outlook用)</span>
+                    </button>
+                    <a id="tds-download-btn" href="#" target="_blank" rel="noopener noreferrer" download
                    class="f-size-sm f-weight-bold bg-blue-50 text-blue-900 border border-blue-200 px-2.5 py-1 rounded hover:bg-blue-100 flex items-center gap-1.5">
                     <i class="fa-solid fa-download" aria-hidden="true"></i> 直接下載檔案
                 </a>
@@ -2784,11 +2790,11 @@
 <script src="js/search-engine.js?v=20260929_v2"></script>
 <script src="js/data-repo.js?v=20260929_v2"></script>
 <script src="js/filter-engine.js?v=20260929_v2"></script>
-<script src="js/table-renderer.js?v=20260929_v2"></script>
+<script src="js/table-renderer.js?v=20261007_outlook2"></script>
 <script src="js/compare.js?v=20260929_v2"></script>
 <script src="js/contact.js?v=20260929_v2"></script>
-<script src="js/technology.js?v=20261001_v4"></script>
-<script src="js/router.js?v=20261001_v4"></script>
+<script src="js/technology.js?v=20261007_outlook2"></script>
+<script src="js/router.js?v=20261007_outlook2"></script>
 <script src="js/app.js?v=20260929_v2"></script>
 
 </body>

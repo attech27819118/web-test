@@ -248,6 +248,50 @@ app.get('/api/health', (req, res) => {
     });
 });
 
+// 取得檔案路徑資訊（供 Outlook 複製貼上附件使用）
+app.get('/api/file-path', (req, res) => {
+    try {
+        let relPath = req.query.path || '';
+        if (!relPath) {
+            return res.status(400).json({ error: 'Missing path parameter' });
+        }
+        relPath = decodeURIComponent(relPath).replace(/^\.?\/+/, '');
+        const localFullPath = path.resolve(__dirname, relPath);
+
+        const os = require('os');
+        const hostname = os.hostname();
+        const networkInterfaces = os.networkInterfaces();
+        let lanIp = '127.0.0.1';
+        for (const name of Object.keys(networkInterfaces)) {
+            for (const net of networkInterfaces[name]) {
+                if (net.family === 'IPv4' && !net.internal && !net.address.startsWith('169.254')) {
+                    lanIp = net.address;
+                    break;
+                }
+            }
+        }
+
+        const BS = String.fromCharCode(92);
+        const winRel = relPath.split('/').join(BS);
+        const defaultShare = BS + BS + lanIp + BS + 'attech';
+        const sharePrefix = process.env.LAN_SHARE_PREFIX || defaultShare;
+        const uncPath = sharePrefix + BS + winRel;
+        const httpUrl = 'http://' + lanIp + ':' + PORT + '/' + relPath.split('/').map(encodeURIComponent).join('/');
+
+        res.json({
+            success: true,
+            localPath: localFullPath,
+            uncPath: uncPath,
+            httpUrl: httpUrl,
+            filename: path.basename(localFullPath),
+            lanIp: lanIp,
+            hostname: hostname
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // 表單提交與郵件發送端點
 app.post('/api/send-email', async (req, res) => {
     try {

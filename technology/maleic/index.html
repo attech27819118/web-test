@@ -34,7 +34,7 @@
     </script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/MCP-Logo.png">
-    <title id="web-title">馬林酸樹脂技術應用 (Maleic Resin) | 宏威應用材料 ATTech Materials</title>
+    <title id="web-title">Maleic Resin / 馬林酸樹脂 | 宏威應用材料 ATTech Materials</title>
 
     <!-- SEO & Metadata -->
     <meta name="google-site-verification" content="Qh-v0xNgiYGwqRPK7ew3VTJmxopJivHruUclmmA6TOQ" />
@@ -48,7 +48,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="宏威應用材料 ATTech Materials">
     <meta property="og:url" content="https://www.attech.com.tw/technology/maleic/">
-    <meta property="og:title" content="馬林酸樹脂技術應用 (Maleic Resin) | 宏威應用材料 ATTech Materials">
+    <meta property="og:title" content="Maleic Resin / 馬林酸樹脂 | 宏威應用材料 ATTech Materials">
     <meta property="og:description" content="宏威應用材料松香改性馬林酸樹脂技術專題，原廠技術資料與配方諮詢。">
     <meta property="og:image" content="https://www.attech.com.tw/img/MCP-Logo.png">
     <meta property="og:locale" content="zh_TW">
@@ -1102,7 +1102,7 @@
             </div>
         </section>
 
-                                                                                            <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
+                                                                                                                                                            <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
     <section id="tab-technology" class="tab-content active" role="tabpanel" aria-labelledby="nav-technology">
         <style>
         .tech-layout-container {
@@ -1128,12 +1128,33 @@
             gap: 0.375rem !important;
             width: 100% !important;
         }
+        .tech-sidebar-btn {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        .tech-sidebar-btn .min-w-0.flex-1 {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            min-width: 0 !important;
+        }
+        .tech-btn-title {
+            display: block !important;
+            width: 100% !important;
+        }
+        .tech-btn-sub {
+            display: block !important;
+            width: 100% !important;
+        }
         .tech-content-main {
             flex: 1 1 0%;
             min-width: 0;
             width: 100%;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 900px) {
             .tech-layout-container {
                 flex-direction: row;
                 gap: 1.25rem;
@@ -1159,7 +1180,26 @@
                 border-radius: 4px;
             }
         }
-        /* 瀏覽器書籤風格容器與標籤列 (一體化設計：當前頁籤為白底無縫融入下方內容區) */
+        /* 瀏覽器書籤風格容器與標籤列 */
+                /* 優化快捷標籤列滾動條樣式 */
+        .tech-pills-container {
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+            -webkit-overflow-scrolling: touch;
+        }
+        .tech-pills-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        .tech-pills-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .tech-pills-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .tech-pills-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
         .tech-bookmark-wrapper {
             position: relative;
             width: 100%;
@@ -1245,25 +1285,51 @@
             }
         }
         /* 核心原理 2-Column Split 左右分欄雙翼佈局 (重要資訊首屏完全可見) */
-        .tech-principles-grid {
+                /* 全螢幕技術文件預覽模態視窗 (全畫面滿版沉浸式閱讀，絕不被任何元素遮擋) */
+        #tech-pdf-fullscreen-modal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            z-index: 99999 !important;
+            background: #0f172a !important;
+            display: flex !important;
+            flex-direction: column !important;
+            box-sizing: border-box !important;
+        }
+        #tech-pdf-fullscreen-modal.hidden {
+            display: none !important;
+        }
+        #tech-pdf-fullscreen-modal .tech-modal-inner {
+            position: relative !important;
+            z-index: 100000 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            background: #0f172a !important;
+            overflow: hidden !important;
+        }
+.tech-principles-grid {
             display: grid;
-            grid-template-columns: 44% 56%;
+            grid-template-columns: 50% 50%;
             gap: 0.875rem;
             align-items: start;
         }
         @media (max-width: 900px) {
             .tech-principles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* 應用技術 2x2 雙欄緊湊卡片網格 */
-        .tech-apps-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.625rem;
-        }
-        @media (max-width: 768px) {
-            .tech-apps-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1478,14 +1544,15 @@
                 <main class="tech-content-main">
                     <div id="tech-content-display">
             <section class="bg-white border border-slate-200 rounded-xl shadow-xs p-3 sm:p-4 space-y-2.5">
-                <!-- 專題標題列 (超緊湊單行化) -->
+                <!-- 專題標題與頂部操作列 (依圖 1 指示：改成產品類別名稱) -->
                 <div class="flex items-center justify-between gap-3 pb-2 border-b border-slate-100">
                     <div class="flex items-center gap-2 min-w-0">
                         <span class="w-1.5 h-4 bg-blue-900 rounded-full inline-block shrink-0"></span>
                         <h1 class="text-base sm:text-lg font-bold text-blue-950 tracking-tight truncate">
-                            馬林酸樹脂技術應用 (Maleic Resin)
+                            Maleic Resin / 馬林酸樹脂
                         </h1>
                     </div>
+                    
                     <div class="shrink-0 flex items-center">
                         <a href="products/others/maleic_acid_resin/"
                            class="inline-flex items-center gap-1 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-xs font-bold transition-colors">
@@ -1495,7 +1562,13 @@
                     </div>
                 </div>
 
-                <!-- 瀏覽器書籤風格：標籤列與內容容器一體化 -->
+                
+                <!-- 專題核心技術簡介說明 -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
+                    松香改性馬林酸樹脂系列，提供優異之硬度、光澤度、快乾性與耐黃變特性。
+                </p>
+
+                <!-- 瀏覽器書籤風格容器 -->
                 <div class="tech-bookmark-wrapper mt-1">
                 <!-- 瀏覽器書籤樣式：五大核心維度標籤列 -->
                 <div class="tech-subtab-strip" role="tablist" aria-label="技術專題五大核心維度導覽">
@@ -1527,115 +1600,130 @@
                 </div>
 
                     <div class="tech-bookmark-body">
-                        <!-- 分頁一：原理 -->
-                        <div id="tech-panel-principles" class="space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-atom text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            如需了解相關產品反應機制、索取原廠技術手冊或申請測試樣品，歡迎直接聯繫宏威業務團隊。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Maleic-Resin-Tech"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <i class="fa-solid fa-paper-plane text-xs"></i>
-                                <span>聯繫業務索取資料</span>
-                            </a>
-                            <a href="products/others/maleic_acid_resin/"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
-                                <span>瀏覽馬林酸樹脂規格</span>
-                            </a>
-                        </div>
+                    <div id="tech-panel-principles" class="space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開原理機制</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Maleic%20Resin%20/%20%E9%A6%AC%E6%9E%97%E9%85%B8%E6%A8%B9%E8%84%82"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/others/maleic_acid_resin/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
                     </div>
-                </div>
 
-                <!-- 分頁二：目錄 -->
-                <div id="tech-panel-catalog" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-list-check text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 text-xs font-bold">產品目錄</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">瀏覽 馬林酸樹脂技術應用 (Maleic Resin) 完整產品清單與規格</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            宏威應用材料官網提供完整的產品規格表、物性參數對照與樣品申請服務。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="products/others/maleic_acid_resin/"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <i class="fa-solid fa-table-list text-xs"></i>
-                                <span>瀏覽馬林酸樹脂規格</span>
-                            </a>
-                            <a href="contact/?mode=detailed&inquiry=Maleic-Resin-Tech"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
-                                <span>申請規格諮詢</span>
-                            </a>
-                        </div>
+                    <div id="tech-panel-catalog" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開總覽目錄</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Maleic%20Resin%20/%20%E9%A6%AC%E6%9E%97%E9%85%B8%E6%A8%B9%E8%84%82"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/others/maleic_acid_resin/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
                     </div>
-                </div>
 
-                <!-- 分頁三：應用技術 -->
-                <div id="tech-panel-applications" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-industry text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            目前原廠尚未提供此品項之公開技術應用白皮書。如需特定產業應用評估，歡迎直接聯繫宏威技術顧問。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Maleic-Resin-Tech"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <span>聯繫業務索取資料</span>
-                            </a>
-                        </div>
+                    <div id="tech-panel-applications" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開應用技術資料</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Maleic%20Resin%20/%20%E9%A6%AC%E6%9E%97%E9%85%B8%E6%A8%B9%E8%84%82"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/others/maleic_acid_resin/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
                     </div>
-                </div>
 
-                <!-- 分頁四：單一產品技術 -->
-                <div id="tech-panel-single" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-flask-vial text-blue-900 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            如需索取個別產品技術資料表 (TDS) 或安全資料表 (SDS)，請聯繫宏威業務團隊。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Maleic-Resin-Tech"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <span>聯繫業務索取 TDS</span>
-                            </a>
-                        </div>
+                    <div id="tech-panel-single" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開單一產品技術資料</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Maleic%20Resin%20/%20%E9%A6%AC%E6%9E%97%E9%85%B8%E6%A8%B9%E8%84%82"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/others/maleic_acid_resin/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
                     </div>
-                </div>
 
-                <!-- 分頁五：配方 -->
-                <div id="tech-panel-formulation" class="hidden space-y-2">
-                    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-4 text-center space-y-2">
-                        <div class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-clipboard-list text-amber-700 text-sm"></i>
-                            <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">原廠無公開配方</span>
-                            <span class="text-sm sm:text-base font-bold text-blue-950">原廠未提供公開參考配方，暫無資料</span>
-                        </div>
-                        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                            特用化學品配方取決於樹脂與固化體系，原廠未提供通用公開配方。如需特定系統配方評估與樣品測試，歡迎聯繫宏威技術服務團隊。
-                        </p>
-                        <div class="pt-1 flex items-center justify-center gap-2.5">
-                            <a href="contact/?mode=detailed&inquiry=Maleic-Resin-Tech"
-                               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                                <span>申請配方諮詢與樣品</span>
-                            </a>
-                        </div>
+                    <div id="tech-panel-formulation" class="hidden space-y-2">
+        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
+                <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold">資料整備中</span>
+                <span class="text-sm sm:text-base font-bold text-blue-950">原廠技術資料整理中，暫無公開配方指南</span>
+            </div>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                目前原廠未提供此項之公開資料，我們秉持實事求是原則不進行臆測杜撰。若您需要特定規格手冊或評估樣品，歡迎直接聯繫宏威業務團隊為您服務。
+            </p>
+            <div class="pt-1 flex items-center justify-center gap-2.5">
+                <a href="contact/?mode=detailed&inquiry=Maleic%20Resin%20/%20%E9%A6%AC%E6%9E%97%E9%85%B8%E6%A8%B9%E8%84%82"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>聯繫業務索取資料</span>
+                </a>
+                <a href="products/others/maleic_acid_resin/"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                    <i class="fa-solid fa-table-list text-xs"></i>
+                    <span>瀏覽相關產品專區</span>
+                </a>
+            </div>
+        </div>
                     </div>
-                </div>
                     </div>
                 </div>
             </section>
@@ -2563,7 +2651,13 @@
                 </h3>
 
                 <div class="flex items-center gap-3">
-                    <a id="tds-download-btn" href="#" target="_blank" rel="noopener noreferrer" download
+                    <button id="tds-copy-path-btn" onclick="copyCurrentTdsPath()" type="button"
+                        class="f-size-sm f-weight-bold bg-emerald-50 text-emerald-800 border border-emerald-300 px-2.5 py-1 rounded hover:bg-emerald-100 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer active:scale-95"
+                        title="複製檔案路徑，至 Outlook 附加檔案視窗直接 Ctrl+V 貼上即可掛載">
+                        <i class="fa-solid fa-copy text-emerald-700" aria-hidden="true"></i>
+                        <span>複製路徑 (Outlook用)</span>
+                    </button>
+                    <a id="tds-download-btn"  href="#" target="_blank" rel="noopener noreferrer" download
                         class="f-size-sm f-weight-bold bg-blue-50 text-blue-900 border border-blue-200 px-2.5 py-1 rounded hover:bg-blue-100 flex items-center gap-1.5">
                         <i class="fa-solid fa-download" aria-hidden="true"></i> 直接下載檔案
                     </a>
@@ -2732,11 +2826,12 @@
     <script src="js/search-engine.js?v=20260929_v2"></script>
     <script src="js/data-repo.js?v=20260929_v2"></script>
     <script src="js/filter-engine.js?v=20260929_v2"></script>
-    <script src="js/table-renderer.js?v=20260929_v2"></script>
+    <script src="js/table-renderer.js?v=20261007_outlook2"></script>
     <script src="js/compare.js?v=20260929_v2"></script>
     <script src="js/contact.js?v=20260929_v2"></script>
-    <script src="js/technology.js?v=20261006_v2"></script>
-    <script src="js/router.js?v=20261006_v2"></script>
+    <script src="js/vendor/pdf.min.js"></script>
+    <script src="js/technology.js?v=20261007_outlook2"></script>
+    <script src="js/router.js?v=20261007_outlook2"></script>
     <script src="js/app.js?v=20260929_v2"></script>
 
 </body>
