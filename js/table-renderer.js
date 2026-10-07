@@ -964,16 +964,8 @@ const DynamicTableRenderer = {
                 render: p => {
                     const t = uiText[AppState.lang];
                     return `<div class="flex flex-row justify-center items-center gap-2">
-            ${p.website && p.website !== 'N/A' ? `
-            <div class="inline-flex items-center gap-1">
-                <button data-action="tds" data-product="${p.product_name}" class="text-red-600 hover:text-red-800 f-size-sm f-weight-bold cursor-pointer" title="${p.product_name} - ${t.official_doc} (線上瀏覽)" aria-label="${p.product_name} - ${t.official_doc}"><i class="fa-solid fa-file-pdf"></i></button>
-                <button type="button" onclick="event.stopPropagation(); copyProductDocPath('${p.product_name}', 'tds')" class="text-emerald-700 hover:text-emerald-900 f-size-xs cursor-pointer p-0.5 rounded hover:bg-emerald-50 transition-colors" title="複製 ${p.product_name} 規格書檔案路徑 (Outlook附加用)"><i class="fa-solid fa-copy"></i></button>
-            </div>` : ''}
-            ${p.tech_data_url && p.tech_data_url !== 'N/A' ? `
-            <div class="inline-flex items-center gap-1">
-                <button data-action="data" data-product="${p.product_name}" class="text-blue-700 hover:text-blue-900 f-size-sm f-weight-bold cursor-pointer" title="${p.product_name} - ${t.tech_data} (線上瀏覽)" aria-label="${p.product_name} - ${t.tech_data}"><i class="fa-solid fa-file-lines"></i></button>
-                <button type="button" onclick="event.stopPropagation(); copyProductDocPath('${p.product_name}', 'data')" class="text-emerald-700 hover:text-emerald-900 f-size-xs cursor-pointer p-0.5 rounded hover:bg-emerald-50 transition-colors" title="複製 ${p.product_name} 技術資料檔案路徑 (Outlook附加用)"><i class="fa-solid fa-copy"></i></button>
-            </div>` : ''}
+            ${p.website && p.website !== 'N/A' ? `<button data-action="tds" data-product="${p.product_name}" class="text-red-600 hover:text-red-800 f-size-sm f-weight-bold cursor-pointer" title="${p.product_name} - ${t.official_doc} (線上瀏覽)" aria-label="${p.product_name} - ${t.official_doc}"><i class="fa-solid fa-file-pdf"></i></button>` : ''}
+            ${p.tech_data_url && p.tech_data_url !== 'N/A' ? `<button data-action="data" data-product="${p.product_name}" class="text-blue-700 hover:text-blue-900 f-size-sm f-weight-bold cursor-pointer" title="${p.product_name} - ${t.tech_data} (線上瀏覽)" aria-label="${p.product_name} - ${t.tech_data}"><i class="fa-solid fa-file-lines"></i></button>` : ''}
         </div>`;
                 }
             }

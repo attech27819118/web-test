@@ -182,80 +182,11 @@ function updateLanguageUI() {
 }
 
 // ----------------------------------------------------
-// 複製檔案路徑 (供 Outlook Classic 貼上附加檔案使用)
+// 複製檔案路徑功能（已依需求全站移除）
 // ----------------------------------------------------
-async function copyFileAttachmentPath(relPath, customName) {
-    if (!relPath) return;
-    const cleanPath = relPath.replace(/^\.?\/+/, '');
-    const isLocalHost = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-    let pathToCopy = '';
-
-    try {
-        const resp = await fetch(`/api/file-path?path=${encodeURIComponent(cleanPath)}`);
-        if (resp.ok) {
-            const data = await resp.json();
-            const preferredMode = localStorage.getItem('attech_path_mode') || 'auto';
-            if (preferredMode === 'local') {
-                pathToCopy = data.localPath;
-            } else if (preferredMode === 'unc') {
-                pathToCopy = data.uncPath;
-            } else if (preferredMode === 'http') {
-                pathToCopy = data.httpUrl;
-            } else {
-                // 自動模式：本機優先本機路徑；區網電腦優先 UNC 共用路徑
-                pathToCopy = isLocalHost ? data.localPath : (data.uncPath || data.httpUrl || data.localPath);
-            }
-        }
-    } catch (e) {
-        console.warn('API /api/file-path fetch failed:', e);
-    }
-
-    if (!pathToCopy) {
-        const BS = '\\';
-        const winSlash = cleanPath.split('/').join(BS);
-        pathToCopy = isLocalHost ? `D:\\Jay\\vscode\\attech0824 - test\\${winSlash}` : `\\\\${window.location.hostname || '192.168.0.117'}\\attech\\${winSlash}`;
-    }
-
-    let copied = false;
-    if (navigator.clipboard && window.isSecureContext) {
-        try {
-            await navigator.clipboard.writeText(pathToCopy);
-            copied = true;
-        } catch (err) {}
-    }
-    if (!copied) {
-        const ta = document.createElement('textarea');
-        ta.value = pathToCopy;
-        ta.style.position = 'fixed';
-        ta.style.left = '-9999px';
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        try {
-            copied = document.execCommand('copy');
-        } catch (err) {}
-        document.body.removeChild(ta);
-    }
-
-    if (copied) {
-        showToast('📋 已複製檔案路徑！\n至 Outlook【附加檔案】➔【瀏覽這部電腦】，在檔名處按 Ctrl+V 貼上即可掛載！', 'success');
-    } else {
-        prompt('請複製以下檔案路徑：', pathToCopy);
-    }
-    return pathToCopy;
-}
-
-
-function copyProductDocPath(productName, type) {
-    const relPath = (type === 'tds') ? `tds/${productName} TDS.pdf` : `coatingsdata/${productName} data.pdf`;
-    copyFileAttachmentPath(relPath, productName);
-}
-
-function copyCurrentTdsPath() {
-    if (window.currentTdsModalRelPath) {
-        copyFileAttachmentPath(window.currentTdsModalRelPath, window.currentTdsModalProductName);
-    }
-}
+function copyFileAttachmentPath() {}
+function copyProductDocPath() {}
+function copyCurrentTdsPath() {}
 
 function openModal(productName, type) {
     const modal = document.getElementById('tds-modal');

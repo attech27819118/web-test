@@ -2715,14 +2715,6 @@ function buildSingleDocLayoutHtml(doc, slug, tabKey) {
                         <i class="fa-solid fa-table-list text-xs"></i>
                         <span>查看相關產品列表</span>
                     </a>
-                    ${doc.pdfPath ? `
-                    <button type="button" onclick="copyFileAttachmentPath('${doc.pdfPath}', '${encodeURIComponent(doc.title || '')}')"
-                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95 cursor-pointer"
-                       title="複製檔案路徑，至 Outlook 附加檔案視窗直接 Ctrl+V 貼上即可掛載">
-                        <i class="fa-solid fa-copy text-xs text-emerald-600"></i>
-                        <span>複製路徑 (Outlook用)</span>
-                    </button>
-                    ` : ''}
                 </div>
             </div>
         </div>
