@@ -546,12 +546,6 @@ def build_category_content_section(item, active_subtab="principles"):
                     </div>
                 </div>
 
-                
-                <!-- 專題核心技術簡介說明 -->
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
-                    {item.get("description", "")}
-                </p>
-
                 <!-- 瀏覽器書籤風格容器 -->
                 <div class="tech-bookmark-wrapper mt-1">
 {subtab_nav_html}
