@@ -1102,7 +1102,7 @@
             </div>
         </section>
 
-                                                                                                                                                                                <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
+                                                                                                                                                                                                                    <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
     <section id="tab-technology" class="tab-content active" role="tabpanel" aria-labelledby="nav-technology">
         <style>
         .tech-layout-container {
@@ -1620,16 +1620,7 @@
                     </div>
 
                     <div id="tech-panel-catalog" class="space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-chain-catalog-0" onclick="selectTechDoc('chain', 'catalog', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. 擴鏈劑塗料線手冊
-                            </button>
-                        </div>
-
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-chain-catalog">
+                        <div id="viewer-chain-catalog" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1637,8 +1628,8 @@
                 <div id="pdf-canvas-viewer-chain-catalog"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/3.unilink/2.Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E7%9B%AE%E9%8C%84/Brochure%20DK%20Unilink%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="Unilink® / Clearlink® 擴鏈劑塗料產品線型錄"
-                     onclick="openPdfFullscreenModal('techdatadb/3.unilink/2.Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E7%9B%AE%E9%8C%84/Brochure%20DK%20Unilink%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0', 'Unilink® / Clearlink® 擴鏈劑塗料產品線型錄')"
+                     data-pdf-title="Clearlink® & Unilink® Chain Extenders Product Guide"
+                     onclick="openPdfFullscreenModal('techdatadb/3.unilink/2.Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E7%9B%AE%E9%8C%84/Brochure%20DK%20Unilink%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0', 'Clearlink® & Unilink® Chain Extenders Product Guide')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1656,12 +1647,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        Unilink® / Clearlink® 擴鏈劑塗料產品線型錄
+                        Clearlink® & Unilink® Chain Extenders Product Guide
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    聚脲與聚氨酯彈性體塗層的高性能液態擴鏈劑大全，常溫操作易施工、有效延長凝膠時間，完全解決固態擴鏈劑粉塵危害與施工氣泡缺陷。
+                    彙編 Clearlink 脂肪族與 Unilink 芳香族受阻二級二胺擴鏈劑產品線，說明其在聚氨酯/聚脲噴塗、彈性體及泡棉中之反應動力學控制特性。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1673,19 +1664,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>常溫液態易操作，徹底告別傳統固態 MOCA / DETDA 的粉塵危害與低溫結晶結塊。</span>
+                            <span>受阻二級二胺結構（Secondary Diamine）顯著延緩與異氰酸酯（-NCO）的反應速度，提供充裕的操作流平時間。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>立體受阻二級二胺分子結構，減緩與異氰酸酯反應速度，延長凝膠時間（Gel Time）。</span>
+                            <span>Clearlink 1000 專注於脂肪族高耐候不黃變體系；Unilink 4200 適用於芳香族高強度彈性體與泡棉。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>消除聚脲噴塗施工時表面起泡與針孔缺陷，大幅改善塗層流平性與鏡面外觀。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>Clearlink 1000 脂肪族擴鏈劑具卓越耐候性，長期戶外日曬紫外線完全不黃變。</span>
+                            <span>液態低黏度易於計量泵送，且 Ames 試驗為陰性（低毒性），改善現場施工勞安環境。</span>
                         </li>
                     </ul>
                 </div>
@@ -1694,15 +1681,16 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">聚脲噴塗</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高性能聚氨酯彈性體</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">耐磨耐候防腐塗層</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">聚脲防腐噴塗塗層</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">澆注聚氨酯彈性體</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高回彈軟質泡棉</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">車輛耐磨防撞襯裡</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91-Unilink%C2%AE%20/%20Clearlink%C2%AE%20%E6%93%B4%E9%8F%88%E5%8A%91%E5%A1%97%E6%96%99%E7%94%A2%E5%93%81%E7%B7%9A%E5%9E%8B%E9%8C%84"
+                    <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91-Clearlink%C2%AE%20%26%20Unilink%C2%AE%20Chain%20Extenders%20Product%20Guide"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1743,29 +1731,55 @@
         </div>
                     </div>
 
-                    <div id="tech-panel-single" class="hidden space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-chain-single-0" onclick="selectTechDoc('chain', 'single', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. Clearlink 1000 聚脲
-                            </button>
-                            <button type="button" id="pill-chain-single-1" onclick="selectTechDoc('chain', 'single', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. Unilink 1030 彈性體
-                            </button>
-                            <button type="button" id="pill-chain-single-2" onclick="selectTechDoc('chain', 'single', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. Unilink 4200 軟質泡棉
-                            </button>
-                            <button type="button" id="pill-chain-single-3" onclick="selectTechDoc('chain', 'single', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. Unilink 4200 彈性體塗層
-                            </button>
+                    <div id="tech-panel-single" class="hidden space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-chain-single" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-chain-single" onchange="selectTechDoc('chain', 'single', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <optgroup label="── Clearlink 1000 (1 篇) ──">
+                                    <option value="0" selected>Clearlink 1000 聚脲塗層擴鏈劑</option>
+                                </optgroup>
+                                <optgroup label="── Unilink 1030 (1 篇) ──">
+                                    <option value="1">Unilink 1030 澆注彈性體催化劑</option>
+                                </optgroup>
+                                <optgroup label="── Unilink 4200 (2 篇) ──">
+                                    <option value="2">Unilink 4200 軟質泡棉擴鏈劑</option>
+                                    <option value="3">Unilink 4200 彈性體塗層擴鏈劑</option>
+                                </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-chain-single" class="text-blue-950 font-bold">1</strong> / 4 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-chain-single" onclick="navigateTechDoc('chain', 'single', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-chain-single" onclick="navigateTechDoc('chain', 'single', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-chain-single">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-chain-single" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1773,8 +1787,8 @@
                 <div id="pdf-canvas-viewer-chain-single"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/3.unilink/4.%20Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99/TI%20Clearlink%201000/TI%20DK%20Clearlink%201000%20for%20Polyurea%20Coatings%20EN%20201707.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="Clearlink® 1000 脂肪族擴鏈劑聚脲塗料技術資料"
-                     onclick="openPdfFullscreenModal('techdatadb/3.unilink/4.%20Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99/TI%20Clearlink%201000/TI%20DK%20Clearlink%201000%20for%20Polyurea%20Coatings%20EN%20201707.pdf#toolbar=0&navpanes=0', 'Clearlink® 1000 脂肪族擴鏈劑聚脲塗料技術資料')"
+                     data-pdf-title="CLEARLINK® 1000 Aliphatic Amine Chain Extender for Polyurea Coatings"
+                     onclick="openPdfFullscreenModal('techdatadb/3.unilink/4.%20Unilink%20Clearlink%E6%93%B4%E9%8F%88%E5%8A%91%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99/TI%20Clearlink%201000/TI%20DK%20Clearlink%201000%20for%20Polyurea%20Coatings%20EN%20201707.pdf#toolbar=0&navpanes=0', 'CLEARLINK® 1000 Aliphatic Amine Chain Extender for Polyurea Coatings')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1792,12 +1806,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        Clearlink® 1000 脂肪族擴鏈劑聚脲塗料技術資料
+                        CLEARLINK® 1000 Aliphatic Amine Chain Extender for Polyurea Coatings
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    戶外超耐候脂肪族聚脲噴塗的必備擴鏈劑，100% 杜絕日曬發黃，延長施工反應時間至數分鐘，成膜強韌且抗撕裂衝擊。
+                    介紹 Clearlink 1000 脂肪族二級二胺擴鏈劑在聚脲噴塗塗料中延長膠凝時間、提供顏色穩定性與耐候性的具體測試配方與力學數據。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1809,19 +1823,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>100% 脂肪族受阻二級二胺結構，具備極致抗紫外線光老化與保色耐黃變性。</span>
+                            <span>配合異佛爾酮二異氰酸酯（IPDI）體系，隨添加量自 10% 增至 40%，膠凝時間自 < 1 秒精確延長至 11 秒，不沾手時間延長至 20 秒。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>有效調控噴塗固化速度，使操作時間延長至數分鐘，大幅降低對特殊設備的苛刻依賴。</span>
+                            <span>脂肪族分子結構具備極佳的光穩定性與耐候性，戶外日曬紫外線下不變色不黃變。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>顯著增強聚脲塗層的拉伸強度（> 20 MPa）、斷裂伸長率與耐撕裂性能。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>大幅提升塗膜在混凝土、金屬底材上的浸水附著力與耐化學品腐蝕性能。</span>
+                            <span>塗層展現優異抗張強度（最高達 2005 psi）、斷裂伸長率（480%~545%）與抗撕裂性能。</span>
                         </li>
                     </ul>
                 </div>
@@ -1830,16 +1840,15 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高耐候戶外聚脲</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">保色彈性體面漆</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">水上樂園防腐</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">混凝土防護</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">戶外耐候聚脲噴塗</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">淺色/透明裝飾性防腐塗層</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">景觀防水與耐磨面漆</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91-Clearlink%C2%AE%201000%20%E8%84%82%E8%82%AA%E6%97%8F%E6%93%B4%E9%8F%88%E5%8A%91%E8%81%9A%E8%84%B2%E5%A1%97%E6%96%99%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99"
+                    <a href="contact/?mode=detailed&inquiry=Chain%20Extender%20/%20%E6%93%B4%E9%8F%88%E5%8A%91-CLEARLINK%C2%AE%201000%20Aliphatic%20Amine%20Chain%20Extender%20for%20Polyurea%20Coatings"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>

@@ -1102,7 +1102,7 @@
             </div>
         </section>
 
-                                                                                                                                                                                <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
+                                                                                                                                                                                                                    <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
     <section id="tab-technology" class="tab-content active" role="tabpanel" aria-labelledby="nav-technology">
         <style>
         .tech-layout-container {
@@ -1594,29 +1594,49 @@
                 </div>
 
                     <div class="tech-bookmark-body">
-                    <div id="tech-panel-principles" class="space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-tyzor-principles-0" onclick="selectTechDoc('tyzor', 'principles', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. 交聯劑機制
-                            </button>
-                            <button type="button" id="pill-tyzor-principles-1" onclick="selectTechDoc('tyzor', 'principles', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. 催化劑機制
-                            </button>
-                            <button type="button" id="pill-tyzor-principles-2" onclick="selectTechDoc('tyzor', 'principles', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. 表面改性機制
-                            </button>
-                            <button type="button" id="pill-tyzor-principles-3" onclick="selectTechDoc('tyzor', 'principles', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. 附著力機制
-                            </button>
+                    <div id="tech-panel-principles" class="space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-tyzor-principles" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-tyzor-principles" onchange="selectTechDoc('tyzor', 'principles', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <option value="0" selected>交聯劑機制</option>
+                                <option value="1">催化劑機制</option>
+                                <option value="2">表面改性機制</option>
+                                <option value="3">附著力機制</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-tyzor-principles" class="text-blue-950 font-bold">1</strong> / 4 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-tyzor-principles" onclick="navigateTechDoc('tyzor', 'principles', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-tyzor-principles" onclick="navigateTechDoc('tyzor', 'principles', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-tyzor-principles">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-tyzor-principles" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1626,7 +1646,7 @@
                         <i class="fa-solid fa-atom text-blue-900"></i>
                         <span>原廠化學反應機制</span>
                     </div>
-                    <img src="techdata/tyzor/crosslinker_mech.webp" alt="鈦（鋯）酸酯作為交聯劑反應機制 反應機制圖"
+                    <img src="techdata/tyzor/crosslinker_mech.webp" alt="鈦（鋯）酸酯作為交聯劑 反應機制圖"
                          class="w-full max-h-[420px] sm:max-h-[500px] object-contain rounded select-none pointer-events-none"
                          draggable="false">
                 </div>
@@ -1637,12 +1657,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        鈦（鋯）酸酯作為交聯劑反應機制
+                        鈦（鋯）酸酯作為交聯劑
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    油漆與油墨的「成膜固化加速器」，藉由鈦/鋯中心與樹脂中的羥基、羧基迅速架橋形成三維網絡，低溫即可固化，大幅強化耐水、耐刮與耐溶劑表現。
+                    說明 Tyzor 有機鈦（鋯）作為交聯劑，在 100~250°C 加熱條件下與聚合物活性基團反應，提高塗料、油墨、膠黏劑與聚合物的物理化學性能。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1654,19 +1674,143 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>加速常溫或低溫烘烤固化速度，顯著縮短塗膜完全乾燥與成膜週期。</span>
+                            <span>在 100~250°C 加熱條件下，與聚合物羥基（HO-polymer）發生反應形成交聯網狀結構。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>與高分子官能基形成緊密三維立體網絡，顯著提升耐水、耐水煮蒸煮與高溫熱穩定性。</span>
+                            <span>提高漆膜與膠層的固化速度。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>增強漆膜表面鉛筆硬度（提升 1~2H），賦予卓越的耐摩擦與耐刮傷物理性能。</span>
+                            <span>顯著提高耐水性、耐熱性，並提升硬度與耐刮性能。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 適用範疇標籤 -->
+                <div class="space-y-1 pt-0.5">
+                    <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
+                    <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">油漆</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">油墨</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">膠黏劑</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">聚合物（如 PVA）</span>
+                    </div>
+                </div>
+
+                <!-- 諮詢動作列 -->
+                <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
+                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-%E9%88%A6%EF%BC%88%E9%8B%AF%EF%BC%89%E9%85%B8%E9%85%AF%E4%BD%9C%E7%82%BA%E4%BA%A4%E8%81%AF%E5%8A%91"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                        <i class="fa-solid fa-envelope text-xs"></i>
+                        <span>索取規格諮詢 / 申請樣品</span>
+                    </a>
+                    <a href="products/dorfketal/tyzor/"
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                        <i class="fa-solid fa-table-list text-xs"></i>
+                        <span>查看相關產品列表</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+                        </div>
+                    </div>
+
+                    <div id="tech-panel-catalog" class="hidden space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-tyzor-catalog" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-tyzor-catalog" onchange="selectTechDoc('tyzor', 'catalog', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <option value="0" selected>有機鈦鋯產品綜合目錄</option>
+                                <option value="1">膠黏與密封膠應用</option>
+                                <option value="2">塗料系列產品</option>
+                                <option value="3">多元醇與聚合物催化劑</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-tyzor-catalog" class="text-blue-950 font-bold">1</strong> / 4 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-tyzor-catalog" onclick="navigateTechDoc('tyzor', 'catalog', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-tyzor-catalog" onclick="navigateTechDoc('tyzor', 'catalog', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-tyzor-catalog" class="w-full">
+        <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
+            <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
+            <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
+            <div class="h-full flex flex-col justify-center">
+                <div id="pdf-canvas-viewer-tyzor-catalog"
+                     class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
+                     data-pdf-url="techdatadb/2.Tyzor/2.Tyzor%20Brochure%E7%9B%AE%E9%8C%84/Brochure%20DK%20Tyzor%20General%20CN%20202608.pdf#toolbar=0&navpanes=0"
+                     data-pdf-title="Tyzor™ 有機鈦（鋯）酸酯 產品目錄"
+                     onclick="openPdfFullscreenModal('techdatadb/2.Tyzor/2.Tyzor%20Brochure%E7%9B%AE%E9%8C%84/Brochure%20DK%20Tyzor%20General%20CN%20202608.pdf#toolbar=0&navpanes=0', 'Tyzor™ 有機鈦（鋯）酸酯 產品目錄')"
+                     title="點擊全螢幕放大閱讀"
+                     oncontextmenu="return false;"
+                     onselectstart="return false;">
+                    
+                    <div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2">
+                        <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
+                        <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
+                    </div>
+
+                    </div>
+            </div>
+            </div>
+
+            <!-- 右欄：文件檔案屬性與技術重點摘要 (依圖 1 指示：移除被劃掉的語言/版本標籤與檔案名字串) -->
+            <div class="space-y-2 pl-0 sm:pl-2.5">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                        Tyzor™ 有機鈦（鋯）酸酯 產品目錄
+                    </h3>
+                </div>
+
+                <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+                    綜述 Tyzor 有機鈦酸酯與鋯酸酯系列產品，涵蓋四個核心反應功能（催化、交聯、表面改性、附著力促進）與全系列型號物理化學參數。
+                </p>
+
+                <!-- 主要技術特點 -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-1.5 text-xs font-bold text-blue-950">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
+                        <span>主要內容與技術特點：</span>
+                    </div>
+                    <ul class="space-y-1 text-sm text-slate-700">
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
+                            <span>涵蓋高活性烷氧基鈦酸酯（TPT、TnBT、TOT）、螯合型鈦酸酯（AA75、TE、AA105、LA）與有機鋯酸酯（NPZ、NBZ）體系。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>大幅提升塗層耐化學品侵蝕與耐溶劑（如 MEK 擦拭次數突破 200 次）保護力。</span>
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
+                            <span>詳解催化酯化/酯交換、聚合物交聯、Sol-Gel 表面改性與異質介面附著力增強等四大多功能機制。</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
+                            <span>彙整各型號之活性金屬含量、比重、黏度、閃點及溶劑相容性，提供完整選型依據。</span>
                         </li>
                     </ul>
                 </div>
@@ -1677,14 +1821,15 @@
                     <div class="flex flex-wrap gap-1">
                             <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">塗料</span>
                             <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">印刷油墨</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">膠黏劑</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">聚合物改性</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">接著劑與密封膠</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">酯化合成催化</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">玻璃與金屬表面改性處理</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-%E9%88%A6%EF%BC%88%E9%8B%AF%EF%BC%89%E9%85%B8%E9%85%AF%E4%BD%9C%E7%82%BA%E4%BA%A4%E8%81%AF%E5%8A%91%E5%8F%8D%E6%87%89%E6%A9%9F%E5%88%B6"
+                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-Tyzor%E2%84%A2%20%E6%9C%89%E6%A9%9F%E9%88%A6%EF%BC%88%E9%8B%AF%EF%BC%89%E9%85%B8%E9%85%AF%20%E7%94%A2%E5%93%81%E7%9B%AE%E9%8C%84"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1700,173 +1845,57 @@
                         </div>
                     </div>
 
-                    <div id="tech-panel-catalog" class="hidden space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-tyzor-catalog-0" onclick="selectTechDoc('tyzor', 'catalog', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. 膠黏與塗料
-                            </button>
-                            <button type="button" id="pill-tyzor-catalog-1" onclick="selectTechDoc('tyzor', 'catalog', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. 綜合手冊 (中)
-                            </button>
-                            <button type="button" id="pill-tyzor-catalog-2" onclick="selectTechDoc('tyzor', 'catalog', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. 塗料專用型錄
-                            </button>
-                            <button type="button" id="pill-tyzor-catalog-3" onclick="selectTechDoc('tyzor', 'catalog', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. 多元醇聚合物
-                            </button>
+                    <div id="tech-panel-applications" class="hidden space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-tyzor-applications" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-tyzor-applications" onchange="selectTechDoc('tyzor', 'applications', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <option value="0" selected>膠黏劑與密封膠應用</option>
+                                <option value="1">大宗儲運操作規範</option>
+                                <option value="2">可塑劑生產催化應用</option>
+                                <option value="3">紙張應用耐水交聯</option>
+                                <option value="4">直接酯化反應催化</option>
+                                <option value="5">金屬表面鈍化防腐</option>
+                                <option value="6">玻璃表面塗層改性</option>
+                                <option value="7">無機填料表面改性</option>
+                                <option value="8">表面底塗劑打底</option>
+                                <option value="9">冷凍TPT解凍指南</option>
+                                <option value="10">酯交換反應催化</option>
+                                <option value="11">飽和蒸氣壓與溫度曲線</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-tyzor-applications" class="text-blue-950 font-bold">1</strong> / 12 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-tyzor-applications" onclick="navigateTechDoc('tyzor', 'applications', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-tyzor-applications" onclick="navigateTechDoc('tyzor', 'applications', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-tyzor-catalog">
-        <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
-            <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
-            <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
-            <div class="h-full flex flex-col justify-center">
-                <div id="pdf-canvas-viewer-tyzor-catalog"
-                     class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
-                     data-pdf-url="techdatadb/2.Tyzor/2.Tyzor%20Brochure%E7%9B%AE%E9%8C%84/Brochure%20DK%20Tyzor%20Adhesive%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="Tyzor® 膠黏劑與塗料產品線型錄"
-                     onclick="openPdfFullscreenModal('techdatadb/2.Tyzor/2.Tyzor%20Brochure%E7%9B%AE%E9%8C%84/Brochure%20DK%20Tyzor%20Adhesive%20Plus%20Coatings%20Line%20EN%20202512.pdf#toolbar=0&navpanes=0', 'Tyzor® 膠黏劑與塗料產品線型錄')"
-                     title="點擊全螢幕放大閱讀"
-                     oncontextmenu="return false;"
-                     onselectstart="return false;">
-                    
-                    <div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2">
-                        <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
-                        <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
-                    </div>
-
-                    </div>
-            </div>
-            </div>
-
-            <!-- 右欄：文件檔案屬性與技術重點摘要 (依圖 1 指示：移除被劃掉的語言/版本標籤與檔案名字串) -->
-            <div class="space-y-2 pl-0 sm:pl-2.5">
-                <div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        Tyzor® 膠黏劑與塗料產品線型錄
-                    </h3>
-                </div>
-
-                <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    塗料與膠黏劑配方的官方選型大全，完整涵蓋溶劑型與水性耐水解體系的鈦/鋯交聯促進劑，全面解決成膜慢與附著力不足的痛點。
-                </p>
-
-                <!-- 主要技術特點 -->
-                <div class="space-y-1.5">
-                    <div class="flex items-center gap-1.5 text-xs font-bold text-blue-950">
-                        <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
-                        <span>主要內容與技術特點：</span>
-                    </div>
-                    <ul class="space-y-1 text-sm text-slate-700">
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>溶劑型首選 Tyzor AA-75、GBA 螯合物，提供極佳儲存穩定性與烘烤快速交聯。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>水性體系推薦 Tyzor TE（三乙醇胺螯合物）與 LA（乳酸銨鹽），具耐水解高穩定性。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>顯著改善壓敏膠高溫持粘力（Shear Adhesion）與長期抗蠕變性能。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>大幅提升包裝凹版油墨的耐揉搓性與耐高溫高壓水煮蒸煮（Retort Resistance）。</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 適用範疇標籤 -->
-                <div class="space-y-1 pt-0.5">
-                    <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
-                    <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">溶劑型與水性塗料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">壓敏膠</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">密封膠</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">包裝油墨</span>
-                    </div>
-                </div>
-
-                <!-- 諮詢動作列 -->
-                <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-Tyzor%C2%AE%20%E8%86%A0%E9%BB%8F%E5%8A%91%E8%88%87%E5%A1%97%E6%96%99%E7%94%A2%E5%93%81%E7%B7%9A%E5%9E%8B%E9%8C%84"
-                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
-                        <i class="fa-solid fa-envelope text-xs"></i>
-                        <span>索取規格諮詢 / 申請樣品</span>
-                    </a>
-                    <a href="products/dorfketal/tyzor/"
-                       class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
-                        <i class="fa-solid fa-table-list text-xs"></i>
-                        <span>查看相關產品列表</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-                        </div>
-                    </div>
-
-                    <div id="tech-panel-applications" class="hidden space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-tyzor-applications-0" onclick="selectTechDoc('tyzor', 'applications', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. 膠黏與密封膠
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-1" onclick="selectTechDoc('tyzor', 'applications', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. 大宗儲運規範
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-2" onclick="selectTechDoc('tyzor', 'applications', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. 可塑劑催化
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-3" onclick="selectTechDoc('tyzor', 'applications', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. 紙張塗佈交聯
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-4" onclick="selectTechDoc('tyzor', 'applications', 4)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                5. 直接酯化反應
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-5" onclick="selectTechDoc('tyzor', 'applications', 5)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                6. 金屬表面前處理
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-6" onclick="selectTechDoc('tyzor', 'applications', 6)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                7. 玻璃表面塗層
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-7" onclick="selectTechDoc('tyzor', 'applications', 7)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                8. 無機填料改性
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-8" onclick="selectTechDoc('tyzor', 'applications', 8)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                9. 底塗打底劑
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-9" onclick="selectTechDoc('tyzor', 'applications', 9)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                10. TPT 解凍指引
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-10" onclick="selectTechDoc('tyzor', 'applications', 10)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                11. 酯交換反應
-                            </button>
-                            <button type="button" id="pill-tyzor-applications-11" onclick="selectTechDoc('tyzor', 'applications', 11)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                12. 蒸氣壓曲線手冊
-                            </button>
-                        </div>
-
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-tyzor-applications">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-tyzor-applications" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1874,8 +1903,8 @@
                 <div id="pdf-canvas-viewer-tyzor-applications"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/2.Tyzor/3.Tyzor%20%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%20%2812%29%E9%88%A6%E9%85%B8%E9%85%AF%20%EF%80%A8/Application%20Note%20DK%20Tyzor%20Adhesives%20Sealants%20EN.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="Tyzor® 膠黏劑與密封膠應用技術指南"
-                     onclick="openPdfFullscreenModal('techdatadb/2.Tyzor/3.Tyzor%20%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%20%2812%29%E9%88%A6%E9%85%B8%E9%85%AF%20%EF%80%A8/Application%20Note%20DK%20Tyzor%20Adhesives%20Sealants%20EN.pdf#toolbar=0&navpanes=0', 'Tyzor® 膠黏劑與密封膠應用技術指南')"
+                     data-pdf-title="Tyzor® Organic Titanates and Zirconates in Adhesives and Sealants"
+                     onclick="openPdfFullscreenModal('techdatadb/2.Tyzor/3.Tyzor%20%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%20%2812%29%E9%88%A6%E9%85%B8%E9%85%AF%20%EF%80%A8/Application%20Note%20DK%20Tyzor%20Adhesives%20Sealants%20EN.pdf#toolbar=0&navpanes=0', 'Tyzor® Organic Titanates and Zirconates in Adhesives and Sealants')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1893,12 +1922,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        Tyzor® 膠黏劑與密封膠應用技術指南
+                        Tyzor® Organic Titanates and Zirconates in Adhesives and Sealants
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    壓敏膠與密封膠耐候深層固化的技術方案，添加量極少即可強化浸水剝離強度與高溫抗蠕變性，精確控制表乾與適用期。
+                    說明 Tyzor 鈦酸酯與鋯酸酯在矽膠、壓克力、聚氨酯及熱熔膠中作為交聯劑、催化劑與附著力促進劑的作用機理與應用數據。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1910,19 +1939,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>添加量僅需 0.5%~2.0%，即可顯著提升壓敏膠高溫持粘力（Shear Adhesion）與抗蠕變性。</span>
+                            <span>作為中性交聯催化劑用於單組份（RTV-1）矽膠，提供快速固化且避免金屬腐蝕。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>作為矽烷改性聚醚（MS Polymer）與聚氨酯無錫交聯催化劑，提供良好深層固化。</span>
+                            <span>促進壓克力與聚氨酯接著劑對玻璃、金屬及難黏塑膠底材的化學鍵合與耐水接著強度。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>顯著改善在未經前處理的鋁合金、不鏽鋼及浮法玻璃上的浸水剝離強度。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>有效調控膠體適用期（Pot Life）與表乾時間（Skin Formation Time）。</span>
+                            <span>調節聚合物網絡密度，顯著提高密封膠固化後的耐熱性、剪切強度與耐溶劑侵蝕能力。</span>
                         </li>
                     </ul>
                 </div>
@@ -1931,16 +1956,16 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">壓敏膠</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">MS 建築密封膠</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">聚氨酯膠黏劑</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">電子結構膠</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">RTV-1 矽膠密封膠</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">壓克力感壓膠</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">聚氨酯結構膠</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">金屬/玻璃黏著封裝</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-Tyzor%C2%AE%20%E8%86%A0%E9%BB%8F%E5%8A%91%E8%88%87%E5%AF%86%E5%B0%81%E8%86%A0%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E6%8C%87%E5%8D%97"
+                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-Tyzor%C2%AE%20Organic%20Titanates%20and%20Zirconates%20in%20Adhesives%20and%20Sealants"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1956,29 +1981,53 @@
                         </div>
                     </div>
 
-                    <div id="tech-panel-single" class="hidden space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-tyzor-single-0" onclick="selectTechDoc('tyzor', 'single', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. Activate 422 食品接觸
-                            </button>
-                            <button type="button" id="pill-tyzor-single-1" onclick="selectTechDoc('tyzor', 'single', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. Activate 422 瓶級樹脂
-                            </button>
-                            <button type="button" id="pill-tyzor-single-2" onclick="selectTechDoc('tyzor', 'single', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. IAM 油墨專用
-                            </button>
-                            <button type="button" id="pill-tyzor-single-3" onclick="selectTechDoc('tyzor', 'single', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. IAM 溶劑型油墨
-                            </button>
+                    <div id="tech-panel-single" class="hidden space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-tyzor-single" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-tyzor-single" onchange="selectTechDoc('tyzor', 'single', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <optgroup label="── Activate 422 (2 篇) ──">
+                                    <option value="0" selected>422 食品接觸塑膠包裝</option>
+                                    <option value="1">422 瓶級聚酯樹脂催化</option>
+                                </optgroup>
+                                <optgroup label="── IAM (2 篇) ──">
+                                    <option value="2">IAM 油墨專用交聯劑</option>
+                                    <option value="3">IAM 溶劑型油墨交聯</option>
+                                </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-tyzor-single" class="text-blue-950 font-bold">1</strong> / 4 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-tyzor-single" onclick="navigateTechDoc('tyzor', 'single', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-tyzor-single" onclick="navigateTechDoc('tyzor', 'single', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-tyzor-single">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-tyzor-single" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1986,8 +2035,8 @@
                 <div id="pdf-canvas-viewer-tyzor-single"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/2.Tyzor/4.Tyzor%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%282%29%EF%80%A8/TI_Tyzor%20Activate%20422/TI%20DK%20Tyzor%20Activate%20422%20Plastic%20Packaging%20for%20Food%20Contact%20EN.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="Tyzor® ACtivate™ 422 食品接觸塑料包裝合規評估報告"
-                     onclick="openPdfFullscreenModal('techdatadb/2.Tyzor/4.Tyzor%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%282%29%EF%80%A8/TI_Tyzor%20Activate%20422/TI%20DK%20Tyzor%20Activate%20422%20Plastic%20Packaging%20for%20Food%20Contact%20EN.pdf#toolbar=0&navpanes=0', 'Tyzor® ACtivate™ 422 食品接觸塑料包裝合規評估報告')"
+                     data-pdf-title="Tyzor® ACtivate™ 422 Titanate Catalyst Plastic Packaging for Food Contact"
+                     onclick="openPdfFullscreenModal('techdatadb/2.Tyzor/4.Tyzor%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%282%29%EF%80%A8/TI_Tyzor%20Activate%20422/TI%20DK%20Tyzor%20Activate%20422%20Plastic%20Packaging%20for%20Food%20Contact%20EN.pdf#toolbar=0&navpanes=0', 'Tyzor® ACtivate™ 422 Titanate Catalyst Plastic Packaging for Food Contact')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -2005,12 +2054,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        Tyzor® ACtivate™ 422 食品接觸塑料包裝合規評估報告
+                        Tyzor® ACtivate™ 422 Titanate Catalyst Plastic Packaging for Food Contact
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    食品飲料包裝 PET 樹脂合成的國際安全合規權威報告，完全排除傳統重金屬銻催化劑毒性，通過 FDA 與 EFSA 雙重食品接觸認證。
+                    介紹 ACtivate 422 鈦酸酯催化劑在食品接觸級 PET 塑膠包裝中的法規符合性、高催化活性與提升產能特點。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -2022,19 +2071,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>完全通過美國 FDA 21 CFR 177.1630 及歐洲 EFSA 食品接觸法規嚴苛安全標準。</span>
+                            <span>完全符合美國 FDA 21 CFR 177.1630 與歐盟 EU Regulation 10/2011 食品接觸塑膠材料法規要求。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>耐水解配位結構，在含有微量水分的單體環境中仍能維持高催化活性。</span>
+                            <span>作為高活性酯化催化劑可提高酯化速率達 20%（允許降低反應溫度以控制二甘醇 DEG 含量）；熔融縮聚產能可提升高達 15%。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>徹底排除傳統重金屬銻催化劑毒性，解決食品級聚酯的環保重金屬隱患。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>成品瓶片維持優異的 L* 亮度透光率，黃色指數極低（b* < 1.5）。</span>
+                            <span>具備優異耐水解穩定性，可直接添加於 PTA/MEG 漿料或直接注入酯化釜中，並能降低乙醛（AA）與端羧基含量以滿足風味敏感包裝要求。</span>
                         </li>
                     </ul>
                 </div>
@@ -2043,16 +2088,15 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">食品級 PET 瓶</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">飲料包裝</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">食品熱收縮膜</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">無銻環保聚酯</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">食品接觸級 PET 瓶</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">食品塑膠包裝材料</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">風味敏感飲料包裝樹脂生產</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-Tyzor%C2%AE%20ACtivate%E2%84%A2%20422%20%E9%A3%9F%E5%93%81%E6%8E%A5%E8%A7%B8%E5%A1%91%E6%96%99%E5%8C%85%E8%A3%9D%E5%90%88%E8%A6%8F%E8%A9%95%E4%BC%B0%E5%A0%B1%E5%91%8A"
+                    <a href="contact/?mode=detailed&inquiry=Organic%20Titanates%20and%20Zirconates-Tyzor%C2%AE%20ACtivate%E2%84%A2%20422%20Titanate%20Catalyst%20Plastic%20Packaging%20for%20Food%20Contact"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>

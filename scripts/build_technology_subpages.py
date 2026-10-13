@@ -495,30 +495,86 @@ def build_category_content_section(item, active_subtab="principles"):
                     </div>'''
             panels_html.append(panel)
         else:
-            # 渲染 Pills 標籤列
-            pills = []
-            for idx, doc in enumerate(docs):
-                is_active = (idx == 0)
-                active_cls = "bg-blue-900 text-white shadow-2xs font-bold" if is_active else "text-slate-600 hover:text-blue-900 hover:bg-slate-100"
-                p_btn = f'''                            <button type="button" id="pill-{slug}-{tab_key}-{idx}" onclick="selectTechDoc('{slug}', '{tab_key}', {idx})"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap {active_cls}">
-                                {idx + 1}. {doc.get("shortLabel")}
-                            </button>'''
-                pills.append(p_btn)
-            pills_html = "\n".join(pills)
-
-            # 預設展示第 0 份文件
             first_doc = docs[0]
             doc_view_html = build_single_doc_layout_html(first_doc, slug, tab_key, item)
 
-            panel = f'''                    <div id="tech-panel-{tab_key}" class="{hidden_cls}space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-{pills_html}
+            if len(docs) > 1:
+                if tab_key == "single":
+                    # 單一產品依相同產品系列分組排列 optgroup
+                    groups = {}
+                    group_names = []
+                    for idx, doc in enumerate(docs):
+                        grp = doc.get("productGroup", "其他")
+                        if grp not in groups:
+                            groups[grp] = []
+                            group_names.append(grp)
+                        groups[grp].append((idx, doc))
+
+                    group_opts = []
+                    for grp in group_names:
+                        opt_lines = []
+                        for idx, doc in groups[grp]:
+                            selected_attr = ' selected' if idx == 0 else ''
+                            label = doc.get('shortLabel') or doc.get('title')
+                            opt_lines.append(f'                                    <option value="{idx}"{selected_attr}>{label}</option>')
+                        opt_lines_str = "\n".join(opt_lines)
+                        group_opts.append(f'                                <optgroup label="── {grp} ({len(groups[grp])} 篇) ──">\n{opt_lines_str}\n                                </optgroup>')
+                    options_html = "\n".join(group_opts)
+                else:
+                    opt_lines = []
+                    for idx, doc in enumerate(docs):
+                        selected_attr = ' selected' if idx == 0 else ''
+                        label = doc.get('shortLabel') or doc.get('title')
+                        opt_lines.append(f'                                <option value="{idx}"{selected_attr}>{label}</option>')
+                    options_html = "\n".join(opt_lines)
+
+                panel = f'''                    <div id="tech-panel-{tab_key}" class="{hidden_cls}space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-{slug}-{tab_key}" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-{slug}-{tab_key}" onchange="selectTechDoc('{slug}', '{tab_key}', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+{options_html}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-{slug}-{tab_key}" class="text-blue-950 font-bold">1</strong> / {len(docs)} 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-{slug}-{tab_key}" onclick="navigateTechDoc('{slug}', '{tab_key}', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-{slug}-{tab_key}" onclick="navigateTechDoc('{slug}', '{tab_key}', 1)"
+                                            {'disabled' if len(docs) <= 1 else ''}
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-{slug}-{tab_key}">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-{slug}-{tab_key}" class="w-full">
+{doc_view_html}
+                        </div>
+                    </div>'''
+            else:
+                # 只有 1 篇文件時直接滿版展示
+                panel = f'''                    <div id="tech-panel-{tab_key}" class="{hidden_cls}space-y-2">
+                        <div id="viewer-{slug}-{tab_key}" class="w-full">
 {doc_view_html}
                         </div>
                     </div>'''

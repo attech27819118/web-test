@@ -1,0 +1,597 @@
+================================================================================
+FILE: TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf
+PATH: 2.Tyzor\4.Tyzor 單一產品應用技術資料(2)\TI_Tyzor Activate 422\TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf
+CONTENT:
+--- PAGE 1 ---
+DESCRIPTION Tyzor ® ACtivate™ 422 is a hydrolytically stable titanate catalyst specifically designed for plastic packaging 
+in food contact applications.  Superior ligand chemistry provides the excellent melt and SSP activity 
+required for excellent polymer color and aesthetics.   
+Approved for Food Contact
+Tyzor® ACtivate™ catalysts complies with the requirements of US CFR177.1630 and 
+EU Regulation 10/2011 when used in the manufacture of plastic for food contact materials.  
+Tyzor® ACtivate™ 422 benefits can be fine-tuned in a variety of ways to fit each manufacturer’s unique 
+requirements for a balance of manufacturing efficiency, resin quality improvements and increased resin 
+performance in demanding bottle designs.  
+Application Benefits
+ Improved Process Efficiency and Throughput 
+ Enhanced Resin Properties 
+ Improved Resin Performance.  
+Tyzor® ACtivate™ 422 is a highly active esterification catalyst that can increase esterification rates 
+up to 20%.  This allows resin manufacturers to improve diethylene glycol concentration by lowering 
+esterification temperatures.  
+Tyzor® ACtivate™ 422 is a high-performance polymerization catalyst that has been shown to increase 
+melt plant capacity by as much as 15%, substantially lowering PET manufacturing costs.  Alternatively, 
+manufacturers can choose to decrease polymerization temperatures, producing improved polymers with 
+reduced acetaldehyde or carboxyl end group concentration for flavor-sensitive applications.   
+Excellent hydrolytic stability allows Tyzor® ACtivate 422 to be added to the esterification reaction wherever 
+it is most convenient, either by addition to the PTA/MEG slurry or directly to the esterification vessel.   
+TYPICAL PROPERTIES  
+TYZOR® ACtivate™ 422  
+Titanate Catalyst 
+Plastic Packaging for Food Contact
+Page 1 of 1     
+SC0118     04/13
+Application Data Sheet
+PROPERTY TYPICAL VALUE 
+Flash point, °C (°F) > 70  (158)
+Specific gravity @ at 25 °C (77 °F) 1.14 - 1.18
+Viscosity, cPs @ 25 °C (77 °F) 1 to 20
+pH 3
+Solubility Miscible in water.
+Soluble in glycols and alcohols. 
+Insoluble in hydrocarbons.
+Dorf Ketal Speciality Catalysts LLC
+11200 Westheimer Road – Suite 400
+Houston, Texas 77042
+USA
+Tel: +1-713-343-2377
+E-mail: tyzor@dorfketal.com 
+www.dorfketal.com 
+The information contained in this sheet is provided free of charge and is based on technical data that Dorf Ketal believes to be
+correct and reliable.  It is intended for use by persons having technical skill and at their own discretion and risk.  We make no
+warranties, express or implied, and assume no liability in connection with any of this information as the conditions of use are
+outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a
+recommendation to infringe any patent.
+TYZOR, ACtivate and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd.
+© 2013 Dorf Ketal Speciality Catalysts LLC  
+
+
+================================================================================
+FILE: TI DK Tyzor Activate 422 for PET Bottle Resins EN.pdf
+PATH: 2.Tyzor\4.Tyzor 單一產品應用技術資料(2)\TI_Tyzor Activate 422\TI DK Tyzor Activate 422 for PET Bottle Resins EN.pdf
+CONTENT:
+--- PAGE 1 ---
+DESCRIPTION Tyzor ® ACtivate™ 422 is a hydrolytically stable titanate catalyst specifically designed for PET bottle resin 
+production.  Superior ligand chemistry provides excellent catalytic activity, producing PET resin and 
+bottles with superior color and aesthetics.  
+Tyzor® ACtivate™ 422 benefits can be fine-tuned in a variety of ways to fit each manufacturer’s unique 
+requirements for a balance of manufacturing efficiency, product quality and performance improvements 
+in demanding bottle applications.  
+Application Benefits:
+ Improved Process Efficiency and Throughput 
+ Enhanced Resin and Bottle Properties  
+ Improved Resin and Bottle Performance  
+Tyzor® ACtivate™ 422 is a very effective esterification catalyst that can be used to increase 
+the esterification reaction by up to 20%, useful for de-bottlenecking a process.  Alternatively the 
+esterification temperature can be lowered to reduce diethylene glycol concentration in the resin.  
+Tyzor® ACtivate™ 422 is a very effective melt polymerization catalyst that can be used to increase 
+the melt plant rate by up to 15% or to decrease the temperature of the melt polymerization process, 
+resulting in improved product quality.  Tyzor® ACtivate™ 422 has been shown to produce bottle resin 
+and bottles with a reduced level of oligomers, acetaldehyde and haze.  
+Tyzor® ACtivate™ 422 changes the crystallinity properties of the resin compared to an equivalent 
+Sb catalyzed resin showing a higher onset of crystallation on heating and a lower onset of crystallation 
+on cooling.  These changes can be exploited by a reduction in IPA content of up to 40%, producing 
+significant financial benefits.  
+Tyzor® ACtivate™ 422 is hydrolytically stable, which provides exceptional manufacturing versatility.  
+It can beadded before or during esterification, to either the paste tank or the esterification reactors.  
+Alternatively it can be added to the oligomer line after esterification.  
+TYZOR® ACtivate™ 422  
+Titanate Catalyst 
+Titanate Catalyst for PET Bottle Resins
+Page 1 of 4     
+DKLSC019   SC0114   05/13
+Application Data Sheet
+FIGURE 1:  Tyzor® ACtivate™ Catalysts Add Value to PET Production and Products  
+PET 
+Production 
+Process
+Improvement
+PET 
+Product
+Improvement
+High Active Catalyst
+Hot-Fill 
+Bottle 
+Market
+Water/CSD 
+Bottle 
+Market
+No Change in Business or Product
+Reduces IPA Use
+Faster
+Molding Cycle
+Times
+Lower
+Energy
+(kW/hr)
+Increased 
+Throughput
+(kg/hr)
+Improved
+Crystallinity
+Higher 
+Hot Fill 
+Temperatures and 
+Potential 
+for Light 
+Weighting
+Lower
+Resin Cost 
+$/kg
+Better
+DEG
+Control and 
+Potential 
+to Reduce
+DEG
+Level
+--- PAGE 2 ---
+FIGURE 3: Antimony Resin DSC Trace – Heat-Up 
+Page 2 of 4     
+DKLSC019   SC0114   05/13
+FIGURE 2: Tyzor® ACtivate™ 422 Resin DSC Trace – Heat-Up 
+Figure 2 and 3 compare Tyzor® ACtivate™ 422 resin crystallinity performance to antimony resin 
+crystallinity performance.  
+--- PAGE 3 ---
+Table 1 provides a rough estimate of the savings that can be realized when using Tyzor® ACtivate™ 422 
+in various resin applications utilizing different capabilities.
+Page 3 of 4     
+DKLSC019   SC0114   05/13
+TABLE 1:  Cost Savings Comparisons for Dye-Toned Formulations
+ANTIMONY TYZOR ® ACtivate™ 422
+Standard Reduced Co-monomer Reformulation 
+Formulation IPA (Reduced Molding Temperature/Light Weighting/Higher Fill Temperatures)
+Applications All CSD/Water CSD/Water Hot Fill
+Cost Impact 
+PET Producer 0 -3.13 0.75 0.75
+($/MT PET)
+Cost Impact 
+Convertor 0 0 -22.44 -7.76
+($/MT PET preforms)
+Total 
+Cost Impact 0 -3.13 -21.69 -7.01
+($/MT PET)
+Additional Reduced Reduced Preform AA Higher 
+Product 0 Stress and Fill
+Benefits Cracking Reduced Stress Cracking Temperatures
+Tyzor® ACtivate™ 422 can increase productivity and significantly reduce manufacturing costs without 
+compromising bottle aesthetics by allowing resin manufacturers to reformulate co-monomer levels for 
+improved preform injection molding performance. Injection molding temperatures can be reduced by 
+up to 10 °C (18 °F), reducing cycle time by as much as 8%.  
+Tyzor® ACtivate™ 422 also can produce bottle resins for hot-fill with a lower level of shrinkage.  This can 
+be exploited with higher filling temperatures and/or bottle light weighting, reducing raw material costs and 
+increasing productivity.  
+Tyzor® ACtivate™ 422 produces PET bottle resins that meet or exceed the properties of antimony-catalyzed 
+PET botle resins at lower cost.  Figures 3 through 5 compare polymer chip and bottle color properties of 
+Tyzor® ACtivate™ 422 resin with an equivalent antimony resin.
+FIGURE 3:  Color Standards Achieved 
+- Base Chip Color 
+FIGURE 4:  Color Standards Achieved 
+- SSP Chip Color
+FIGURE 5:  Color Standards Achieved 
+- Bottle Color 
+--- PAGE 4 ---
+Page 4 of 4     
+DKLSC019   SC0114   05/13
+PROPERTY TYPICAL VALUE 
+Flash point, °C (°F) > 70  (158)
+Specific gravity @ at 25 °C (77 °F) 1.14 - 1.18
+Viscosity, cPs @ 25 °C (77 °F) 1 to 20
+pH 3
+Solubility Miscible in water.
+Soluble in glycols and alcohols. 
+Insoluble in hydrocarbons.
+TYPICAL PROPERTIES 
+OF Tyzor® ACtivate™ 422
+Dorf Ketal Speciality Catalysts LLC
+11200 Westheimer Road – Suite 400
+Houston, Texas 77042
+USA
+Tel: +1-713-343-2377
+E-mail: tyzor@dorfketal.com 
+www.dorfketal.com 
+The information contained in this sheet is provided free of charge and is based on technical data that Dorf Ketal believes to be
+correct and reliable.  It is intended for use by persons having technical skill and at their own discretion and risk.  We make no
+warranties, express or implied, and assume no liability in connection with any of this information as the conditions of use are
+outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a
+recommendation to infringe any patent.
+TYZOR, ACtivate and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd.
+© 2013 Dorf Ketal Speciality Catalysts LLC  
+
+
+================================================================================
+FILE: TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf
+PATH: 3.unilink\4. Unilink Clearlink擴鏈劑單一產品應用技術資料\TI Clearlink 1000\TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf
+CONTENT:
+--- PAGE 1 ---
+CLEARLINK® 1000 
+Aliphatic Amine
+Page 1 of 2     
+SC0031     09/11    
+APPLICATIONS P OLYUREA COATINGS SYSTEMS
+Clearlink® 1000 is a liquid aliphatic chain extender for light-stable or color-critical aliphatic polyurea spray 
+and hand-applied coatings.  It is a colorless liquid with low reactivity that provides considerable latitude 
+for cure-rate control without altering formulation color, and it is compatible with a wide range of polyols, 
+co-curatives and other polyurethane and polyurea chemicals.
+Clearlink® 1000 extends pot life, allowing time for coatings to flow, adhere and develop smooth finishes.  
+Coatings cured with Clearlink® 1000 are tough and extremely light-stable in harsh environments.
+Chain Extender for Polyurea Coatings
+Application Data Sheet
+Effect of Clearlink® 1000 
+on Properties of a Sprayed Polyurea Coating
+A Side, wt%
+IPDI: Jeffamine D-2000 100 100 100 100 100
+(45:55)
+NCO, %: 14.8
+B Side, wt% 
+Jeffamine D-2000 50.1 48.2 45.9 44.3 38.5
+Jeffamine T-5000 19.2 18.5 17.6 17.0 14.8
+IPDA 20.6 18.3 15.9 13.5 6.7
+CLEARLINK® 1000 10.1 15.0 20.6 25.2 40.0
+Gel Time (sec) < 1 < 1 < 1 3 11
+Tack Free (sec) < 1 < 1 < 1 3 20
+Physical Properties
+Tensile Strength (psi) 2005 1810 1790 1945 1230
+Elongation (%) 530 480 505 545 490
+Tear Strength (psi) 420 395 380 375 380
+Shore D Hardness 42 43 46 46 48
+Modulus @ 100% (psi) 935 935 950 960 950
+Modulus @ 300% (psi) 1350 1330 1305 1340 1220
+Tensile Strength, Tear Strength, Modulus and Gel Time
+Sprayed Polyurea Coating with Clearlink® 1000 
+10 15 21 25 40
+Tensile Strength Tear Strength Modulus @ 100% Modulus @ 300%
+Gel Time
+Clearlink® 1000 (wt%)
+2500
+2000
+1500
+1000
+500
+0
+12
+10
+8
+6
+4
+2
+0
+psi
+Gel Time (sec)
+--- PAGE 2 ---
+Page 2 of 2     
+SC0031     09/11    
+Dorf Ketal Speciality Catalysts, LLC
+3727 Greenbriar Dr., Suite 114
+Stafford, TX 77477
+USA
+Phone: +1-281-491-3700
+E-mail: clearlink@dorfketal.com 
+www.dorfketal.com 
+The information contained in this sheet is provided free of charge and is based on technical data that Dorf Ketal believes to be
+correct and reliable.  It is intended for use by persons having technical skill and at their own discretion and risk.  We make no
+warranties, express or implied, and assume no liability in connection with any of this information as the conditions of use are
+outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a
+recommendation to infringe any patent.
+CLEARLINK and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt., Ltd.
+© 2011 Dorf Ketal Speciality Catalysts, LLC  
+PACKAGING AND SHIPPING Not regulated for transportation by US DOT  
+SAFETY AND HANDLING Please refer to the current Material Safety Data Sheet for detailed safety, handling and toxicity informatio n.  
+TYPICAL SHELF LIFE 1 year
+PROPERTY TYPICAL VALUE 
+Appearance Clear, colorless liquid
+Specific gravity @ 20 °C (68 °F) 0.90
+Density, g/cm3 (lb/gal) 0.89 (7.4)
+Flash point, PMCC, °C (°F), min 60.6 (141)
+Viscosity @ 15.6 °C (60 °F), cps 110
+Water content, ppm < 500
+Molecular weight (g/mol) 322
+Equivalent weight, min 161
+Hydroxyl number 348
+Ames test Negative
+HOW TO USE Typical use levels in sprayed polyurea coatings range from 5% to 10% by weight.
+DESCRIPTION Clearlink ® 1000 is an aliphatic amine chain extender for use with aliphatic isocyanates to produce 
+color-critical and UV light-stable polymers.  It is an easy-handling, low-viscosity liquid that is low in toxicity 
+(Ames negative) and it provides substantially lower reactivity than other commercially available aliphatic 
+diamines.  Finished coatings have excellent color stability, physical properties and heat resistance.
+TYPICAL PROPERTIES
+
+
+================================================================================
+FILE: TI DK Unilink 1030 Catalyst for Cast Elastomers EN.pdf
+PATH: 3.unilink\4. Unilink Clearlink擴鏈劑單一產品應用技術資料\TI Unilink 1030\TI DK Unilink 1030 Catalyst for Cast Elastomers EN.pdf
+CONTENT:
+--- PAGE 1 ---
+120
+100
+80
+60
+40
+20
+0
+UNILINK® 1030 
+Polyurethane Catalyst
+Page 1 of 2     
+SC0081     02/13
+APPLICATIONS C AST ELASTOMERS
+Unilink® 1030 is designed to provide delayed “snap cures” in polyester polyol elastomers, allowing molds 
+to be filled while the mixture remains relatively low in viscosity.  When gelling begins, it takes place rapidly, 
+allowing the casting to be removed from the mold quickly for maximum productivity.  
+Unilink® 1030 is a proprietary zirconium chelate in a reactive diol solvent.  It features a sharp viscosity 
+increase profile that is very similar to mercury, but without the exposure risks or environmental hazards.  
+Because the diol solvent reacts into the polyurethane it works without leaving any residue.  In addition, 
+Unilink® 1030 is selective towards the gelling reaction, so it exhibits very low “blow” or water reactivity, and 
+its low color makes it particularly suitable for color-critical formulations. 
+Elastomers cured with Unilink® 1030 have excellent physical properties that are comparable, and in some 
+cases superior to their mercury-cured equivalents.  
+Catalyst for Cast Elastomers
+Application Data Sheet
+Physical Property Comparison
+UNILINK® 1030 vs. Mercury Catalyst
+Reaction Profile
+UNILINK® 1030 vs. Mercury
+51 0 1 5 2 0 2 5
+Time (min)
+4500
+4000
+3500
+3000
+2500
+2000
+1500
+1000
+500
+0
+Viscosity (cP)
+Tensile Stress at Preset Point
+(Tensile Strain 10%, MPa)
+Tensile Stress at Preset Point
+(Tensile Strain 200%, MPa)
+Tensile Stress at Preset Point
+(Tensile Strain 300%, MPa)
+Tensile Strain at Break
+(Standard, %)  
+Hg UNILINK ® 1030
+Tensile Strength
+(MPa)  
+Maximum Load
+(N)  
+Tensile Stress at Preset Point
+(Tensile Strain 100%, MPa)
+--- PAGE 2 ---
+Page 2 of 2     
+SC0081     02/13
+Dorf Ketal Speciality Catalysts LLC
+11200 Westheimer Road – Suite 400
+Houston, Texas 77042
+USA
+Tel: +1-713-343-2377
+E-mail: queries.northamerica@dorfketal.com 
+www.dorfketal.com 
+The information contained in this sheet is provided free of charge and is based on technical data that Dorf Ketal believes to be
+correct and reliable.  It is intended for use by persons having technical skill and at their own discretion and risk.  We make no
+warranties, express or implied, and assume no liability in connection with any of this information as the conditions of use are
+outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a
+recommendation to infringe any patent.
+UNILINK and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd.
+© 2013 Dorf Ketal Speciality Catalysts LLC  
+PACKAGING AND SHIPPING Not regulated for transportation by US DOT  
+SAFETY AND HANDLING Please refer to the current Material Safety Data Sheet for detailed safety, handling and toxicity informatio n.  
+TYPICAL SHELF LIFE 1 year
+PROPERTY TYPICAL VALUE 
+Appearance Pale red liquid
+Zirconium, wt%, 11.1
+OH value (mg KOH/g) < 40
+Flash point, PMCC,  °C (°F), min > 80 (176)
+Specific gravity @ 26.7 °C (80 °F) 1.07
+Viscosity @ 25 °C, cPs 280
+Solubility Miscible with most esters, ketones and glycols
+HOW TO USE Typical Unilink ® 1030 application rates range from 0.03-3.0 wt% on polyol depending on the application 
+and desired reaction time.
+DESCRIPTION Unilink ® 1030 is a reactive proprietary zirconium chelate dissolved in a reactive diol.  It is sensitive to 
+moisture.  Unilink® 1030 dissolves to form clear, pale-yellow solutions in most organic solvents.
+TYPICAL PROPERTIES
+
+
+================================================================================
+FILE: TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams EN.pdf
+PATH: 3.unilink\4. Unilink Clearlink擴鏈劑單一產品應用技術資料\TI Unilink 4200\TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams EN.pdf
+CONTENT:
+--- PAGE 1 ---
+UNILINK® 4200 
+Aromatic Diamine
+Page 1 of 2     
+SC0027     09/11    
+APPLICATIONS S LABSTOCK FOAM
+Unilink® 4200 improves tensile, tear and load-bearing properties in standard TDI foams and 
+high-resilience foam systems, often at lower foam densities and with little effect on reaction kinetics 
+or foam rise.  Foams made with Unilink® 4200 have a finer cell structure with less elongation in the 
+direction of rise, which significantly improves compressive strength and dimensional stability.  
+In polyester foams, Unilink® 4200 improves tear strength and load-bearing performance without 
+degrading other foam properties.
+COLD MOLDED FOAM
+Unilink® 4200 significantly softens cold molded foams and reduces foam density.  Finished foams 
+have higher tensile strength, improved tear and elongation as well as better mold flow, and can often 
+be removed from the mold sooner.
+Chain Extender for Flexible Polyurethane Foams
+Application Data Sheet
+Effect of Unilink® 4200 on Flexible Slab-Stock HR Foam Properties
+Based on Pluracol 1117 Graft Polyether Polyol
+Formulation  (php) 1234
+Pluracol 1117 100 100 100 100
+Fyrol FR-2 5.00 5.00 5.00 5.00
+DC-5043 1.20 1.20 1.20 1.20
+Water 2.08 2.08 2.08 2.08
+Dabco 33-LV 0.15 0.15 0.15 0.15
+Niax A-1 0.05 0.05 0.05 0.05
+Dabco T-12 0.40 0.40 0.40 0.40
+Unilink 4200 0.00 1.00 3.00 5.00
+TDI 80/20 28.9 29.5 30.7 32.0
+NCO index 110 110 110 110
+Cream time, secs 28 28 26 24
+Rise time, secs 110 106 100 91
+Tack-free time, secs 525 518 502 480
+Density, kg/m3 43 42 40 35
+Tensile  strength, kPa 172 179 186 200
+Elongation, % 225 230 240 245
+Tear strength, N/m 367 385 437 507
+Compression set, % 11 11 11 11
+Humid aged set, % 20 19 17 16
+IFD at 25%, kPa 172 179 207 241
+IFD at 65%, kPa 434 462 572 690
+Sag factor 2.5 2.6 2.8 2.9
+Effect of Unilink® 4200 Secondary Diamine 
+on the Properties of HR Slab-stock Foam
+Density Tensile Elongation Tear
+80/20 TDI Pluracol 1117 - 110 Index Control Density 43 kg/m3
+1.0 php 
+3.0 php 
+5.0 php
+40
+20
+0
+-20 Percent Change vs. Control
+--- PAGE 2 ---
+Page 2 of 2     
+SC0027     09/11    
+Dorf Ketal Speciality Catalysts, LLC
+3727 Greenbriar Dr., Suite 114
+Stafford, TX 77477
+USA
+Phone: +1-281-491-3700
+E-mail: unilink@dorfketal.com 
+www.dorfketal.com 
+The information contained in this sheet is provided free of charge and is based on technical data that Dorf Ketal believes to be
+correct and reliable.  It is intended for use by persons having technical skill and at their own discretion and risk.  We make no
+warranties, express or implied, and assume no liability in connection with any of this information as the conditions of use are
+outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a
+recommendation to infringe any patent.
+UNILINK and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt., Ltd.
+© 2011 Dorf Ketal Speciality Catalysts, LLC  
+PACKAGING AND SHIPPING Not regulated for transportation by US DOT  
+SAFETY AND HANDLING Please refer to the current Material Safety Data Sheet for detailed safety, handling and toxicity informatio n.  
+TYPICAL SHELF LIFE 1 year
+PROPERTY TYPICAL VALUE 
+Appearance Clear light to dark brown liquid
+Specific gravity @ 26.7 °C (80 °F) 0.98 – 0.99
+Density, g/cm3 (lb/gal) 0.99 (8.3)
+Flash point, PMCC,  °C (°F), min 161 (321.8)
+Water content, ppm, max 500
+Molecular weight 310
+Equivalent weight, min 153
+Hydroxyl number 362
+HOW TO USE Typical use levels in flexible foams range from 1 to 5 parts per hundred polyol (php).  In TDI foams and 
+polyester foams rates typically range from 3 to 5 php.  Rates in cold molded foams typically range 
+from 1-2 php.
+DESCRIPTION Unilink ® 4200 is a unique di-functional aromatic diamine that builds linear polymer networks, allowing 
+the polyurethane formulator to control the degree of cross-linking by adding higher-functioning polyols.   
+It is an easy-to-handle liquid that is low in toxicity (Ames negative) and relatively insensitive to moisture, 
+and it is compatible with a wide range of polyols, co-curatives and other components.
+TYPICAL PROPERTIES
+
+
+================================================================================
+FILE: TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings EN.pdf
+PATH: 3.unilink\4. Unilink Clearlink擴鏈劑單一產品應用技術資料\TI Unilink 4200\TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings EN.pdf
+CONTENT:
+--- PAGE 1 ---
+UNILINK® 4200 
+Aromatic Diamine
+Page 1 of 2     
+SC0028     10/11    
+APPLICATIONS C OATINGS
+Unilink® 4200 cures TDI and MDI coating compounds at ambient temperatures.  Depending on the 
+catalysts and co-curing agents used, the resulting compounds can be applied by spray or pour-and-
+spread techniques.  Relatively low viscosity makes formulations cured with UNILINK 4200 easy to handle 
+and helps to improve surface wetting, adhesion and surface finish.
+Chain Extender for Elastomeric Coatings
+Application Data Sheet
+Unilink® 4200 Use Levels (php) 
+and Gel Time in Polyurea Spray Coatings 
+A Side 
+Rubinate LF168 100 100 100 100 100 100
+Texox PPG-2000
+(60:40)
+B Side 
+Jeffamine T-5000 39.3 37.9 34.5 30.0 26.4 23.5
+Jeffamine D-2000 26.2 25.3 23.0 20.0 17.6 15.7
+DETDA 31.2 27.6 1.2 12.5 5.5 ---
+UNILINK® 4200 3.3 9.2 21.2 37.5 50.5 60.8
+Gel Time (sec) 2.3 2.5 3.0 5.5 13.0 36.0
+Tack Free (sec) 2.5 3.0 3.5 11.5 36.0 70.0
+Physical Properties
+Tensile Strength (psi) 2425 2153 2195 1798 1695 1724
+Elongation (%) 145 135 144 138 155 145
+Tear Strength (psi) 494 459 466 406 383 419
+Shore D Hardness 65 62 61 57 56 56
+Modulus (100%) 2158 1982 2000 1669 1526 1529
+Tensile Strength, Modulus and Gel Time
+Aromatic Isocyanate Quasi-prepolymer and Aliphatic Polyamines
+3.3 9.2 21.2 37.5 50.5 60.8
+Tensile Strength Modulus Gel Time
+Unlink® 4200, php
+3000
+2500
+2000
+1500
+1000
+500
+0
+40
+35
+30
+25
+20
+15
+10
+5
+0
+PSI
+Gel Time, Sec
+--- PAGE 2 ---
+Page 2 of 2     
+SC0028     10/11    
+Dorf Ketal Speciality Catalysts, LLC
+3727 Greenbriar Dr., Suite 114
+Stafford, TX 77477
+USA
+Phone: +1-281-491-3700
+E-mail: unilink@dorfketal.com 
+www.dorfketal.com 
+The information contained in this sheet is provided free of charge and is based on technical data that Dorf Ketal believes to be
+correct and reliable.  It is intended for use by persons having technical skill and at their own discretion and risk.  We make no
+warranties, express or implied, and assume no liability in connection with any of this information as the conditions of use are
+outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a
+recommendation to infringe any patent.
+UNILINK and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt., Ltd.
+© 2011 Dorf Ketal Speciality Catalysts, LLC  
+PACKAGING AND SHIPPING Not regulated for transportation by US DOT  
+SAFETY AND HANDLING Please refer to the current Material Safety Data Sheet for detailed safety, handling and toxicity informatio n.  
+TYPICAL SHELF LIFE 1 year
+PROPERTY TYPICAL VALUE 
+Appearance Clear light to dark brown liquid
+Specific gravity @ 26.7 °C (80 °F) 0.98 – 0.99
+Density, g/cm3 (lb/gal) 0.99 (8.3)
+Flash point, PMCC,  °C (°F), min 161 (321.8)
+Water content, ppm, max 500
+Molecular weight 310
+Equivalent weight, min 153
+Hydroxyl number 362
+HOW TO USE Typical use levels in coatings range from 3 to 60 parts per hundred polyol (php).
+DESCRIPTION Unilink ® 4200 is a unique di-functional aromatic diamine that builds linear polymer networks, allowing 
+the polyurethane formulator to control the degree of cross-linking by adding higher-functioning polyols.  
+It is an easy-to-handle liquid that is low in toxicity (Ames negative) and relatively insensitive to moisture, 
+and it is compatible with a wide range of co-curatives and other components.
+TYPICAL PROPERTIES
+
+

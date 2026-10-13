@@ -1102,7 +1102,7 @@
             </div>
         </section>
 
-                                                                                                                                                                                <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
+                                                                                                                                                                                                                    <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
     <section id="tab-technology" class="tab-content active" role="tabpanel" aria-labelledby="nav-technology">
         <style>
         .tech-layout-container {
@@ -1619,21 +1619,47 @@
         </div>
                     </div>
 
-                    <div id="tech-panel-catalog" class="space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-wax-catalog-0" onclick="selectTechDoc('wax', 'catalog', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. 工業 PTFE 替代方案
-                            </button>
-                            <button type="button" id="pill-wax-catalog-1" onclick="selectTechDoc('wax', 'catalog', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. 特種蠟助劑型錄
-                            </button>
+                    <div id="tech-panel-catalog" class="space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-wax-catalog" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-wax-catalog" onchange="selectTechDoc('wax', 'catalog', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <option value="0" selected>無氟 PTFE 替代方案手冊</option>
+                                <option value="1">特種微粉蠟與助劑總覽</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-wax-catalog" class="text-blue-950 font-bold">1</strong> / 2 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-wax-catalog" onclick="navigateTechDoc('wax', 'catalog', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-wax-catalog" onclick="navigateTechDoc('wax', 'catalog', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-wax-catalog">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-wax-catalog" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1641,8 +1667,8 @@
                 <div id="pdf-canvas-viewer-wax-catalog"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/5.%20MPI/2.Brochure%20MPI%20%E5%BE%AE%E7%B2%89%E8%A0%9F%20%E7%9B%AE%E9%8C%8415%20%E5%86%8A/Brochure%20MPI%20Industrial%20PTFE%20Alternatives%20EN%202026.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="MPI 工業塗料 PTFE 取代系列手冊 (2026)"
-                     onclick="openPdfFullscreenModal('techdatadb/5.%20MPI/2.Brochure%20MPI%20%E5%BE%AE%E7%B2%89%E8%A0%9F%20%E7%9B%AE%E9%8C%8415%20%E5%86%8A/Brochure%20MPI%20Industrial%20PTFE%20Alternatives%20EN%202026.pdf#toolbar=0&navpanes=0', 'MPI 工業塗料 PTFE 取代系列手冊 (2026)')"
+                     data-pdf-title="PTFE Replacements / Industrial PTFE Alternatives (Brochure)"
+                     onclick="openPdfFullscreenModal('techdatadb/5.%20MPI/2.Brochure%20MPI%20%E5%BE%AE%E7%B2%89%E8%A0%9F%20%E7%9B%AE%E9%8C%8415%20%E5%86%8A/Brochure%20MPI%20Industrial%20PTFE%20Alternatives%20EN%202026.pdf#toolbar=0&navpanes=0', 'PTFE Replacements / Industrial PTFE Alternatives (Brochure)')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1660,12 +1686,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        MPI 工業塗料 PTFE 取代系列手冊 (2026)
+                        PTFE Replacements / Industrial PTFE Alternatives (Brochure)
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    應對全球 PFAS 禁令的權威官方解方，100% 無氟卻能達到媲美微粉 PTFE 的抗刮耐磨與爽滑度，不損害塗層清漆光澤與重塗性。
+                    彙編 Micro Powders 全面替代聚四氟乙烯（PTFE）的微粉蠟添加劑產品線，因應全球 PFAS 環保監管並提供同等抗刮耐磨性能。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1677,19 +1703,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>100% 符合歐盟 REACH 及美國各州嚴格的無氟（PFAS-Free）環保法規。</span>
+                            <span>採用天然蠟、合成蠟與奈米氧化鋁/陶瓷複合工程技術，達成 100% 性能、零 PTFE（Zero PTFE）。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>採用專利改性高密度聚乙烯、聚醯胺與天然硬蠟複合技術，徹底替代微粉 PTFE。</span>
+                            <span>Taber 耐磨耗試驗證明 PolyTuf 1229、MPP-611AL、SuperGlide 等磨耗失重（mg）達到或超越傳統 PTFE 改性蠟。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>在金屬烤漆、木器漆與卷鋼塗層中提供等同甚至更優異的 Taber 耐磨耗數據。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>維持極低動態摩擦係數（COF），不損害漆膜透明度、清漆光澤度與重塗附著力。</span>
+                            <span>具備全球多國化學品名錄認證與食品接觸法規合規性（FDA 21CFR、EU 10/2011）。</span>
                         </li>
                     </ul>
                 </div>
@@ -1699,15 +1721,16 @@
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
                             <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">工業塗料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">金屬烤漆</span>
                             <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">罐裝塗料</span>
                             <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">卷材塗料</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">印刷油墨</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">木器漆等無 PFAS 環保配方轉型</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Micronized%20Wax%20/%20%E5%BE%AE%E7%B2%89%E8%A0%9F-MPI%20%E5%B7%A5%E6%A5%AD%E5%A1%97%E6%96%99%20PTFE%20%E5%8F%96%E4%BB%A3%E7%B3%BB%E5%88%97%E6%89%8B%E5%86%8A%20%282026%29"
+                    <a href="contact/?mode=detailed&inquiry=Micronized%20Wax%20/%20%E5%BE%AE%E7%B2%89%E8%A0%9F-PTFE%20Replacements%20/%20Industrial%20PTFE%20Alternatives%20%28Brochure%29"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1723,61 +1746,57 @@
                         </div>
                     </div>
 
-                    <div id="tech-panel-applications" class="hidden space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-wax-applications-0" onclick="selectTechDoc('wax', 'applications', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. 無氟複合材料
-                            </button>
-                            <button type="button" id="pill-wax-applications-1" onclick="selectTechDoc('wax', 'applications', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. 微粉蠟分散指引
-                            </button>
-                            <button type="button" id="pill-wax-applications-2" onclick="selectTechDoc('wax', 'applications', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. MicroTouch 觸感助劑
-                            </button>
-                            <button type="button" id="pill-wax-applications-3" onclick="selectTechDoc('wax', 'applications', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. 金屬罐容器塗料
-                            </button>
-                            <button type="button" id="pill-wax-applications-4" onclick="selectTechDoc('wax', 'applications', 4)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                5. 能量固化油墨塗料
-                            </button>
-                            <button type="button" id="pill-wax-applications-5" onclick="selectTechDoc('wax', 'applications', 5)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                6. 工業塗料選用指南
-                            </button>
-                            <button type="button" id="pill-wax-applications-6" onclick="selectTechDoc('wax', 'applications', 6)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                7. 工業地坪耐磨塗料
-                            </button>
-                            <button type="button" id="pill-wax-applications-7" onclick="selectTechDoc('wax', 'applications', 7)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                8. 粉體塗料微粉蠟
-                            </button>
-                            <button type="button" id="pill-wax-applications-8" onclick="selectTechDoc('wax', 'applications', 8)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                9. 印刷油墨抗耐磨
-                            </button>
-                            <button type="button" id="pill-wax-applications-9" onclick="selectTechDoc('wax', 'applications', 9)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                10. 木器傢俱塗料
-                            </button>
-                            <button type="button" id="pill-wax-applications-10" onclick="selectTechDoc('wax', 'applications', 10)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                11. 建築裝飾塗料
-                            </button>
-                            <button type="button" id="pill-wax-applications-11" onclick="selectTechDoc('wax', 'applications', 11)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                12. MicroTouch 起始配方
-                            </button>
+                    <div id="tech-panel-applications" class="hidden space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-wax-applications" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-wax-applications" onchange="selectTechDoc('wax', 'applications', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <option value="0" selected>無氟先進複合材料</option>
+                                <option value="1">微粉蠟潤濕分散指南</option>
+                                <option value="2">MicroTouch 觸感改性助劑</option>
+                                <option value="3">金屬製罐與容器塗料</option>
+                                <option value="4">光固化油墨與塗料</option>
+                                <option value="5">工業防護塗料</option>
+                                <option value="6">工業地坪耐磨防滑塗料</option>
+                                <option value="7">粉體塗料專用微粉蠟</option>
+                                <option value="8">印刷油墨與罩光油</option>
+                                <option value="9">木器與家具塗料</option>
+                                <option value="10">建築裝飾塗料</option>
+                                <option value="11">MicroTouch 觸感漆配方</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-wax-applications" class="text-blue-950 font-bold">1</strong> / 12 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-wax-applications" onclick="navigateTechDoc('wax', 'applications', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-wax-applications" onclick="navigateTechDoc('wax', 'applications', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-wax-applications">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-wax-applications" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1785,8 +1804,8 @@
                 <div id="pdf-canvas-viewer-wax-applications"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/5.%20MPI/3.Application%20Note%20MPI%20%20wax/Application%20Note%20MPI%20Advanced%20Composite%20Selector%20Guide%20PFAS%20Free%20EN%202025.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="無氟 (PFAS-Free) 先進複合材料選用指南"
-                     onclick="openPdfFullscreenModal('techdatadb/5.%20MPI/3.Application%20Note%20MPI%20%20wax/Application%20Note%20MPI%20Advanced%20Composite%20Selector%20Guide%20PFAS%20Free%20EN%202025.pdf#toolbar=0&navpanes=0', '無氟 (PFAS-Free) 先進複合材料選用指南')"
+                     data-pdf-title="Advanced Composite Selector Guide PFAS-Free"
+                     onclick="openPdfFullscreenModal('techdatadb/5.%20MPI/3.Application%20Note%20MPI%20%20wax/Application%20Note%20MPI%20Advanced%20Composite%20Selector%20Guide%20PFAS%20Free%20EN%202025.pdf#toolbar=0&navpanes=0', 'Advanced Composite Selector Guide PFAS-Free')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1804,12 +1823,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        無氟 (PFAS-Free) 先進複合材料選用指南
+                        Advanced Composite Selector Guide PFAS-Free
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    碳纖維與先進複合材料的無氟耐磨潤滑手冊，能在高溫固化中均勻遷移至表面形成物理保護層，降低滑動摩擦阻力並提高表面抗碎石衝擊性。
+                    提供無 PFAS（PFAS-Free）先進複合微粉蠟選型，著重於奈米氧化鋁複合系列在超薄塗膜中的耐刮與耐磨增強。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1821,19 +1840,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>針對熱固性環氧樹脂、雙馬來醯亞胺（BMI）等高溫樹脂基複合材料量身打造。</span>
+                            <span>採用莫氏硬度 9 的奈米氧化鋁（300 nm 粒子）牢固錨定於蠟顆粒中，兼具蠟的光滑性與陶瓷的極限抗磨性。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>完全排除全氟化合物（PFAS），滿足航太與高端汽車工業最新綠色材料要求。</span>
+                            <span>專為超薄塗膜（Ultra-thin film coatings < 5 μm）設計，奈米顆粒均勻分佈於塗層表面不影響光澤與透明度。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>在複合材料固化過程中均勻分散遷移至表面，顯著降低表面滑動摩擦阻力。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>提升複材表面抗碎石衝擊與耐磨損壽命，避免纖維裸露或微裂紋擴展。</span>
+                            <span>推薦 MPP-611AL、MP-28AL、Superslip 6515AL 等牌號，全面取代含氟表面改性劑。</span>
                         </li>
                     </ul>
                 </div>
@@ -1842,16 +1857,16 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">碳纖維複合材料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">風電葉片</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">航太材料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高溫環氧樹脂基材</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">罐裝與容器塗料（Can & Container）</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">卷材塗料（Coil）</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">薄膜印刷光油</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">工業精密防護塗層</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Micronized%20Wax%20/%20%E5%BE%AE%E7%B2%89%E8%A0%9F-%E7%84%A1%E6%B0%9F%20%28PFAS-Free%29%20%E5%85%88%E9%80%B2%E8%A4%87%E5%90%88%E6%9D%90%E6%96%99%E9%81%B8%E7%94%A8%E6%8C%87%E5%8D%97"
+                    <a href="contact/?mode=detailed&inquiry=Micronized%20Wax%20/%20%E5%BE%AE%E7%B2%89%E8%A0%9F-Advanced%20Composite%20Selector%20Guide%20PFAS-Free"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1867,73 +1882,70 @@
                         </div>
                     </div>
 
-                    <div id="tech-panel-single" class="hidden space-y-2">
-                        <!-- 快捷標籤列 (單行滾動) -->
-                        <div class="flex items-center gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 overflow-x-auto tech-pills-container">
-                            <button type="button" id="pill-wax-single-0" onclick="selectTechDoc('wax', 'single', 0)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap bg-blue-900 text-white shadow-2xs font-bold">
-                                1. PolyGlide 1226XF
-                            </button>
-                            <button type="button" id="pill-wax-single-1" onclick="selectTechDoc('wax', 'single', 1)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                2. PropylMatte 31 HD
-                            </button>
-                            <button type="button" id="pill-wax-single-2" onclick="selectTechDoc('wax', 'single', 2)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                3. MicroKlear 418AL
-                            </button>
-                            <button type="button" id="pill-wax-single-3" onclick="selectTechDoc('wax', 'single', 3)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                4. MicroMatte 1415EZ
-                            </button>
-                            <button type="button" id="pill-wax-single-4" onclick="selectTechDoc('wax', 'single', 4)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                5. MP 22 VF (油墨耐磨)
-                            </button>
-                            <button type="button" id="pill-wax-single-5" onclick="selectTechDoc('wax', 'single', 5)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                6. MP-22XF (油墨耐磨)
-                            </button>
-                            <button type="button" id="pill-wax-single-6" onclick="selectTechDoc('wax', 'single', 6)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                7. MPP-611AL (高溫耐磨)
-                            </button>
-                            <button type="button" id="pill-wax-single-7" onclick="selectTechDoc('wax', 'single', 7)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                8. MPP-620F (油墨耐磨)
-                            </button>
-                            <button type="button" id="pill-wax-single-8" onclick="selectTechDoc('wax', 'single', 8)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                9. MPP-620XF (油墨耐磨)
-                            </button>
-                            <button type="button" id="pill-wax-single-9" onclick="selectTechDoc('wax', 'single', 9)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                10. MPP-635VF (高結晶耐磨)
-                            </button>
-                            <button type="button" id="pill-wax-single-10" onclick="selectTechDoc('wax', 'single', 10)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                11. PolyTuf 1229
-                            </button>
-                            <button type="button" id="pill-wax-single-11" onclick="selectTechDoc('wax', 'single', 11)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                12. AquaMatte (水性消光)
-                            </button>
-                            <button type="button" id="pill-wax-single-12" onclick="selectTechDoc('wax', 'single', 12)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                13. Superslip 6515AL
-                            </button>
-                            <button type="button" id="pill-wax-single-13" onclick="selectTechDoc('wax', 'single', 13)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                14. Fluo 300XF / Polyfluo
-                            </button>
-                            <button type="button" id="pill-wax-single-14" onclick="selectTechDoc('wax', 'single', 14)"
-                                    class="px-2.5 py-1 rounded-md text-xs font-semibold transition-all whitespace-nowrap text-slate-600 hover:text-blue-900 hover:bg-slate-100">
-                                15. MicroTex 950 (防滑紋理)
-                            </button>
+                    <div id="tech-panel-single" class="hidden space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-wax-single" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-wax-single" onchange="selectTechDoc('wax', 'single', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+                                <optgroup label="── Poly 耐磨系列 (3 篇) ──">
+                                    <option value="0" selected>PolyGlide 1226XF 耐磨性能研究</option>
+                                    <option value="10">PolyTuf 1229 耐磨性能研究</option>
+                                    <option value="13">Polyfluo 與 Fluo 300 耐磨對比研究</option>
+                                </optgroup>
+                                <optgroup label="── Matte 消光系列 (3 篇) ──">
+                                    <option value="1">PropylMatte 31HD 消光效率研究</option>
+                                    <option value="3">MicroMatte 1415-EZ 產品性能研究</option>
+                                    <option value="11">AquaMatte 水性消光效率研究</option>
+                                </optgroup>
+                                <optgroup label="── 特種微粉系列 (3 篇) ──">
+                                    <option value="2">MicroKlear 418AL 產品性能研究</option>
+                                    <option value="12">Superslip 6515AL 耐磨滑爽研究</option>
+                                    <option value="14">MicroTex 950 織紋防滑研究</option>
+                                </optgroup>
+                                <optgroup label="── MP-22 系列 (2 篇) ──">
+                                    <option value="4">MP-22 VF 油墨耐磨擦研究</option>
+                                    <option value="5">MP-22XF 油墨耐磨擦研究</option>
+                                </optgroup>
+                                <optgroup label="── MPP 系列 (4 篇) ──">
+                                    <option value="6">MPP-611AL 高溫耐磨研究</option>
+                                    <option value="7">MPP-620F 油墨耐磨擦研究</option>
+                                    <option value="8">MPP-620XF 油墨耐磨擦研究</option>
+                                    <option value="9">MPP-635VF 油墨耐磨擦研究</option>
+                                </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-wax-single" class="text-blue-950 font-bold">1</strong> / 15 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-wax-single" onclick="navigateTechDoc('wax', 'single', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-wax-single" onclick="navigateTechDoc('wax', 'single', 1)"
+                                            
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- 雙欄核心展示區 -->
-                        <div id="viewer-wax-single">
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-wax-single" class="w-full">
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -1941,8 +1953,8 @@
                 <div id="pdf-canvas-viewer-wax-single"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/5.%20MPI/4.MPI%20%20wax%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81/TI%20MPI%20Polyglide%201226%20XF/TI%20MPI%20PolyGlide%201226XF%20Performance%20Study%20EN%20202407.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="PolyGlide 1226XF 超細耐磨複合蠟性能研究報告"
-                     onclick="openPdfFullscreenModal('techdatadb/5.%20MPI/4.MPI%20%20wax%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81/TI%20MPI%20Polyglide%201226%20XF/TI%20MPI%20PolyGlide%201226XF%20Performance%20Study%20EN%20202407.pdf#toolbar=0&navpanes=0', 'PolyGlide 1226XF 超細耐磨複合蠟性能研究報告')"
+                     data-pdf-title="PolyGlide 1226XF Product Performance Study"
+                     onclick="openPdfFullscreenModal('techdatadb/5.%20MPI/4.MPI%20%20wax%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81/TI%20MPI%20Polyglide%201226%20XF/TI%20MPI%20PolyGlide%201226XF%20Performance%20Study%20EN%20202407.pdf#toolbar=0&navpanes=0', 'PolyGlide 1226XF Product Performance Study')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1960,12 +1972,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        PolyGlide 1226XF 超細耐磨複合蠟性能研究報告
+                        PolyGlide 1226XF Product Performance Study
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    超細粒徑（D50 約 4.0~5.5 μm）複合蠟的硬核實測報告，表面摩擦係數驟降超過 50%，提供極限 Taber 耐磨保護，且清漆清澈見底無晶點。
+                    評估 PolyGlide 1226XF 聚烯烴/複合微粉蠟在硬質聚氨酯塗層中大幅降低摩擦係數（COF）與提升滑爽耐磨性能的實驗報告。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1977,19 +1989,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>採用專利高密度聚乙烯與特種硬質高分子複合，D50 粒徑僅約 4.0~5.5 μm。</span>
+                            <span>針對硬質聚氨酯水性塗層，添加 2% PolyGlide 1226XF 可使 ASTM D1894 靜態與動態摩擦係數（COF）大幅降低。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>在薄膜印刷油墨與工業烤漆中展現出色的 Taber 與 Sutherland 耐磨耗保護。</span>
+                            <span>性能表現全面匹敵並優於含 PTFE 的傳統對標品 Polyfluo 150，為 100% 無氟的滑爽增強解決方案。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>顯著降低表面動態摩擦係數（COF 降幅超過 50%），滑爽觸感持久不消退。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>在透明高光清漆中完全不影響光澤度，塗膜清澈見底、無顆粒晶點。</span>
+                            <span>顆粒均勻超微細化，不損害塗層原有高透明度與光澤，表面滑爽手感持久穩定。</span>
                         </li>
                     </ul>
                 </div>
@@ -1998,15 +2006,15 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">薄膜包裝油墨</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">工業卷鋼烤漆</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高光清漆耐磨改性</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">工業塗料表面滑爽耐磨改性</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">卷材薄膜防護</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">無 PTFE 水性木器與塑膠面漆</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Micronized%20Wax%20/%20%E5%BE%AE%E7%B2%89%E8%A0%9F-PolyGlide%201226XF%20%E8%B6%85%E7%B4%B0%E8%80%90%E7%A3%A8%E8%A4%87%E5%90%88%E8%A0%9F%E6%80%A7%E8%83%BD%E7%A0%94%E7%A9%B6%E5%A0%B1%E5%91%8A"
+                    <a href="contact/?mode=detailed&inquiry=Micronized%20Wax%20/%20%E5%BE%AE%E7%B2%89%E8%A0%9F-PolyGlide%201226XF%20Product%20Performance%20Study"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>

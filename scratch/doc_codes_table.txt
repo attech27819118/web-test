@@ -1,0 +1,370 @@
+#01 | 鈦（鋯）酸酯作為交聯劑.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 
+     End: 
+--------------------------------------------------------------------------------
+#02 | 鈦（鋯）酸酯作為催化劑.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 
+     End: 
+--------------------------------------------------------------------------------
+#03 | 鈦（鋯）酸酯作為表面改性.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 
+     End: 
+--------------------------------------------------------------------------------
+#04 | 鈦（鋯）酸酯提高附著力.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 
+     End: 
+--------------------------------------------------------------------------------
+#05 | Brochure DK Tyzor Adhesive Plus Coatings Line EN 202512.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Tyzor // ® // Adhesives and Sealants // Application Guide
+     End: Acrylic (Water) Tyzor® TE // Tyzor® LA // Tyzor® 217 // Fast Stable Moderate to Low
+--------------------------------------------------------------------------------
+#06 | Brochure DK Tyzor General CN 202608.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 產品目錄  Tyzor™  有機鈦（鋯）酸酯 // Alan & Thomas Technologies // 宏 威 應 用 材 料 // Your Specialist
+     End: 形式的擔保，明示或暗示的保證，包括適銷 // 性或針對特定用途的擔保。 // 我們保留原廠因科技發展或深入研發而作出 // 更改的權利， 此版本取代所有之前的版本。
+--------------------------------------------------------------------------------
+#07 | Brochure DK Tyzor Plus Coatings EN 202512.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Tyzor // ® // Product Guide // PRODUCT DESCRIPTION APPLICATION NOTES
+     End: With the reduced operating temperatures, Tyzor® PC-64 offers improved // polymer quality. The b* color and acetaldehyde level in bottle resins produced // using Tyzor® PC-64 is excellent and matches or betters the polymer produced // using current conventional catalysts.
+--------------------------------------------------------------------------------
+#08 | Brochure DK Tyzor for Polyols Polymers EN 202602.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Tyzor // ® // Catalysts // for Polyols and Polymers
+     End: Tyzor® TnBT – Good overall reaction-rate performance and excellent clarity and color. // – High yield, easy work up, High Ti-content and reactivity. // Tyzor® BTP – High yield, easy work up, High Ti-content and reactivity. // – Provides good water stability and minimal hydrolysis reactions.
+--------------------------------------------------------------------------------
+#09 | Application Note DK Tyzor Adhesives Sealants EN.pdf
+     SC: ['SC0057     12/11'] | DKL: [] | TI: []
+     P1: INTRODUCTION // Dorf Ketal’s Tyzor® organic titanates and zirconates are versatile // chemical tools that are widely used in the adhesives and sealants // industry.  This Technical Note describes some of the more
+     End: outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a // recommendation to infringe any patent. // TYZOR and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd. // © 2011 Dorf Ketal Speciality Catalysts LLC
+--------------------------------------------------------------------------------
+#10 | Application Note DK Tyzor Bulk Handling Procedures EN.pdf
+     SC: ['SC0052     11/11'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® organic titanates comprise a series of titanium // and zirconate esters ranging from very reactive Tyzor® TPT // (tetraisopropyl titanate) to stabilized chelated forms such as Tyzor®
+     End: 0 // Viscosity (centipoise) // FREEZING POINT // TYZOR® Organic Titanate Brooksfield Viscosity
+--------------------------------------------------------------------------------
+#11 | Application Note DK Tyzor Catalyst Plasticizer Production EN.pdf
+     SC: ['SC0050     01/12'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® organic titanates are valuable, environmentally // friendly catalysts for the direct esterification of aromatic and // aliphatic mono, di, tri, and other carboxylic acids to make a variety
+     End: outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a // recommendation to infringe any patent. // TYZOR and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd. // © 2012 Dorf Ketal Speciality Catalysts LLC
+--------------------------------------------------------------------------------
+#12 | Application Note DK Tyzor Crosslinking for Paper EN.pdf
+     SC: ['SC0061     01/12'] | DKL: [] | TI: []
+     P1: PAPER // Dorf Ketal Tyzor® titanates crosslink PVA and starch in adhesive // formulations to improve water resistance1-4 of Kraft paper laminates // and corrugated paperboard.  The titanates also are used in sizing
+     End: outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a // recommendation to infringe any patent. // TYZOR and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd. // ELVANOL is a trademark of DuPont © 2012 Dorf Ketal Speciality Catalysts LLC
+--------------------------------------------------------------------------------
+#13 | Application Note DK Tyzor Direct Esterification EN.pdf
+     SC: ['SC0049     03/12'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® organic titanates are excellent catalysts in a // number of chemical reactions.  They are particularly useful in // esterifications and transesterifications because the catalysis is
+     End: 20 // 0 // % Conversion // Direct Esterification of Adipic Acid to Bis-2-ethylhexyl Adipate
+--------------------------------------------------------------------------------
+#14 | Application Note DK Tyzor Ferrous and Nonferrous Metal EN.pdf
+     SC: ['SC0108     05/12'] | DKL: [] | TI: []
+     P1: INTRODUCTION // Tyzor® organic titanates and zirconates are highly reactive // compounds with dozens of applications on metal surfaces. // They are non-toxic, effective at low dosages and easy to apply
+     End: — Produces tough coatings that are extremely light-stable // in harsh environments // INDUSTRIAL ORGANIC COATING ADDITIVE CASE STUDY // – CHAIN EXTENDER FOR LIGHT-STABLE POLYUREA SPRAY TRUCK BED LINERS
+--------------------------------------------------------------------------------
+#15 | Application Note DK Tyzor Glass Surface Coatings EN.pdf
+     SC: ['SC0046     11/11'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® organic titanates and zirconates are used to // prevent glass surfaces from scratching and to provide adhesion // and bonding of other metal oxide finishes to glass and other
+     End: 21. BFG Glass Group, J 87–10,943–3/19/87 // 22. Asahi Glass, US 3,660,137–5/2/72 // 23. Central Glass Company Ltd., US 4,521,454–6/4/85 // 24. Owens-Corning Fiberglas, US 4,492,722–1/8/8
+--------------------------------------------------------------------------------
+#16 | Application Note DK Tyzor Inorganic Filler Modification EN.pdf
+     SC: ['SC0048     12/11'] | DKL: [] | TI: []
+     P1: DESCRIPTION // The trend in manufactured paints and coatings or filled // thermoplastic and thermoset resins is to increase the amount of // inexpensive, inert inorganic fillers without affecting resultant resin
+     End: TYZOR and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd. // © 2011 Dorf Ketal Speciality Catalysts LLC // REFERENCES: // 1.  U.S. Pat. Nos. 3,697,474 and 3,697,475.
+--------------------------------------------------------------------------------
+#17 | Application Note DK Tyzor Surface Primers EN.pdf
+     SC: ['SC0045     11/11'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® organic titanates make excellent primers for the // treatment of a variety of metals, plastics, and even fluoropolymers // to accept paints, inks, rubber-based coatings and many others
+     End: 29. Shin-Estu Polymer Company, J 60-221,430-11/8/85 // 30. Hitemp Wires, US 2,888,367-5/26/59 // 31. 3M, US 2,898,229-8/4/59 // 32. DuPont, DE 2,264,962-10/16/75
+--------------------------------------------------------------------------------
+#18 | Application Note DK Tyzor Thawing Frozen TPT EN.pdf
+     SC: ['SC0051     11/11'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® TPT freezes at 18 °C (64 °F), which is very close // to room temperature, so it may become solid during shipment or // storage.  Because Tyzor® TPT does not expand while freezing,
+     End: outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a // recommendation to infringe any patent. // TYZOR and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt., Ltd. // © 2011 Dorf Ketal Speciality Catalysts, LLC
+--------------------------------------------------------------------------------
+#19 | Application Note DK Tyzor Transesterification EN.pdf
+     SC: ['SC0053     11/11'] | DKL: [] | TI: []
+     P1: DESCRIPTION // Dorf Ketal Tyzor® organic titanates are valuable catalysts in a // number of chemical reactions.  They are particularly useful in // esterifications and transesterifications, because the catalysis is
+     End: 0 // % Conversion // PTSA // N-Decyl Acrylate from Ethyl Acrylate
+--------------------------------------------------------------------------------
+#20 | Application Note DK Tyzor Vapor Pressure vs Temperature EN.pdf
+     SC: ['SC0054     11/11'] | DKL: [] | TI: []
+     P1: TYZOR® // Organic Titanates // VAPOR PRESSURE VS. TEMPERATURE // Page 1 of 1
+     End: 0.2 // 0.1 // Vapor Pressure [mbar] // ETHYL TITANATE n-PROPYL TITANATE ISOBUTYL TITANATE n-BUTYL TITANATE
+--------------------------------------------------------------------------------
+#21 | TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf
+     SC: ['SC0118     04/13'] | DKL: [] | TI: []
+     P1: DESCRIPTION Tyzor ® ACtivate™ 422 is a hydrolytically stable titanate catalyst specifically designed for plastic packaging // in food contact applications.  Superior ligand chemistry provides the excellent melt and SSP activity // required for excellent polymer color and aesthetics. // Approved for Food Contact
+     End: outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a // recommendation to infringe any patent. // TYZOR, ACtivate and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd. // © 2013 Dorf Ketal Speciality Catalysts LLC
+--------------------------------------------------------------------------------
+#22 | TI DK Tyzor Activate 422 for PET Bottle Resins EN.pdf
+     SC: ['SC0114   05/13'] | DKL: ['DKLSC019'] | TI: []
+     P1: DESCRIPTION Tyzor ® ACtivate™ 422 is a hydrolytically stable titanate catalyst specifically designed for PET bottle resin // production.  Superior ligand chemistry provides excellent catalytic activity, producing PET resin and // bottles with superior color and aesthetics. // Tyzor® ACtivate™ 422 benefits can be fine-tuned in a variety of ways to fit each manufacturer’s unique
+     End: outside our control.  In addition, none of the contents of this publication should be taken as a license to operate under, or a // recommendation to infringe any patent. // TYZOR, ACtivate and DORF KETAL are trademarks of Dorf Ketal Chemicals Pvt. Ltd. // © 2013 Dorf Ketal Speciality Catalysts LLC
+--------------------------------------------------------------------------------
+#23 | TI DK Tyzor IAM for Ink EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Tyzor® IAM // Organic Titanate // DESCRIPTION Tyzor® IAM is specifically developed for the printing ink industry.  It is a titanium-based phosphate // complex that offers the following features:
+     End: tyzor@dorfketalusa.com // customerservice@dorfketalusa.com // www.dorfketal.com // Issued July 2010
+--------------------------------------------------------------------------------
+#24 | TI DK Tyzor IAM for Solvent-Based Printing Ink EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: TYZOR  IAM // Issued by the // Product Management Group // BULLET IN
+     End: 1% IAM 0.01 // 2% IAM 0.14 // 3% IAM 0.10 // 4% IAM 0.15
+--------------------------------------------------------------------------------
+#25 | Brochure DK Unilink Plus Coatings Line EN 202512.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Clearlink // ® // , Unilink // ®
+     End: foams, coatings, adhesives, and elastomers. Thanks to relatively // low reactivity, UNILINK® 4200 can be used in TDI or MDI // formulations, and cross-linking can be controlled by adding higher // functioning polyols.
+--------------------------------------------------------------------------------
+#26 | TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf
+     SC: ['SC0031     09/11'] | DKL: [] | TI: []
+     P1: CLEARLINK® 1000 // Aliphatic Amine // Page 1 of 2 // SC0031     09/11
+     End: color-critical and UV light-stable polymers.  It is an easy-handling, low-viscosity liquid that is low in toxicity // (Ames negative) and it provides substantially lower reactivity than other commercially available aliphatic // diamines.  Finished coatings have excellent color stability, physical properties and heat resistance. // TYPICAL PROPERTIES
+--------------------------------------------------------------------------------
+#27 | TI DK Unilink 1030 Catalyst for Cast Elastomers EN.pdf
+     SC: ['SC0081     02/13'] | DKL: [] | TI: []
+     P1: 120 // 100 // 80 // 60
+     End: and desired reaction time. // DESCRIPTION Unilink ® 1030 is a reactive proprietary zirconium chelate dissolved in a reactive diol.  It is sensitive to // moisture.  Unilink® 1030 dissolves to form clear, pale-yellow solutions in most organic solvents. // TYPICAL PROPERTIES
+--------------------------------------------------------------------------------
+#28 | TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams EN.pdf
+     SC: ['SC0027     09/11'] | DKL: [] | TI: []
+     P1: UNILINK® 4200 // Aromatic Diamine // Page 1 of 2 // SC0027     09/11
+     End: the polyurethane formulator to control the degree of cross-linking by adding higher-functioning polyols. // It is an easy-to-handle liquid that is low in toxicity (Ames negative) and relatively insensitive to moisture, // and it is compatible with a wide range of polyols, co-curatives and other components. // TYPICAL PROPERTIES
+--------------------------------------------------------------------------------
+#29 | TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings EN.pdf
+     SC: ['SC0028     10/11'] | DKL: [] | TI: []
+     P1: UNILINK® 4200 // Aromatic Diamine // Page 1 of 2 // SC0028     10/11
+     End: the polyurethane formulator to control the degree of cross-linking by adding higher-functioning polyols. // It is an easy-to-handle liquid that is low in toxicity (Ames negative) and relatively insensitive to moisture, // and it is compatible with a wide range of co-curatives and other components. // TYPICAL PROPERTIES
+--------------------------------------------------------------------------------
+#30 | Brochure Orion Carbon Black CN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 产品技术指标 / 亚太地区 // 特种炭黑
+     End: 电话 +86 21 61 07 09 66 // APAC@orioncarbons.com // 公司全球总部 // Orion S.A., 6, Route de Trèves, 2633 Senningerberg, Luxembourg, Phone +352 270 48 06 0
+--------------------------------------------------------------------------------
+#31 | Brochure Orion Carbon Black EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Focused. Innovative. Responsive. // Specialty carbon blacks // Technical Data Asia Pacifi c // Focused. Innovative. Responsive.
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#32 | Application Note Orion Fastness of Specialty Carbon Blacks EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1480']
+     P1: Fastness and resistance properties of // specialty carbon blacks // Technical Information  TI 1480 // Focused. Innovative. Responsive.
+     End: P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com // OEC-TI 1480-10/ 2022
+--------------------------------------------------------------------------------
+#33 | Application Note Orion Handling of Carbon Black EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1451']
+     P1: Bild // Focused. Innovative. Responsive. // Handling of carbon black // Technical Information TI 1451
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#34 | Application Note Orion Pigments Special Carbon Black in Modern Coatings EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Carbon Black Pigments in // modern coating systems // Industry Information
+     End: information or statements or the material or systems described herein is at user’s sole discretion and risk, and consequently user acknowledges that Orion Engineered Carbons // GmbH shall bear no responsibility or liability for same. Nothing herein shall be construed as a license of or recommendation for use which infringes any proprietary // right. All sales are subject to Orion Engineered Carbons GmbH’s Standard Terms and Conditions of Sale, including but not limited to its Limited Warranty. // © 2012 Orion Engineered Carbons GmbH
+--------------------------------------------------------------------------------
+#35 | Application Note Orion Special Black for Fibers EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1377']
+     P1: Focused. Innovative. Responsive. // Specialty carbon blacks for fi bers // Technical Information 1377
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#36 | Application Note Orion Special Carbon Black Disperse Guideline EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1375']
+     P1: Focused. Innovative. Responsive. // Short Dispersion Guideline for // Specialty Carbon Blacks in Coatings // Technical Information 1375
+     End: Shanghai 200070, P . R. China // Phone +86 21 61 07 09 66 // APAC@orioncarbons.com // www.orioncarbons.com
+--------------------------------------------------------------------------------
+#37 | Application Note Orion Special Carbon Black for Industrial Coatings EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1458', 'TI 1257', 'TI 1455', 'TI 1293', 'TI 1459']
+     P1: Focused. Innovative. Responsive. // Specialty carbon blacks for // industrial coatings // Technical Information 1458
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#38 | Application Note Orion Special Carbon Black for Inkjet Inks EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1291']
+     P1: Focused. Innovative. Responsive. // Specialty carbon blacks for // superior pigmented inkjet inks // Technical Information 1291
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#39 | Application Note Orion Special Carbon Black for Powder Coatings EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1293']
+     P1: Focused. Innovative. Responsive. // Specialty carbon blacks for powder coatings // Technical Information 1293
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#40 | Application Note Orion Special Carbon Black for Printing Inks EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Bild // Focused. Innovative. Responsive. // Specialty carbon black // for printing inks
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#41 | Application Note Orion Special Carbon Black for Tinting Coating EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1459']
+     P1: Focused. Innovative. Responsive. // Specialty carbon blacks for // tinting applications // Technical Information 1459
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#42 | Application Note Orion Special Carbon Black in Food Package Printing Ink EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1453']
+     P1: Carbon Black Pigment for // Food Packaging Printing Inks // Technical Information TI 1453
+     End: 94 Galsan 1 -Dong, Bupyeong-gu // Incheon 403-081, Korea // phone +82 32 510 6075 // fax +82 32 527 6023
+--------------------------------------------------------------------------------
+#43 | Application Note Orion Special Carbon Black with Low PAHS EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1483']
+     P1: Focused. Innovative. Responsive. // Carbon blacks with low amount of // Polycyclic Aromatic Hydrocarbons (PAHs) // Technical Information 1483
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#44 | TI Orion Colour Black FW 310 in Coating CN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1485']
+     P1: Focused. Innovative. Responsive. // COLOUR BLACK FW 310 // 水性和溶剂型涂料用超高黑度特种炭黑 // 技术信息 1485
+     End: 邮编 200070 // 电话 +86 21 61 07 09 66 // APAC@orioncarbons.com // www.orioncarbons.com
+--------------------------------------------------------------------------------
+#45 | TI Orion Colour Black FW 310 in Coating EN.pdf
+     SC: [] | DKL: [] | TI: ['TI 1485']
+     P1: Focused. Innovative. Responsive. // COLOUR BLACK FW 310 // Carbon black with deepest blackness for // water-borne and solvent-borne coatings
+     End: 100 Yutong Road, Jing’an District, Shanghai 20007 // P . R. China // Phone +86 21 6107 0966 // APAC@orioncarbons.com
+--------------------------------------------------------------------------------
+#46 | Brochure MPI Industrial PTFE Alternatives EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: PTFE Replacements // Specialty Wax Additives and Fine Powders
+     End: NEW // NEW // NEW // NEW
+--------------------------------------------------------------------------------
+#47 | Brochure MPI Specialty Wax Additives and Fine Powders EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Specialty Wax Additives // and Fine Powders
+     End: 12 --- // Micro Powders  |  580 White Plains Road  |  Tarrytown, NY 10591   |  info@micropowders.com  |  micropowders.com // 08/26
+--------------------------------------------------------------------------------
+#48 | Application Note MPI Advanced Composite Selector Guide PFAS Free EN 2025.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: SMALL PARTICLES, BIG IDEAS® // ADVANCED COMPOSITE SELECTOR GUIDE PFAS-FREE // The information contained herein is to the best of our knowledge true and correct and any suggestions are made without guarantee, express or // implied, since conditions of use are beyond our control. Micro Powders, Inc. disclaims any liability incurred in connection with the use of any data or
+     End: Natural or naturally derived // Available as a waterbased dispersion // Micro Powders  |  580 White Plains Road  |  Tarrytown, NY 10591   |  914-793-4058  |  micropowders.com // NEW
+--------------------------------------------------------------------------------
+#49 | Application Note MPI How to Disperse Micronized Wax EN 2024.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 
+     End: HAVING PROBLEMS? // Micro Powders’ Technical Support Staff are just a phone call or e-mail away and are always available to help. If you are // facing challenges with your application and need our assistance, please contact us. // 4
+--------------------------------------------------------------------------------
+#50 | Application Note MPI MicroTouch EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: How do you define // MicroTouch // from Micro Powders // Soft?
+     End: excellent customer service and superior technical support to its // customers. // l l l // www.micropowders.com
+--------------------------------------------------------------------------------
+#51 | Application Note MPI SelectorGuide Can Container Coatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Can & Container Coatings // Coatings for can and container have demanding performance requirements such as // abrasion and block resistance as well as surface slip and mobility. Micro Powders // products can enhance these properties with optimal gloss, clarity and durability.
+     End: R-03/26Micro Powders  |  580 White Plains Road  |  Tarrytown, NY 10591   |  914-793-4058  |  micropowders. com // PTFE // Alte // rnative
+--------------------------------------------------------------------------------
+#52 | Application Note MPI SelectorGuide Energy Curable Inks and Coatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Energy Curable Inks & Coatings // UV and other energy curable coatings and inks beneﬁt when formulated with wax // additives that impart slip, rub, and scratch resistance, while improving hardness and // anti-blocking. Micro Powders’ products can enhance these properties with the optimum
+     End: ance // The information contained herein is to the best of our knowledge true and correct and any suggestions are made without guarantee, express or implied, since conditions of use are beyond our control. Micro Powders, Inc. // disclaims any liability incurred in connection with the use of any data or suggestions. Nothing contained herein shall be construed as a recommendation to infringe on any existing patents covering any material or its use. // R-03/26Micro Powders  |  580 White Plains Road  |  Tarrytown, NY 10591   |  914-793-4058  |  micropowders. com
+--------------------------------------------------------------------------------
+#53 | Application Note MPI SelectorGuide Industrial Coatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Industrial Coatings // Coatings for industrial products present a range of performance challenges, from // improving slip and lubricity to boosting abrasion resistance and anti-blocking. The right // Micro Powders additive can enhance these properties while imparting visual and tactile
+     End: PTFE // Alter // nat // ive
+--------------------------------------------------------------------------------
+#54 | Application Note MPI SelectorGuide Industrial Flooring Coatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Industrial Floor Coatings // Coatings for industrial ﬂooring require unique surface properties which include COF and // gloss control, scuﬀ and abrasion resistance, and water repellency.  Micro Powders has the // broadest range of polymeric additives for walking surfaces, including ﬁne-to-coarse
+     End: R-03/26Micro Powders  |  580 White Plains Road  |  Tarrytown, NY 10591   |  914-793-4058  |  micropowders. com // PTFE // Altern // ative
+--------------------------------------------------------------------------------
+#55 | Application Note MPI SelectorGuide Powder Coatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Powder Coatings // A durable powder coated surface can be improved with additives from Micro Powders // that provide eﬀective degassing, abrasion resistance, anti-blocking, and lubricity.  Special // surface eﬀects that control gloss, add texture, and impart distinct coating structure are
+     End: Alte // rnative // Edge C // overage
+--------------------------------------------------------------------------------
+#56 | Application Note MPI SelectorGuide Printing Inks EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Printing Inks & OPV’s // Printed coatings and inks perform most eﬀectively when properly formulated with wax // additives from Micro Powders that improve slip, rub, scratch, and block resistance.  From // ﬂexo to gravure to oﬀset, we oﬀer the most comprehensive line of additives for both high
+     End: PTF // E Al // terna // tive
+--------------------------------------------------------------------------------
+#57 | Application Note MPI SelectorGuide WoodCoatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Wood Coatings // The natural beauty of a coated wood surface can be protected and enhanced with // additives that improve scratch and mar resistance, add lubricity, and impart a smooth // surface feel. Micro Powders products can enhance these properties while providing
+     End: disclaims any liability incurred in connection with the use of any data or suggestions. Nothing contained herein shall be construed as a recommendation to infringe on any existing patents covering any material or its use. // R-03/26Micro Powders  |  580 White Plains Road  |  Tarrytown, NY 10591   |  914-793-4058  |  micropowders. com // PTFE A // lternative
+--------------------------------------------------------------------------------
+#58 | Application Note MPI Wax SelectorGuide Architectural Coatings EN 2026.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Architectural Coatings // The performance demands of todays modern interior and exterior architectural coatings // can be achieved with a wax additive that provides eﬀective gloss control, enhanced // burnish resistance, improved soil release, and superior in-can stability. Micro Powders’
+     End: ture // and Stain Res // istanc // e
+--------------------------------------------------------------------------------
+#59 | Formulation Guide MPI MicroTouch EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: MICRO POWDERS, INC. // High Performance Wax Additives // 10/2018 // MicroTouchMicroTouch
+     End: % Additive 0 11.5 0 11.5 0 11.5 0 11.5 // Gloss 20° 39.3 0.4 42.8 0.6 39.3 0.4 39.3 0.4 // Gloss 60° 72.9 4.3 71.8 7.5 72.9 3.7 72.9 4.2 // Gloss 85° 88.0 10.3 92.8 18.9 88.0 3.2 88.0 1.7
+--------------------------------------------------------------------------------
+#60 | TI MPI PolyGlide 1226XF Performance Study EN 202407.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // Revised 07/2024 - Page 1 of 3 // PRODUCT PERFORMANCE STUDY // PolyGlide 1226XF
+     End: Polyfluo 150 PolyGlide 1226XF No Wax // Coefficient of Friction // +2% Wax in Hard Urethane Coating // ASTM D1894 Coefficient of Friction (COF)
+--------------------------------------------------------------------------------
+#61 | TI MPI PropylMatte 31 HD and AquaMatte Matting Efficiency Study EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: 0.25 // 0.3 // Measurement // COF Measurements for 4% Additive
+--------------------------------------------------------------------------------
+#62 | TI MPI MicroKlear KL-418AL Performance Study EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: 1 // Micro Powders, Inc. Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: contained herein is to the best of our  knowledge true  and  correct and  any  suggestions are  made  without guarantee,  express // or  implied, since conditions  of  use are beyond  our  control.  Micro  Powders,  Inc. disclaims  any  liability incurred in connection // with the  use of  any  data or  suggestions.  Nothing contained  herein  shall  be construed  as a  recommendation to infringe on // any existing patents covering any material or its use.
+--------------------------------------------------------------------------------
+#63 | TI MPI MicroMatte 1415-EZ Performance Study EN 2024.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // Revised 04/2024 - Page 1 of 7 // PRODUCT PERFORMANCE STUDY // MicroMatte 1415-EZ
+     End: • Dirt Pick Up Resistance (Soil release) // MicroMatte 1415-EZ has superior dirt pick up resistance (DPUR) and is very // similar in performance to MicroMatte 1011 UVW, with a Delta E of 2.8 after // staining and cleaning
+--------------------------------------------------------------------------------
+#64 | TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: control. // Althou // gh this study w as conducted i n a wat erbased printing ink formul a, t he results a nd differences i n // performance are translatable to their use in other wax-modified surface coatings.
+--------------------------------------------------------------------------------
+#65 | TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: control. // Althou // gh this study w as conducted i n a wat erbased printing ink formul a, t he results a nd differences i n // performance are translatable to their use in other wax-modified surface coatings.
+--------------------------------------------------------------------------------
+#66 | TI MPI MPP-611AL Performance Study EN 202407.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // Revision 07/2024 - Page 1 of 4 // PRODUCT PERFORMANCE STUDY // MPP- 611AL
+     End: • MPP-611AL gives the formulator the cutting-edge performance of alumina // nanopowder in a safe, easier-to-disperse, non-nano additive // • MPP-611AL has a density optimized for maximum surface efficiency and minimal // settling vs. alumina nanopowders
+--------------------------------------------------------------------------------
+#67 | TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: control. // Althou // gh this study w as conducted i n a wat erbased printing ink formul a, t he results a nd differences i n // performance are translatable to their use in other wax-modified surface coatings.
+--------------------------------------------------------------------------------
+#68 | TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: control. // Althou // gh this study w as conducted i n a wat erbased printing ink formul a, t he results a nd differences i n // performance are translatable to their use in other wax-modified surface coatings.
+--------------------------------------------------------------------------------
+#69 | TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: control. // Althou // gh this study w as conducted i n a wat erbased printing ink formul a, t he results a nd differences i n // performance are translatable to their use in other wax-modified surface coatings.
+--------------------------------------------------------------------------------
+#70 | TI MPI PolyTuf 1229 Performance Study EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // Revised 03/2023 - Page 1 of 3 // PRODUCT PERFORMANCE STUDY // PolyTuf™ 1229
+     End: Weight Loss (mg) // +1% in Hard Urethane Coating // ASTM D4060 Abrasion Resistance after 2500 // cycles
+--------------------------------------------------------------------------------
+#71 | TI MPI AquaMatte and PropylMatte Matting Efficiency Study EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: 0.25 // 0.3 // Measurement // COF Measurements for 4% Additive
+--------------------------------------------------------------------------------
+#72 | TI MPI Superslip 6515AL Superslip 6515AL-EZ Performance Study EN 202412.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // Revised 12/2024 - Page 1 of 4 // PRODUCT PERFORMANCE STUDY // Superslip 6515AL & Superslip 6515AL-EZ
+     End: • Comparable coefficient of friction to Polyfluo 150 // Superslip 6515AL is an ultrafine PTFE -free composite wax additive recommended as a // replacement for PTFE based waxes in can, coil and other thin film coating applications.   If // ease of dispersion into water-based systems is critical, Superslip 6515AL-EZ is recommended.
+--------------------------------------------------------------------------------
+#73 | TI MPI Polyfluo 190 and Fluo 300 Abrasion Resistance Study EN.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: Micro Powders, Inc.  Application Study // High-Performance Wax Additives micropowders.com // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+     End: 15.0 // Weight Loss Average (mg) // Polyfluo 190 Fluo 300 Control // Percent Additive
+--------------------------------------------------------------------------------
+#74 | TI MPI MicroTex 950 Performance Study EN 202504.pdf
+     SC: [] | DKL: [] | TI: []
+     P1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . // Revised 04/2025 - Page 1 of 5 // PRODUCT PERFORMANCE STUDY // MicroTex® 950
+     End: 3. The inert (filler and pigment) portion of the formula could have different oil // absorption values. In this case, higher oil absorption would increase the // texturing effect. This could also be affected by differences in particle size of the // mineral fillers.
+--------------------------------------------------------------------------------

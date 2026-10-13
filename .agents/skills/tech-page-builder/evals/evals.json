@@ -1,0 +1,23 @@
+{
+  "skill_name": "tech-page-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我們新增了一個產品線『特種防腐鋅粉 (Zinc Flake)』，請依據技術專頁規範，為其建立符合五大維度架構的資料設定、側邊欄按鈕與單一文件雙欄翼狀展示 HTML。",
+      "expected_output": "包含正確的 11/12 產品線側邊欄條列、五大維度書籤樣式按鈕、左右 50%:50% 雙翼預覽結構（封面+特點清單+標籤+諮詢按鈕），並符合安全防護規範。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "馬林酸樹脂 (maleic) 目前原廠尚無公開技術手冊，請依照實事求是規範產出其原理與配方分頁的提示卡片 HTML，確認沒有杜撰內容且包含正確諮詢連結。",
+      "expected_output": "產出標準的 build_empty_tab_html 結構，明確標示『資料整理中』與『暫無公開資料』，諮詢按鈕參數正確進行 URL 編碼，並具備產品專區導流按鈕。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "請檢查微粉蠟 (wax) 的單一產品技術資料 (single) 下拉選單結構，確保符合 Munzing 風格下拉選單與 optgroup 分組規範。",
+      "expected_output": "包含 tech-doc-selector-bar、<select> 內含 <optgroup label=\"── 系列名稱 (N 篇) ──\">、篇數統計徽章及上一篇/下一篇切換按鈕。",
+      "files": []
+    }
+  ]
+}

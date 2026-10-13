@@ -417,7 +417,72 @@ def parse_doc_meta(category_slug, tab_key, filename, rel_web_path):
     # 2. CARBON BLACK (Orion Engineered Carbons 特級碳黑)
     # =========================================================================
     elif category_slug == "carbon-black":
-        if tab_key == "catalog":
+        if tab_key == "principles":
+            if "粒徑" in fn or "particle" in fn.lower():
+                meta.update({
+                    "docId": "ORI-P01",
+                    "shortLabel": "平均原生粒徑機制",
+                    "title": "碳黑重要技術指標：平均原生粒徑與比表面積原理",
+                    "titleEn": "Carbon Black Primary Particle Size & Specific Surface Area (BET)",
+                    "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（一、平均原生粒徑）",
+                    "desc": "探討碳黑原生粒徑（Primary Particle Size）與 BET 比表面積之物理作用機制。粒徑大小直接決定光學黑度（Jetness）、色調底相（Undertone）、著色力及抗紫外線能力，並深入剖析微細粒徑對塗料油墨潤濕分散流變特性的關鍵影響。",
+                    "advantages": [
+                        "黑度與原生粒徑直接相關：粒徑越小（10~20 nm），BET 比表面積越大，光線吸收率越高，呈現之黑度越深邃且抗紫外線老化性能更佳。",
+                        "色相與底色調控：微細小粒徑碳黑展現高級深藍色相（Blue Undertone），而粗粒徑大粒徑碳黑則偏向棕色調（Brown Tone）。",
+                        "凝聚體比表面積效應：原生粒子熔結成凝聚體後，微細粒子依然保持極高有效比表面積，對塗膜提供頂級著色力與光學反射密度。",
+                        "分散工藝關聯性：比表面積越大，分子間吸引力越強且吸油量增加，需搭配適當高分子分散劑與研磨剪切力以確保最佳展色穩定性。"
+                    ],
+                    "applications": ["頂級汽車原廠漆", "高光修補漆", "高光學密度噴墨油墨", "抗UV耐候塑料母粒", "防腐防護塗料"]
+                })
+            elif "結" in fn or "结" in fn or "structure" in fn.lower():
+                meta.update({
+                    "docId": "ORI-P02",
+                    "shortLabel": "聚集體結構形態",
+                    "title": "碳黑重要技術指標：聚集體立體結構形態與吸油值原理",
+                    "titleEn": "Carbon Black Aggregate Structure & Oil Absorption (OAN)",
+                    "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（二、結構）",
+                    "desc": "解析色素碳黑原生凝聚體（Aggregate）之化學鍵結立體形態與鏈枝結構發育度。闡明高結構與低結構碳黑在吸油量（OAN）、流變黏度、分散行為、塗層光澤度及導電性能上的本質差異與選型依據。",
+                    "advantages": [
+                        "原生化學鍵熔結：碳黑在反應爐高溫區由原生粒子熔結為不可逆原生凝聚體，以鏈狀或葡萄串狀形態存在，構成碳黑的立體結構基礎。",
+                        "高結構特徵與性能：高結構碳黑具備大量鏈枝與孔隙空間，吸油值（OAN）高、抗絮凝穩定性好，利於賦予複合材料優異抗靜電與導電網絡。",
+                        "低結構特徵與性能：低結構碳黑聚集體緊湊、吸油值低，在液態塗料與油墨中黏度增稠小，具備高顏料填充負載量與極致鏡面高光澤。",
+                        "流變與加工性指導：結構度直接主導塗料油墨的屈服值與流平性，為控制配方黏度與塗裝作業流動性的核心參數。"
+                    ],
+                    "applications": ["高光汽車烤漆", "低黏度高填量色漿", "導電防靜電塗層", "平版膠印油墨", "工程塑料著色母粒"]
+                })
+            elif "表面" in fn or "surface" in fn.lower():
+                meta.update({
+                    "docId": "ORI-P03",
+                    "shortLabel": "表面氧化化學處理",
+                    "title": "碳黑重要技術指標：表面化學處理、揮發分與酸鹼度 (pH) 原理",
+                    "titleEn": "Carbon Black Surface Treatment, Volatiles & pH Chemistry",
+                    "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（三、表面處理）",
+                    "desc": "闡述特級碳黑後氧化表面處理機制，解析羧基、酚羥基、內酯基與醌基等含氧極性官能基之分布。深入說明揮發分含量（Volatile Content）與 pH 酸鹼度對極性體系潤濕相容性、高分子分散劑錨定鍵合及抗絮凝返粗的決定性作用。",
+                    "advantages": [
+                        "調整極性與潤濕性：表面後氧化引入豐富含氧極性官能基（羧基、酚羥基、內酯基），大幅降低介面張力，使微細粒徑碳黑在極性溶劑中快速潤濕。",
+                        "揮發分與官能基指標：揮發分含量直接反映表面含氧基團數量，揮發分越高代表極性越強，與水性分散樹脂相容展色性更卓越。",
+                        "酸鹼性 (pH) 轉變機制：一般未處理爐黑呈鹼性（pH > 7），經深度後處理之色素碳黑轉為酸性（pH 3~5），能與分散劑之鹼性胺基錨定基團形成超強鍵結。",
+                        "防止返粗與提升光澤：強固的極性介面保護層能徹底防止儲存過程中的絮凝返粗與色差漂移，大幅提升塗膜的光澤度與漆膜通透感。"
+                    ],
+                    "applications": ["水性高光工業漆", "汽車烤漆原廠漆", "極性溶劑型高級油墨", "高展色奈米色漿", "UV光固化塗料"]
+                })
+            elif "製程" in fn or "工藝" in fn or "process" in fn.lower():
+                meta.update({
+                    "docId": "ORI-P04",
+                    "shortLabel": "三大核心製程工藝",
+                    "title": "顏料碳黑三大核心製造工藝差異：爐黑、氣黑與燈黑",
+                    "titleEn": "Manufacturing Processes of Pigment Blacks: Furnace, Gas, and Lamp Black",
+                    "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（四、製程差異）",
+                    "desc": "比較爐黑工藝（Furnace Black）、氣黑工藝（Gas Black）與燈黑工藝（Lamp Black）之反應爐結構、燃燒熱解機理及表面化學特性。詳解不同工藝對碳黑粒徑分布、聚集體結構、酸鹼值及終端漆膜色調特徵的決定性影響。",
+                    "advantages": [
+                        "爐黑工藝 (Furnace Black)：在密閉反應爐中高溫缺氧裂解，粒徑調控範圍寬廣（15~80 nm），產量大且結構多元，廣泛應用於塑料、合成皮革、電線電纜與工業防護領域。",
+                        "氣黑工藝 (Gas Black)：採用多孔扇形火焰於冷卻水鼓沉積，原生粒徑超細（10~30 nm）且天然富含酸性表面含氧基團（pH 3~5），具備極致超深黑度、強著色力與清澈深藍底相。",
+                        "燈黑工藝 (Lamp Black)：於敞開燃燒盤緩慢燃燒沉積，粒徑粗大且分佈寬，抗浮色發花（Rub-out）能力卓越，為建築與工業調色漆提供中性純灰與抗指研發花標竿。",
+                        "工藝決定應用特性：製程直接決定碳黑的化學純度、表面官能基與物理晶體結構，為各類高階塗料、油墨及工程塑料提供精準客製化材料選型。"
+                    ],
+                    "applications": ["頂級汽車原廠面漆", "高級包裝凹版油墨", "建築外牆調色乳膠漆", "合成皮革PU塗飾", "工程塑料色母粒"]
+                })
+        elif tab_key == "catalog":
             if "CN" in fn:
                 meta.update({
                     "shortLabel": "特級碳黑型錄 (中)",
