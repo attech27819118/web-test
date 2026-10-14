@@ -10,149 +10,149 @@
 
 // 11 大產品系列分類
 const TECH_CATEGORIES = [
-    {
-        slug: "tyzor",
-        itemNo: "01",
-        name: "Organic Titanates and Zirconates",
-        sub: "鈦酸酯與鋯酸酯, Tyzor",
-        brandTag: "Dorf Ketal",
-        brandBadge: "Dorf Ketal 原廠專用技術",
-        titleZh: "鈦酸酯與鋯酸酯四大核心技術應用 (Tyzor®)",
-        productLink: "products/dorfketal/tyzor/",
-        productLinkText: "瀏覽 Tyzor 產品",
-        desc: "Tyzor® 有機鈦（鋯）化合物具備高反應性與多重配位特性，廣泛應用於高分子合成催化、三維網絡交聯、異質基材介面強化，以及 Sol-Gel 表面改性，為工業化提供全面解決方案。",
-        hasData: true
-    },
-    {
-        slug: "carbon-black",
-        itemNo: "02",
-        name: "Special Carbon Black",
-        sub: "特級碳黑 / 導電碳黑",
-        brandTag: "Orion",
-        brandBadge: "Orion Engineered Carbons 原廠技術",
-        titleZh: "特級碳黑技術應用 (Carbon Black)",
-        productLink: "products/orion/coating/",
-        productLinkText: "瀏覽 40+ 款 Orion 碳黑",
-        desc: "Orion Engineered Carbons 為全球特級碳黑領導品牌，提供卓越黑度、分散流變性與耐候堅牢度，廣泛應用於高階塗料、油墨與塑料。",
-        hasData: true
-    },
-    {
-        slug: "maleic",
-        itemNo: "03",
-        name: "Maleic Resin / 馬林酸樹脂",
-        sub: "松香改性馬林酸樹脂",
-        brandTag: "其他特化",
-        brandBadge: "特用化學品技術專區",
-        titleZh: "馬林酸樹脂技術應用 (Maleic Resin)",
-        productLink: "products/others/maleic_acid_resin/",
-        productLinkText: "瀏覽馬林酸樹脂規格",
-        desc: "松香改性馬林酸樹脂系列，提供優異之硬度、光澤度、快乾性與耐黃變特性。",
-        hasData: false
-    },
-    {
-        slug: "px",
-        itemNo: "04",
-        name: "PX Lubricant Additives",
-        sub: "潤滑油添加劑 (原 ExxonMobil)",
-        brandTag: "Dorf Ketal",
-        brandBadge: "Dorf Ketal (原 ExxonMobil) 原廠技術",
-        titleZh: "PX 潤滑油添加劑技術應用 (PX Lubricants)",
-        productLink: "products/dorfketal/px/",
-        productLinkText: "瀏覽 PX 潤滑油添加劑",
-        desc: "Dorf Ketal (原 ExxonMobil 產品線) 特種潤滑油合成酯添加劑技術專題。",
-        hasData: false
-    },
-    {
-        slug: "silane",
-        itemNo: "05",
-        name: "Silane / 矽烷偶合劑",
-        sub: "Dynasylan / hydrosil 系列",
-        brandTag: "Evonik / 特化",
-        brandBadge: "Evonik 原廠專用技術",
-        titleZh: "矽烷偶合劑系列技術應用 (Silane)",
-        productLink: "products/others/silane/",
-        productLinkText: "瀏覽 24 款矽烷規格",
-        desc: "矽烷偶合劑技術專題，涵蓋水性與溶劑型有機官能基矽烷於複合材料與表面改性應用。",
-        hasData: false
-    },
-    {
-        slug: "wax",
-        itemNo: "06",
-        name: "Micronized Wax / 微粉蠟",
-        sub: "PTFE 取代 / 耐磨耐刮助劑",
-        brandTag: "Micro Powders",
-        brandBadge: "Micro Powders (MPI) 原廠技術",
-        titleZh: "微粉化蠟技術應用 (Micronized Wax)",
-        productLink: "products/mpi/ptfe/",
-        productLinkText: "瀏覽微粉蠟與 PTFE 替代方案",
-        desc: "Micro Powders (MPI) 全球微粉化蠟技術權威，提供合規無氟 PFAS-Free PTFE 替代方案、耐磨耐刮、消光爽滑及觸感改性劑。",
-        hasData: true
-    },
-    {
-        slug: "adhesion",
-        itemNo: "07",
-        name: "Adhesion Resin / 密著樹脂",
-        sub: "氯化聚烯烴 (CPO) & 非氯系",
-        brandTag: "其他特化",
-        brandBadge: "特用化學品技術專區",
-        titleZh: "密著樹脂技術應用 (Adhesion Resin)",
-        productLink: "products/others/adhesion_promoter/",
-        productLinkText: "瀏覽密著促進劑規格",
-        desc: "氯化聚烯烴 (CPO) 與非氯系特種密著樹脂技術應用。",
-        hasData: false
-    },
-    {
-        slug: "polyester",
-        itemNo: "08",
-        name: "Polyester Resin / 聚酯樹脂",
-        sub: "聚酯樹脂 (DYNAPOL/DYNACOLL替代品)",
-        brandTag: "其他特化",
-        brandBadge: "特用化學品技術專區",
-        titleZh: "聚酯樹脂技術應用 (Polyester Resin)",
-        productLink: "products/others/polyester_resin/",
-        productLinkText: "瀏覽 37 款聚酯規格",
-        desc: "飽和共聚聚酯樹脂技術專題，提供高附著、柔韌性與優異耐化學品塗料樹脂。",
-        hasData: false
-    },
-    {
-        slug: "chain",
-        itemNo: "09",
-        name: "Chain Extender / 擴鏈劑",
-        sub: "Unilink & Clearlink 系列",
-        brandTag: "Dorf Ketal",
-        brandBadge: "Dorf Ketal 原廠專用技術",
-        titleZh: "擴鏈劑技術應用 (Chain Extender)",
-        productLink: "products/dorfketal/chain/",
-        productLinkText: "瀏覽擴鏈劑規格",
-        desc: "Dorf Ketal Unilink® 與 Clearlink® 受阻二級二胺擴鏈劑技術，專用於聚脲 (Polyurea) 與高性能聚氨酯彈性體體系。",
-        hasData: true
-    },
-    {
-        slug: "matting",
-        itemNo: "10",
-        name: "Matting Agent / 消光粉",
-        sub: "二氧化矽 / 表面處理消光",
-        brandTag: "其他特化",
-        brandBadge: "特用化學品技術專區",
-        titleZh: "消光粉技術應用 (Matting Agent)",
-        productLink: "products/others/matting_agent/",
-        productLinkText: "瀏覽消光粉規格",
-        desc: "特種沉澱與氣相二氧化矽消光粉技術專題。",
-        hasData: false
-    },
-    {
-        slug: "powder",
-        itemNo: "11",
-        name: "Powder Coating Additive",
-        sub: "粉體塗料專用功能性助劑",
-        brandTag: "其他特化",
-        brandBadge: "特用化學品技術專區",
-        titleZh: "粉體塗料專用助劑技術應用 (Powder Additives)",
-        productLink: "products/others/coating_additive/",
-        productLinkText: "瀏覽粉體塗料助劑規格",
-        desc: "熱固性粉體塗料專用功能性助劑技術專區。",
-        hasData: false
-    }
+  {
+    slug: "tyzor",
+    itemNo: "01",
+    name: "Organic Titanates and Zirconates",
+    sub: "鈦酸酯與鋯酸酯, Tyzor",
+    brandTag: "Dorf Ketal",
+    brandBadge: "Dorf Ketal 原廠專用技術",
+    titleZh: "鈦酸酯與鋯酸酯四大核心技術應用 (Tyzor®)",
+    productLink: "products/dorfketal/tyzor/",
+    productLinkText: "瀏覽 Tyzor 產品",
+    desc: "Tyzor® 有機鈦（鋯）化合物具備高反應性與多重配位特性，廣泛應用於高分子合成催化、三維網絡交聯、異質基材介面強化，以及 Sol-Gel 表面改性，為工業化提供全面解決方案。",
+    hasData: true
+  },
+  {
+    slug: "carbon-black",
+    itemNo: "02",
+    name: "Special Carbon Black",
+    sub: "特級碳黑 / 導電碳黑",
+    brandTag: "Orion",
+    brandBadge: "Orion Engineered Carbons 原廠技術",
+    titleZh: "特級碳黑技術應用 (Carbon Black)",
+    productLink: "products/orion/coating/",
+    productLinkText: "瀏覽 40+ 款 Orion 碳黑",
+    desc: "Orion Engineered Carbons 為全球特級碳黑領導品牌，提供卓越黑度、分散流變性與耐候堅牢度，廣泛應用於高階塗料、油墨與塑料。",
+    hasData: true
+  },
+  {
+    slug: "maleic",
+    itemNo: "03",
+    name: "Maleic Resin / 馬林酸樹脂",
+    sub: "松香改性馬林酸樹脂",
+    brandTag: "其他特化",
+    brandBadge: "特用化學品技術專區",
+    titleZh: "馬林酸樹脂技術應用 (Maleic Resin)",
+    productLink: "products/others/maleic_acid_resin/",
+    productLinkText: "瀏覽馬林酸樹脂規格",
+    desc: "松香改性馬林酸樹脂系列，提供優異之硬度、光澤度、快乾性與耐黃變特性。",
+    hasData: false
+  },
+  {
+    slug: "px",
+    itemNo: "04",
+    name: "PX Lubricant Additives",
+    sub: "潤滑油添加劑 (原 ExxonMobil)",
+    brandTag: "Dorf Ketal",
+    brandBadge: "Dorf Ketal (原 ExxonMobil) 原廠技術",
+    titleZh: "PX 潤滑油添加劑技術應用 (PX Lubricants)",
+    productLink: "products/dorfketal/px/",
+    productLinkText: "瀏覽 PX 潤滑油添加劑",
+    desc: "Dorf Ketal (原 ExxonMobil 產品線) 特種潤滑油合成酯添加劑技術專題。",
+    hasData: false
+  },
+  {
+    slug: "silane",
+    itemNo: "05",
+    name: "Silane / 矽烷偶合劑",
+    sub: "Dynasylan / hydrosil 系列",
+    brandTag: "Evonik / 特化",
+    brandBadge: "Evonik 原廠專用技術",
+    titleZh: "矽烷偶合劑系列技術應用 (Silane)",
+    productLink: "products/others/silane/",
+    productLinkText: "瀏覽 24 款矽烷規格",
+    desc: "矽烷偶合劑技術專題，涵蓋水性與溶劑型有機官能基矽烷於複合材料與表面改性應用。",
+    hasData: false
+  },
+  {
+    slug: "wax",
+    itemNo: "06",
+    name: "Micronized Wax / 微粉蠟",
+    sub: "PTFE 取代 / 耐磨耐刮助劑",
+    brandTag: "Micro Powders",
+    brandBadge: "Micro Powders (MPI) 原廠技術",
+    titleZh: "微粉化蠟技術應用 (Micronized Wax)",
+    productLink: "products/mpi/ptfe/",
+    productLinkText: "瀏覽微粉蠟與 PTFE 替代方案",
+    desc: "Micro Powders (MPI) 全球微粉化蠟技術權威，提供合規無氟 PFAS-Free PTFE 替代方案、耐磨耐刮、消光爽滑及觸感改性劑。",
+    hasData: true
+  },
+  {
+    slug: "adhesion",
+    itemNo: "07",
+    name: "Adhesion Resin / 密著樹脂",
+    sub: "氯化聚烯烴 (CPO) & 非氯系",
+    brandTag: "其他特化",
+    brandBadge: "特用化學品技術專區",
+    titleZh: "密著樹脂技術應用 (Adhesion Resin)",
+    productLink: "products/others/adhesion_promoter/",
+    productLinkText: "瀏覽密著促進劑規格",
+    desc: "氯化聚烯烴 (CPO) 與非氯系特種密著樹脂技術應用。",
+    hasData: false
+  },
+  {
+    slug: "polyester",
+    itemNo: "08",
+    name: "Polyester Resin / 聚酯樹脂",
+    sub: "聚酯樹脂 (DYNAPOL/DYNACOLL替代品)",
+    brandTag: "其他特化",
+    brandBadge: "特用化學品技術專區",
+    titleZh: "聚酯樹脂技術應用 (Polyester Resin)",
+    productLink: "products/others/polyester_resin/",
+    productLinkText: "瀏覽 37 款聚酯規格",
+    desc: "飽和共聚聚酯樹脂技術專題，提供高附著、柔韌性與優異耐化學品塗料樹脂。",
+    hasData: false
+  },
+  {
+    slug: "chain",
+    itemNo: "09",
+    name: "Chain Extender / 擴鏈劑",
+    sub: "Unilink & Clearlink 系列",
+    brandTag: "Dorf Ketal",
+    brandBadge: "Dorf Ketal 原廠專用技術",
+    titleZh: "擴鏈劑技術應用 (Chain Extender)",
+    productLink: "products/dorfketal/chain/",
+    productLinkText: "瀏覽擴鏈劑規格",
+    desc: "Dorf Ketal Unilink® 與 Clearlink® 受阻二級二胺擴鏈劑技術，專用於聚脲 (Polyurea) 與高性能聚氨酯彈性體體系。",
+    hasData: true
+  },
+  {
+    slug: "matting",
+    itemNo: "10",
+    name: "Matting Agent / 消光粉",
+    sub: "二氧化矽 / 表面處理消光",
+    brandTag: "其他特化",
+    brandBadge: "特用化學品技術專區",
+    titleZh: "消光粉技術應用 (Matting Agent)",
+    productLink: "products/others/matting_agent/",
+    productLinkText: "瀏覽消光粉規格",
+    desc: "特種沉澱與氣相二氧化矽消光粉技術專題，包含消光原理、粒徑分佈、孔隙率、膜厚影響與各樹脂體系之分散工藝指引。",
+    hasData: true
+  },
+  {
+    slug: "powder",
+    itemNo: "11",
+    name: "Powder Coating Additive",
+    sub: "粉體塗料專用功能性助劑",
+    brandTag: "其他特化",
+    brandBadge: "特用化學品技術專區",
+    titleZh: "粉體塗料專用助劑技術應用 (Powder Additives)",
+    productLink: "products/others/coating_additive/",
+    productLinkText: "瀏覽粉體塗料助劑規格",
+    desc: "熱固性粉體塗料專用功能性助劑技術專區。",
+    hasData: false
+  }
 ];
 
 // 原廠技術資料庫 (完整整合自 techdatadb，嚴格實事求是)
@@ -163,618 +163,639 @@ const TECH_DATABASE = {
     "tabs": {
       "principles": [
         {
-          "docId": "TYZ-01",
+          "docId": "TYZ-PRIN-01",
           "filename": "鈦（鋯）酸酯作為交聯劑.pdf",
           "pdfPath": "techdatadb/2.Tyzor/1.原理/鈦（鋯）酸酯作為交聯劑.pdf",
           "docType": "1. 原理機制",
-          "lang": "EN (英文)",
+          "lang": "TW (繁體中文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "交聯劑機制",
+          "shortLabel": "作為交聯劑",
           "title": "鈦（鋯）酸酯作為交聯劑",
-          "titleEn": "Tyzor® Crosslinkers",
-          "mechImg": "techdatadb/2.Tyzor/1.原理/crosslinker_mech.webp",
-          "origin": "Alan & Thomas Technologies 技術資料（Page 5）：鈦（鋯）酸酯作為交聯劑",
-          "desc": "說明 Tyzor 有機鈦（鋯）作為交聯劑，在 100~250°C 加熱條件下與聚合物活性基團反應，提高塗料、油墨、膠黏劑與聚合物的物理化學性能。",
+          "titleEn": "鈦（鋯）酸酯作為交聯劑.pdf",
+          "origin": "鈦（鋯）酸酯作為交聯劑（Alan & Thomas Technologies）",
+          "desc": "說明 Tyzor 有機鈦（鋯）酸酯作為交聯劑在 100~250°C 下與聚合物活性基團反應，提高油漆、油墨、接著劑（膠黏劑）與聚合物（如 PVA 等）的物理化學性能。",
           "advantages": [
-            "在 100~250°C 加熱條件下，與聚合物羥基（HO-polymer）發生反應形成交聯網狀結構。",
-            "提高漆膜與膠層的固化速度。",
+            "在100~250°C加熱條件下，與聚合羥基(HO-polymer)發生反應形成交聯",
+            "提高漆膜與膠層的固化速度",
             "顯著提高耐水性、耐熱性，並提升硬度與耐刮性能。"
           ],
           "applications": [
             "油漆",
             "油墨",
-            "膠黏劑",
-            "聚合物（如 PVA）"
-          ]
+            "接著劑（膠黏劑）",
+            "聚合物（如 PVA 等）。"
+          ],
+          "mechImg": "techdatadb/2.Tyzor/1.原理/crosslinker.webp"
         },
         {
-          "docId": "TYZ-02",
+          "docId": "TYZ-PRIN-02",
           "filename": "鈦（鋯）酸酯作為催化劑.pdf",
           "pdfPath": "techdatadb/2.Tyzor/1.原理/鈦（鋯）酸酯作為催化劑.pdf",
           "docType": "1. 原理機制",
-          "lang": "EN (英文)",
+          "lang": "TW (繁體中文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "催化劑機制",
+          "shortLabel": "作為催化劑",
           "title": "鈦（鋯）酸酯作為催化劑",
-          "titleEn": "Tyzor® Catalysts",
-          "mechImg": "techdatadb/2.Tyzor/1.原理/catalyst_mech.webp",
-          "origin": "Alan & Thomas Technologies 技術資料（Page 4）：鈦（鋯）酸酯作為催化劑",
-          "desc": "介紹 Tyzor 有機鈦（鋯）在酯合成、酯交換、縮合和加成反應中的高效催化性能，為不含有機錫的環保催化方案。",
+          "titleEn": "鈦（鋯）酸酯作為催化劑.pdf",
+          "origin": "鈦（鋯）酸酯作為催化劑（Alan & Thomas Technologies）",
+          "desc": "介紹 Tyzor 有機鈦（鋯）酸酯在酯合成、酯交換、縮合和加成反應中作為高效觸媒（催化劑），為不含有機錫的環保催化方案。",
           "advantages": [
             "不含任何有機錫，最終產品具良好環保性，符合歐美環保標準。",
-            "克服普通鈦酸酯催化劑不耐水等缺陷，在 280°C 下依舊可以保持較高催化活性（如 Tyzor 422、Tyzor 436）。",
-            "可縮短聚酯合成反應時間，且 Tyzor 436 具備低黃變特點，在水、醇和單體中有良好的分散性。"
+            "克服普通鈦酸酯催化劑不耐水等缺陷，在280°C下依舊可以保持較高催化活性(如Tyzor 422、Tyzor 436)",
+            "可縮短聚酯合成反應時間，且Tyzor 436具備低黃變特點，在水、醇和單體中有良好的分散性"
           ],
           "applications": [
             "可塑劑",
             "（不）飽和聚酯",
             "PET",
             "PBT",
-            "聚酯多元醇"
-          ]
+            "聚酯多元醇等。"
+          ],
+          "mechImg": "techdatadb/2.Tyzor/1.原理/catalyst.webp"
         },
         {
-          "docId": "TYZ-03",
+          "docId": "TYZ-PRIN-03",
           "filename": "鈦（鋯）酸酯作為表面改性.pdf",
           "pdfPath": "techdatadb/2.Tyzor/1.原理/鈦（鋯）酸酯作為表面改性.pdf",
           "docType": "1. 原理機制",
-          "lang": "EN (英文)",
+          "lang": "TW (繁體中文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "表面改性機制",
+          "shortLabel": "作為表面改性",
           "title": "鈦（鋯）酸酯作為表面改性",
-          "titleEn": "Tyzor® Surface Modification",
-          "mechImg": "techdatadb/2.Tyzor/1.原理/surface_mech.webp",
-          "origin": "Alan & Thomas Technologies 技術資料（Page 7）：鈦（鋯）酸酯作為表面改性",
-          "desc": "說明 Tyzor 有機鈦（鋯）單獨或混合其他材料加入溶膠-凝膠（Sol-Gel）體系，經水解或 350°C 以上熱解形成連續金屬氧化物塗層以改性表面。",
+          "titleEn": "鈦（鋯）酸酯作為表面改性.pdf",
+          "origin": "鈦（鋯）酸酯作為表面改性（Alan & Thomas Technologies）",
+          "desc": "說明 Tyzor 有機鈦（鋯）酸酯單獨或混合其他材料加入溶膠-凝膠（Sol-Gel）體系，經水解或熱解形成連續金屬氧化物塗層以進行表面改質（改性）。",
           "advantages": [
-            "經水解（Hydrolysis）或大於 350°C 熱解（Pyrolysis）轉化為緻密的二氧化鈦（TiO2）薄膜。",
+            "經水解（Hydrolysis）或大於350°C 熱解（Pyrolysis）轉化為緻密的二氧化鈦（TiO2）薄膜。",
             "於基材表面形成連續的金屬氧化物塗層，顯著改善表面防腐性能。",
-            "有效改善基材表面的耐刮性能、耐熱性能以及表面親水性能。"
+            "有效改善基材表面的耐刮性能、耐熱性能、以及表面親水性能。"
           ],
           "applications": [
             "紡織整理劑",
             "鋁銀漿表面處理",
-            "顏料表面處理"
-          ]
+            "顏料表面處理等。"
+          ],
+          "mechImg": "techdatadb/2.Tyzor/1.原理/surface_treatment.webp"
         },
         {
-          "docId": "TYZ-04",
+          "docId": "TYZ-PRIN-04",
           "filename": "鈦（鋯）酸酯提高附著力.pdf",
           "pdfPath": "techdatadb/2.Tyzor/1.原理/鈦（鋯）酸酯提高附著力.pdf",
           "docType": "1. 原理機制",
-          "lang": "EN (英文)",
+          "lang": "TW (繁體中文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "附著力機制",
+          "shortLabel": "作為附著力促進劑",
           "title": "鈦（鋯）酸酯提高附著力",
-          "titleEn": "Tyzor® Adhesion Promoters",
-          "mechImg": "techdatadb/2.Tyzor/1.原理/adhesion_mech.webp",
-          "origin": "Alan & Thomas Technologies 技術資料（Page 6）：鈦（鋯）酸酯提高附著力",
-          "desc": "說明 Tyzor 有機鈦（鋯）在無機底材與高分子材料間架橋鍵合，顯著提升各類塗料、油墨與密封膠對不同基材的附著力。",
+          "titleEn": "鈦（鋯）酸酯提高附著力.pdf",
+          "origin": "鈦（鋯）酸酯提高附著力（Alan & Thomas Technologies）",
+          "desc": "Tyzor 有機鈦（鋯）在無機底材與高分子材料間架橋鍵結，顯著提升各類油漆、塗料、油墨與密封膠對不同基材的附著力（密著性）。",
           "advantages": [
-            "透過有機鈦在底材表面（-OH）與聚合物分子間架橋鍵結（Polymer Adhered to Substrate via Ti），緊密連結異質介面。",
-            "能與聚合物、玻璃和金屬塗層上的 -OH 及 -COOH 相互作用，促進塗層與底材的交聯。",
-            "提高塗料耐高溫性、耐溶劑性、抗腐蝕性、耐刮性、硬度及耐鹽霧性。"
+            "能與聚合物、玻璃和金屬塗層上的-OH及-COOH相互作用，促進塗層與底材的交聯",
+            "提高塗層耐高溫性、耐溶劑性、抗腐蝕性及耐刮性。",
+            "可顯著提高塗層的硬度、耐鹽霧性與耐腐蝕性，大幅強化塗膜密著力。"
           ],
           "applications": [
             "油漆",
             "塗料",
             "油墨",
-            "密封膠（金屬",
-            "塑膠",
-            "玻璃等基材）"
-          ]
+            "密封膠。"
+          ],
+          "mechImg": "techdatadb/2.Tyzor/1.原理/adhesion.webp"
         }
       ],
       "catalog": [
         {
-          "docId": "TYZ-05",
-          "filename": "Brochure DK Tyzor General CN 202608.pdf",
-          "pdfPath": "techdatadb/2.Tyzor/2.Tyzor Brochure目錄/Brochure DK Tyzor General CN 202608.pdf",
-          "docType": "2. Brochure 總覽型錄",
-          "lang": "CN (簡體中文)",
-          "version": "202608",
-          "brand": "Dorf Ketal",
-          "shortLabel": "有機鈦鋯產品綜合目錄",
-          "title": "Tyzor™ 有機鈦（鋯）酸酯 產品目錄",
-          "titleEn": "Brochure DK Tyzor General CN",
-          "origin": "Alan & Thomas Technologies 產品目錄 (2026/08): Tyzor™ 有機鈦（鋯）酸酯",
-          "desc": "綜述 Tyzor 有機鈦酸酯與鋯酸酯系列產品，涵蓋四個核心反應功能（催化、交聯、表面改性、附著力促進）與全系列型號物理化學參數。",
-          "advantages": [
-            "涵蓋高活性烷氧基鈦酸酯（TPT、TnBT、TOT）、螯合型鈦酸酯（AA75、TE、AA105、LA）與有機鋯酸酯（NPZ、NBZ）體系。",
-            "詳解催化酯化/酯交換、聚合物交聯、Sol-Gel 表面改性與異質介面附著力增強等四大多功能機制。",
-            "彙整各型號之活性金屬含量、比重、黏度、閃點及溶劑相容性，提供完整選型依據。"
-          ],
-          "applications": [
-            "塗料",
-            "印刷油墨",
-            "接著劑與密封膠",
-            "酯化合成催化",
-            "玻璃與金屬表面改性處理"
-          ]
-        },
-        {
-          "docId": "TYZ-06",
+          "docId": "TYZ-CATA-01",
           "filename": "Brochure DK Tyzor Adhesive Plus Coatings Line EN 202512.pdf",
           "pdfPath": "techdatadb/2.Tyzor/2.Tyzor Brochure目錄/Brochure DK Tyzor Adhesive Plus Coatings Line EN 202512.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "EN (英文)",
           "version": "202512",
           "brand": "Dorf Ketal",
-          "shortLabel": "膠黏與密封膠應用",
+          "shortLabel": "膠黏與塗料",
           "title": "Tyzor® Adhesives and Sealants Application Guide",
-          "titleEn": "Brochure DK Tyzor Adhesive Plus Coatings Line",
-          "origin": "Dorf Ketal Application Guide (2025/12): Tyzor® Adhesives and Sealants",
-          "desc": "提供 Tyzor 系列鈦酸酯在單組份矽膠（RTV-1）、MS Polymer、聚氨酯及壓克力接著劑與密封膠中的選型與固化參數。",
+          "titleEn": "Brochure DK Tyzor Adhesive Plus Coatings Line EN 202512.pdf",
+          "origin": "Tyzor® Adhesives and Sealants Application Guide (Dorf Ketal)",
+          "desc": "彙整 Tyzor 鈦酸酯與鋯酸酯系列（包括 Tyzor 726、795、KE-6、9000、BTP、TE、NBZ、TPT、TOT、LA、217 等）應用於接著劑與密封膠系統之產品指南，涵蓋矽酮（RTV-1）、MS 聚合物、聚胺酯、壓克力、聚硫、天然橡膠與環氧等體系。",
           "advantages": [
-            "詳細列出 Tyzor 726、795、KE-6、9000 等型號之固化時間、不沾手時間（Tack Free Time）與表乾時間（Skin Formation Time）。",
-            "針對矽膠（RTV-1）、改性矽烷（STP / MS Polymer）與水性壓克力體系，評估固化速率、耐濕敏感度與顏色影響程度。",
-            "標註各型號耐低溫冷凍性（如 KE-6 凝固點 -35°C、9000 達 -40°C），便利極端氣候環境下的施工與儲運。"
+            "提供多種固化時間與不發黏時間（Tack Free Time）調控，如 Tyzor 726 不發黏時間僅 2–5 分鐘、固化時間 <5 分鐘；Tyzor 795 不發黏時間 10–30 分鐘，固化時間 12–24 小時。",
+            "針對各類接著密封膠體系提供完整固化速率（Cure Rate）、濕氣敏感性（Moisture Sensitivity）與顏色影響評估，提供快速固化至耐濕氣穩定之多元觸媒選擇。",
+            "廣泛改善 RTV-1 矽酮與改質矽烷系統對玻璃、金屬、塑膠等基材之相對密著性（指標達 0.95–1.0），並耐受環境老化。"
           ],
           "applications": [
-            "單組份室溫硫化矽膠（RTV-1）",
-            "改性聚矽氧烷（MS Polymer / STP）",
-            "壓克力樹脂接著劑",
-            "汽車與建築工業密封膠"
+            "RTV-1 矽酮密封膠",
+            "MS Polymer / STP 密封膠",
+            "聚胺酯接著劑",
+            "溶劑型與水性壓克力接著劑",
+            "聚硫接著劑",
+            "天然橡膠接著劑",
+            "環氧樹脂",
+            "車用與電子工業接著密封。"
           ]
         },
         {
-          "docId": "TYZ-07",
-          "filename": "Brochure DK Tyzor Plus Coatings EN 202512.pdf",
-          "pdfPath": "techdatadb/2.Tyzor/2.Tyzor Brochure目錄/Brochure DK Tyzor Plus Coatings EN 202512.pdf",
-          "docType": "2. Brochure 總覽型錄",
-          "lang": "EN (英文)",
-          "version": "202512",
-          "brand": "Dorf Ketal",
-          "shortLabel": "塗料系列產品",
-          "title": "Tyzor® Product Guide",
-          "titleEn": "Brochure DK Tyzor Plus Coatings",
-          "origin": "Dorf Ketal Product Guide (2025/12): Tyzor® Product Guide",
-          "desc": "介紹 Tyzor 全系列鈦酸酯與鋯酸酯在塗料、油墨、鑄造樹脂與聚酯瓶級樹脂中的產品特性、技術功能與牌號推薦。",
-          "advantages": [
-            "涵蓋純烷氧基鈦酸酯（TPT、TnBT）、乙醯丙酮螯合物（AA 系列）及水性三乙醇胺螯合物（TE 系列）在溶劑型與水性體系中的應用對照。",
-            "詳細說明在金屬底漆、耐高溫塗料、印刷油墨耐磨性及常溫/低溫固化交聯中的技術效益。",
-            "說明 Tyzor PC-64 在降低瓶級聚酯聚合溫度、維持優異色澤（b* 值）與降低乙醛含量方面的具體特點。"
-          ],
-          "applications": [
-            "工業塗料",
-            "金屬防腐底漆",
-            "包裝印刷油墨",
-            "常溫與高溫交聯塗層",
-            "瓶級聚酯樹脂聚合"
-          ]
-        },
-        {
-          "docId": "TYZ-08",
+          "docId": "TYZ-CATA-02",
           "filename": "Brochure DK Tyzor for Polyols Polymers EN 202602.pdf",
           "pdfPath": "techdatadb/2.Tyzor/2.Tyzor Brochure目錄/Brochure DK Tyzor for Polyols Polymers EN 202602.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "EN (英文)",
           "version": "202602",
           "brand": "Dorf Ketal",
-          "shortLabel": "多元醇與聚合物催化劑",
-          "title": "Tyzor® Catalysts for Polyols and Polymers",
-          "titleEn": "Brochure DK Tyzor for Polyols Polymers",
-          "origin": "Dorf Ketal Product Brochure (2026/02): Tyzor® Catalysts for Polyols and Polymers",
-          "desc": "專注於 Tyzor 鈦與鋯催化劑在聚酯多元醇、增塑劑、聚酯樹脂及聚烯烴合成中的催化性能與製程優勢。",
+          "shortLabel": "多元醇聚合物",
+          "title": "Tyzor® Catalysts for Polyols and Polymers Application Guide",
+          "titleEn": "Brochure DK Tyzor for Polyols Polymers EN 202602.pdf",
+          "origin": "Tyzor® Catalysts for Polyols and Polymers Application Guide (Dorf Ketal)",
+          "desc": "介紹 Tyzor 有機鈦觸媒在聚酯多元醇（Polyester Polyol）、可塑劑、丙烯酸酯單體以及 PBT、PET、聚碳酸酯（PC）聚合物合成製程中的觸媒特性，涵蓋 Tyzor TE、9000、LA、TnBT、TPT、TOT、PC 64 及 ACtivate 422/436 等產品。",
           "advantages": [
-            "提供極高的催化反應速率，大幅縮短批次縮聚反應時間並提升生產裝置產能。",
-            "不含重金屬錫，為完全符合 REACH 及現代環保法規之無錫綠色催化技術。",
-            "提供高產率、易後處理且耐水解穩定的聚合催化劑選型（如 TnBT、BTP 等）。"
+            "Tyzor TE 與 Tyzor 9000 可在較低溫度下提供高反應速率，產出清澈無色之聚酯多元醇產品，並具備優異耐水性與極低水解副反應。",
+            "Tyzor LA 為水性乳酸鈦螯合物，對高水分原料具備耐受性，適合直接羧酸酯化與脂肪酸酯交換反應。",
+            "轉酯化反應可在 <100°C 低溫進行，直接酯化需 >180°C；在 PBT 與 PET 聚縮合製程中，Tyzor ACtivate 422/436 及 PC 64 具備與銻相當之 SSP 固相聚合速率，並展現超低金屬殘留、高透明無霧度（haze-free）與低色相優勢。"
           ],
           "applications": [
             "聚酯多元醇合成",
-            "可塑劑直接酯化",
-            "PET/PBT 聚酯縮聚",
-            "環保聚合物聚合催化"
+            "可塑劑製造（如鄰苯二甲酸酯）",
+            "（甲基）丙烯酸酯單體合成",
+            "PBT 工程塑膠合成",
+            "PET 瓶級與薄膜樹脂合成",
+            "聚碳酸酯（PC）縮聚反應。"
+          ]
+        },
+        {
+          "docId": "TYZ-CATA-03",
+          "filename": "Brochure DK Tyzor General CN 202608.pdf",
+          "pdfPath": "techdatadb/2.Tyzor/2.Tyzor Brochure目錄/Brochure DK Tyzor General CN 202608.pdf",
+          "docType": "2. Brochure 總覽型錄",
+          "lang": "CN (簡體中文)",
+          "version": "202608",
+          "brand": "Dorf Ketal",
+          "shortLabel": "綜合手冊 (中)",
+          "title": "Tyzor™ 有機鈦（鋯）酸酯 產品目錄",
+          "titleEn": "Brochure DK Tyzor General CN 202608.pdf",
+          "origin": "Dorf Ketal Tyzor™ 有機鈦（鋯）酸酯產品目錄（宏威應用材料發行）",
+          "desc": "全面介紹 Dorf Ketal 生產之 Tyzor 烷基鈦酸酯、鋯酸酯及螯合型鈦/鋯酸酯四大功能機制（催化劑、交聯劑、表面性能改質、密著促進劑）與完整產品物理特性。",
+          "advantages": [
+            "完整彙整烷氧基鈦（TnBT、TOT、TPT、BTP、ET）、螯合鈦（AA-75、AA-105、IAM、GBA、TLF 11010、LA、TE、OGT、726、9000、795、IBAY、KE 6、422、436、PC 64）及有機鋯（NBZ、NPZ、217）之系列產品特性與選型建議。",
+            "機制涵蓋路易斯酸催化、羥基/羧基高分子交聯、無機粉體表面有機偶聯修飾，以及高溫裂解生成高硬度緻密薄膜（TiO2 / ZrO2 反射層或鈍化層）。",
+            "能取代具毒性或高污染性之重金屬觸媒（如錫、鉛），並大幅提高耐熱、耐水、耐溶劑及耐磨耗性能。"
+          ],
+          "applications": [
+            "印刷油墨（硝化棉/聚醯胺/PU）",
+            "塗料與油漆（醇酸/壓克力/烤漆/耐高溫塗料）",
+            "接著劑與密封膠（矽酮/MS/聚胺酯）",
+            "酯化觸媒",
+            "無機填料改質",
+            "玻璃熱端/冷端噴塗",
+            "電線絕緣漆。"
+          ]
+        },
+        {
+          "docId": "TYZ-CATA-04",
+          "filename": "Brochure DK Tyzor Plus Coatings EN 202512.pdf",
+          "pdfPath": "techdatadb/2.Tyzor/2.Tyzor Brochure目錄/Brochure DK Tyzor Plus Coatings EN 202512.pdf",
+          "docType": "2. Brochure 總覽型錄",
+          "lang": "EN (英文)",
+          "version": "202512",
+          "brand": "Dorf Ketal",
+          "shortLabel": "塗料專用型錄",
+          "title": "Tyzor® Product Guide for Coatings",
+          "titleEn": "Brochure DK Tyzor Plus Coatings EN 202512.pdf",
+          "origin": "Tyzor® Product Guide - Coatings Application Notes (Dorf Ketal)",
+          "desc": "綜述 Tyzor 全系列鈦酸酯與鋯酸酯在塗料領域之作用，包括作為成膜樹脂的交聯劑、密著促進劑、耐溫金屬氧化物形成劑及溶膠凝膠（sol-gel）反應前驅物。",
+          "advantages": [
+            "Tyzor TnBT、TOT、OGT 等烷氧基鈦可與含 -OH 或 -COOH 官能基之聚合物交聯，提高塗膜表面硬度、耐化性與耐水性。",
+            "Tyzor TE、CLA、TEAZ 等胺螯合化合物具搖變性誘導效果，可作為高黏度搖變塗料中碳水化合物包覆乳膠粒子的有效交聯硬化劑。",
+            "水性螯合物 Tyzor LA、TLF 11010、217 能在水性體系中穩定存在，大幅提升塗層對金屬、玻璃、紙張等氧化表面的附著力與耐刮性。"
+          ],
+          "applications": [
+            "溶劑型與水性工業塗料",
+            "壓克力漆",
+            "搖變性乳膠漆",
+            "耐高溫塗膜",
+            "汽車底漆",
+            "電泳塗料",
+            "溶膠-凝膠無機塗層。"
           ]
         }
       ],
       "applications": [
         {
-          "docId": "TYZ-09",
+          "docId": "TYZ-APPL-01",
           "filename": "Application Note DK Tyzor Adhesives Sealants EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Adhesives Sealants EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "膠黏劑與密封膠應用",
-          "title": "Tyzor® Organic Titanates and Zirconates in Adhesives and Sealants",
-          "titleEn": "Application Note DK Tyzor Adhesives Sealants EN",
-          "origin": "Dorf Ketal Technical Note: SC0057 12/11",
-          "desc": "說明 Tyzor 鈦酸酯與鋯酸酯在矽膠、壓克力、聚氨酯及熱熔膠中作為交聯劑、催化劑與附著力促進劑的作用機理與應用數據。",
+          "shortLabel": "膠黏與密封膠",
+          "title": "Tyzor® Organic Titanates and Zirconates in Adhesives and Sealants Applications",
+          "titleEn": "Application Note DK Tyzor Adhesives Sealants EN.pdf",
+          "origin": "Tyzor® Organic Titanates and Zirconates - Adhesives and Sealants Applications Technical Note (Dorf Ketal, SC0057)",
+          "desc": "闡述 Tyzor 在接著劑與密封膠工業中作為密著促進劑、交聯硬化劑與聚縮合觸媒的應用技術，評估其對各類基材之增強機制。",
           "advantages": [
-            "作為中性交聯催化劑用於單組份（RTV-1）矽膠，提供快速固化且避免金屬腐蝕。",
-            "促進壓克力與聚氨酯接著劑對玻璃、金屬及難黏塑膠底材的化學鍵合與耐水接著強度。",
-            "調節聚合物網絡密度，顯著提高密封膠固化後的耐熱性、剪切強度與耐溶劑侵蝕能力。"
+            "在 RTV-1 矽酮密封膠中，Tyzor PITA、IBAY、TnBT 及 AA 系列可作為非錫觸媒與交聯劑，相容於各類酸性、鹼性及中性（烷氧基、肟基）交聯體系，添加量 1–10%。",
+            "應用於壓克力與非水系膠黏劑時，添加 0.3–1.5% Tyzor（如 AA-75、AA-105、TnBT）可與 -COOH 或 -OH 基團反應，溶劑揮發後自發交聯；並可作為除水吸濕劑（0.5–5%）提高儲存穩定性。",
+            "在底塗劑（Primer）應用中，Tyzor 稀釋溶液能在金屬、玻璃、塑膠表面形成分子級架橋鍵，提升接著劑對難接著基材的剝離強度。"
           ],
           "applications": [
-            "RTV-1 矽膠密封膠",
-            "壓克力感壓膠",
-            "聚氨酯結構膠",
-            "金屬/玻璃黏著封裝"
+            "RTV-1 矽酮密封膠",
+            "溶劑型與水性壓克力接著劑",
+            "聚硫接著劑",
+            "聚胺酯接著劑（PUR）",
+            "環氧樹脂接著劑（EP）",
+            "丁基橡膠/氯丁橡膠",
+            "基材底塗劑（Primer）。"
           ]
         },
         {
-          "docId": "TYZ-10",
+          "docId": "TYZ-APPL-02",
           "filename": "Application Note DK Tyzor Bulk Handling Procedures EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Bulk Handling Procedures EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "大宗儲運操作規範",
+          "shortLabel": "大宗儲運規範",
           "title": "Bulk Handling Procedures for Tyzor® Organic Titanates",
-          "titleEn": "Application Note DK Tyzor Bulk Handling Procedures EN",
-          "origin": "Dorf Ketal Technical Note: SC0052 11/11",
-          "desc": "說明 Tyzor 有機鈦酸酯大宗槽車運輸、儲存設施、管線材質、惰性氣體保護與黏度/低溫凝固特性的工程安全規範。",
+          "titleEn": "Application Note DK Tyzor Bulk Handling Procedures EN.pdf",
+          "origin": "Bulk Handling Procedures for Tyzor® Organic Titanates (Dorf Ketal)",
+          "desc": "指導 Tyzor 烷基鈦酸酯（特別是高反應活性之 Tyzor TPT、TnBT）大宗儲存、管路輸送、儲槽設計、防潮保護與安全操作規範。",
           "advantages": [
-            "鈦酸酯遇微量濕氣易水解生成二氧化鈦白沉澱，儲存與卸料系統必須配備乾燥氮氣（露點 < -40°C）覆蓋保護。",
-            "推薦採用碳鋼或不鏽鋼管線與儲槽，避免使用鋁、銅或含水分填料之密封襯墊。",
-            "提供各型號布氏黏度對溫度關係與凝固點特性，指導寒冷季節伴熱保溫與管線防凝固工程。"
+            "Tyzor 烷基鈦酸酯對水分極度敏感，接觸濕氣會迅速水解生成白色二氧化鈦水合物沉澱並釋出相應醇類，因此所有儲槽與槽車管線必須強制維持乾燥氮氣封頂（-40°C 露點）。",
+            "泵浦與密封件材質建議採用碳鋼或不銹鋼，密封墊圈推薦使用 PTFE 或 Viton，禁用易受醇類或溶劑侵蝕之彈性體。",
+            "Tyzor TPT 凝固點約為 18°C，儲槽與輸送管線需配備保溫伴熱系統（建議維持於 25–35°C），避免結晶凍結堵塞管路。"
           ],
           "applications": [
-            "化工廠大宗化學品儲存槽區",
-            "流體輸送管路工程",
-            "鈦酸酯安全裝卸與氮封系統設計"
+            "化工廠大宗液體儲存",
+            "散裝槽車裝卸",
+            "管道伴熱與氮封輸送工程",
+            "酯化與聚酯反應工廠儲槽系統。"
           ]
         },
         {
-          "docId": "TYZ-11",
+          "docId": "TYZ-APPL-03",
           "filename": "Application Note DK Tyzor Catalyst Plasticizer Production EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Catalyst Plasticizer Production EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "可塑劑生產催化應用",
+          "shortLabel": "可塑劑生產催化",
           "title": "Tyzor® Organic Titanates as Catalysts in Plasticizer Production",
-          "titleEn": "Application Note DK Tyzor Catalyst Plasticizer Production EN",
-          "origin": "Dorf Ketal Technical Note: SC0050 01/12",
-          "desc": "介紹 Tyzor 有機鈦酸酯在鄰苯二甲酸酯、己二酸酯及偏苯三酸酯等增塑劑直接酯化製程中的催化反應動力學與產能提升效益。",
+          "titleEn": "Application Note DK Tyzor Catalyst Plasticizer Production EN.pdf",
+          "origin": "Tyzor® Organic Titanates - Catalysts for Plasticizer Production Technical Note (Dorf Ketal, SC0050)",
+          "desc": "說明 Tyzor 鈦酸酯觸媒在鄰苯二甲酸酯（DOP、DINP）、己二酸酯（DOA）及偏苯三酸酯（TOTM）等各類可塑劑製造中的直接酯化與轉酯化反應優勢。",
           "advantages": [
-            "相較於傳統硫酸或對甲苯磺酸酸催化劑，無酸腐蝕問題且副反應少，粗酯酸值低。",
-            "催化反應轉化率高達 99.5% 以上，反應溫度可適度提升以大幅縮短反應週期。",
-            "產物水洗中和與脫色製程簡單，顯著減少廢水產生與增塑劑成品色度（APHA 低）。"
+            "相較於傳統硫酸或對甲苯磺酸等酸觸媒，Tyzor 觸媒無腐蝕性，且能抑制醇類脫水副反應（脫水率由 92% 降至 5%），產出高純度、極低色度之可塑劑產品。",
+            "商業運轉建議添加量僅為酯產物重量之 0.02–0.1 wt%，反應溫度範圍約 180–220°C，轉化率可達 99.9% 以上，反應週期大幅縮短。",
+            "觸媒後處理簡便，反應結束後加入微量水或鹼性水溶液攪拌進行水解，生成的固態不溶二氧化鈦沉澱可經由常規過濾輕易分離，無廢酸水排放問題。"
           ],
           "applications": [
-            "DOP/DINP/DOTP 增塑劑合成",
-            "己二酸二辛酯（DOA）生產",
-            "高溫環保增塑劑製造"
+            "鄰苯二甲酸二辛酯（DOP）",
+            "鄰苯二甲酸二異壬酯（DINP）",
+            "己二酸二辛酯（DOA）",
+            "偏苯三酸三辛酯（TOTM）",
+            "生質可塑劑。"
           ]
         },
         {
-          "docId": "TYZ-12",
+          "docId": "TYZ-APPL-04",
           "filename": "Application Note DK Tyzor Crosslinking for Paper EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Crosslinking for Paper EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "紙張應用耐水交聯",
-          "title": "Tyzor® Titanates for Crosslinking in Paper Applications",
-          "titleEn": "Application Note DK Tyzor Crosslinking for Paper EN",
-          "origin": "Dorf Ketal Technical Note: SC0061 01/12",
-          "desc": "說明 Tyzor 螯合型鈦酸酯在造紙施膠劑、瓦楞紙箱接著劑及 PVA/澱粉塗層中作為耐水交聯劑的機理與配方技術。",
+          "shortLabel": "紙張塗佈交聯",
+          "title": "Tyzor® Titanates Crosslinking for Paper, Textiles and PVOH",
+          "titleEn": "Application Note DK Tyzor Crosslinking for Paper EN.pdf",
+          "origin": "Tyzor® Titanates Crosslinking for Paper, Textiles and Polyvinyl Alcohols (Dorf Ketal, SC0061)",
+          "desc": "探討 Tyzor 水性鈦螯合物（TE、LA 及 AA 系列）在造紙施膠塗佈、紙張貼合、紡織物後整理及聚乙烯醇（PVA）不溶化處理中的交聯技術與改質效能。",
           "advantages": [
-            "與聚乙烯醇（PVA）和澱粉中的羥基發生多點配位交聯，顯著提升紙板黏合層的耐水解性能。",
-            "用於牛皮紙層壓（Kraft paper laminates）及瓦楞紙板，防止受潮開膠與剝離強度下降。",
-            "水性螯合型號（如 Tyzor TE、Tyzor LA）在酸性與中性水溶液中具良好穩定性，可直接在線添加於施膠液。"
+            "Tyzor LA 與 Tyzor TE 能在室溫及中性至微酸/微鹼水相中穩定分散，受熱乾燥時與澱粉或 PVA 之 -OH 基迅速形成化學交聯鍵。",
+            "顯著改善牛皮紙貼合板（Kraft paper laminates）及瓦楞紙板的耐水性、濕抗張強度與耐潮開膠問題。",
+            "亦廣泛應用於紡織品改質（與蠟或聚矽氧烷併用提高織物拒水性、固色率與抗污性），且 AA 系列經酸預處理後可作為添加量僅 5% 之高效 PVA 不溶化劑。"
           ],
           "applications": [
-            "瓦楞紙板接著劑",
-            "牛皮紙層壓膠",
-            "紙張表面施膠劑",
-            "耐水性紙製品塗布"
+            "瓦楞紙板製造",
+            "牛皮紙袋貼合接著",
+            "紙張表面施膠塗佈",
+            "紡織品撥水防污整理劑",
+            "織物固色劑",
+            "PVA 耐水薄膜與不溶化塗層。"
           ]
         },
         {
-          "docId": "TYZ-13",
+          "docId": "TYZ-APPL-05",
           "filename": "Application Note DK Tyzor Direct Esterification EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Direct Esterification EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "直接酯化反應催化",
-          "title": "Direct Esterification Catalysis with Tyzor® Organic Titanates",
-          "titleEn": "Application Note DK Tyzor Direct Esterification EN",
-          "origin": "Dorf Ketal Technical Note: SC0049 03/12",
-          "desc": "探討 Tyzor 有機鈦酸酯在羧酸與醇直接酯化反應中的催化機理、反應轉化率及操作溫度與加料量影響。",
+          "shortLabel": "直接酯化反應",
+          "title": "Tyzor® Organic Titanates in Direct Esterification",
+          "titleEn": "Application Note DK Tyzor Direct Esterification EN.pdf",
+          "origin": "Tyzor® Organic Titanates - Direct Esterification Technical Note (Dorf Ketal, SC0049)",
+          "desc": "詳細分析 Tyzor 烷基鈦酸酯催化羧酸與醇類直接酯化反應的動力學、觸媒選擇、製程參數與後處理方法。",
           "advantages": [
-            "催化芳香族與脂肪族單元酸、二元酸（如己二酸、對苯二甲酸）之直接酯化，轉化率迅速達到 99% 以上。",
-            "加料量極低（典型添加量 0.01%~0.1% 基於反應物重量），極具工業成本優勢。",
-            "消除強酸催化劑引起的副反應（如脫水醚化、烯烴生成）及設備腐蝕，保持高產物純度與優異色澤。"
+            "在己二酸與 2-乙基己醇合成 DOA 及偏苯三酸酯等直接酯化反應中，Tyzor TPT 能徹底抑制傳統酸觸媒之醇脫水副反應（無烯烴副產物），大幅提高未反應醇類之回收再利用品質。",
+            "反應體系需透過共沸蒸餾及時將生成水排除；一般商業推薦添加量為 0.05–0.2 wt%，操作溫度通常在 180–230°C。",
+            "生成之粗酯加入 0.5–1.0% 水或中和劑進行蒸汽汽提與水解，使鈦金屬轉化為結晶水合氧化鈦顆粒，經濾過分離後可得極低酸價之成品。"
           ],
           "applications": [
-            "酯類合成化學品",
-            "聚酯單體合成",
-            "合成潤滑油基礎油",
-            "特種脂肪酸酯"
+            "可塑劑（DOP",
+            "DBP）",
+            "壓克力單體合成",
+            "脂肪酸酯合成",
+            "潤滑油合成基礎油",
+            "聚酯樹脂合成。"
           ]
         },
         {
-          "docId": "TYZ-14",
+          "docId": "TYZ-APPL-06",
           "filename": "Application Note DK Tyzor Ferrous and Nonferrous Metal EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Ferrous and Nonferrous Metal EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "金屬表面鈍化防腐",
-          "title": "Tyzor® Organic Titanates and Zirconates for Ferrous and Nonferrous Metals",
-          "titleEn": "Application Note DK Tyzor Ferrous and Nonferrous Metal EN",
-          "origin": "Dorf Ketal Technical Note: SC0108 05/12",
-          "desc": "彙整 Tyzor 鈦酸酯與鋯酸酯在鐵金屬與非鐵金屬表面處理、抗腐蝕轉化膜及金屬塗層附著力提升中的多重功能。",
+          "shortLabel": "金屬表面前處理",
+          "title": "Tyzor® Organic Titanates and Zirconates Ferrous and Nonferrous Metal Applications",
+          "titleEn": "Application Note DK Tyzor Ferrous and Nonferrous Metal EN.pdf",
+          "origin": "Ferrous and Nonferrous Metal Applications Technical Note (Dorf Ketal, SC0108)",
+          "desc": "說明 Tyzor 鈦酸酯與鋯酸酯在黑色金屬與有色金屬表面處理中的應用，涵蓋底塗防腐、磷化後封閉清洗、電線漆交聯及金屬緊固件防蝕塗裝實例。",
           "advantages": [
-            "與金屬表面天然氧化層（-OH）發生化學鍵合，形成厚度僅奈米級但極為緻密的金屬-氧-鈦/鋯耐蝕鈍化膜。",
-            "顯著提升有機塗料與接著劑在鋁、鋼、鍍鋅鋼板及銅等金屬底材上的附著強度與耐鹽霧剝落性。",
-            "可取代傳統毒性鉻酸鹽表面處理工藝，提供環保無鉻的金屬前處理轉化解決方案。"
+            "Tyzor 螯合物可配製為環保無鉻清洗劑，在磷化鋼鐵表面形成不溶性保護膜，耐鹽霧腐蝕性能媲美傳統有毒六價鉻鈍化液。",
+            "應用於小金屬零件（螺絲、夾片、緊固件）浸塗甩乾（Dip-spin）塗裝，Tyzor AA-75、TnBT、TOT 能黏結鋅/鋁金屬粉末，乾燥迅速且不增加鎖緊扭力。",
+            "在聚酯/聚酯醯亞胺電線絕緣漆中作為交聯劑與密著促進劑，加速烘烤硬化，增強漆膜之耐熱等級與耐磨耗性能。"
           ],
           "applications": [
-            "鋁合金及冷軋鋼板無鉻鈍化",
-            "金屬烤漆前處理底漆",
-            "防腐蝕金屬表面防護",
-            "耐高溫塗層"
+            "緊固件防腐塗裝（Dip-spin）",
+            "鋼捲塗料（Coil coating）",
+            "無鉻磷化後封閉處理",
+            "漆包線絕緣漆",
+            "金屬底漆。"
           ]
         },
         {
-          "docId": "TYZ-15",
+          "docId": "TYZ-APPL-07",
           "filename": "Application Note DK Tyzor Glass Surface Coatings EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Glass Surface Coatings EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "玻璃表面塗層改性",
+          "shortLabel": "玻璃表面塗層",
           "title": "Tyzor® Organic Titanates and Zirconates in Glass Surface Coatings",
-          "titleEn": "Application Note DK Tyzor Glass Surface Coatings EN",
-          "origin": "Dorf Ketal Technical Note: SC0046 11/11",
-          "desc": "說明 Tyzor 鈦酸酯在玻璃熱端瓶罐噴塗、平板玻璃化學氣相沉積（CVD）與表面硬化抗刮塗層中的應用與熱解反應。",
+          "titleEn": "Application Note DK Tyzor Glass Surface Coatings EN.pdf",
+          "origin": "Glass Surface Coatings Technical Note (Dorf Ketal, SC0046)",
+          "desc": "介紹 Tyzor 鈦酸酯與鋯酸酯在玻璃表面塗裝技術，特別是玻璃瓶熱端（Hot-end）化學氣相沉積（CVD）與冷端溶膠塗層防刮防碎技術。",
           "advantages": [
-            "在玻璃製瓶熱端退火前（500~600°C）噴塗，熱解生成極薄且均勻的二氧化鈦硬質氧化物塗層。",
-            "大幅提升玻璃製品的抗刮磨強度（Scratch resistance）並增強後續冷端潤滑劑的接著鍵合。",
-            "用於平板玻璃與光學玻璃的 CVD 製程，可精準調節塗層厚度以獲得特定反射率與光學干涉特性。"
+            "在玻璃製瓶成型後（500–600°C 高溫區），Tyzor TPT、TnBT 經由熱裂解沉積在玻璃表面形成數十奈米均勻緻密的二氧化鈦薄膜。",
+            "形成的 TiO2 奈米膜顯著填補玻璃微觀表面微裂紋，將玻璃瓶抗爆裂強度與抗衝擊性提升數倍，並作為冷端有機塗層之極佳密著底層。",
+            "亦可於常溫透過溶膠凝膠（Sol-Gel）水解法塗佈，固化後賦予玻璃抗反射、彩色干涉光澤、防刮性及抗指紋表面特性。"
           ],
           "applications": [
-            "玻璃瓶罐熱端硬化塗布",
-            "平板建築玻璃抗反射/隔熱膜",
-            "光學元件保護薄膜"
+            "玻璃容器與酒瓶熱端塗佈",
+            "平板玻璃表面功能性塗層",
+            "建築與車用隔熱防眩窗玻",
+            "光學鏡片抗反射膜",
+            "玻璃纖維增強樹脂複合材料。"
           ]
         },
         {
-          "docId": "TYZ-16",
+          "docId": "TYZ-APPL-08",
           "filename": "Application Note DK Tyzor Inorganic Filler Modification EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Inorganic Filler Modification EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "無機填料表面改性",
-          "title": "Inorganic Filler Modification with Tyzor® Organic Titanates",
-          "titleEn": "Application Note DK Tyzor Inorganic Filler Modification EN",
-          "origin": "Dorf Ketal Technical Note: SC0048 12/11",
-          "desc": "研究 Tyzor 鈦酸酯作為偶聯劑改性碳酸鈣、高嶺土、二氧化矽及滑石粉等無機填料，改善其在高分子樹脂中的分散性與填充率。",
+          "shortLabel": "無機填料改質",
+          "title": "Tyzor® Organic Titanates in Inorganic Filler Modification",
+          "titleEn": "Application Note DK Tyzor Inorganic Filler Modification EN.pdf",
+          "origin": "Inorganic Filler Modification Technical Note (Dorf Ketal, SC0048)",
+          "desc": "闡述 Tyzor 烷氧基鈦酸酯與螯合型鈦酸酯作為偶聯劑改質無機填料（碳酸鈣、高嶺土、二氧化鈦、玻璃纖維等）的表面化學改質技術。",
           "advantages": [
-            "鈦酸酯分子一端與無機填料表面的羥基反應，另一端有機長鏈改善與有機聚合物基質的相容性。",
-            "顯著降低填料-樹脂混合體系的熔融黏度與混煉阻力，允許大幅提升廉價無機填料的添加比例。",
-            "增強複合材料的衝擊強度、拉伸強度與耐熱變形溫度，並防止填料在塗料體系中沉底硬結。"
+            "Tyzor 鈦酸酯的一端親水鈦基團與無機填料表面的羥基/水分結合，另一端疏水有機烷氧基鏈與樹脂高分子相容，顯著降低表面自由能。",
+            "使熱塑性/熱固性樹脂及塗料中的填料添加量顯著提升，同時降低研磨黏度，防止顆粒二次凝聚。",
+            "大幅改善填充塑膠與複合材料的衝擊強度、拉伸模數與熔融加工流動性。"
           ],
           "applications": [
-            "高填充熱塑性與熱固性塑膠改性",
-            "防腐塗料填料分散",
-            "橡膠填料偶聯",
-            "母粒加工製造"
+            "填充塑膠（PP",
+            "PE",
+            "PVC 碳酸鈣/滑石粉母粒）",
+            "塗料填料分散",
+            "熱固性複合材料",
+            "橡膠補強填料。"
           ]
         },
         {
-          "docId": "TYZ-17",
+          "docId": "TYZ-APPL-09",
           "filename": "Application Note DK Tyzor Surface Primers EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Surface Primers EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "表面底塗劑打底",
+          "shortLabel": "底塗促進劑",
           "title": "Tyzor® Organic Titanates as Surface Primers",
-          "titleEn": "Application Note DK Tyzor Surface Primers EN",
-          "origin": "Dorf Ketal Technical Note: SC0045 11/11",
-          "desc": "介紹 Tyzor 鈦酸酯稀釋溶液作為底漆（Primers）應用於金屬、塑膠及氟碳聚合物表面，促使油漆、油墨與橡膠牢固接著的技術工藝。",
+          "titleEn": "Application Note DK Tyzor Surface Primers EN.pdf",
+          "origin": "Surface Primers Technical Note (Dorf Ketal, SC0045)",
+          "desc": "說明 Tyzor 鈦酸酯作為金屬、塑膠及難接著底材（包括氟聚合物）底塗劑（Primers）的配製方法、附著促進機制與操作條件。",
           "advantages": [
-            "作為薄層底漆塗布於金屬、聚烯烴（PE/PP）、聚酯（PET）及難黏氟聚合物表面，經微量濕氣水解乾燥後形成活性接著層。",
-            "提供分子級交聯橋接，將後續塗布的油漆、印刷油墨或橡膠硫化塗層牢牢鎖定於底材上。",
-            "耐溶劑擦拭與耐高低溫冷熱循環老化性能優異，顯著降低介面脫層剝離風險。"
+            "建議稀釋濃度為 0.1–2%（如 TPT、TnBT，或加熱條件下之螯合物），施工環境濕度宜控制在 30–60% RH，避免塗層過厚或高濕環境造成粉化（powdering）。",
+            "鈦酸酯水解在底材表面形成金屬-氧-底材化學共價鍵，同時與後續塗覆的油漆、油墨或接著劑樹脂的官能基（羥基、羧基）緊密交聯。",
+            "顯著解決鋁合金、鍍鋅鋼板、聚烯烴、聚酯薄膜及鐵氟龍等底材之掉漆、脫膠與耐水性不良問題。"
           ],
           "applications": [
-            "金屬烤漆底漆",
-            "塑膠薄膜印刷前處理",
-            "橡膠金屬接著黏合",
-            "難黏基材底塗劑"
+            "金屬防蝕底漆（鋼/鋁/銅）",
+            "塑膠塗裝與印刷底塗（PET/PP/PE/尼龍）",
+            "PTFE 氟聚合物表面改質",
+            "建築與航空矽酮接著劑底塗。"
           ]
         },
         {
-          "docId": "TYZ-18",
+          "docId": "TYZ-APPL-10",
           "filename": "Application Note DK Tyzor Thawing Frozen TPT EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Thawing Frozen TPT EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "冷凍TPT解凍指南",
-          "title": "Thawing Procedures for Frozen Tyzor® TPT",
-          "titleEn": "Application Note DK Tyzor Thawing Frozen TPT EN",
-          "origin": "Dorf Ketal Technical Note: SC0051 11/11",
-          "desc": "針對 Tyzor TPT 凝固點較高（18°C）之物理特性，提供儲存、運輸凝固後安全解凍與避免產品變質的操作規範。",
+          "shortLabel": "TPT 解凍操作",
+          "title": "Thawing Frozen Tyzor® TPT",
+          "titleEn": "Application Note DK Tyzor Thawing Frozen TPT EN.pdf",
+          "origin": "Thawing Frozen Tyzor® TPT Technical Note (Dorf Ketal, SC0051)",
+          "desc": "規範 Tyzor TPT（四異丙基鈦酸酯）在低於熔點（18°C）結晶凍結後的標準解凍、加熱與安全操作程序。",
           "advantages": [
-            "Tyzor TPT 凝固點為 18°C（64°F），在低於室溫環境下易結晶固化，但結晶時體積不膨脹，不會脹破包裝鋼桶。",
-            "解凍時必須嚴格控制加熱溫度（建議水浴或熱風烘房溫度不高於 50°C），切忌使用局部直火烘烤以防局部過熱分解。",
-            "解凍過程中必須嚴格維持容器密封，嚴防空氣中濕氣侵入導致水解混濁與鈦沉澱。"
+            "Tyzor TPT 凍結時體積不膨脹，因此在容器或管線中結晶不會導致容器脹破或管路破裂。",
+            "解凍加熱上限溫度嚴格限制於 71°C（160°F）以防產品黃變；建議滾動桶身加速熔融均勻化，解凍後冷卻並儲存於 20°C–38°C 乾燥環境。",
+            "桶塞必須全程密封嚴防濕氣進入，因水解釋出之異丙醇會使產品閃火點急劇降至 <-6.67°C（20°F），具高度易燃危險性。"
           ],
           "applications": [
-            "Tyzor TPT 倉庫儲存管理",
-            "冬季低溫運輸解凍操作",
-            "化工廠配料槽加料前處理"
+            "桶裝/槽裝 Tyzor TPT 冬季儲存維護",
+            "化學工廠投料解凍作業",
+            "低溫運輸後復原。"
           ]
         },
         {
-          "docId": "TYZ-19",
+          "docId": "TYZ-APPL-11",
           "filename": "Application Note DK Tyzor Transesterification EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Transesterification EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "酯交換反應催化",
-          "title": "Transesterification Catalysis with Tyzor® Organic Titanates",
-          "titleEn": "Application Note DK Tyzor Transesterification EN",
-          "origin": "Dorf Ketal Technical Note: SC0053 11/11",
-          "desc": "深入探討 Tyzor 有機鈦酸酯在丙烯酸酯、甲基丙烯酸酯、聚碳酸酯及生物柴油等酯交換反應中的高效催化動力學與工藝條件。",
+          "shortLabel": "酯交換反應",
+          "title": "Tyzor® Organic Titanates in Transesterification",
+          "titleEn": "Application Note DK Tyzor Transesterification EN.pdf",
+          "origin": "Tyzor® Organic Titanates - Transesterification Technical Note (Dorf Ketal, SC0053)",
+          "desc": "說明 Tyzor 鈦酸酯在羧酸酯轉酯化（酯交換）反應中的觸媒選擇、反應條件控制及與傳統酸觸媒之效能對比。",
           "advantages": [
-            "催化酯與高級醇之間的烷氧基交換反應，反應轉化率快速達到 98% 以上。",
-            "相比強酸或強鹼催化劑，反應條件溫和且副反應極少，不會引發丙烯酸單體自聚或雙鍵破壞。",
-            "產物純度高、分離提純工藝簡單，大幅降低中和水洗產生的廢鹽與乳化損耗。"
+            "在丙烯酸乙酯與正癸醇合成丙烯酸正癸酯反應中，Tyzor TPT（1.0 wt%）於 60 分鐘內轉化率達 99%，遠高於硫酸（55%）與對甲苯磺酸（23%）。",
+            "反應中過量的醇類不會發生酸催化引起的副反應降解，回收醇品質優良可循環使用；成品無深色副產物。",
+            "轉酯化通常在較溫和溫度（約 100°C）進行，生成之低沸點醇（如甲醇、乙醇）需迅速蒸餾移除以驅動平衡。"
           ],
           "applications": [
-            "特種（甲基）丙烯酸酯單體合成",
-            "聚碳酸酯酯交換聚合",
-            "生質柴油製備",
-            "精細化學品酯類交換"
+            "特用丙烯酸酯單體合成",
+            "生質柴油轉酯化",
+            "聚對苯二甲酸二甲酯（DMT）製程",
+            "聚碳酸酯轉酯化。"
           ]
         },
         {
-          "docId": "TYZ-20",
+          "docId": "TYZ-APPL-12",
           "filename": "Application Note DK Tyzor Vapor Pressure vs Temperature EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/3.Tyzor 應用技術資料 (12)鈦酸酯 /Application Note DK Tyzor Vapor Pressure vs Temperature EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "飽和蒸氣壓與溫度曲線",
-          "title": "Tyzor® Organic Titanates Vapor Pressure vs. Temperature",
-          "titleEn": "Application Note DK Tyzor Vapor Pressure vs Temperature EN",
-          "origin": "Dorf Ketal Technical Note: SC0054 11/11",
-          "desc": "彙整 Tyzor 乙基、正丙基、異丙基、正丁基及異丁基鈦酸酯在不同溫度下之飽和蒸氣壓工程數據對照曲線圖表。",
+          "shortLabel": "蒸氣壓曲線手冊",
+          "title": "Tyzor® Organic Titanates Vapor Pressure vs Temperature",
+          "titleEn": "Application Note DK Tyzor Vapor Pressure vs Temperature EN.pdf",
+          "origin": "Tyzor® Organic Titanates Vapor Pressure vs Temperature Technical Note (Dorf Ketal, SC0054)",
+          "desc": "提供 Tyzor 系列各烷基鈦酸酯純品在 50°C 至 280°C 溫度範圍內的蒸氣壓（mbar）熱力學數據圖表。",
           "advantages": [
-            "提供 Tyzor TPT、TnBT、TOT、TE 等不同烷氧基純品型號在 50°C 至 250°C 區間之蒸氣壓（mbar）工程曲線。",
-            "為化工減壓蒸餾純化提供精確的真空度與沸點對照計算基準。",
-            "為化學氣相沉積（CVD/ALD）與氣相輸送製程提供氣化溫度與蒸氣流量控制之關鍵物理熱力學參數。"
+            "涵蓋五種代表性烷基鈦酸酯：異丙基鈦酸酯（TPT）、乙基鈦酸酯（ET）、正丙基鈦酸酯（NPT）、異丁基鈦酸酯（TIBT）及正丁基鈦酸酯（TnBT）。",
+            "蒸氣壓高低順序為：TPT > ET > NPT > TIBT > TnBT；例如在 100°C 下，TPT 蒸氣壓最高（約 10 mbar 量級），而 TnBT 蒸氣壓最低。",
+            "該數據曲線為反應蒸餾除醇製程、真空脫揮、化學氣相沉積（CVD）蒸發量計算及儲槽排氣防護工程之關鍵設計依據。"
           ],
           "applications": [
-            "鈦酸酯減壓蒸餾精餾塔設計",
-            "半導體/光電 CVD 氣相沉積沈積工程",
-            "儲罐呼吸閥安全計算"
+            "真空蒸餾製程設計",
+            "化學氣相沉積（CVD/ALD）原料蒸發控制",
+            "工程管線壓降計算",
+            "化學儲槽排氣安全設計。"
           ]
         }
       ],
       "single": [
         {
-          "docId": "TYZ-21",
-          "filename": "TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf",
-          "pdfPath": "techdatadb/2.Tyzor/4.Tyzor 單一產品應用技術資料(2)/TI_Tyzor Activate 422/TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf",
-          "docType": "4. TI 單一產品技術資料",
-          "lang": "EN (英文)",
-          "version": "原廠發行版",
-          "brand": "Dorf Ketal",
-          "shortLabel": "422 食品接觸塑膠包裝",
-          "title": "Tyzor® ACtivate™ 422 Titanate Catalyst Plastic Packaging for Food Contact",
-          "titleEn": "TI DK Tyzor Activate 422 Plastic Packaging for Food Contact",
-          "model": "Activate 422",
-          "productGroup": "Activate 422",
-          "origin": "Dorf Ketal Application Data Sheet: SC0118 04/13",
-          "desc": "介紹 ACtivate 422 鈦酸酯催化劑在食品接觸級 PET 塑膠包裝中的法規符合性、高催化活性與提升產能特點。",
-          "advantages": [
-            "完全符合美國 FDA 21 CFR 177.1630 與歐盟 EU Regulation 10/2011 食品接觸塑膠材料法規要求。",
-            "作為高活性酯化催化劑可提高酯化速率達 20%（允許降低反應溫度以控制二甘醇 DEG 含量）；熔融縮聚產能可提升高達 15%。",
-            "具備優異耐水解穩定性，可直接添加於 PTA/MEG 漿料或直接注入酯化釜中，並能降低乙醛（AA）與端羧基含量以滿足風味敏感包裝要求。"
-          ],
-          "applications": [
-            "食品接觸級 PET 瓶",
-            "食品塑膠包裝材料",
-            "風味敏感飲料包裝樹脂生產"
-          ]
-        },
-        {
-          "docId": "TYZ-22",
+          "docId": "TYZ-SING-01",
           "filename": "TI DK Tyzor Activate 422 for PET Bottle Resins EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/4.Tyzor 單一產品應用技術資料(2)/TI_Tyzor Activate 422/TI DK Tyzor Activate 422 for PET Bottle Resins EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "422 瓶級聚酯樹脂催化",
-          "title": "Tyzor® ACtivate™ 422 Titanate Catalyst for PET Bottle Resins",
-          "titleEn": "TI DK Tyzor Activate 422 for PET Bottle Resins",
-          "model": "Activate 422",
-          "productGroup": "Activate 422",
-          "origin": "Dorf Ketal Application Data Sheet: DKLSC019 SC0114 05/13",
-          "desc": "詳述 ACtivate 422 在 PET 瓶級樹脂中改善聚酯結晶動力學、降低共聚單體 IPA 用量及提升射出成型效率的技術數據。",
+          "shortLabel": "Activate 422 瓶級聚酯",
+          "title": "Tyzor® ACtivate™ 422 for PET Bottle Resins",
+          "titleEn": "TI DK Tyzor Activate 422 for PET Bottle Resins EN.pdf",
+          "origin": "Tyzor® ACtivate™ 422 for PET Bottle Resins Technical Information (Dorf Ketal)",
+          "desc": "評估液態螯合鈦觸媒 Tyzor ACtivate 422 在聚酯（PET）瓶級樹脂連續縮聚及固相聚合（SSP）製程中取代銻（Antimony）觸媒的技術性能。",
           "advantages": [
-            "改變樹脂結晶特性（DSC 曲線顯示升溫結晶起始點升高、冷卻結晶起始點降低），可減少高達 40% 的間苯二甲酸（IPA）用量。",
-            "瓶胚射出成型溫度可降低達 10°C（18°F），成型週期縮短高達 8%，顯著降低加工能耗與瓶胚應力開裂。",
-            "應用於耐熱充填（Hot-Fill）瓶樹脂可降低收縮率，允許更高充填溫度或瓶身輕量化，並大幅降低乙醛、低聚物與霧度。"
+            "具備高水解穩定性與優異配位基化學，熔融縮聚反應速率高，SSP 固相聚合增黏速率與三氧化二銻相當。",
+            "活性極高，鈦金屬使用量（約 5–15 ppm Ti）遠低於銻觸媒（~250 ppm Sb），無重金屬灰分殘留，顯著降低瓶胚霧度（Haze）並提升光學透光度。",
+            "具備良好熱穩定性，可精準控制乙醛（Acetaldehyde, AA）生成量並維持出色的聚合物色相（低 b* 黃色相）。"
           ],
           "applications": [
-            "水瓶與碳酸飲料瓶（CSD）",
-            "耐熱充填瓶（Hot-Fill Bottle）",
-            "PET 瓶胚射出成型與節能生產"
-          ]
+            "瓶級 PET 樹脂生產",
+            "食品與飲料包裝容器",
+            "高透光 PET 薄膜。"
+          ],
+          "productGroup": "Activate 專利耐水解系列"
         },
         {
-          "docId": "TYZ-23",
+          "docId": "TYZ-SING-02",
+          "filename": "TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf",
+          "pdfPath": "techdatadb/2.Tyzor/4.Tyzor 單一產品應用技術資料(2)/TI_Tyzor Activate 422/TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf",
+          "docType": "4. TI 單一產品技術資料",
+          "lang": "EN (英文)",
+          "version": "原廠發行版",
+          "brand": "Dorf Ketal",
+          "shortLabel": "Activate 422 食品接觸",
+          "title": "Tyzor® ACtivate™ 422 Plastic Packaging for Food Contact",
+          "titleEn": "TI DK Tyzor Activate 422 Plastic Packaging for Food Contact EN.pdf",
+          "origin": "Tyzor® ACtivate™ 422 Plastic Packaging for Food Contact Technical Information (Dorf Ketal, SC0118)",
+          "desc": "說明 Tyzor ACtivate 422 作為符合食品接觸法規的無重金屬環保鈦觸媒，在食品包裝用 PET 塑膠容器中的合規性與加工優勢。",
+          "advantages": [
+            "嚴格符合美國 FDA (US CFR 177.1630) 及歐盟 (EU Regulation 10/2011) 食品接觸材料合規認證，徹底杜絕傳統銻等重金屬殘留疑慮。",
+            "高水解穩定性確保原料在儲存與預混過程中不析出沉澱，維持連續化反應器之均勻催化。",
+            "降低熔融聚合溫度與停留時間，減少高分子熱降解，確保食品包裝無異味釋放且外觀高潔淨度。"
+          ],
+          "applications": [
+            "食品級 PET 包裝瓶",
+            "熱成型食品托盤",
+            "飲料瓶胚",
+            "透明食品包裝薄膜。"
+          ],
+          "productGroup": "Activate 專利耐水解系列"
+        },
+        {
+          "docId": "TYZ-SING-03",
           "filename": "TI DK Tyzor IAM for Ink EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/4.Tyzor 單一產品應用技術資料(2)/TI_Tyzor IAM/TI DK Tyzor IAM for Ink EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "IAM 油墨專用交聯劑",
-          "title": "Tyzor® IAM Organic Titanate for Ink",
-          "titleEn": "TI DK Tyzor IAM for Ink",
-          "model": "IAM",
-          "productGroup": "IAM",
-          "origin": "Dorf Ketal Technical Bulletin: Issued July 2010 (Tyzor® IAM Organic Titanate)",
-          "desc": "說明 Tyzor IAM 鈦-磷酸鹽複合物在包裝印刷油墨中作為附著力促進劑與交聯劑的特點，不釋放乙醯丙酮且具極高耐水解穩定性。",
+          "shortLabel": "IAM 印刷油墨",
+          "title": "Tyzor® IAM Organic Titanate for Printing Inks",
+          "titleEn": "TI DK Tyzor IAM for Ink EN.pdf",
+          "origin": "Tyzor® IAM Organic Titanate Technical Information (Dorf Ketal)",
+          "desc": "介紹專為溶劑型印刷油墨開發的鈦磷酸酯複合物 Tyzor IAM，針對傳統乙醯丙酮鈦（Tyzor AA）易黃變及釋放氣味問題提供高效替代方案。",
           "advantages": [
-            "特別針對印刷油墨開發，不含乙醯丙酮（acetylacetone），在高溫蒸煮烘乾過程中不釋放刺激性氣味。",
-            "添加量僅 1%~4% 即可顯著增強油墨對聚烯烴（OPP/PE）及聚酯（PET）薄膜的附著牢度，通過 OPP 膠帶剝離測試。",
-            "耐水解穩定性遠高於普通鈦螯合物，油墨調配後儲存穩定性佳，且顯著提升耐熱封性與耐化學品溶劑擦拭性。"
+            "化學成分為鈦基磷酸酯複合物，TiO2 含量約 14.7%，比重 1.0，黏度約 20 mPa·s，外觀為無色至淺黃色液體。",
+            "完全不含且不釋放乙醯丙酮（2,4-戊二酮），杜絕傳統交聯劑殘留氣味與法規毒性疑慮。",
+            "在白墨及淺色油墨體系中表現出近乎零黃變（Δb 顯著低於 Tyzor AA-75），同時具備極高交聯乾燥速度與附著促進性（添加量 1–4%）。"
           ],
           "applications": [
-            "凹版印刷油墨",
-            "柔版印刷油墨",
-            "複合軟包裝薄膜印刷",
-            "食品包裝外層油墨"
-          ]
+            "溶劑型凸版與凹版印刷油墨",
+            "硝化棉（NC）油墨",
+            "包裝印刷油墨（OPP/PET/PE 軟包裝薄膜）。"
+          ],
+          "productGroup": "IAM 油墨無黃變系列"
         },
         {
-          "docId": "TYZ-24",
+          "docId": "TYZ-SING-04",
           "filename": "TI DK Tyzor IAM for Solvent-Based Printing Ink EN.pdf",
           "pdfPath": "techdatadb/2.Tyzor/4.Tyzor 單一產品應用技術資料(2)/TI_Tyzor IAM/TI DK Tyzor IAM for Solvent-Based Printing Ink EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "IAM 溶劑型油墨交聯",
-          "title": "Tyzor® IAM for Solvent-Based Printing Inks",
-          "titleEn": "TI DK Tyzor IAM for Solvent-Based Printing Ink",
-          "model": "IAM",
-          "productGroup": "IAM",
-          "origin": "Dorf Ketal Technical Bulletin: Tyzor® IAM for Solvent-Based Printing Inks",
-          "desc": "提供 Tyzor IAM 在溶劑型硝化棉（NC）印刷油墨中對比不同添加量（1%~4%）之附著力、耐磨耗與流動黏度表現的實驗數據。",
+          "shortLabel": "IAM 溶劑型油墨",
+          "title": "Tyzor® IAM Technical Bulletin for Solvent-Based Printing Ink",
+          "titleEn": "TI DK Tyzor IAM for Solvent-Based Printing Ink EN.pdf",
+          "origin": "Tyzor® IAM Technical Bulletin (Dorf Ketal Speciality Catalyst Division)",
+          "desc": "完整收錄 Tyzor IAM 在溶劑型硝化棉油墨中的實際測試數據，對比 Tyzor AA-75 在 OPP 薄膜膠帶密著測試、耐水耐溶劑性及黃變指數（Δb）之詳細表現。",
           "advantages": [
-            "評估 1% 至 4% 添加量在硝化棉油墨中的表現，2%~3% 即達到優異的薄膜接著強度與耐刮耐磨性。",
-            "在乙酸乙酯、乙醇等常規酯醇溶劑中溶解性與相容性極佳，不引起油墨體系膠化增稠。",
-            "固化後漆膜柔韌抗衝擊，耐受包裝後加工熱封刀頭高溫夾燙而不黏刀脫墨。"
+            "在電暈處理 OPP 薄膜膠帶撕拔測試中，Tyzor IAM 在 >2% 濃度下展現優於 AA-75 的密著保持力（分級評分為最優的 1 級，無掉漆）。",
+            "耐水耐溶劑測試中，經 50/50 及 70/30 乙醇/水浸泡 1 分鐘後，油墨層完整無損，耐性表現與 AA-75 相當。",
+            "在白色油墨以 BYK 分光光度計測量 b 值，2% AA-75 之 Δb 為 0.44，而 1–4% Tyzor IAM 之 Δb 僅 0.01–0.15，黃變程度大幅降低 65–95%。"
           ],
           "applications": [
-            "溶劑型硝化棉凹版油墨",
-            "聚醯胺印刷油墨",
-            "軟性複合包裝印刷"
-          ]
+            "溶劑型軟包裝印刷油墨（BOPP",
+            "CPP 薄膜）",
+            "高遮蓋白墨",
+            "硝化棉基複合包裝油墨。"
+          ],
+          "productGroup": "IAM 油墨無黃變系列"
         }
       ],
       "formulation": []
@@ -786,515 +807,517 @@ const TECH_DATABASE = {
     "tabs": {
       "principles": [
         {
-          "docId": "ORI-P01",
-          "filename": "平均原生粒徑.pdf",
-          "pdfPath": "techdatadb/4.Orion/1.原理/平均原生粒徑.pdf",
+          "docId": "CAR-PRIN-01",
+          "filename": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "pdfPath": "techdatadb/4.Orion/1.原理/技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
           "docType": "1. 原理機制",
           "lang": "TW (繁體中文)",
-          "version": "原廠發行版",
+          "version": "2026",
           "brand": "Orion",
-          "shortLabel": "平均原生粒徑機制",
-          "title": "碳黑重要技術指標：平均原生粒徑與比表面積原理",
-          "titleEn": "Carbon Black Primary Particle Size & Specific Surface Area (BET)",
-          "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（一、平均原生粒徑）",
-          "desc": "探討碳黑原生粒徑（Primary Particle Size）與 BET 比表面積之物理作用機制。粒徑大小直接決定光學黑度（Jetness）、色調底相（Undertone）、著色力及抗紫外線能力，並深入剖析微細粒徑對塗料油墨潤濕分散流變特性的關鍵影響。",
+          "shortLabel": "平均原生粒徑",
+          "title": "特種碳黑技術手冊：碳黑的重要技術指標",
+          "titleEn": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "origin": "技術手冊碳黑 CARBON BLACK 2026-07 V1 - 碳黑的重要技術指標：一、平均原生粒徑 (average primary particle size)",
+          "desc": "說明碳黑核心指標「平均原生粒徑」與比表面積（BET）、黑度（Jetness）及抗紫外線防護力之正相關物理機制。",
           "advantages": [
-            "黑度與原生粒徑直接相關：粒徑越小（10~20 nm），BET 比表面積越大，光線吸收率越高，呈現之黑度越深邃且抗紫外線老化性能更佳。",
-            "色相與底色調控：微細小粒徑碳黑展現高級深藍色相（Blue Undertone），而粗粒徑大粒徑碳黑則偏向棕色調（Brown Tone）。",
-            "凝聚體比表面積效應：原生粒子熔結成凝聚體後，微細粒子依然保持極高有效比表面積，對塗膜提供頂級著色力與光學反射密度。",
-            "分散工藝關聯性：比表面積越大，分子間吸引力越強且吸油量增加，需搭配適當高分子分散劑與研磨剪切力以確保最佳展色穩定性。"
+            "黑度直接取決於碳黑之平均原生粒徑；粒徑越小，比表面積愈大，所顯現之碳黑黑度越高。",
+            "原生粒子在生成時會聚集成原生凝聚體（Aggregate），原生粒子越小則凝聚體比表面積越大，其抗紫外線（防 UV）作用更佳。",
+            "碳黑比表面積透過 BET 氮氣吸附方法測定，測定結果以每克樣品所具有之表面積（m²/g）定量表示。"
           ],
-          "applications": [
-            "頂級汽車原廠漆",
-            "高光修補漆",
-            "高光學密度噴墨油墨",
-            "抗UV耐候塑料母粒",
-            "防腐防護塗料"
-          ]
+          "applications": [],
+          "mechImg": "techdatadb/4.Orion/1.原理/particle size.png"
         },
         {
-          "docId": "ORI-P02",
-          "filename": "结構.pdf",
-          "pdfPath": "techdatadb/4.Orion/1.原理/结構.pdf",
+          "docId": "CAR-PRIN-02",
+          "filename": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "pdfPath": "techdatadb/4.Orion/1.原理/技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
           "docType": "1. 原理機制",
           "lang": "TW (繁體中文)",
-          "version": "原廠發行版",
+          "version": "2026",
           "brand": "Orion",
           "shortLabel": "聚集體結構形態",
-          "title": "碳黑重要技術指標：聚集體立體結構形態與吸油值原理",
-          "titleEn": "Carbon Black Aggregate Structure & Oil Absorption (OAN)",
-          "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（二、結構）",
-          "desc": "解析色素碳黑原生凝聚體（Aggregate）之化學鍵結立體形態與鏈枝結構發育度。闡明高結構與低結構碳黑在吸油量（OAN）、流變黏度、分散行為、塗層光澤度及導電性能上的本質差異與選型依據。",
+          "title": "特種碳黑技術手冊：結構",
+          "titleEn": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "origin": "技術手冊碳黑 CARBON BLACK 2026-07 V1 - 二、結構 (Structure)",
+          "desc": "闡述色素碳黑聚集體之空間形態結構定義，解析原生粒子透過化學鍵熔結成鏈枝狀或葡萄狀之微觀構造與高低結構分類。",
           "advantages": [
-            "原生化學鍵熔結：碳黑在反應爐高溫區由原生粒子熔結為不可逆原生凝聚體，以鏈狀或葡萄串狀形態存在，構成碳黑的立體結構基礎。",
-            "高結構特徵與性能：高結構碳黑具備大量鏈枝與孔隙空間，吸油值（OAN）高、抗絮凝穩定性好，利於賦予複合材料優異抗靜電與導電網絡。",
-            "低結構特徵與性能：低結構碳黑聚集體緊湊、吸油值低，在液態塗料與油墨中黏度增稠小，具備高顏料填充負載量與極致鏡面高光澤。",
-            "流變與加工性指導：結構度直接主導塗料油墨的屈服值與流平性，為控制配方黏度與塗裝作業流動性的核心參數。"
+            "色素碳黑在生產生成過程中原生粒子經化學鍵結熔結形成原生凝聚體（聚集體），非單純原生粒子獨立存在。",
+            "碳黑的「結構」即碳黑聚集體的空間形態，以粒子間聚集交聯成鏈狀或葡萄狀之複雜程度來表示。",
+            "凝聚體由大量鏈枝構成者定義為「高結構碳黑」；凝聚體由較少鏈枝之原生粒子組成者則定義為「低結構碳黑」。"
           ],
-          "applications": [
-            "高光汽車烤漆",
-            "低黏度高填量色漿",
-            "導電防靜電塗層",
-            "平版膠印油墨",
-            "工程塑料著色母粒"
-          ]
+          "applications": [],
+          "mechImg": "techdatadb/4.Orion/1.原理/property comparison chart.png"
         },
         {
-          "docId": "ORI-P03",
-          "filename": "表面處理.pdf",
-          "pdfPath": "techdatadb/4.Orion/1.原理/表面處理.pdf",
+          "docId": "CAR-PRIN-03",
+          "filename": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "pdfPath": "techdatadb/4.Orion/1.原理/技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
           "docType": "1. 原理機制",
           "lang": "TW (繁體中文)",
-          "version": "原廠發行版",
+          "version": "2026",
           "brand": "Orion",
-          "shortLabel": "表面氧化化學處理",
-          "title": "碳黑重要技術指標：表面化學處理、揮發分與酸鹼度 (pH) 原理",
-          "titleEn": "Carbon Black Surface Treatment, Volatiles & pH Chemistry",
-          "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（三、表面處理）",
-          "desc": "闡述特級碳黑後氧化表面處理機制，解析羧基、酚羥基、內酯基與醌基等含氧極性官能基之分布。深入說明揮發分含量（Volatile Content）與 pH 酸鹼度對極性體系潤濕相容性、高分子分散劑錨定鍵合及抗絮凝返粗的決定性作用。",
+          "shortLabel": "表面處理",
+          "title": "特種碳黑技術手冊：表面處理",
+          "titleEn": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "origin": "技術手冊碳黑 CARBON BLACK 2026-07 V1 - 三、表面處理 (Surface Treatment)",
+          "desc": "分析碳黑表面氧化後處理對改善微細粒子潤濕分散性之效應，並以揮發份（含氧官能基含量）、pH 值及極性評估表面化學改質程度。",
           "advantages": [
-            "調整極性與潤濕性：表面後氧化引入豐富含氧極性官能基（羧基、酚羥基、內酯基），大幅降低介面張力，使微細粒徑碳黑在極性溶劑中快速潤濕。",
-            "揮發分與官能基指標：揮發分含量直接反映表面含氧基團數量，揮發分越高代表極性越強，與水性分散樹脂相容展色性更卓越。",
-            "酸鹼性 (pH) 轉變機制：一般未處理爐黑呈鹼性（pH > 7），經深度後處理之色素碳黑轉為酸性（pH 3~5），能與分散劑之鹼性胺基錨定基團形成超強鍵結。",
-            "防止返粗與提升光澤：強固的極性介面保護層能徹底防止儲存過程中的絮凝返粗與色差漂移，大幅提升塗膜的光澤度與漆膜通透感。"
+            "更細微原生粒子帶來高比表面積並顯著提高分散難度，透過表面氧化處理可有效調控碳黑潤濕性並大幅改善分散性。",
+            "表面處理程度以揮發份含量評估，反映碳黑表面化學吸附之含氧酸性官能基（羧基、醌基、內酯基及羥基）多寡與極性強弱。",
+            "表面官能基直接決定酸鹼度：常規未處理爐法碳黑均呈鹼性（pH > 7），而經氧化後處理之特種碳黑富含羧基等酸性基團，pH 值降至 3–5 之間。"
           ],
-          "applications": [
-            "水性高光工業漆",
-            "汽車烤漆原廠漆",
-            "極性溶劑型高級油墨",
-            "高展色奈米色漿",
-            "UV光固化塗料"
-          ]
+          "applications": []
         },
         {
-          "docId": "ORI-P04",
-          "filename": "製程差異.pdf",
-          "pdfPath": "techdatadb/4.Orion/1.原理/製程差異.pdf",
+          "docId": "CAR-PRIN-04",
+          "filename": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "pdfPath": "techdatadb/4.Orion/1.原理/技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
           "docType": "1. 原理機制",
           "lang": "TW (繁體中文)",
-          "version": "原廠發行版",
+          "version": "2026",
           "brand": "Orion",
-          "shortLabel": "三大核心製程工藝",
-          "title": "顏料碳黑三大核心製造工藝差異：爐黑、氣黑與燈黑",
-          "titleEn": "Manufacturing Processes of Pigment Blacks: Furnace, Gas, and Lamp Black",
-          "origin": "Alan & Thomas Technologies 技術資料：碳黑重要技術指標（四、製程差異）",
-          "desc": "比較爐黑工藝（Furnace Black）、氣黑工藝（Gas Black）與燈黑工藝（Lamp Black）之反應爐結構、燃燒熱解機理及表面化學特性。詳解不同工藝對碳黑粒徑分布、聚集體結構、酸鹼值及終端漆膜色調特徵的決定性影響。",
+          "shortLabel": "製程差異",
+          "title": "特種碳黑技術手冊：製程差異",
+          "titleEn": "技術手冊碳黑 CARBON BLACK 2026-07 V1.docx",
+          "origin": "技術手冊碳黑 CARBON BLACK 2026-07 V1 - 四、製程差異 (Manufacturing Process Differences)",
+          "desc": "比較爐法（Furnace Black）、氣黑/槽法（Gas Black）及燈黑（Lamp Black）三大生產製程在燃燒反應機制、原生粒徑範圍、表面含氧酸性化學性質及終端特性的核心差異。",
           "advantages": [
-            "爐黑工藝 (Furnace Black)：在密閉反應爐中高溫缺氧裂解，粒徑調控範圍寬廣（15~80 nm），產量大且結構多元，廣泛應用於塑料、合成皮革、電線電纜與工業防護領域。",
-            "氣黑工藝 (Gas Black)：採用多孔扇形火焰於冷卻水鼓沉積，原生粒徑超細（10~30 nm）且天然富含酸性表面含氧基團（pH 3~5），具備極致超深黑度、強著色力與清澈深藍底相。",
-            "燈黑工藝 (Lamp Black)：於敞開燃燒盤緩慢燃燒沉積，粒徑粗大且分佈寬，抗浮色發花（Rub-out）能力卓越，為建築與工業調色漆提供中性純灰與抗指研發花標竿。",
-            "工藝決定應用特性：製程直接決定碳黑的化學純度、表面官能基與物理晶體結構，為各類高階塗料、油墨及工程塑料提供精準客製化材料選型。"
+            "爐法製程於缺氧密閉爐中進行，粒徑可控範圍寬廣（15–80 nm，平均約 40 nm），未經後處理時表面化學呈弱鹼性且較粗糙。",
+            "氣黑/槽法製程藉由多束小扇形火焰於轉鼓沉積，高溫刮取時接觸空氣自發氧化生成大量酸性基團（呈酸性 pH），粒徑極細（10–30 nm，平均 13 nm），兼具高黑度、強著色力、易分散與純正藍底色調。",
+            "燈黑製程採用平坦敞開燃燒鐵盤於欠氧條件下進行熱裂解，生成粒徑分佈寬且顆粒粗大之特徵產品。"
           ],
           "applications": [
-            "頂級汽車原廠面漆",
-            "高級包裝凹版油墨",
-            "建築外牆調色乳膠漆",
-            "合成皮革PU塗飾",
-            "工程塑料色母粒"
-          ]
+            "爐法適用於高級天然皮革",
+            "合成皮革",
+            "合成纖維著色",
+            "塑料製品",
+            "密封膠製品",
+            "農業用膜著色",
+            "塑料色母粒",
+            "電線護套；氣黑/槽法適用於油漆",
+            "油墨",
+            "皮革",
+            "PU 合成皮。"
+          ],
+          "mechImg": "techdatadb/4.Orion/1.原理/processes_comparison.png"
         }
       ],
       "catalog": [
         {
-          "docId": "ORI-01",
+          "docId": "CAR-CATA-01",
           "filename": "Brochure Orion Carbon Black CN.pdf",
           "pdfPath": "techdatadb/4.Orion/2.Orion Carbon Black 碳黑 目錄 （16）冊/Brochure Orion Carbon Black CN.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "CN (簡體中文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "特種碳黑產品技術指標(中)",
-          "title": "特种炭黑 产品技术指标 / 亚太地区",
-          "titleEn": "Brochure Orion Carbon Black CN",
-          "origin": "Orion S.A. 產品手冊: 特种炭黑 产品技术指标 / 亚太地区",
-          "desc": "彙編 Orion 亞太地區供應之全系列特種碳黑產品物理化學指標，涵蓋氣黑、爐黑及燈黑在塗料、油墨與塑料中的關鍵參數。",
+          "shortLabel": "特種碳黑型錄 (中)",
+          "title": "Orion 特種碳黑 產品目錄（中文版）",
+          "titleEn": "Brochure Orion Carbon Black CN.pdf",
+          "origin": "Orion Engineered Carbons 特種碳黑綜合產品指南（中文版）",
+          "desc": "彙整 Orion 氣法碳黑（Gas Black）、爐法碳黑（Furnace Black）、燈黑（Lamp Black）、乙炔黑（Acetylene Black）及特種導電碳黑在塗料、塑料與印刷油墨系統之產品分類、技術規格與核心性能指標。",
           "advantages": [
-            "完整列出各牌號之 BET 比表面積、吸油值（OAN）、黑度值（My/Mc）及原生粒徑對照表。",
-            "依據氣黑（Gas Black）、爐黑（Furnace Black）及燈黑（Lamp Black）不同製程工藝劃分性能特點與著色強度。",
-            "針對不同極性溶劑、水性樹脂及聚合物體系提供後處理（氧化表面）與未後處理牌號推薦。"
+            "產品涵蓋 Colour Black（如 FW 310/255/171/200）、Special Black（如 6/5/4/4A/100）、Nerox（如 600/505）、Printex（如 95/300/U/V）、HiBlack 系列、Lamp Black 101，以及超高導電碳黑 Printex XE2 B（比表面積 1000 m²/g）與 Printex kappa 系列。",
+            "說明原生粒徑（11–95 nm）、BET 比表面積（26–1000 m²/g）、OAN 吸油值（42–420 ml/100g）與 950°C 揮發份含量（含氧酸性官能基，最高 20%）對黑度（Jetness My 最高 310）、分散性、流變行為與底色相的決定性影響。",
+            "氣黑法氧化後處理產品表面富含羧基與酚羥基，在極性塗料與溶劑體系中具備優異潤濕相容性、儲存黏度穩定性與藍相高黑度。"
           ],
           "applications": [
-            "汽車面漆/修補漆",
-            "工業防腐塗料",
-            "包裝印刷油墨",
-            "塑料色母粒",
-            "合成纖維紡絲著色"
+            "汽車 OEM 及修補漆",
+            "電泳塗料",
+            "一般工業塗料",
+            "粉末塗料；聚烯烴/工程塑膠/化纖母粒",
+            "電線電纜",
+            "管材",
+            "農膜；膠印",
+            "凹版",
+            "柔版包裝印刷油墨及 UV/水性噴墨墨水。"
           ]
         },
         {
-          "docId": "ORI-02",
+          "docId": "CAR-CATA-02",
           "filename": "Brochure Orion Carbon Black EN.pdf",
           "pdfPath": "techdatadb/4.Orion/2.Orion Carbon Black 碳黑 目錄 （16）冊/Brochure Orion Carbon Black EN.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "特種碳黑產品技術指標(英)",
-          "title": "Specialty Carbon Blacks Technical Data Asia Pacific",
-          "titleEn": "Brochure Orion Carbon Black EN",
-          "origin": "Orion S.A. Technical Brochure: Specialty Carbon Blacks Technical Data Asia Pacific",
-          "desc": "提供 Orion 亞太市場特種碳黑全系列產品技術規範、分析方法（ASTM）及在塗料、油墨與高分子中的牌號矩陣。",
+          "shortLabel": "特種碳黑型錄 (英)",
+          "title": "Orion Specialty Carbon Blacks Product Guide (English)",
+          "titleEn": "Brochure Orion Carbon Black EN.pdf",
+          "origin": "Specialty Carbon Blacks - Technical Data Asia Pacific (Orion Engineered Carbons)",
+          "desc": "彙整 Orion 亞太地區特種碳黑在塗料、塑料與印刷油墨三大領域之技術規格（BET 比表面積、OAN 吸油值、揮發份、pH、黑度 MY）、測試標準與產品選型指南。",
           "advantages": [
-            "詳細記載 OAN/COAN 結構吸油值、揮發份含量（Volatile Content）及 pH 值對流變性與相容性的影響。",
-            "依應用領域細分為超高黑度（High Jetness）、中黑度及著色型（Tinting）專用等級。",
-            "標註粒狀（Beads）與粉狀（Powder）形態的物性差異，指導工廠分散研磨設備選型。"
+            "詳述物理規格參數關聯：較小原生粒徑提供更高黑度與著色力，但吸油量與比表面積增大導致分散黏度上升。",
+            "爐黑製程提供寬廣的結構度（OAN）調節空間，高結構碳黑易於分散且導電性高，低結構碳黑利於高固含量填充與流平。",
+            "產品系列包含 COLOUR BLACK、SPECIAL BLACK、PRINTEX、NEROX、HIBLACK、AROSPERSE、LAMP BLACK 等專利品牌等級。"
           ],
           "applications": [
-            "溶劑型與水性工業塗料",
+            "溶劑型與水性塗料",
+            "工業塗料",
+            "粉末塗料",
+            "平版與凹版油墨",
             "噴墨墨水",
-            "膠印/柔版/凹版油墨",
-            "導電塑料與抗靜電複合材料"
+            "合成纖維母粒。"
           ]
         }
       ],
       "applications": [
         {
-          "docId": "ORI-03",
+          "docId": "CAR-APPL-01",
           "filename": "Application Note Orion Fastness of Specialty Carbon Blacks EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Fastness of Specialty Carbon Blacks EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "特種碳黑耐光耐候堅牢度",
-          "title": "Fastness and Resistance Properties of Specialty Carbon Blacks",
-          "titleEn": "Application Note Orion Fastness of Specialty Carbon Blacks EN",
-          "origin": "Orion Technical Information: TI 1480 (OEC-TI 1480-10/2022)",
-          "desc": "評估特種碳黑顏料在極端光照、耐候、高溫熱穩定性及耐酸鹼化學品介質侵蝕下的牢度與耐抗性能。",
+          "shortLabel": "碳黑堅牢度 (TI 1460)",
+          "title": "Fastness Properties of Specialty Carbon Blacks",
+          "titleEn": "Application Note Orion Fastness of Specialty Carbon Blacks EN.pdf",
+          "origin": "Fastness and Resistance Properties of Specialty Carbon Blacks (Orion Engineered Carbons, Technical Information TI 1480)",
+          "desc": "分析特種碳黑顏料相較於有機黑色顏料在耐光性、耐候性、耐化學性、耐溫性及耐遷移性（Bleeding）等各項堅牢度（Fastness）指標的絕對優勢。",
           "advantages": [
-            "碳黑由無定形碳組成，具備耐日光、耐紫外線（UV）及耐候老化的極致牢度（耐光等級達最高級 Blue Wool 8 級）。",
-            "具備卓越的熱穩定性，在惰性氣氛下高溫耐受超過 1000°C，遠勝所有有機黑色顏料。",
-            "耐強酸、耐強鹼及有機溶劑浸泡侵蝕，在嚴苛腐蝕環境下不褪色、不遷移、不滲色。"
+            "爐黑與氣黑歸類為 Pigment Black #7（PBk7），燈黑歸類為 Pigment Black #6（PBk6），C.I. 結構編號均為 77266；耐光牢度達 BSI 標準 7–8 級（優異 Excellent）。",
+            "耐水、耐酸、耐鹼、耐有機溶劑、可塑劑、油脂與熱蠟牢度均達最高級（No bleed or discoloration，完全不滲色、不變色）。",
+            "原文特別指出：若含碳黑塗料或油墨之耐性表現不良，其根本限制通常來自黏結劑樹脂系統（Binder system），而非特種碳黑本身。"
           ],
           "applications": [
-            "高階汽車塗料",
-            "建築外牆氟碳塗料",
-            "高耐候農膜",
-            "極端高溫工業設備防護塗層"
+            "車輛外裝塗料",
+            "工程塑膠部件",
+            "建築外牆氟碳烤漆",
+            "農用防老化黑膜",
+            "耐高溫塗層。"
           ]
         },
         {
-          "docId": "ORI-04",
+          "docId": "CAR-APPL-02",
           "filename": "Application Note Orion Handling of Carbon Black EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Handling of Carbon Black EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "碳黑安全裝卸指南",
-          "title": "Handling of Carbon Black",
-          "titleEn": "Application Note Orion Handling of Carbon Black EN",
-          "origin": "Orion Technical Information: TI 1451",
-          "desc": "提供特種碳黑粉體與顆粒在大宗儲存、氣力輸送、除塵防爆及粉塵健康安全防護方面的工程操作指導規範。",
+          "shortLabel": "碳黑安全裝卸 (TI 1451)",
+          "title": "Safe and Effective Handling of Specialty Carbon Black",
+          "titleEn": "Application Note Orion Handling of Carbon Black EN.pdf",
+          "origin": "Handling of Carbon Black (Orion Engineered Carbons, Technical Information TI 1451, 32 pages)",
+          "desc": "全面指引特種碳黑（粉狀 Powder 與粒狀 Beads）在工廠物流、儲存、除塵、氣力輸送、開袋、下料及安全防爆方面的工程技術規範。",
           "advantages": [
-            "詳細分析碳黑顆粒（Beads）與粉狀（Powder）的流動性、堆積密度與輸送壓降差異。",
-            "提供筒倉卸料、螺旋輸送、氣力輸送管路設計與防架橋、防粉塵飛揚的最佳實踐。",
-            "明確粉塵防爆防護分區標準、接地靜電釋放要求與個人防護裝備（PPE）操作規範。"
+            "比較粉狀（Powder，低堆積密度約 0.05–0.15 g/cm³，易起塵、分散較快）與珠狀/粒狀（Beads，堆積密度約 0.3–0.5 g/cm³，流動性佳、低粉塵）之物性差異與操作設備選型。",
+            "提供粉塵爆炸預防準則：最小點火能量（MIE）、粉塵雲爆炸指數（Kst）、下爆炸極限（LEL）分析，並規範適當之接地、除塵防爆閥與惰化措施。",
+            "規範密閉式氣力輸送（稀相/密相）、料斗排料防搭橋設計（振動器/破拱錐）及個人呼吸防護與通風要求。"
           ],
           "applications": [
-            "塗料油墨廠碳黑投料系統",
-            "塑料色母粒中央供料系統",
-            "密閉式氣力輸送工程設計"
+            "塗料工廠研磨配料系統",
+            "塑料母粒擠出上料工程",
+            "油墨廠物料輸送",
+            "工廠安全防護與粉塵控制。"
           ]
         },
         {
-          "docId": "ORI-05",
+          "docId": "CAR-APPL-03",
           "filename": "Application Note Orion Pigments Special Carbon Black in Modern Coatings EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Pigments Special Carbon Black in Modern Coatings EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "現代塗料碳黑顏料應用",
-          "title": "Carbon Black Pigments in Modern Coating Systems",
-          "titleEn": "Application Note Orion Pigments Special Carbon Black in Modern Coatings EN",
-          "origin": "Orion Industry Information: Carbon Black Pigments in Modern Coating Systems (© 2012)",
-          "desc": "全面說明碳黑在溶劑型、水性、粉末及輻射固化現代塗料中的分散機理、光學黑度、藍相色相與流變特性。",
+          "shortLabel": "現代塗料系統 (0402)",
+          "title": "Specialty Carbon Blacks in Modern Coating Systems",
+          "titleEn": "Application Note Orion Pigments Special Carbon Black in Modern Coatings EN.pdf",
+          "origin": "Carbon Black Pigments in Modern Coating Systems (Orion Engineered Carbons, Industry Information 0402, 24 pages)",
+          "desc": "深入探討特種碳黑在現代環保塗料系統（高固含量、水性塗料、粉末塗料、UV 固化）中的色度學理論（My、dM）、分散安定化與流變學性能。",
           "advantages": [
-            "深入解析原生粒徑、聚集體結構與表面化學（揮發份/氧化官能基）對黑度（Jetness）與藍相色調（Undertone）的決定性作用。",
-            "探討潤濕分散劑與碳黑表面酸性/中性官能基的相互作用機制，預防浮色發花與絮凝返粗。",
-            "分析水性化與高固體份塗料體系中黏度建立與長期儲存穩定性的控制策略。"
+            "詳細定義黑度數值 My（Jetness）與底色相 dM（Undertone，dM > 0 為藍底色，dM < 0 為棕/紅底色），說明微細粒徑產生高 My 配合藍底色相帶來深邃視覺黑度。",
+            "比較研磨設備效能（砂磨機、三輥機、高速分散機）與研磨配方設計（顏基比、固含量、分散劑當量吸附量），避免過磨產生二次凝聚。",
+            "針對水性體系推薦後處理氧化型碳黑搭配高分子嵌段共聚物分散劑，解決水相中碳黑表面疏水難潤濕與絮凝返粗問題。"
           ],
           "applications": [
-            "汽車 OEM 漆與修補漆",
-            "高階工業面漆",
-            "水性木器漆",
-            "粉末塗料"
+            "汽車塗裝（OEM）面漆",
+            "汽車修補漆",
+            "水性工業金屬漆",
+            "卷材塗料",
+            "塑膠件裝飾塗料。"
           ]
         },
         {
-          "docId": "ORI-06",
+          "docId": "CAR-APPL-04",
           "filename": "Application Note Orion Special Black for Fibers EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Black for Fibers EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "合成纖維原液著色碳黑",
-          "title": "Specialty Carbon Blacks for Fibers",
-          "titleEn": "Application Note Orion Special Black for Fibers EN",
-          "origin": "Orion Technical Information: TI 1377",
-          "desc": "介紹特種碳黑在聚酯（PET）、尼龍（PA）及聚丙烯（PP）合成纖維原液著色紡絲中的過濾性、紡絲穩定性與深黑度表現。",
+          "shortLabel": "纖維紡絲碳黑 (TI 1377)",
+          "title": "Specialty Carbon Blacks for Synthetic Fibers",
+          "titleEn": "Application Note Orion Special Black for Fibers EN.pdf",
+          "origin": "Specialty Carbon Blacks for Fibers (Orion Engineered Carbons, Technical Information TI 1377, 6 pages)",
+          "desc": "介紹符合 OEKO-TEX Standard 100 紡織品安全規範的化學纖維紡絲專用特種碳黑（Printex L6 SQ、Printex alpha SQ、Arosperse 11、Arosperse 138，以及 Arosperse 26）。",
           "advantages": [
-            "具備超高純淨度與極低灰分雜質，顯著降低熔融紡絲濾壓值（DFP, Delta Filter Pressure），大幅延長紡絲組件濾網壽命。",
-            "聚集體分佈均勻且易於分散，徹底避免化纖高速牽伸過程中的斷頭（Filament Breakage）與毛絲現象。",
-            "賦予纖維均勻深邃的色澤與優異的耐洗滌、耐摩擦牢度，並兼具抗紫外線光老化保護功能。"
+            "Printex L6 SQ、Printex alpha SQ、Arosperse 11 與 Arosperse 138 符合重金屬、多環芳香烴（PAH）殘留限量標準及歐盟 Directive 10/2011 規範，符合 OEKO-TEX Standard 100 第 I 類（嬰兒用品）至第 IV 類要求。",
+            "具備超低殘留粗粒（Residue on 325 mesh < 10 ppm）與低凝膠（Gel）生成率，極大化延長紡絲噴絲板與熔體過濾器壽命（Filter Pressure Value, FPV 極低）。",
+            "降低紡絲斷頭率（Low spin breaks）、減少高溫加工硫磺異味（Low olfactory effect），賦予化學纖維長絲均勻的高光澤黑度與柔軟手感。"
           ],
           "applications": [
-            "聚酯纖維（PET）",
-            "尼龍纖維（PA6/PA66）",
-            "聚丙烯（PP）紡絲",
-            "土工布與汽車內飾織物"
+            "聚酯（PET）纖維原液著色",
+            "聚醯胺（PA/Nylon）紡絲母粒",
+            "聚丙烯（PP）無紡布與長絲",
+            "高端紡織服飾面料。"
           ]
         },
         {
-          "docId": "ORI-07",
+          "docId": "CAR-APPL-05",
           "filename": "Application Note Orion Special Carbon Black Disperse Guideline EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black Disperse Guideline EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "塗料碳黑潤濕分散指南",
-          "title": "Short Dispersion Guideline for Specialty Carbon Blacks in Coatings",
-          "titleEn": "Application Note Orion Special Carbon Black Disperse Guideline EN",
-          "origin": "Orion Technical Information: TI 1375",
-          "desc": "提供特種碳黑在塗料生產中預分散、研磨設備選擇（珠磨機）、研磨介質充填率及分散劑最佳添加量之實用工藝。",
+          "shortLabel": "潤濕分散指引 (TI 1375)",
+          "title": "Dispersion Guideline for Specialty Carbon Blacks in Coatings",
+          "titleEn": "Application Note Orion Special Carbon Black Disperse Guideline EN.pdf",
+          "origin": "Short Dispersion Guideline for Specialty Carbon Blacks in Coatings (Orion Engineered Carbons, Technical Information TI 1375, 12 pages)",
+          "desc": "提供特種碳黑在塗料色漿中分散的三大物理步驟（潤濕、機械破碎/解聚、靜電與空間位阻安定化）之實用製程與工藝指引。",
           "advantages": [
-            "詳細規範三步驟分散流程：潤濕（Wetting）、機械解聚研磨（Deagglomeration）與穩定化（Stabilization）。",
-            "推薦珠磨機研磨珠尺寸（0.4~1.2 mm 氧化鋯珠）、填裝比率（70%~80%）及線速度控制參數。",
-            "提供階梯流動法（Flow Point Method）精確測定分散劑最佳用量，防止添加過量或不足導致降黏失效。"
+            "研磨階段之剪切應力、珠磨機填珠率（建議 70–80% 氧化鋯珠，珠徑 0.4–0.8 mm）與研磨線速度（10–14 m/s）的精準控制要求。",
+            "說明分散劑需求量（DOP 法與吸油值關聯），高比表面積碳黑需添加足量高分子分散劑以達到單分子層飽和吸附，防止脫吸附導致絮凝。",
+            "制定黏度曲線、刮板細度計測定（Hegman 規要求 < 5 µm）與展色性（Rub-out 測試）等分散終點評估標準。"
           ],
           "applications": [
             "塗料研磨色漿製備",
-            "高階黑漆量產製程控制",
-            "砂磨分散工藝最佳化"
+            "萬能色漿",
+            "高色素碳黑研磨工藝",
+            "砂磨機製程優化。"
           ]
         },
         {
-          "docId": "ORI-08",
+          "docId": "CAR-APPL-06",
           "filename": "Application Note Orion Special Carbon Black for Industrial Coatings EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black for Industrial Coatings EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "工業防護塗料專用碳黑",
+          "shortLabel": "工業防護塗料 (TI 1458)",
           "title": "Specialty Carbon Blacks for Industrial Coatings",
-          "titleEn": "Application Note Orion Special Carbon Black for Industrial Coatings EN",
-          "origin": "Orion Technical Information: TI 1458",
-          "desc": "探討特種碳黑在一般工業漆、工程機械、農機防腐及金屬烤漆中平衡黑度、遮蓋力、流變性與經濟成本的選型方案。",
+          "titleEn": "Application Note Orion Special Carbon Black for Industrial Coatings EN.pdf",
+          "origin": "Specialty Carbon Blacks for Industrial Coatings (Orion Engineered Carbons, TI 1458, 12 pages)",
+          "desc": "系統評估 Orion 特種碳黑（Printex 200/300/35、Nerox 505/600、Special Black 4/100 等）在工業塗料本色/原色黑度（mass tone）應用中之黑度表現、流變行為與耐候特性。",
           "advantages": [
-            "針對農機、工程機械及金屬結構提供高耐候、優異防腐與高耐刮之專用碳黑牌號推薦。",
-            "分析爐黑與氣黑在環氧底漆、聚氨酯面漆及醇酸調和漆中的流變相容性與抗流掛平衡。",
-            "提供兼顧良好遮蓋力與高光澤度的經濟型配色解決方案，降低配方整體顏料成本。"
+            "在環氧樹脂、醇酸樹脂、聚胺酯及壓克力工業底漆與面漆中評估黑度（My 220–260）與消色力（Tinting strength）。",
+            "涵蓋建築塗料、電泳漆（EDC）、耐高溫塗料、卷材塗料（Coil coating）與重防腐塗料五大工業體系，依膜厚與樹脂特性推薦對應之氣黑、爐黑或燈黑等級。",
+            "在重防腐底漆中，低吸油值、低可溶性鹽類含量的碳黑有助於降低塗膜滲透性，增強耐鹽霧與耐濕熱保護屏障。"
           ],
           "applications": [
-            "重防腐工業塗料",
-            "工程機械與卡車烤漆",
-            "鋼結構防腐底漆",
-            "五金金屬面漆"
+            "一般工業金屬塗漆",
+            "重防腐鋼結構塗料",
+            "農機與工程機械塗裝",
+            "家電烤漆",
+            "工業防腐底漆。"
           ]
         },
         {
-          "docId": "ORI-09",
+          "docId": "CAR-APPL-07",
           "filename": "Application Note Orion Special Carbon Black for Inkjet Inks EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black for Inkjet Inks EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "數位噴墨墨水專用碳黑",
-          "title": "Specialty Carbon Blacks for Superior Pigmented Inkjet Inks",
-          "titleEn": "Application Note Orion Special Carbon Black for Inkjet Inks EN",
-          "origin": "Orion Technical Information: TI 1291",
-          "desc": "詳述特種碳黑在數位噴墨墨水（Inkjet）中奈米級分散粒徑、極窄粒徑分佈、超低黏度與噴頭防堵塞可靠性技術。",
+          "shortLabel": "數位噴墨油墨 (TI 1482)",
+          "title": "Specialty Carbon Blacks for Inkjet Inks",
+          "titleEn": "Application Note Orion Special Carbon Black for Inkjet Inks EN.pdf",
+          "origin": "Specialty Carbon Blacks for Superior Pigmented Inkjet Inks (Orion Engineered Carbons, Technical Information TI 1291, 16 pages)",
+          "desc": "針對數位噴墨（Inkjet）印刷要求，探討水性、溶劑型及 UV 固化噴墨墨水用特種碳黑的粒徑分佈、表面改質、分散穩定性與噴嘴相容性。",
           "advantages": [
-            "要求分散後平均粒徑 D50 < 100 nm 且無大於 1 μm 粗粒子，確保連續噴印無堵塞（Nozzle Clogging）。",
-            "嚴格控制多價金屬離子（如 Ca2+、Mg2+、Fe3+）與可溶性鹽含量，確保墨水極佳的水相膠體穩定性。",
-            "在高剪切噴射條件下保持低黏度與快速自修復流變特性，賦予印花高光學密度（Optical Density）與銳利邊緣。"
+            "噴墨專用碳黑要求超窄原生粒徑分佈（平均粒徑約 15–25 nm），研磨分散後粒徑（D99 < 150 nm）無大顆粒，確保無堵塞壓電式或熱發泡噴嘴。",
+            "水性噴墨推薦使用高氧化處理氣黑 NIPex IQ 系列（如 NIPex 180IQ/170IQ/160IQ），非水性與 UV 噴墨推薦 NIPex 150/90/60/35，提供高 Zeta 電位與長期儲存低沉降黏度穩定性。",
+            "打印於普通紙與相片紙上展現高光學密度（OD > 1.4–1.6）、極佳邊緣銳利度（Edge acuity）與高耐摩擦/耐水抗暈染性能。"
           ],
           "applications": [
-            "水性桌上與工業噴墨墨水",
-            "UV 固化數位噴墨墨水",
-            "紡織數位印花墨水"
+            "水性桌上型與商用噴墨墨水",
+            "工業陶瓷與標籤 UV 噴墨墨水",
+            "寬幅廣告溶劑型噴墨墨水",
+            "紡織數位印花墨水。"
           ]
         },
         {
-          "docId": "ORI-10",
+          "docId": "CAR-APPL-08",
           "filename": "Application Note Orion Special Carbon Black for Powder Coatings EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black for Powder Coatings EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "粉體塗料專用碳黑",
+          "shortLabel": "粉體塗料碳黑 (TI 1456)",
           "title": "Specialty Carbon Blacks for Powder Coatings",
-          "titleEn": "Application Note Orion Special Carbon Black for Powder Coatings EN",
-          "origin": "Orion Technical Information: TI 1293",
-          "desc": "評估特種碳黑在聚酯/TGIC、聚酯/HAA、環氧及聚酯/環氧混合型粉末塗料中的熔融擠出分散、黑度與帶電性能。",
+          "titleEn": "Application Note Orion Special Carbon Black for Powder Coatings EN.pdf",
+          "origin": "Specialty Carbon Blacks for Powder Coatings (Orion Engineered Carbons, Technical Information TI 1293, 16 pages)",
+          "desc": "評估特種碳黑在聚酯/TGIC、聚酯/Primid（HAA）、環氧及聚酯/環氧混合型粉末塗料中，於雙螺桿擠出熔融混煉下的分散機制、光澤及色相。",
           "advantages": [
-            "評估螺桿擠出機剪切混合過程中的碳黑解聚難易度，推薦易分散粒狀與粉狀等級。",
-            "控制粉末塗料靜電噴塗施工中的摩擦帶電（Tribo）與電暈帶電（Corona）性能，提升第一道上粉率。",
-            "在固化烘烤過程中展現極佳熱穩定性，消除針孔、縮孔缺陷，維持高光澤與深黑外觀。"
+            "固態粉末混煉無溶劑研磨剪切力，推薦易分散型爐黑（如 Special Black 100、Printex 30/200/35），具備適度結構以促進樹脂熔融捏合解聚。",
+            "比較氣黑與爐黑對粉末塗料熔融流動性（Pellet Flow）與膠化時間的影響，氧化型碳黑之酸性官能基對部分胺催化系統具有輕微延遲膠化作用。",
+            "能在低添加量（0.5–2%）下達到優異黑度、高 60° 光澤度（>90 GU）或均勻消光紋理，且不影響靜電噴塗帶電性與抗衝擊柔韌性。"
           ],
           "applications": [
-            "家電粉末塗料",
-            "建築鋁型材粉末噴塗",
-            "汽車輪轂與底盤粉末塗層"
+            "建築鋁型材粉末塗料",
+            "家電粉末塗裝",
+            "汽車輪圈與底盤粉末塗料",
+            "工業通用金屬粉末塗料。"
           ]
         },
         {
-          "docId": "ORI-11",
+          "docId": "CAR-APPL-09",
           "filename": "Application Note Orion Special Carbon Black for Printing Inks EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black for Printing Inks EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "印刷油墨專用碳黑",
-          "title": "Specialty Carbon Black for Printing Inks",
-          "titleEn": "Application Note Orion Special Carbon Black for Printing Inks EN",
-          "origin": "Orion Industry Information: Specialty Carbon Black for Printing Inks",
-          "desc": "介紹特種碳黑在膠印（平版）、凹版、柔版及絲網印刷油墨中的流變性、流動度、著色力與印刷光澤度要求。",
+          "shortLabel": "包裝印刷油墨 (TI 1452)",
+          "title": "Specialty Carbon Blacks for Printing Inks",
+          "titleEn": "Application Note Orion Special Carbon Black for Printing Inks EN.pdf",
+          "origin": "Specialty Carbon Black for Printing Inks (Orion Engineered Carbons, Industry Information II 0401, 8 pages)",
+          "desc": "綜述 Orion 特種碳黑在各類傳統印刷油墨（平版膠印 Offset、凹版 Gravure、柔版 Flexo 及絲網印刷 Screen）中的色度學、流變性與印刷適性。",
           "advantages": [
-            "針對單張紙與輪轉膠印油墨的高黏度高剪切特性，提供優異長度（Length/Tack）與抗乳化平衡。",
-            "針對液體油墨（凹版/柔版）提供低黏度、高著色力及卓越的醇酯溶劑釋放性。",
-            "確保油墨印品具有高光澤度、優異耐摩擦性（Rub Resistance）與清晰明銳的網點還原性。"
+            "在膠印油墨中推薦使用中高結構爐黑（如 Printex 35/45），能快速建立油墨結構彈性（Tack）與屈服值，確保高速印刷油墨抗飛墨（Mist resistance）與水墨平衡。",
+            "在凹版與柔版包裝油墨中推薦低結構、易流動之碳黑（如 Special Black 4A、Printex 25），提供低黏度、高墨膜遮蓋力與高光澤度。",
+            "針對包裝印刷對溶劑釋放與乾燥速度之嚴格要求，碳黑適度吸油值可保證墨層快速固化乾燥與優異耐摩擦耐刮性。"
           ],
           "applications": [
-            "書刊與商業膠印油墨",
-            "食品與藥品包裝柔版/凹版油墨",
-            "網版印刷厚膜油墨"
+            "報刊與商業平版膠印油墨",
+            "塑膠薄膜凹版包裝油墨",
+            "水性柔版瓦楞紙箱油墨",
+            "絲網印刷厚膜油墨。"
           ]
         },
         {
-          "docId": "ORI-12",
+          "docId": "CAR-APPL-10",
           "filename": "Application Note Orion Special Carbon Black for Tinting Coating EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black for Tinting Coating EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "調色與底漆專用碳黑",
-          "title": "Specialty Carbon Blacks for Tinting Applications",
-          "titleEn": "Application Note Orion Special Carbon Black for Tinting Coating EN",
-          "origin": "Orion Technical Information: TI 1459",
-          "desc": "探討碳黑在建築調色漆與工業混色漆中作為調色顏料（Tinting）的著色力穩定性、抗浮色發花（Rub-out）與色相控制。",
+          "shortLabel": "調色塗料碳黑 (TI 1459)",
+          "title": "Specialty Carbon Blacks for Tinting Coatings",
+          "titleEn": "Application Note Orion Special Carbon Black for Tinting Coating EN.pdf",
+          "origin": "Specialty Carbon Blacks for Tinting Applications (Orion Engineered Carbons, Technical Information TI 1459, 12 pages)",
+          "desc": "探討碳黑在與白色顏料（TiO2）調配灰色及複色塗料時的調色著色力（Tinting Strength）、灰度值（Greyness GY）、底色相（dG）及浮色發花行為（Floating behavior）。",
           "advantages": [
-            "採用中等至較大粒徑、寬結構分佈的燈黑（Lamp Black）與爐黑，大幅降低調色系統浮色發花風險。",
-            "展現優異的著色力（Tinting Strength）穩定性，批次間色差 ΔE 極小，滿足高精準電腦調色機要求。",
-            "具備中性偏藍 Undertone，與二氧化鈦白色顏料混合時呈現明亮清透的純灰色調而不偏偏黃偏紅。"
+            "白稀釋時底色相發生反轉：粗粒徑碳黑（如 Lamp Black 101、Printex G、Special Black 100）呈現藍底色（Blue undertone），而細粒徑高色素碳黑則轉為紅/棕底色。",
+            "浮色評級以指研測試（Rub-out）評估，浮色指數 100% 代表無分離；大粒徑與經氧化表面改質之碳黑能縮小與 TiO2 粒子之動態沉降差異，將浮色率維持在接近 100% 之完美穩定狀態。",
+            "比較 Printex 300、30、3 的 OAN 吸油值對調漆黏度的影響：低 OAN 結構之 Printex 300 具備較高著色力（113%）與較低研磨黏度（850 mPa·s）。"
           ],
           "applications": [
-            "建築內外牆調色基礎漆",
-            "工業調色系統通用色漿",
-            "水性與溶劑型灰色面漆"
+            "建築調色色漿",
+            "汽車中塗漆（Primer Surfacer）",
+            "工業灰色調色漆",
+            "塑料調色母粒。"
           ]
         },
         {
-          "docId": "ORI-13",
+          "docId": "CAR-APPL-11",
           "filename": "Application Note Orion Special Carbon Black in Food Package Printing Ink EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black in Food Package Printing Ink EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "食品包裝油墨碳黑合規",
-          "title": "Carbon Black Pigment for Food Packaging Printing Inks",
-          "titleEn": "Application Note Orion Special Carbon Black in Food Package Printing Ink EN",
-          "origin": "Orion Technical Information: TI 1453",
-          "desc": "說明特種碳黑在食品接觸包裝印刷油墨中的合規要求，重點評估純淨度、重金屬限值及多環芳烴（PAH）與初級芳香胺殘留。",
+          "shortLabel": "食品包裝油墨 (TI 1453)",
+          "title": "Specialty Carbon Blacks in Food Packaging Printing Inks",
+          "titleEn": "Application Note Orion Special Carbon Black in Food Package Printing Ink EN.pdf",
+          "origin": "Carbon Black Pigment for Food Packaging Printing Inks (Orion Engineered Carbons, Technical Information TI 1453, 4 pages)",
+          "desc": "說明特種碳黑在食品包裝印刷油墨中的法規合規性要求（歐盟 EU 10/2011、瑞士條例與法國 AVIS），聚焦甲苯抽出物與苯駢芘（BaP）限量標準及油墨推薦型號。",
           "advantages": [
-            "符合瑞士條例（Swiss Ordinance SR 817.023.21）及歐洲印刷油墨協會（EuPIA）排除名單規定。",
-            "嚴格控制低甲苯萃取物（Toluene Extract）、超低鎘、鉛、汞、六價鉻等重金屬含量。",
-            "確保印刷油墨在複合食品包裝外層不發生化學物質向食品內容物遷移超標。"
+            "符合歐盟 EU 10/2011（FCM 411，甲苯抽出物 < 0.1%，苯駢芘 BaP < 0.25 ppm）、瑞士條例 SR 817.023.21 及法國 AVIS 07.11.1995（BaP ≤ 30 µg/kg）之嚴苛規範。",
+            "包裝油墨專用等級推薦：單張紙/膠印推薦 PRINTEX 45/35/Nature；溶劑型推薦 PRINTEX 35、SPECIAL BLACK 350/535；水性紙箱推薦 PRINTEX 3/30/Nature；UV 系統推薦 SPECIAL BLACK 350。",
+            "具備高著色強度與優異流動分散性，確保包裝印刷層在超薄塗佈下仍具高遮蓋率且不會向食品內側發生化學品遷移。"
           ],
           "applications": [
-            "食品接觸軟包裝印刷油墨",
-            "紙盒外包裝水性印刷",
-            "衛生敏感包裝印品"
+            "食品包裝紙箱與紙袋水性油墨",
+            "糖果與休閒食品軟包裝複合油墨",
+            "飲料標籤 UV 印刷油墨。"
           ]
         },
         {
-          "docId": "ORI-14",
+          "docId": "CAR-APPL-12",
           "filename": "Application Note Orion Special Carbon Black with Low PAHS EN.pdf",
           "pdfPath": "techdatadb/4.Orion/3.Orion Application Note/Application Note Orion Special Carbon Black with Low PAHS EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "低多環芳烴環保碳黑",
-          "title": "Carbon Blacks with Low Amount of Polycyclic Aromatic Hydrocarbons (PAHs)",
-          "titleEn": "Application Note Orion Special Carbon Black with Low PAHS EN",
-          "origin": "Orion Technical Information: TI 1483",
-          "desc": "介紹符合德國 GS 標誌、歐盟 REACH 附錄 XVII 及各國消費品嚴格安全法規之超低多環芳烴（Low PAHs）特種碳黑系列。",
+          "shortLabel": "低 PAHs 環保碳黑 (TI 1483)",
+          "title": "Specialty Carbon Blacks with Low PAHs",
+          "titleEn": "Application Note Orion Special Carbon Black with Low PAHS EN.pdf",
+          "origin": "Carbon Blacks with Low Amount of Polycyclic Aromatic Hydrocarbons (PAHs) (Orion Engineered Carbons, Technical Information TI 1483, 12 pages)",
+          "desc": "深入分析特種碳黑中多環芳香烴（Polycyclic Aromatic Hydrocarbons, PAHs）之生成機理、檢測標準（AfPS GS 2019:01 PAK）與極低 PAH 系列產品特性。",
           "advantages": [
-            "經特殊燃燒工藝與深度高溫純化處理，將 18 種管控多環芳烴（PAHs）總量降至極低水準（< 1 ppm）。",
-            "完全符合德國 AfPS GS 2019:01 PAK 認證 Category 1 最高等級（可長期接觸人體皮膚或放入口中之玩具標準）。",
-            "在維持超低 PAHs 安全指標的同時，完全保持傳統碳黑的高黑度、優異機械力學與抗老化性能。"
+            "德國 GS Mark 認證將材料分為第 1 類（可放入口中或接觸兒童玩具，總 PAH < 1 mg/kg）至第 3 類；Orion 開發之專用爐黑具備工業領先之極低 PAH 含量。",
+            "產品涵蓋 Low PAH 特殊等級（如 Printex nature、Arosperse 7 系列），原生粒徑 17–25 nm，嚴格控制 15 種關鍵 PAH 物質含量均低於檢測限度。",
+            "保持優異物理性能：黑度高、著色力強、流變黏度低且高溫熱穩定性優異，完全無需犧牲著色效果即可達到嚴苛環保標準。"
           ],
           "applications": [
-            "兒童玩具及母嬰用品橡膠塑料配件",
-            "電動工具包膠手柄",
-            "消費性電子產品護套",
-            "皮膚接觸密封件"
+            "兒童玩具塑料與塗料",
+            "消費電子手持外殼",
+            "食品接觸塑膠製品",
+            "橡膠握把",
+            "環保運動器材。"
           ]
         }
       ],
       "single": [
         {
-          "docId": "ORI-15",
+          "docId": "CAR-SING-01",
           "filename": "TI Orion Colour Black FW 310 in Coating CN.pdf",
           "pdfPath": "techdatadb/4.Orion/4.Orion Carbon Black 碳黑 單一產品/TI Orion Colour Black FW 310 in Coating CN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "CN (簡體中文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "FW 310 超高黑度塗料(中)",
-          "title": "COLOUR BLACK FW 310 水性和溶剂型涂料用超高黑度特种炭黑",
-          "titleEn": "TI Orion Colour Black FW 310 in Coating CN",
-          "model": "FW 310",
-          "productGroup": "FW 310",
-          "origin": "Orion 技术信息: TI 1485 (TI 1485)",
-          "desc": "介紹 Colour Black FW 310 後處理高色素爐黑在汽車面漆與高檔工業塗料中實現超深黑度（Ultra-High Jetness）與深藍相的技術特性。",
+          "shortLabel": "FW 310 超高黑度碳黑在水性及油性塗料中應用(中文版)",
+          "title": "Colour Black FW 310 在塗料中的應用技術資料（中文版）",
+          "titleEn": "TI Orion Colour Black FW 310 in Coating CN.pdf",
+          "origin": "Colour Black FW 310 水性和溶劑型塗料用超高黑度特種碳黑 (中文版, Orion Technical Information TI 1485, 8 pages)",
+          "desc": "Colour Black FW 310 在汽車面漆、高檔工業塗料及消費性電子產品中實現超深黑度（Ultra-High Jetness）與深藍相的特性。",
           "advantages": [
-            "原生粒徑僅 13 nm，經高程度後表面氧化處理，賦予塗層無與倫比的超高黑度值（My > 300）與強烈深藍相（dM > 0）。",
-            "表面富含氧官能基，在高極性溶劑及水性丙烯酸/聚氨酯分散液中展現絕佳的潤濕性與相容性。",
-            "展現優異抗絮凝與耐光老化穩定性，滿足頂級豪華汽車外觀面漆最嚴苛的光澤與鏡面黑度要求。"
+            "平均原生粒徑約 11 nm 且粒徑呈單峰分佈，賦予塗層無與倫比的超高黑度值（My > 310）與強烈深藍相（dM）。",
+            "表面富含含氧極性官能基，展現絕佳的潤濕性與樹脂相容性，且能同時適用於水性體系與溶劑型體系。",
+            "展現優異抗絮凝與耐光性，滿足頂級外觀面漆最嚴苛的光澤與鏡面黑度要求。"
           ],
           "applications": [
-            "豪華汽車面漆",
+            "汽車面漆",
             "汽車修補漆",
-            "高端消費電子高光黑色外殼",
-            "鋼琴黑裝飾塗料"
-          ]
+            "高端消費性產品",
+            "鋼琴裝飾塗料。"
+          ],
+          "productGroup": "Colour Black 超高色素氣黑系列"
         },
         {
-          "docId": "ORI-16",
+          "docId": "CAR-SING-02",
           "filename": "TI Orion Colour Black FW 310 in Coating EN.pdf",
           "pdfPath": "techdatadb/4.Orion/4.Orion Carbon Black 碳黑 單一產品/TI Orion Colour Black FW 310 in Coating EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Orion",
-          "shortLabel": "FW 310 超高黑度塗料(英)",
-          "title": "COLOUR BLACK FW 310 Carbon Black with Deepest Blackness for Water-Borne and Solvent-Borne Coatings",
-          "titleEn": "TI Orion Colour Black FW 310 in Coating EN",
-          "model": "FW 310",
-          "productGroup": "FW 310",
-          "origin": "Orion Technical Information: TI 1485 (OEC-TI 1485)",
-          "desc": "提供 Colour Black FW 310 在水性與溶劑型高光面漆中的光學黑度分析數據（L*、My、Mc）、色漿分散配方與流變穩定性測試。",
+          "shortLabel": "FW 310 超高黑度碳黑在水性及油性塗料中應用(英文版)",
+          "title": "Colour Black FW 310 in Coatings Technical Information (English)",
+          "titleEn": "TI Orion Colour Black FW 310 in Coating EN.pdf",
+          "origin": "COLOUR BLACK FW 310 Specialty Carbon Black for Ultra-High Jetness in Water-borne and Solvent-borne Coatings (English, Orion Technical Information TI 1485, 8 pages)",
+          "desc": "詳細測試 Colour Black FW 310 搭配商業潤濕分散劑（Efka PX 4701、PX 4320、Edaplan 935、Tego Dispers 673、Solsperse 37500、Borchi Gen 0451）於水性及溶劑型系統之研磨配方與色度學數據。",
           "advantages": [
-            "具備極低 L* 明度值與極高著色力，為現代水性及溶劑型頂級黑漆提供標竿級的色度深度。",
-            "提供詳細的色漿研磨起始配方建議，指導高分子分散劑與研磨樹脂比例以獲得牛頓流體流變特性。",
-            "經高溫烘烤與加速老化測試證明其黑度持久不衰退，表面無發霧（Haze）現象。"
+            "測試證實分散劑之選擇對 FW 310 之黑度 My 與藍相 dM 具關鍵影響，配合優選分散劑（如 Efka PX 4701 或 Solsperse 37500）可完全釋放超過 320 的極限黑度。",
+            "於溶劑型研磨色漿配方中（以 Laropal A81 為研磨樹脂，10% 碳黑添加量），黏度維持在穩定流動區間，無假稠與反粗現象。",
+            "在水性鋁粉金屬漆對比測試中，多角度（15°/25°/45°/75°/110°）分光光度分析顯示 FW 310 提供較 FW 171 與 FW 255 更溫暖、更獨特的金屬質感光澤擴展色域。"
           ],
           "applications": [
-            "水性汽車面漆",
-            "溶劑型高級汽車修補漆",
-            "高裝飾性黑色工業烤漆"
-          ]
+            "奢華汽車面漆",
+            "高端工業鋼琴黑塗料",
+            "高光金屬閃光漆",
+            "水性與溶劑型高色素裝飾塗層。"
+          ],
+          "productGroup": "Colour Black 超高色素氣黑系列"
         }
       ],
       "formulation": []
@@ -1337,313 +1360,442 @@ const TECH_DATABASE = {
     "slug": "wax",
     "hasData": true,
     "tabs": {
-      "principles": [],
+      "principles": [
+        {
+          "docId": "WAX-PRIN-01",
+          "filename": "技術手冊  微粉蠟 2026-08-14.docx",
+          "pdfPath": "techdatadb/5. MPI/1.原理/技術手冊  微粉蠟 2026-08-14.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "Micro Powders",
+          "shortLabel": "1. 作用原理機制",
+          "title": "微粉蠟技術資料：作用原理",
+          "titleEn": "技術手冊  微粉蠟 2026-08-14.docx",
+          "origin": "宏威應用材料 技術資料:蠟粉 微粉蠟 - 作用原理",
+          "desc": "闡明微粉蠟於塗料與油墨成膜過程中之兩大核心物理機制：「漂浮理論」（成膜時向表面遷移聚集）與「球軸效應」（突顯於塗膜外提供滾珠摩擦防護）。",
+          "advantages": [
+            "漂浮理論：微粉蠟分散在塗料中，在塗裝施工後的塗膜乾燥或固化交聯成膜階段，微粉顆粒會自發向塗膜表面漂移遷移，於表層顯現應有之保護改質效果。",
+            "球軸效應：微粉蠟顆粒之粒徑大小與塗層膜厚相近甚至略大而顯露於塗膜外部，使蠟粉的耐刮與耐擦傷性能得以充分顯現。",
+            "微粉蠟可透過塗層以不同品種、添加量及粒徑大小調控塗膜表面性能，提供耐刮、抗黏結（抗結塊）、耐磨擦、消光、提高滑爽手感或織紋/柔感/撥水等特殊性能。"
+          ],
+          "applications": [
+            "塗料",
+            "印刷油墨。"
+          ]
+        },
+        {
+          "docId": "WAX-PRIN-02",
+          "filename": "技術手冊  微粉蠟 2026-08-14.docx",
+          "pdfPath": "techdatadb/5. MPI/1.原理/技術手冊  微粉蠟 2026-08-14.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "Micro Powders",
+          "shortLabel": "2. 微粉蠟品種與功能",
+          "title": "微粉蠟技術資料：微粉蠟品種及功能",
+          "titleEn": "技術手冊  微粉蠟 2026-08-14.docx",
+          "origin": "宏威應用材料 技術資料:蠟粉 微粉蠟 - 一、微粉蠟品種及功能",
+          "desc": "整理四大常見微粉蠟化學品種類（PE 蠟、PP 蠟、PE/PTFE 複合蠟、PTFE 蠟）之改質功能特徵與常規添加量標準。",
+          "advantages": [
+            "PE 蠟（聚乙烯蠟）特點為柔和、手感好、滑爽且具備優異經濟性；PP 蠟（聚丙烯蠟）特點為具備消光效果、硬度高且耐刮性優良。",
+            "PE/PTFE 複合蠟具備滑爽、耐刮與耐磨擦性能；PTFE 蠟則提供滑爽、耐刮、耐磨擦、耐高溫與手感改善效果。",
+            "微粉蠟常規添加量標準為樹脂量的 0.3%–2.0%。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "WAX-PRIN-03",
+          "filename": "技術手冊  微粉蠟 2026-08-14.docx",
+          "pdfPath": "techdatadb/5. MPI/1.原理/技術手冊  微粉蠟 2026-08-14.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "Micro Powders",
+          "shortLabel": "3. 粒徑及分佈效應",
+          "title": "微粉蠟技術資料：粒徑及粒徑分布",
+          "titleEn": "技術手冊  微粉蠟 2026-08-14.docx",
+          "origin": "宏威應用材料 技術資料:蠟粉 微粉蠟 - 二、粒徑及粒徑分布",
+          "desc": "探討微粉蠟粒徑大小與粒徑分佈寬窄對漆膜光澤（全反射/漫反射消光作用）及表面觸感（細膩滑爽、柔感、特殊織紋）之影響規律。",
+          "advantages": [
+            "粒徑對光澤之影響：粒徑小於 1 µm 時基本不影響光澤；當粒徑大於 1 µm 時，粒子漂浮遷移至漆膜表面受光照射會產生漫反射，產生一定程度的消光效果。",
+            "粒徑對手感之影響：粒徑大於 5 µm 時開始產生顯著手感差異，隨粒徑增大呈現由細膩滑爽到特殊織紋效果，柔感手感亦需要較大粒徑支持。",
+            "粒徑分佈之影響：粒徑分佈較寬之蠟粉消光性較強，與消光劑併用具協同作用可降低消光粉使用量並營造特殊手感；粒徑分佈窄則可賦予漆膜均勻一致之手感。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "WAX-PRIN-04",
+          "filename": "技術手冊  微粉蠟 2026-08-14.docx",
+          "pdfPath": "techdatadb/5. MPI/1.原理/技術手冊  微粉蠟 2026-08-14.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "Micro Powders",
+          "shortLabel": "4. 分散性與工藝操作",
+          "title": "微粉蠟技術資料：分散性及應用方便性",
+          "titleEn": "技術手冊  微粉蠟 2026-08-14.docx",
+          "origin": "宏威應用材料 技術資料:蠟粉 微粉蠟 - 三、分散性及應用方便性",
+          "desc": "說明微粉化蠟與蠟漿兩大商品形態之應用特徵，並規範塗料生產時微粉化蠟之低速潤濕與高速分散工藝要求。",
+          "advantages": [
+            "工業常用微粉蠟形態主要有兩種：一種是微粉化蠟，另一種是蠟漿。",
+            "塗料生產過程中，微粉蠟可按配方比例緩慢加入塗料體系中進行投料。",
+            "操作流程要求先以低速分散進行潤濕浸潤，隨後將攪拌速度提升至每分鐘 1200 轉進行高速分散，持續攪拌直至完全混合均勻。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "WAX-PRIN-05",
+          "filename": "技術手冊  微粉蠟 2026-08-14.docx",
+          "pdfPath": "techdatadb/5. MPI/1.原理/技術手冊  微粉蠟 2026-08-14.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "Micro Powders",
+          "shortLabel": "5. 熔點與表面性能",
+          "title": "微粉蠟技術資料：熔點對其表面性能的影響",
+          "titleEn": "技術手冊  微粉蠟 2026-08-14.docx",
+          "origin": "宏威應用材料 技術資料:蠟粉 微粉蠟 - 四、熔點對其表面性能的影響",
+          "desc": "分析微粉蠟熔點高低（100–140°C 與 >140°C）對塗膜表面軟硬度、滑爽手感、抗刮傷、抗金屬劃痕及防滑耐磨機械性能之影響。",
+          "advantages": [
+            "當微粉蠟熔點介於 100～140°C 時，結晶軟硬兼具，表面滑爽且能顯著提高塗膜表面機械性能，如抗刮傷與抗金屬刮痕等。",
+            "當微粉蠟熔點大於 140°C 時，蠟粉防滑性能良好，具備抗滑、耐磨與抗刮傷特性。",
+            "熔點高低直接調控塗膜表面軟硬度、滑爽與防滑平衡，以及耐刮磨等表面機械改質效果。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "WAX-PRIN-06",
+          "filename": "技術手冊  微粉蠟 2026-08-14.docx",
+          "pdfPath": "techdatadb/5. MPI/1.原理/技術手冊  微粉蠟 2026-08-14.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "Micro Powders",
+          "shortLabel": "6. 極性改質與性能",
+          "title": "微粉蠟技術資料：極性對其表面性能的影響",
+          "titleEn": "技術手冊  微粉蠟 2026-08-14.docx",
+          "origin": "宏威應用材料 技術資料:蠟粉 微粉蠟 - 五、極性對其表面性能的影響",
+          "desc": "剖析低極性、中極性與高極性微粉蠟（石蠟、棕櫚蠟、低密度與高密度聚乙烯蠟）在疏水性、抗結塊性、硬度與滑爽手感之差異表現。",
+          "advantages": [
+            "低極性微粉蠟（如石蠟）疏水性良好且抗結塊性（抗黏結性）優良；高極性微粉蠟（如棕櫚蠟）則相對具備高滑爽度與高硬度。",
+            "中極性微粉蠟（如低密度聚乙烯蠟）則兼具疏水性與滑爽硬度兩者之平衡物性。",
+            "高密度聚乙烯蠟熔點約在 130°C 左右，硬度表現較好，但滑爽性略遜於低密度聚乙烯蠟。"
+          ],
+          "applications": []
+        }
+      ],
       "catalog": [
         {
-          "docId": "MPI-01",
+          "docId": "WAX-CATA-01",
           "filename": "Brochure MPI Industrial PTFE Alternatives EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/2.Brochure MPI 微粉蠟 目錄15 冊/Brochure MPI Industrial PTFE Alternatives EN 2026.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "無氟 PTFE 替代方案手冊",
-          "title": "PTFE Replacements / Industrial PTFE Alternatives (Brochure)",
-          "titleEn": "Brochure MPI Industrial PTFE Alternatives EN 2026",
-          "origin": "Micro Powders Brochure (08/26): PTFE Replacements",
-          "desc": "彙編 Micro Powders 全面替代聚四氟乙烯（PTFE）的微粉蠟添加劑產品線，因應全球 PFAS 環保監管並提供同等抗刮耐磨性能。",
+          "shortLabel": "PTFE 無氟替代指南",
+          "title": "Micro Powders Industrial PTFE Alternatives Guide",
+          "titleEn": "Brochure MPI Industrial PTFE Alternatives EN 2026.pdf",
+          "origin": "Industrial PTFE Alternatives Guide (Micro Powders, Inc. 2026)",
+          "desc": "彙編 Micro Powders 針對 PFAS 禁用與環保法規所研發之全系列無氟（PFAS-Free / PTFE-Free）微粉蠟添加劑，全面替代傳統含氟聚合物。",
           "advantages": [
-            "採用天然蠟、合成蠟與奈米氧化鋁/陶瓷複合工程技術，達成 100% 性能、零 PTFE（Zero PTFE）。",
-            "Taber 耐磨耗試驗證明 PolyTuf 1229、MPP-611AL、SuperGlide 等磨耗失重（mg）達到或超越傳統 PTFE 改性蠟。",
-            "具備全球多國化學品名錄認證與食品接觸法規合規性（FDA 21CFR、EU 10/2011）。"
+            "涵蓋改質聚乙烯、天然生質蠟、微粉高分子複合蠟及特殊聚烯烴產品（如 Polyglide 系列、MicroTex 950、Superslip 系列、MPP-611AL）。",
+            "在塗層中提供等同甚至超越傳統 PTFE 蠟之滑爽性（動摩擦係數 COF 顯著降至 0.16–0.21）、鉛筆硬度（達 F/HB）與優異耐磨耗性。",
+            "具備全球食品接觸合規性與多國認證，部分耐高溫等級（如 NatureMatte C44、Spherex）耐熱溫度更高達 230–260°C 以上。"
           ],
           "applications": [
-            "工業塗料",
-            "罐裝塗料",
-            "卷材塗料",
-            "印刷油墨",
-            "木器漆等無 PFAS 環保配方轉型"
+            "卷材塗料（Coil Coatings）",
+            "罐頭與容器塗料",
+            "粉末塗料",
+            "工業木器漆",
+            "包裝印刷油墨。"
           ]
         },
         {
-          "docId": "MPI-02",
+          "docId": "WAX-CATA-02",
           "filename": "Brochure MPI Specialty Wax Additives and Fine Powders EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/2.Brochure MPI 微粉蠟 目錄15 冊/Brochure MPI Specialty Wax Additives and Fine Powders EN 2026.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "特種微粉蠟與助劑總覽",
-          "title": "Specialty Wax Additives and Fine Powders (Brochure)",
-          "titleEn": "Brochure MPI Specialty Wax Additives and Fine Powders EN 2026",
-          "origin": "Micro Powders Technical Brochure (08/26): Specialty Wax Additives and Fine Powders",
-          "desc": "綜述 Micro Powders 微粉蠟粉體、水性分散體及乳液產品系列，涵蓋耐磨耐刮、消光、防滑、觸感與手感全方位表面改性功能。",
+          "shortLabel": "微粉蠟產品目錄總覽",
+          "title": "Micro Powders Specialty Wax Additives and Fine Powders Product Catalog",
+          "titleEn": "Brochure MPI Specialty Wax Additives and Fine Powders EN 2026.pdf",
+          "origin": "Specialty Wax Additives and Fine Powders Product Catalog (Micro Powders, Inc. 2026, 12 pages)",
+          "desc": "完整收錄 Micro Powders 全產品線物理規格參數表，包含聚乙烯蠟（MPP）、費托合成蠟（MP）、聚丙烯蠟（PropylMatte）、天然生質蠟、微粉聚胺酯（MicroTouch）及水性蠟分散體（Microspersion）等微粉與分散體系列。",
           "advantages": [
-            "完整劃分聚乙烯蠟（PE）、聚丙烯蠟（PP）、天然巴西棕櫚蠟、聚四氟乙烯複合蠟及天然生物基可降解蠟體系。",
-            "提供耐刮耐磨、降低摩擦係數（COF）、抗沾黏（Anti-blocking）、消光及柔軟觸感（Soft touch）五大多功能機制。",
-            "提供微粉蠟粒徑（平均粒徑與最大粒徑 D99）精確規格與不同塗膜厚度匹配。"
+            "提供微粉蠟之化學組成、熔點（54°C 至 >260°C）、密度（0.89–2.13 g/cm³）、平均粒徑（d50 由 3 µm 至 425 µm，粗紋理粉最大達 841 µm）等完整物性參數。",
+            "產品依應用功能劃分：表面耐久改質（滑爽、耐磨耗、抗刮傷與抗結塊）、消光抗拋光、撥水性、紋理效果與軟觸感手感。",
+            "規範微粉蠟應用最佳實踐工藝：強調表面張力潤濕原則，建議預先製備高濃度濃縮分散漿（Concentrated dispersion）以避免乾粉直接投料結團。"
           ],
           "applications": [
-            "油漆與塗料",
-            "印刷油墨與光油（OPV）",
-            "工業木器漆",
-            "粉末塗料",
-            "皮革與塑膠塗層"
+            "油漆與塗料（建築/工業/木器/車用）",
+            "印刷油墨（能量固化/膠印/凹版）",
+            "皮革與塑膠塗層",
+            "無機與有機粉末塗料。"
           ]
         }
       ],
       "applications": [
         {
-          "docId": "MPI-03",
+          "docId": "WAX-APPL-01",
           "filename": "Application Note MPI Advanced Composite Selector Guide PFAS Free EN 2025.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI Advanced Composite Selector Guide PFAS Free EN 2025.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2025",
           "brand": "Micro Powders",
-          "shortLabel": "無氟先進複合材料",
-          "title": "Advanced Composite Selector Guide PFAS-Free",
-          "titleEn": "Application Note MPI Advanced Composite Selector Guide PFAS Free EN 2025",
-          "origin": "Micro Powders Selector Guide (03/2025): Advanced Composite Selector Guide PFAS-Free",
-          "desc": "提供無 PFAS（PFAS-Free）先進複合微粉蠟選型，著重於奈米氧化鋁複合系列在超薄塗膜中的耐刮與耐磨增強。",
+          "shortLabel": "先進複合材料 (PFAS-Free)",
+          "title": "MPI Advanced Composite Selector Guide PFAS Free",
+          "titleEn": "Application Note MPI Advanced Composite Selector Guide PFAS Free EN 2025.pdf",
+          "origin": "Advanced Composite Selector Guide PFAS Free (Micro Powders, Inc. 2025)",
+          "desc": "提供全系列無 PFAS 高級複合微粉蠟產品在塗料與油墨各細分領域中的快速選型矩陣指南。",
           "advantages": [
-            "採用莫氏硬度 9 的奈米氧化鋁（300 nm 粒子）牢固錨定於蠟顆粒中，兼具蠟的光滑性與陶瓷的極限抗磨性。",
-            "專為超薄塗膜（Ultra-thin film coatings < 5 μm）設計，奈米顆粒均勻分佈於塗層表面不影響光澤與透明度。",
-            "推薦 MPP-611AL、MP-28AL、Superslip 6515AL 等牌號，全面取代含氟表面改性劑。"
+            "收錄 10 款無 PFAS 高級複合微粉蠟，分為氧化鋁奈米複合（MicroKlear、MP-28AL、MPP-AL、Superslip 系列）與陶瓷奈米複合（PolyGlide 1226XF、PolyTuf 1229、SuperGlide 1231）。",
+            "矩陣明確評比各牌號之耐刮痕性（Scratch）、耐磨耗性（Abrasion）以及超薄塗膜適用性（Ultra-Thin Film Coatings）。",
+            "提供清透度、滑爽性、抗結塊、熱脫模、易水散及耐燒光（Anti-burnish）等多元附加效益對比。"
           ],
           "applications": [
-            "罐裝與容器塗料（Can & Container）",
-            "卷材塗料（Coil）",
-            "薄膜印刷光油",
-            "工業精密防護塗層"
+            "罐頭與容器塗料",
+            "高生物基包裝塗層",
+            "一般工業塗層",
+            "地坪塗料",
+            "OEM 木器與工業塗層",
+            "粉末塗料。"
           ]
         },
         {
-          "docId": "MPI-04",
+          "docId": "WAX-APPL-02",
           "filename": "Application Note MPI How to Disperse Micronized Wax EN 2024.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI How to Disperse Micronized Wax EN 2024.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2024",
           "brand": "Micro Powders",
-          "shortLabel": "微粉蠟潤濕分散指南",
+          "shortLabel": "微粉蠟高效分散指引",
           "title": "How to Disperse Micronized Wax",
-          "titleEn": "Application Note MPI How to Disperse Micronized Wax EN 2024",
-          "origin": "Micro Powders Technical Guide (2024): How to Disperse Micronized Wax",
-          "desc": "介紹微粉化蠟在溶劑型、水性及無溶劑體系中的分散工藝要點，包括高剪切分散機葉輪選擇、線速度、加料順序與消泡控制。",
+          "titleEn": "Application Note MPI How to Disperse Micronized Wax EN 2024.pdf",
+          "origin": "How to Disperse Micronized Wax Application Note (Micro Powders, Inc. 2024, 4 pages)",
+          "desc": "詳細說明微粉蠟在塗料與油墨配方中的正確分散製程、設備選擇、葉輪線速度計算及避免過熱結晶凝聚的最佳實踐。",
           "advantages": [
-            "推薦採用鋸齒形 Cowles 分散盤，控制葉輪線速度在 15~20 m/s 產生足夠剪切渦流。",
-            "規範液體加料順序：先加入溶劑與潤濕劑，在攪拌狀態下緩慢均勻投入微粉蠟，最後加入乳液或基料樹脂。",
-            "監控研磨分散溫度不可超過蠟的熔點或軟化點，避免高溫導致蠟顆粒熔化再結晶結塊。"
+            "推薦使用 Conn ITT 高剪切分散盤；實驗室葉輪尖端線速度建議為 5–7 m/s（1,000–1,500 FPM），量產工廠環境則建議 22–26 m/s（4,000–5,000 FPM）。",
+            "嚴格控制分散研磨溫度：溶劑型體系溫度必須嚴格控制在 40°C（104°F）以下，避免微粉蠟溶解並於冷卻後產生二次重結晶粗粒。",
+            "提供溶劑型預分散漿（35% 蠟）與水性體系（界面活性劑法 50% 蠟 / 樹脂載體法 25% 蠟）之製備配方，並建議使用 NPIRI 或 Hegman 刮板細度計檢驗分散均勻度。"
           ],
           "applications": [
-            "水性塗料色漿與蠟漿調配",
-            "溶劑型烤漆預分散",
-            "油墨製造車間攪拌分散工藝"
+            "塗料研磨調漆工藝",
+            "油墨高速分散調配",
+            "水性與溶劑型色漿製備工藝規範。"
           ]
         },
         {
-          "docId": "MPI-05",
+          "docId": "WAX-APPL-03",
           "filename": "Application Note MPI MicroTouch EN.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI MicroTouch EN.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Micro Powders",
-          "shortLabel": "MicroTouch 觸感改性助劑",
-          "title": "MicroTouch from Micro Powders",
-          "titleEn": "Application Note MPI MicroTouch EN",
-          "origin": "Micro Powders Application Note: MicroTouch Soft Touch Additives",
-          "desc": "介紹 MicroTouch 高分子聚氨酯微球在塗料中賦予表面獨特觸感（玫瑰花瓣、橡膠質感、絨毛感、卵石手感）之微觀結構與配方技術。",
+          "shortLabel": "MicroTouch 觸感助劑",
+          "title": "MicroTouch Soft Touch Coating Additives Brochure",
+          "titleEn": "Application Note MPI MicroTouch EN.pdf",
+          "origin": "MicroTouch Soft Touch Coating Additives (Micro Powders, Inc.)",
+          "desc": "介紹微米級球形脂肪族聚胺酯粉末 MicroTouch 系列（800F、800VF、800XF、850XF）在水性及溶劑型塗料中賦予多樣化皮革觸感、消光與抗刮性能。",
           "advantages": [
-            "以脂肪族聚氨酯交聯微球為基礎，提供 Rose Petal（玫瑰花瓣感）、Rubbery（橡膠彈性质感）、Fuzzy（絨毛感）及 Pebbly（卵石顆粒感）四種手感維度。",
-            "具備卓越彈性回彈力，在日常按壓與摩擦下不破損，塗層耐刮傷與耐指甲劃痕性能優異。",
-            "兼具優異的消光均勻性，光澤隨入射角變化平緩，不產生白霧發花現象。"
+            "100% 脂肪族交聯球形 PU 微顆粒，密度 1.02–1.05 g/cc，平均粒徑 d50 分為 5–9 µm（850XF/800XF）、11–15 µm（800VF）及 22–30 µm（800F）。",
+            "搭配不同 Tg 樹脂可創造多種觸感效果：高 Tg 硬樹脂配方呈現絲綢般滑順觸感（Silky/Satiny feel）；低 Tg 軟樹脂配方則呈現橡膠彈性觸感（Rubbery）或鵝絨觸感（Fuzzy feel）。",
+            "耐熱溫度達 100–120°C（高於 140°C 會熔脹沾黏），在極低添加量下兼具優異消光效率（60° 光澤自 70–80 GU 驟降至 5–10 GU）與卓越的 Taber 耐磨耗性。"
           ],
           "applications": [
-            "消費電子產品外殼手感漆",
-            "汽車內飾儀表板塗料",
-            "化妝品包裝盒手感塗層",
-            "特種木器皮革面漆"
+            "水性聚胺酯（PUD）皮革塗層",
+            "消費電子塑膠外殼軟觸感漆",
+            "車載內飾塗裝",
+            "高級紙張包裝塗層。"
           ]
         },
         {
-          "docId": "MPI-06",
+          "docId": "WAX-APPL-04",
           "filename": "Application Note MPI SelectorGuide Can Container Coatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide Can Container Coatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "金屬製罐與容器塗料",
-          "title": "Can & Container Coatings Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide Can Container Coatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Can & Container Coatings",
-          "desc": "專為金屬製罐與容器塗料提供微粉蠟選型矩陣，滿足高速二片罐/三片罐生產線上的極限耐磨、滑爽性、防沾黏與食品接觸法規。",
+          "shortLabel": "罐頭金屬塗層選用",
+          "title": "MPI Selector Guide for Can and Container Coatings",
+          "titleEn": "Application Note MPI SelectorGuide Can Container Coatings EN 2026.pdf",
+          "origin": "Selector Guide - Can & Container Coatings (Micro Powders, Inc. 2026)",
+          "desc": "針對食品與飲料金屬罐頭、兩片罐/三片罐、金屬瓶蓋與桶裝容器塗層，提供符合食品法規之微粉蠟選型手冊。",
           "advantages": [
-            "提供極低動態與靜態摩擦係數（COF），使金屬罐身在輸送帶及模具沖壓過程中具備極佳滑爽通過性（Mobility）。",
-            "塗膜經高溫蒸煮殺菌（Retort resistance）後仍維持優異的耐抗性，無蠟析出起霧或接著力下降。",
-            "推薦符合美國 FDA 21CFR 及歐洲 EU 10/2011 的 PTFE 替代牌號（如 Superslip 6515AL、MicroGlide 系列）。"
+            "符合美國 FDA 21 CFR § 175.300（樹脂與高分子金屬塗層）及相關國際食品安全規範。",
+            "涵蓋聚乙烯、改質巴西棕櫚蠟、酰胺蠟與陶瓷複合微粉蠟，提供優異之滑爽移動性（Slip & Mobility）、瓶蓋密封附著力與肉類脫模性（Meat Release）。",
+            "具備卓越之耐熱性（Heat Resistance）、防潮耐濕性（Moisture Resistance）與保光性，建議常規添加量為 0.5%–2.0%（特殊效果可至 8.0%）。"
           ],
           "applications": [
-            "飲料罐內外塗料",
-            "食品罐蓋密封漆",
-            "氣霧罐金屬塗裝",
-            "金屬瓶蓋沖壓保護塗層"
+            "飲料罐內外塗層",
+            "食品罐頭金屬塗料",
+            "氣霧罐",
+            "金屬瓶蓋旋蓋塗層",
+            "深衝金屬罐成型加工。"
           ]
         },
         {
-          "docId": "MPI-07",
+          "docId": "WAX-APPL-05",
           "filename": "Application Note MPI SelectorGuide Energy Curable Inks and Coatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide Energy Curable Inks and Coatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "光固化油墨與塗料",
-          "title": "Energy Curable Inks & Coatings Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide Energy Curable Inks and Coatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Energy Curable Inks & Coatings",
-          "desc": "針對 UV 與電子束（EB）輻射固化油墨與塗料，提供快速固化條件下微粉蠟浮升移位、抗擦傷、耐磨損及消光效果之選型依據。",
+          "shortLabel": "UV/EB 固化塗料油墨",
+          "title": "MPI Selector Guide for Energy Curable Inks and Coatings",
+          "titleEn": "Application Note MPI SelectorGuide Energy Curable Inks and Coatings EN 2026.pdf",
+          "origin": "Selector Guide - Energy Curable Inks and Coatings (Micro Powders, Inc. 2026)",
+          "desc": "指引 Micro Powders 各類微粉蠟與消光粉在 100% 固含量 UV 光固化與電子束（EB）固化油墨與塗料中的選用與配方調控。",
           "advantages": [
-            "針對 UV 瞬間固化特性優化蠟微粒密度與流變性，確保蠟粉能在毫秒級固化前及時移位至表面形成保護層。",
-            "顯著提高 UV 固化漆膜與油墨的耐摩擦（Sutherland rub）、耐刮傷及抗沾黏性，解決熱堆疊黏連難題。",
-            "提供不降低 UV 固化速率且透明度高的專用等級（如 Polyfluo、MicroMatte 1011UVW、AquaPoly）。"
+            "針對能量固化（UV/EB）油墨與塗料體系，提供滑爽潤滑、耐磨抗刮、硬度提升與抗結塊改質方案。",
+            "涵蓋 MicroMatte 1213 UVW / 2000、PropylMatte 31HD、PolyGlide 1226XF、MicroTouch 系列等無氟環保牌號。",
+            "矩陣明確評比各牌號之耐刮磨性、滑爽潤滑、消光保光、清透度、膠帶脫模性（Tape Release）與軟觸感，建議添加量一般為 0.5%–3.0%（特殊手感可至 10.0%）。"
           ],
           "applications": [
+            "UV 固化木器漆",
             "UV 柔版與膠印油墨",
-            "UV 紙張罩光油（OPV）",
-            "UV 木器與塑膠塗料",
-            "電子束（EB）固化塗層"
+            "UV 罩光清漆（Overprint Varnish",
+            "OPV）",
+            "電子束固化包裝塗料。"
           ]
         },
         {
-          "docId": "MPI-08",
+          "docId": "WAX-APPL-06",
           "filename": "Application Note MPI SelectorGuide Industrial Coatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide Industrial Coatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "工業防護塗料",
-          "title": "Industrial Coatings Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide Industrial Coatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Industrial Coatings",
-          "desc": "彙編一般工業防腐漆、五金金屬塗料、工程設備及塑膠外殼塗料中改善潤滑性、耐磨性、抗結塊與表面織紋之蠟添加劑推薦。",
+          "shortLabel": "工業塗料選用指南",
+          "title": "MPI Selector Guide for Industrial Coatings",
+          "titleEn": "Application Note MPI SelectorGuide Industrial Coatings EN 2026.pdf",
+          "origin": "Selector Guide - Industrial Coatings (Micro Powders, Inc. 2026)",
+          "desc": "提供微粉蠟添加劑在通用工業塗料、金屬漆、卷材塗料、家電塗料及防腐塗裝體系中的完整選型表。",
           "advantages": [
-            "涵蓋聚乙烯、聚丙烯、醯胺蠟及陶瓷改性蠟，針對不同膜厚（10~100 μm）提供對應粒徑規格。",
-            "顯著降低金屬工件搬運組裝過程中的擦傷率（Mar resistance），並大幅改善包裝堆疊抗沾黏性能。",
-            "提供不同織紋效果（細緻沙面至粗糙砂紋）專用質地添加劑（如 PropylTex、NatureTex）。"
+            "依據水性與溶劑型工業體系，推薦聚乙烯蠟（MPP-611AL、MPP-620VF/XF）、合成複合蠟（MP-28AL）、陶瓷複合蠟（PolyGlide 1226XF）及無氟滑劑（Superslip 系列）。",
+            "矩陣明確評比耐刮磨、抗燒光（Burnish Resistance）、抗金屬劃痕（Metal Mark Resistance）、視在硬度、抗結塊與早期耐水性等多重防護指標。",
+            "提供消光光澤控制、紋理效果、軟觸感手感、增加動摩擦係數（防滑）及開罐穩定性評等，常規建議添加量介於 0.5%–5.0%。"
           ],
           "applications": [
-            "工程機械金屬烤漆",
-            "五金家電外殼塗料",
-            "塑膠玩具與電器外殼面漆",
-            "工業防護防腐塗料"
+            "一般工業金屬塗裝",
+            "工程機械塗裝",
+            "家電烤漆",
+            "鋼捲卷材塗料（Coil Coatings）",
+            "重防腐底漆與面漆。"
           ]
         },
         {
-          "docId": "MPI-09",
+          "docId": "WAX-APPL-07",
           "filename": "Application Note MPI SelectorGuide Industrial Flooring Coatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide Industrial Flooring Coatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "工業地坪耐磨防滑塗料",
-          "title": "Industrial Floor Coatings Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide Industrial Flooring Coatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Industrial Floor Coatings",
-          "desc": "針對環氧樹脂、聚氨酯及聚天門冬氨酸酯工業地坪塗料，提供控制防滑摩擦係數、耐磨耗、抗黑鞋印痕與耐水疏水之選型。",
+          "shortLabel": "工業地坪耐磨塗料",
+          "title": "MPI Selector Guide for Industrial Flooring Coatings",
+          "titleEn": "Application Note MPI SelectorGuide Industrial Flooring Coatings EN 2026.pdf",
+          "origin": "Selector Guide - Industrial Flooring Coatings (Micro Powders, Inc. 2026)",
+          "desc": "指導工業地坪塗料（環氧地坪、聚胺酯地坪、聚天門冬氨酸酯 Polyaspartic 地坪）中抗磨損、防滑與消光微粉添加劑的選配。",
           "advantages": [
-            "提供精確粒徑分佈之聚合物顆粒（如 PropylTex HD、Spherex 200），構建均勻微觀凹凸以達到法定防滑摩擦係數。",
-            "大幅改善行走推車輪胎滾動下的耐磨耗與抗擦黑印痕性能（Scuff & Mar resistance）。",
-            "不破壞底塗接著力，重塗附著性佳，並顯著增強地坪表面的防潑水與防污易清潔特性。"
+            "收錄微粉蠟、耐磨奈米複合微粉及粗顆粒聚丙烯砂紋粉（PropylTex、NyloTex 系列），適用於混凝土、木質及層壓地坪體系。",
+            "兼顧擦傷與耐磨損性（Scuff & Abrasion Resistance）、防滑性（Non-Skid）與光澤消光調控。",
+            "提供優異之抗鞋跟印痕（Heel Mark Resistance）、抗熱輪胎黏胎撕起（Hot Tire Pick up & Resistance）、撥水性與易清潔性（Cleanability）。"
           ],
           "applications": [
-            "環氧自流平地坪",
-            "聚氨酯超耐磨地坪",
-            "車庫止滑地坪塗料",
-            "商業商場步行防滑面漆"
+            "環氧樹脂工業自流平地坪",
+            "聚胺酯薄塗地坪",
+            "聚天門冬氨酸酯快速固化地坪",
+            "商業耐磨地板清漆。"
           ]
         },
         {
-          "docId": "MPI-10",
+          "docId": "WAX-APPL-08",
           "filename": "Application Note MPI SelectorGuide Powder Coatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide Powder Coatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "粉體塗料專用微粉蠟",
-          "title": "Powder Coatings Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide Powder Coatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Powder Coatings",
-          "desc": "介紹粉末塗料專用微粉蠟添加劑，涵蓋熔融擠出脫氣（Degassing）、邊緣覆蓋（Edge Coverage）、消光及不同立體織紋效果之選型矩陣。",
+          "shortLabel": "粉體塗料選用指南",
+          "title": "MPI Selector Guide for Powder Coatings",
+          "titleEn": "Application Note MPI SelectorGuide Powder Coatings EN 2026.pdf",
+          "origin": "Selector Guide - Powder Coatings (Micro Powders, Inc. 2026)",
+          "desc": "彙整粉末塗料用微粉蠟、無氟砂紋劑（Texturing agents）、脫氣劑與抗結塊助劑之綜合選型指引。",
           "advantages": [
-            "充當高效脫氣劑，促進厚膜烘烤固化時揮發氣體順暢排出，徹底消除針孔與氣泡缺陷。",
-            "改善粉末塗料在銳角邊緣部位的流變包裹性（Edge Coverage），防止邊緣薄漆生鏽腐蝕。",
-            "提供由平滑消光至垂紋、沙紋、皺紋等多樣化外觀質感的專用蠟粉（如 MicroTex 950、PropylTex）。"
+            "推薦無氟紋理消光劑 MicroTex 950 / 975（改質聚烯烴，最大粒徑 74 µm，全面替代 PTFE 砂紋粉）、石墨烯複合蠟 GraphShield 730 及消光粉 PropylMatte 系列。",
+            "具備顯著改善擠出流動性（Improved Extrusion Flow）、高效脫氣消泡（Anti-Gassing）與優異抗結塊性能。",
+            "固化過程中在塗膜表面形成均勻細緻的細砂紋/橘紋結構，大幅改善塗層邊角覆蓋率（Edge coverage）與抗劃傷耐磨性能。"
           ],
           "applications": [
-            "建築鋁門窗粉末塗料",
-            "金屬機箱機櫃粉末噴塗",
-            "戶外景觀五金粉末烤漆",
-            "家電粉末塗裝"
+            "熱固性粉末塗料（聚酯/TGIC",
+            "聚酯/HAA",
+            "環氧/聚酯混合型）",
+            "紋理粉末塗層",
+            "金屬傢俱與戶外型材塗裝。"
           ]
         },
         {
-          "docId": "MPI-11",
+          "docId": "WAX-APPL-09",
           "filename": "Application Note MPI SelectorGuide Printing Inks EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide Printing Inks EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "印刷油墨與罩光油",
-          "title": "Printing Inks & OPVs Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide Printing Inks EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Printing Inks & OPVs",
-          "desc": "綜述在柔印、凹印、膠印及光油（OPV）中提升耐磨擦（Rub resistance）、滑爽流平、防刮痕及抗高溫熱封黏連之微粉蠟解決方案。",
+          "shortLabel": "印刷油墨抗耐磨",
+          "title": "MPI Selector Guide for Printing Inks",
+          "titleEn": "Application Note MPI SelectorGuide Printing Inks EN 2026.pdf",
+          "origin": "Selector Guide - Printing Inks (Micro Powders, Inc. 2026)",
+          "desc": "針對各類印刷油墨體系（膠印、凹版、柔版、能量固化與水性墨），提供耐摩擦（Rub resistance）、滑爽度與光澤控制的選型指導。",
           "advantages": [
-            "針對紙張、塑膠薄膜及金屬箔等不同印刷基材提供最優匹配粒徑（NPIRI 研磨細度 < 2.0）。",
-            "經 Sutherland Rub 摩擦儀測試，添加 0.5%~2.0% 即可顯著降低油墨脫墨掉粉與表面刮痕。",
-            "兼顧優良的光學光澤度與透明度，不引發印品混濁失真，耐後加工高溫熱封夾燙。"
+            "涵蓋聚乙烯蠟（MPP-230F、MPP-611AL、MPP-620VF）、合成蠟（MP-22XF、MP-28AL）及陶瓷複合高滑爽蠟（PolyGlide 1226XF、SuperGlide 1231）。",
+            "矩陣明確評比耐擦傷與耐摩擦（Rub & Scratch Resistance）、滑爽潤滑性、抗結塊（Block Resistance）與膠帶脫模性（Tape Release）。",
+            "平均粒徑介於 3.5–15 µm（最大粒徑 ≤ 31 µm），廣泛適用於水性（W）、溶劑型（S）與油性（O）各類油墨與罩光清漆（OPV）。"
           ],
           "applications": [
-            "柔版印刷油墨",
-            "凹版塑膠薄膜油墨",
-            "平版膠印油墨",
-            "水性與 UV 罩光清漆（OPV）"
+            "溶劑型包裝凹版油墨",
+            "平版輪轉膠印油墨",
+            "水性柔版紙箱油墨",
+            "金屬裝飾印刷油墨。"
           ]
         },
         {
-          "docId": "MPI-12",
+          "docId": "WAX-APPL-10",
           "filename": "Application Note MPI SelectorGuide WoodCoatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI SelectorGuide WoodCoatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
           "lang": "EN (英文)",
           "version": "2026",
           "brand": "Micro Powders",
-          "shortLabel": "木器與家具塗料",
-          "title": "Wood Coatings Selector Guide",
-          "titleEn": "Application Note MPI SelectorGuide WoodCoatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Wood Coatings",
-          "desc": "介紹木器漆專用微粉蠟在溶劑型硝基/聚氨酯木器漆及水性木器塗料中改善耐刮擦、手感柔滑度、消光清晰度與防潑水性能的應用矩陣。",
+          "shortLabel": "木器傢俱塗料",
+          "title": "MPI Selector Guide for Wood Coatings",
+          "titleEn": "Application Note MPI SelectorGuide WoodCoatings EN 2026.pdf",
+          "origin": "Selector Guide - Wood Coatings (Micro Powders, Inc. 2026)",
+          "desc": "介紹木器家具漆、地板漆（硝基漆 NC、聚胺酯 PU、UV 木器漆、水性木器漆）中專用的微粉蠟消光與表面防刮改質方案。",
           "advantages": [
-            "與消光二氧化矽協同使用，消除傳統木器漆消光粉下沉死結現象，維持優異的罐內防沉性與重分散性。",
-            "顯著提升木器表面的手感絲滑度（Soft silk feel）與防指甲劃痕、抗硬幣刮傷（Mar resistance）能力。",
-            "賦予木器塗層表面優異的疏水防荷葉效應，阻止茶水、咖啡及酒精液體滲入木材織紋造成斑漬。"
+            "推薦 PropylMatte 系列、MicroMatte 1213UVW / 1415-EZ、MicroTouch 系列、生質蠟 NatureMatte 系列及 Superslip 系列。",
+            "在提供高效消光與光澤控制的同時，保持極佳漆膜清透度（Clarity）並賦予滑爽手感（Smooth Feel）。",
+            "顯著強化耐刮傷耐擦傷（Scratch & Mar）、抗拋光磨損（Burnish Resistance）、撥水防潮以及優異的砂光打磨效率（Sanding Efficiency）。"
           ],
           "applications": [
-            "高級實木家具塗料",
-            "木質地板耐磨面漆",
-            "櫥櫃修飾漆",
-            "水性戶外木結構防腐木油"
+            "高檔實木家具漆",
+            "拼花木地板耐磨塗層",
+            "水性木器底漆與面漆",
+            "UV 固化櫥櫃板材塗裝。"
           ]
         },
         {
-          "docId": "MPI-13",
+          "docId": "WAX-APPL-11",
           "filename": "Application Note MPI Wax SelectorGuide Architectural Coatings EN 2026.pdf",
           "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Application Note MPI Wax SelectorGuide Architectural Coatings EN 2026.pdf",
           "docType": "3. Application Note 應用技術手冊",
@@ -1651,451 +1803,446 @@ const TECH_DATABASE = {
           "version": "2026",
           "brand": "Micro Powders",
           "shortLabel": "建築裝飾塗料",
-          "title": "Architectural Coatings Selector Guide",
-          "titleEn": "Application Note MPI Wax SelectorGuide Architectural Coatings EN 2026",
-          "origin": "Micro Powders Selector Guide (R-03/26): Architectural Coatings",
-          "desc": "針對室內外建築塗料，提供微粉蠟在低 VOC 乳膠漆中精確控制光澤、增強耐擦洗抗拋光（Burnish resistance）、抗沾污與耐水性的選型。",
+          "title": "MPI Wax Selector Guide for Architectural Coatings",
+          "titleEn": "Application Note MPI Wax SelectorGuide Architectural Coatings EN 2026.pdf",
+          "origin": "Selector Guide - Architectural Coatings (Micro Powders, Inc. 2026)",
+          "desc": "針對室內外建築塗料、乳膠漆、藝術塗料與外牆裝飾漆，提供抗擦洗（Scrub resistance）、抗沾污與光澤控制的選型表。",
           "advantages": [
-            "大幅提高平光與蛋殼光內牆乳膠漆的耐擦洗次數（Scrub cycles）與抗摩擦拋光光澤上升現象（Burnish resistance）。",
-            "提升外牆建築塗料的抗髒污附著力（Dirt Pick-up Resistance, DPUR），雨水沖刷自清潔效果卓越。",
-            "水性化乳液與改性微粉蠟具備優異罐內儲存穩定性，不分層、不破乳，不影響調色顏料展色力。"
+            "推薦高密度微粉蠟與天然生質改質蠟（AquaMatte 26HD、PropylMatte 31HD、NatureMatte 系列）。",
+            "在 ASTM D2486 耐擦洗測試中大幅提升耐洗刷循環次數，並在 ASTM D6736 測試中展現頂級抗拋光光澤上升（Burnish resistance）。",
+            "顯著降低灰塵附著，賦予優越耐污防沾性能（Dirt Pick-Up Resistance, DPUR / Soil Release），維持外牆長久美觀。"
           ],
           "applications": [
-            "內牆高耐擦洗乳膠漆",
-            "外牆耐候自清潔塗料",
-            "建築裝飾灰泥",
-            "水性建築木器底面漆"
-          ]
-        },
-        {
-          "docId": "MPI-14",
-          "filename": "Formulation Guide MPI MicroTouch EN.pdf",
-          "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Formulation Guide MPI MicroTouch EN.pdf",
-          "docType": "3. Application Note 應用技術手冊",
-          "lang": "EN (英文)",
-          "version": "原廠發行版",
-          "brand": "Micro Powders",
-          "shortLabel": "MicroTouch 觸感漆配方",
-          "title": "MicroTouch Soft Touch Additives Formulation Guide",
-          "titleEn": "Formulation Guide MPI MicroTouch EN",
-          "origin": "Micro Powders Formulation Guide (10/2018): MicroTouch Soft Touch Additives",
-          "desc": "提供 MicroTouch 在不同樹脂體系中的起始配方、添加比例（典型 5%~15%）及在 20°、60°、85° 光澤度衰減數據對照。",
-          "advantages": [
-            "詳細列出在水性與溶劑型雙組份聚氨酯中添加 11.5% MicroTouch 時，60° 光澤由 72.9 大幅降至 4.3 左右的顯著消光曲線。",
-            "提供觸感與手感在不同樹脂塗膜厚度下的調校配方，確保手感與塗層附著力取得平衡。",
-            "明確指南分散製程無須劇烈研磨，僅需中等剪切分散即可均勻分佈於塗料體系中。"
-          ],
-          "applications": [
-            "手感塗料起始配方設計",
-            "高級電子產品外殼噴塗",
-            "車載飾件霧面軟觸塗裝"
+            "室內高耐擦洗乳膠漆",
+            "室外防沾污建築外牆漆",
+            "天花板平光漆",
+            "裝飾性藝術質感漆。"
           ]
         }
       ],
       "single": [
         {
-          "docId": "MPI-15",
+          "docId": "WAX-SING-01",
           "filename": "TI MPI PolyGlide 1226XF Performance Study EN 202407.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI Polyglide 1226 XF/TI MPI PolyGlide 1226XF Performance Study EN 202407.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202407",
           "brand": "Micro Powders",
-          "shortLabel": "PolyGlide 1226XF 耐磨性能研究",
+          "shortLabel": "PolyGlide 1226XF",
           "title": "PolyGlide 1226XF Product Performance Study",
-          "titleEn": "TI MPI PolyGlide 1226XF Performance Study EN 202407",
-          "model": "PolyGlide 1226XF",
-          "productGroup": "Poly 耐磨系列",
-          "origin": "Micro Powders Product Performance Study (07/2024): PolyGlide 1226XF",
-          "desc": "評估 PolyGlide 1226XF 聚烯烴/複合微粉蠟在硬質聚氨酯塗層中大幅降低摩擦係數（COF）與提升滑爽耐磨性能的實驗報告。",
+          "titleEn": "TI MPI PolyGlide 1226XF Performance Study EN 202407.pdf",
+          "origin": "Product Performance Study - PolyGlide 1226XF (Micro Powders, Inc. 2024)",
+          "desc": "評估高分子無氟改質微粉蠟 PolyGlide 1226XF 在水性烤漆與卷材塗料中作為 PTFE 替代品之動摩擦係數（COF）與耐磨表現。",
           "advantages": [
-            "針對硬質聚氨酯水性塗層，添加 2% PolyGlide 1226XF 可使 ASTM D1894 靜態與動態摩擦係數（COF）大幅降低。",
-            "性能表現全面匹敵並優於含 PTFE 的傳統對標品 Polyfluo 150，為 100% 無氟的滑爽增強解決方案。",
-            "顆粒均勻超微細化，不損害塗層原有高透明度與光澤，表面滑爽手感持久穩定。"
+            "HDPE/雙陶瓷奈米複合微粉蠟，熔點 109–115°C，密度 0.99 g/cm³，平均粒徑 3.5–5.5 µm，最大粒徑 15.56 µm，為無氟替代 Polyfluo 150/900 之首選。",
+            "於硬質水性聚胺酯塗料中添加 2% 時，動摩擦係數（COF）由無蠟原漆之 1.663 驟降至 0.297，具備媲美 PTFE 複合蠟 Polyfluo 150（0.243）之優異滑爽潤滑性。",
+            "ASTM D4060 Taber 耐磨測試（添加 1%，2500 轉）重量損失僅 27.0 mg（原漆 42.3 mg），耐磨耗性分別比純聚乙烯蠟 MPP-611XF 提升 21%、比 PTFE 複合蠟 Polyfluo 150 提升 22%。"
           ],
           "applications": [
-            "工業塗料表面滑爽耐磨改性",
-            "卷材薄膜防護",
-            "無 PTFE 水性木器與塑膠面漆"
-          ]
+            "水性卷材塗料",
+            "罐頭金屬塗層",
+            "工業五金烘烤漆",
+            "包裝印刷罩光清漆。"
+          ],
+          "productGroup": "PolyGlide 超滑無氟系列"
         },
         {
-          "docId": "MPI-16",
+          "docId": "WAX-SING-02",
           "filename": "TI MPI PropylMatte 31 HD and AquaMatte Matting Efficiency Study EN.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI PropylMatte 31 HD/TI MPI PropylMatte 31 HD and AquaMatte Matting Efficiency Study EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Micro Powders",
-          "shortLabel": "PropylMatte 31HD 消光效率研究",
-          "title": "A Comparison of Matting Efficiency and COF Using AquaMatte® 22, AquaMatte 26HD, AquaMatte 31 and PropylMatte 31HD",
-          "titleEn": "TI MPI PropylMatte 31 HD and AquaMatte Matting Efficiency Study EN",
-          "model": "PropylMatte 31 HD",
-          "productGroup": "Matte 消光系列",
-          "origin": "Micro Powders Application Study 1501 (04/15): AquaMatte® 22, 26HD, 31 and PropylMatte 31HD",
-          "desc": "對比氧化聚乙烯蠟（AquaMatte 系列）與改性聚丙烯蠟（PropylMatte 31HD）在水性聚氨酯體系中的消光效率與摩擦係數（COF）。",
+          "shortLabel": "PropylMatte 31 HD",
+          "title": "PropylMatte 31 HD and AquaMatte Matting Efficiency Study",
+          "titleEn": "TI MPI PropylMatte 31 HD and AquaMatte Matting Efficiency Study EN.pdf",
+          "origin": "Product Performance Study - PropylMatte 31 HD & AquaMatte 26HD (Micro Powders, Inc.)",
+          "desc": "比較高密度改質聚丙烯微粉 PropylMatte 31 HD 與高密度微粉化氧化聚乙烯蠟 AquaMatte 26HD 在水性體系中之消光效率、防分層浮移特性與動摩擦係數（COF）。",
           "advantages": [
-            "經重力密度改性（密度調諧至 1.07 g/cc），徹底杜絕蠟微粒在水性及 UV 體系中上浮漂析問題。",
-            "AquaMatte 22 與 26HD 提供極低摩擦係數（最高滑爽度，靜態 COF 低至 0.032~0.037）。",
-            "PropylMatte 31HD 提供優異消光效率的同時維持較高摩擦阻力（適合防滑啞光要求）。"
+            "PropylMatte 31HD（熔點 160–170°C）與 AquaMatte 26HD 密度均經改質提升至 1.07 g/cm³（大於水），能徹底消除微粉蠟在水性與 UV/EB 系統中之浮移分層問題。",
+            "添加 2% 聚合物蠟可達緞面半光效果（60° 光澤 45–50 GU），添加 5% 可達到均勻消光效果（60° 光澤 20–25 GU），其中 PropylMatte 31HD 在 20°/60°/85° 所有角度下均展現最高消光效率。",
+            "動摩擦係數對比：AquaMatte 26HD 展現極低動態 COF（0.031，極高滑爽度），而 PropylMatte 31HD 則具備較高動態 COF（0.242），提供聚丙烯特有的防滑手感。"
           ],
           "applications": [
-            "水性木器消光面漆",
-            "水性工業金屬漆",
-            "皮革防滑消光塗布",
-            "水性 UV 罩光漆"
-          ]
+            "水性木器家具面漆",
+            "室內裝飾清漆",
+            "水性塑膠漆",
+            "透明金屬防護塗層。"
+          ],
+          "productGroup": "PropylMatte / AquaMatte 啞光系列"
         },
         {
-          "docId": "MPI-17",
+          "docId": "WAX-SING-03",
           "filename": "TI MPI MicroKlear KL-418AL Performance Study EN.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MicroKlear 418 AL/TI MPI MicroKlear KL-418AL Performance Study EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Micro Powders",
-          "shortLabel": "MicroKlear 418AL 產品性能研究",
-          "title": "New Product Performance Study – MicroKlear 418AL",
-          "titleEn": "TI MPI MicroKlear KL-418AL Performance Study EN",
-          "model": "MicroKlear 418AL",
-          "productGroup": "特種微粉系列",
-          "origin": "Micro Powders Application Study: MicroKlear 418AL",
-          "desc": "評估奈米氧化鋁增強巴西棕櫚蠟複合微粉 MicroKlear 418AL 在水性聚氨酯塗層中提升鉛筆硬度與耐刮傷性的對比研究。",
+          "shortLabel": "MicroKlear 418AL",
+          "title": "MicroKlear 418AL Product Performance Study",
+          "titleEn": "TI MPI MicroKlear KL-418AL Performance Study EN.pdf",
+          "origin": "Product Performance Study - MicroKlear 418AL (Micro Powders, Inc.)",
+          "desc": "測試天然巴西棕櫚蠟（Carnauba wax）與氧化鋁（Alumina）奈米複合物 MicroKlear 418AL 在高透光清漆與罐頭塗料中的抗刮耐磨特性。",
           "advantages": [
-            "以天然巴西棕櫚蠟（Carnauba wax）為基質，複合 300 nm 莫氏硬度 9 的奈米氧化鋁顆粒。",
-            "保持天然棕櫚蠟高光澤、高透明度與極佳手感的同時，將塗層抗鉛筆劃痕硬度（Pencil Scratch）提升數個等級。",
-            "密度優化為 1.04 g/cc，有效防止純無機奈米氧化鋁在儲存過程中易發生的重質沉底硬結結塊。"
+            "天然巴西棕櫚蠟基質複合 300 nm 氧化鋁奈米微粒（莫氏硬度 9），熔點 81–86°C，密度 1.04 g/cm³，平均粒徑 6.0–8.0 µm（最大粒徑 22.0 µm）。",
+            "ASTM D3363 鉛筆刮痕測試中，添加 1% MKL-418AL 使軟質聚胺酯塗層硬度由 8B 躍升至 HB（比無蠟原漆大幅跨越提升 8 個硬度等級，比純巴西棕櫚蠟提升 4 級）。",
+            "巴西棕櫚蠟提供優異表面光澤保留度與滑爽手感，符合 FDA 食品接觸規範，且完全不損害深色漆面之高透明度。"
           ],
           "applications": [
-            "水性高級木器高光清漆",
-            "汽車裝飾修復面漆",
-            "薄膜防護透明塗層",
-            "精密儀器外殼塗料"
-          ]
+            "罐頭金屬外裝塗料",
+            "汽車修補清漆",
+            "高級木器光澤漆",
+            "熱封食品包裝塗層。"
+          ],
+          "productGroup": "MicroKlear 棕櫚蠟複合系列"
         },
         {
-          "docId": "MPI-18",
+          "docId": "WAX-SING-04",
           "filename": "TI MPI MicroMatte 1415-EZ Performance Study EN 2024.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_Micromatte 1415 EZ/TI MPI MicroMatte 1415-EZ Performance Study EN 2024.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "2024",
           "brand": "Micro Powders",
-          "shortLabel": "MicroMatte 1415-EZ 產品性能研究",
+          "shortLabel": "MicroMatte 1415-EZ",
           "title": "MicroMatte 1415-EZ Product Performance Study",
-          "titleEn": "TI MPI MicroMatte 1415-EZ Performance Study EN 2024",
-          "model": "MicroMatte 1415EZ",
-          "productGroup": "Matte 消光系列",
-          "origin": "Micro Powders Product Performance Study (04/2024): MicroMatte 1415-EZ",
-          "desc": "評估改性合成微粉蠟 MicroMatte 1415-EZ 在建築塗料中提升抗耐磨拋光（Burnish）、抗髒污附著（DPUR）與易分散性（EZ）之測試。",
+          "titleEn": "TI MPI MicroMatte 1415-EZ Performance Study EN 2024.pdf",
+          "origin": "Product Performance Study - MicroMatte 1415-EZ (Micro Powders, Inc. 2024, 7 pages)",
+          "desc": "深度評估易分散型改質微粉蠟 MicroMatte 1415-EZ 在消光效率、摩擦係數、Taber 耐磨、抗拋光光澤上升（Burnish resistance）及耐污防沾（Soil release）之綜合性能。",
           "advantages": [
-            "具備卓越抗拋光性能，經 400 次耐刷洗測試後，60° 光澤上升變化量（Delta Gloss）僅 3.29 個單位。",
-            "抗髒污吸附性能（Dirt Pick Up Resistance, DPUR）優異，在經受污漬染色與清洗後色差 Delta E 僅 2.8。",
-            "特殊表面易分散（EZ）處理，無需高剪切研磨即可迅速在水性乳膠漆中均勻潤濕分散。"
+            "改質合成蠟易分散微粉，熔點 136–140°C，密度 1.06 g/cm³，平均粒徑 10.0–15.0 µm（最大粒徑 44.0 µm），具備優越的潤濕與易分散特性（EZ disperse）。",
+            "具備卓越抗拋光性能：ASTM D6736 經 400 次擦洗後，85° 光澤變化量僅 3.29 GU（高居所有 MPI 產品之冠）；動摩擦係數低至 0.167（媲美純 PTFE Fluo 300 之 0.164）。",
+            "展現優異抗髒污防沾性能（Soil release），耐污測試色差 ΔE 僅 2.8（顯著優於對照組的 22.1），Taber 磨耗減重僅 22.9 mg（2500 轉）。"
           ],
           "applications": [
-            "內牆高階平光與蛋殼光乳膠漆",
-            "外牆耐候抗污塗料",
-            "高耐磨建築裝飾面漆"
-          ]
+            "高級建築室內乳膠漆",
+            "水性工業金屬漆",
+            "木器家具面漆",
+            "耐磨消光地坪塗料。"
+          ],
+          "productGroup": "MicroMatte 易分散消光系列"
         },
         {
-          "docId": "MPI-19",
+          "docId": "WAX-SING-05",
           "filename": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MP 22 VF/TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202208",
           "brand": "Micro Powders",
-          "shortLabel": "MP-22 VF 油墨耐磨擦研究",
-          "title": "MP-22 VF Printing Ink Rub Resistance Study (Study 1402)",
-          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208",
-          "model": "MP 22 VF",
-          "productGroup": "MP-22 系列",
-          "origin": "Micro Powders Application Study: 1402 (02/15 Rev 1 / 2022/08)",
-          "desc": "評估超微細合成蠟 MP-22 VF 在水性印刷油墨中提升耐摩擦（Sutherland Rub Resistance）性能的實驗研究。",
+          "shortLabel": "MP-22 VF 油墨耐磨",
+          "title": "Comparison of Printing Ink Rub Resistance Using Synthetic and Polyethylene Waxes (MP-22 VF Focus)",
+          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
+          "origin": "Application Study 1402 - Printing Ink Rub Resistance Study (Micro Powders, Inc.)",
+          "desc": "評估在水性黑色壓克力印刷油墨中添加 1% 不同分子量聚乙烯蠟（MPP-620F、MPP-635F、MPP-230VF）與費托合成蠟（MP-22）的 Sutherland 耐摩擦磨耗測試對比。",
           "advantages": [
-            "研究評估 MP-22 合成微粉蠟（平均粒徑 8~10 μm，熔點 102~106°C）在水性油墨配方中的耐擦抗磨性。",
-            "經 Sutherland 摩擦測試機百次摩擦驗證，添加 MP-22 顯著消除油墨層剝落擦掉與背印蹭髒缺陷。",
-            "相比普通聚乙烯蠟，提供更加滑爽的表面手感，並有效維持印品的色澤純度與印刷網點清晰度。"
+            "測試添加劑平均粒徑均控制在 7–10 µm（最大粒徑 ≤ 31 µm），墨膜塗佈於 Leneta 卡紙上經 Sutherland 摩擦儀進行 50 次與 200 次（4 磅重錘）摩擦試驗。",
+            "50 次與 200 次摩擦評級結果（1 最佳，5 最差）：MPP-620F 綜合表現最優（評級 1，墨轉移最少），MPP-635F 次之（評級 2），MPP-230VF 居第三（評級 3），MP-22 居第四（評級 4），未添加蠟的空白對照組最差（評級 5）。",
+            "中等分子量高硬度聚乙烯蠟（MPP-620F）提供最佳耐擦傷保護；費托合成蠟（MP-22）則主要提供滑爽性與抗黏連，對耐強摩擦之抗性略遜於高分子量聚乙烯。"
           ],
           "applications": [
-            "水性包裝印刷油墨",
-            "凹版與柔版薄膜印刷",
-            "紙張耐磨印刷塗層"
-          ]
+            "水性印刷油墨",
+            "凹版與柔版包裝印刷墨",
+            "耐摩擦罩光油（OPV）",
+            "紙盒印刷面漆。"
+          ],
+          "productGroup": "MP-22 合成費托微粉系列"
         },
         {
-          "docId": "MPI-20",
+          "docId": "WAX-SING-06",
           "filename": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MP-22XF/TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202208",
           "brand": "Micro Powders",
-          "shortLabel": "MP-22XF 油墨耐磨擦研究",
-          "title": "MP-22XF Printing Ink Rub Resistance Study (Study 1402)",
-          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208",
-          "model": "MP-22XF",
-          "productGroup": "MP-22 系列",
-          "origin": "Micro Powders Application Study: 1402 (02/15 Rev 1 / 2022/08)",
-          "desc": "評估特細微粉級 MP-22XF 合成蠟在薄膜印刷油墨中改善耐刮抗磨性與超微細分散穩定性的性能表現。",
+          "shortLabel": "MP-22XF 薄膜耐磨",
+          "title": "MP-22XF and Polyethylene Waxes Rub Resistance Study",
+          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
+          "origin": "Application Study 1402 - Printing Ink Rub Resistance Study (Micro Powders, Inc.)",
+          "desc": "研究費托合成蠟超細規格 MP-22XF 與聚乙烯蠟在水性油墨薄膜中對耐磨耗、墨層轉移阻抗及表面滑性的效能對比。",
           "advantages": [
-            "針對超細粒徑規格（XF 級，最大粒徑更小），提供極高的比表面積與迅速的印刷膜面均勻分佈。",
-            "在高速輪轉印刷條件下提供持久耐摩擦性，顯著減少印品裁切、堆疊與物流運輸過程中的刮傷。",
-            "測試證明其性能差異可有效推廣至其他蠟改性表面塗層體系中，適應薄膜高速印刷要求。"
+            "MP-22 微粉蠟基於合成費托蠟，熔點 102°C，密度 0.93 g/cm³，與各聚乙烯蠟受測樣品維持相近之平均粒徑分佈（7–10 µm）。",
+            "雖然在高承載 Sutherland 耐磨測試中高分子量聚乙烯（MPP-620/635 系列）耐擦阻力更高，但 MP-22 具備優越的薄膜滑爽手感、高光澤保留度與極低刮板細度。",
+            "易於在低剪切條件下迅速混入油墨體系中，有效防止印張堆疊時的背面擦髒與黏頁（Anti-blocking）。"
           ],
           "applications": [
-            "高速柔版印刷油墨",
-            "凹版包裝薄膜印刷",
-            "標籤印刷光油"
-          ]
+            "高速平版膠印油墨",
+            "包裝柔版水性油墨",
+            "凹版塑膠印刷油墨",
+            "金屬印刷塗料。"
+          ],
+          "productGroup": "MP-22 合成費托微粉系列"
         },
         {
-          "docId": "MPI-21",
+          "docId": "WAX-SING-07",
           "filename": "TI MPI MPP-611AL Performance Study EN 202407.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MPP-611AL/TI MPI MPP-611AL Performance Study EN 202407.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202407",
           "brand": "Micro Powders",
-          "shortLabel": "MPP-611AL 高溫耐磨研究",
+          "shortLabel": "MPP-611AL 氧化鋁耐磨",
           "title": "MPP-611AL Product Performance Study",
-          "titleEn": "TI MPI MPP-611AL Performance Study EN 202407",
-          "model": "MPP-611AL",
-          "productGroup": "MPP 系列",
-          "origin": "Micro Powders Product Performance Study (07/2024): MPP-611AL",
-          "desc": "介紹高密度聚乙烯結合 300 nm 奈米氧化鋁複合微粉 MPP-611AL 在水性聚氨酯塗層中突破性提升抗刮耐磨（鉛筆硬度）之數據。",
+          "titleEn": "TI MPI MPP-611AL Performance Study EN 202407.pdf",
+          "origin": "Product Performance Study - MPP-611AL (Micro Powders, Inc. 2024)",
+          "desc": "評估高分子量聚乙烯蠟與奈米氧化鋁複合微粉 MPP-611AL 在工業塗料、罐頭塗層及無氟配方中的耐磨耗與抗劃痕硬化表現。",
           "advantages": [
-            "採用高密度聚乙烯（HDPE）複合莫氏硬度 9 的 300 nm 奈米氧化鋁，為安全、易分散的非奈米級粉末載體。",
-            "泰伯線性磨耗（Taber linear abrasion）與鉛筆刮擦硬度測試顯示，抗刮性能相較純聚乙烯蠟產生飛躍性提升。",
-            "密度調配為 0.99 g/cc，徹底消除高比重純氧化鋁奈米粉在塗料槽中快速沉底板結的工程頑疾。"
+            "HDPE 基質複合 300 nm 氧化鋁奈米微粒（莫氏硬度 9），熔點 110–116°C，密度 0.99 g/cm³，平均粒徑 3.5–5.5 µm（最大粒徑 15.56 µm）。",
+            "ASTM D3363 鉛筆刮痕測試（Taber 線性耐磨儀）中，添加 1% MPP-611AL 使軟質聚胺酯塗膜硬度由 8B 躍升至 B（大幅提升 7 個等級，比未加氧化鋁之純 PE 蠟 MPP-611XF 提升 4 級）。",
+            "以安全、易分散之非奈米微粉顆粒形態賦予塗層頂級抗刮擦效能，並具備優化密度以確保最大表面效率並消除奈米氧化鋁沉降問題。"
           ],
           "applications": [
-            "工業耐磨防腐面漆",
-            "水性木器耐刮清漆",
-            "金屬保護烤漆",
-            "高耐久塑膠外殼塗層"
-          ]
+            "工業金屬烘烤漆",
+            "卷材塗料",
+            "罐頭外壁保護漆",
+            "木器耐磨地板面漆",
+            "重防腐工業設備塗料。"
+          ],
+          "productGroup": "MPP 聚乙烯氧化鋁複合系列"
         },
         {
-          "docId": "MPI-22",
+          "docId": "WAX-SING-08",
           "filename": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MPP-620F/TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202208",
           "brand": "Micro Powders",
-          "shortLabel": "MPP-620F 油墨耐磨擦研究",
-          "title": "MPP-620F Printing Ink Rub Resistance Study (Study 1402)",
-          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208",
-          "model": "MPP-620F",
-          "productGroup": "MPP 系列",
-          "origin": "Micro Powders Application Study: 1402 (02/15 Rev 1 / 2022/08)",
-          "desc": "評估中等分子量聚乙烯微粉蠟 MPP-620F 在水性印刷油墨中抵抗磨損與提升滑爽耐磨的對比測試報告。",
+          "shortLabel": "MPP-620F 油墨耐磨",
+          "title": "MPP-620F Printing Ink Rub Resistance Study",
+          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
+          "origin": "Application Study 1402 - Printing Ink Rub Resistance Study (Micro Powders, Inc.)",
+          "desc": "聚焦 MPP-620F 中等分子量特製聚乙烯微粉蠟在印刷油墨中展現全場最優耐擦抗性的性能測試與機理解析。",
           "advantages": [
-            "測試中分子量聚乙烯蠟 MPP-620F（平均粒徑 7~9 μm，最大粒徑 31 μm）在水性油墨配方中的抗磨表現。",
-            "於 Sutherland 磨擦儀測試中展現優異抗脫墨性，抗磨損改善效果顯著優於未添加蠟的對照基準組。",
-            "聚乙烯蠟聚合物鏈結構提供優異韌性與低表面能，兼具防沾黏與優良的印刷膜光澤保持性。"
+            "MPP-620F 熔點約 114–118°C，密度 0.94 g/cc，平均粒徑 7.0–9.0 µm，最大粒徑 31.0 µm。",
+            "在水性黑色壓克力印刷油墨的 Sutherland 耐磨測試中，於 50 次與 200 次磨耗下墨轉移量均評定為全組最佳之第 1 名。",
+            "特製聚乙烯結晶度與分子量分佈賦予墨膜表面極高的韌性與耐剪切性，杜絕包裝紙盒在運輸振動過程中的掉色與刮損。"
           ],
           "applications": [
-            "水性紙箱柔印油墨",
-            "膠印油墨",
-            "包裝瓦楞紙印刷保護",
-            "水性上光油"
-          ]
+            "水性包裝瓦楞紙油墨",
+            "溶劑型塑膠凹印油墨",
+            "書刊平版膠印油墨",
+            "各類印刷罩光油。"
+          ],
+          "productGroup": "MPP 高耐磨聚乙烯系列"
         },
         {
-          "docId": "MPI-23",
+          "docId": "WAX-SING-09",
           "filename": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MPP-620XF/TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202208",
           "brand": "Micro Powders",
-          "shortLabel": "MPP-620XF 油墨耐磨擦研究",
-          "title": "MPP-620XF Printing Ink Rub Resistance Study (Study 1402)",
-          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208",
-          "model": "MPP-620XF",
-          "productGroup": "MPP 系列",
-          "origin": "Micro Powders Application Study: 1402 (02/15 Rev 1 / 2022/08)",
-          "desc": "評估極細中分子量聚乙烯微粉蠟 MPP-620XF 在薄膜印刷油墨中之高研磨細度、抗刮擦與分散表現。",
+          "shortLabel": "MPP-620XF 超細耐磨",
+          "title": "MPP-620XF Printing Ink Rub Resistance and Thin-Film Performance Study",
+          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
+          "origin": "Application Study 1402 - Printing Ink Rub Resistance Study (Micro Powders, Inc.)",
+          "desc": "探討 MPP-620 的超細規格 MPP-620XF 在超薄印刷墨層與精密印刷中的耐磨擦、高透明度與表面滑爽表現。",
           "advantages": [
-            "採用更嚴苛的超微細分級工藝（XF 規格），提供極低刮板細度值（Hegman 細度高），防止印刷版輥磨損。",
-            "在 Sutherland 耐磨擦試驗中，極細顆粒能更緊密平整鋪展於印膜表層，形成均勻強韌的耐磨防護膜。",
-            "保證優異流平流動性，在薄膜高速印刷中不起霧、不飛墨，維持印品鮮豔對比度。"
+            "MPP-620 體系微粉蠟熔點 116°C（120–124°C），密度 0.96 g/cm³，以獨特聚乙烯結晶度與分子量分佈專注於極限耐磨擦改質。",
+            "專為薄膜印刷（乾膜厚度 < 5 µm）設計，微粒完全包埋於墨層中且迅速浮於表面，消除大顆粒微粉引發的印刷光澤失真或版輥刮傷。",
+            "證實 MPP-620 體系在水性墨中添加 1% 即達到 Sutherland 耐磨測試第 1 名（評級 1，墨轉移最少），提供頂級之耐磨耗、抗黏連與耐刮痕保護。"
           ],
           "applications": [
-            "凹版塑膠薄膜印刷油墨",
-            "精細網點柔印油墨",
-            "高檔包裝標籤光油"
-          ]
+            "精密軟包裝印刷油墨",
+            "金屬罐薄層印刷油墨",
+            "高光澤印刷罩光清漆（OPV）",
+            "UV 光固化印刷墨。"
+          ],
+          "productGroup": "MPP 高耐磨聚乙烯系列"
         },
         {
-          "docId": "MPI-24",
+          "docId": "WAX-SING-10",
           "filename": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_MPP-635VF/TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202208",
           "brand": "Micro Powders",
-          "shortLabel": "MPP-635VF 油墨耐磨擦研究",
-          "title": "MPP-635VF Printing Ink Rub Resistance Study (Study 1402)",
-          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208",
-          "model": "MPP-635VF",
-          "productGroup": "MPP 系列",
-          "origin": "Micro Powders Application Study: 1402 (02/15 Rev 1 / 2022/08)",
-          "desc": "評估高分子量高硬度聚乙烯微粉蠟 MPP-635VF 在水性油墨中對抗重度摩擦磨損的卓越耐擦拭性能。",
+          "shortLabel": "MPP-635VF 高分子量耐磨",
+          "title": "MPP-635VF Higher Molecular Weight Polyethylene Wax Rub Resistance Study",
+          "titleEn": "TI MPI MP 22 MP 620F MP 635F Printing Ink Rub Resistance Study EN 202208.pdf",
+          "origin": "Application Study 1402 - Printing Ink Rub Resistance Study (Micro Powders, Inc.)",
+          "desc": "評估高分子量高硬度聚乙烯微粉蠟 MPP-635VF 在印刷油墨中抵抗重度磨損與高剪切刮擦的性能測試。",
           "advantages": [
-            "採用更高分子量聚乙烯原料（平均粒徑 8~10 μm），賦予蠟微粒極高的耐磨韌性與熔融支撐強度。",
-            "在 Sutherland 摩擦試驗中展現四款受測產品中最頂級的耐磨抗脫墨壽命，大幅超越低分子量聚乙烯。",
-            "提升油墨在高溫堆疊儲存時的抗黏連（Anti-block）表現，防止紙張包裝受壓黏結破壞。"
+            "採用更高分子量聚乙烯（Higher Molecular Weight HDPE），熔點 123–125°C，密度 0.97 g/cm³，具備極高結晶硬度與熱穩定性。",
+            "在 Sutherland 耐磨擦試驗中排名第 2（優於低分子量 PE 蠟及合成蠟），耐高壓摩擦性能卓越。",
+            "具備更高的熔點與熱穩定性，適用於需要高溫烘乾或高摩擦熱環境之印刷製程，且抗結塊性極強。"
           ],
           "applications": [
-            "重包裝紙袋印刷油墨",
-            "金屬罐外裝印刷",
-            "高耐磨出版印刷",
-            "戶外海報油墨"
-          ]
+            "溶劑型與水性包裝油墨",
+            "高耐磨工業塗層",
+            "紙箱柔版油墨",
+            "金屬裝飾烘烤印刷。"
+          ],
+          "productGroup": "MPP 高耐磨聚乙烯系列"
         },
         {
-          "docId": "MPI-25",
+          "docId": "WAX-SING-11",
           "filename": "TI MPI PolyTuf 1229 Performance Study EN.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_PolyTuf 1229/TI MPI PolyTuf 1229 Performance Study EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Micro Powders",
-          "shortLabel": "PolyTuf 1229 耐磨性能研究",
-          "title": "PolyTuf™ 1229 Product Performance Study",
-          "titleEn": "TI MPI PolyTuf 1229 Performance Study EN",
-          "model": "PolyTuf 1229",
-          "productGroup": "Poly 耐磨系列",
-          "origin": "Micro Powders Product Performance Study (03/2023): PolyTuf™ 1229",
-          "desc": "評估雙重高性能陶瓷改性低密度聚乙烯微粉蠟 PolyTuf 1229 在硬質聚氨酯塗層中取代 PTFE 之耐磨性能報告。",
+          "shortLabel": "PolyTuf 1229 耐磨衝擊",
+          "title": "PolyTuf 1229 Product Performance Study",
+          "titleEn": "TI MPI PolyTuf 1229 Performance Study EN.pdf",
+          "origin": "Product Performance Study - PolyTuf 1229 (Micro Powders, Inc.)",
+          "desc": "測試高分子量抗衝擊微粉聚合物 PolyTuf 1229 在耐磨地坪塗料與重防腐塗層中提升 Taber 耐磨損與抗劃痕衝擊之表現。",
           "advantages": [
-            "採用低密度聚乙烯（LDPE）結合兩種不同高性能陶瓷複合物，完全不含 PTFE 但具極限耐磨性。",
-            "ASTM D4060 泰伯磨耗測試（2500 次循環）顯示，失重量僅 22.3 mg，耐磨表現超越含氟產品 Polyfluo 900（提升 10.8%）。",
-            "ASTM D3363 鉛筆硬度測試顯示顯著增強抗劃痕強度，為金屬及木器漆提供領先的環保耐磨升級方案。"
+            "LDPE 基質複合雙陶瓷奈米微粒，熔點 110–113°C，密度 0.97 g/cm³，平均粒徑 9.0–12.0 µm（最大粒徑 31.11 µm），為無氟替代 Polyfluo 190/900 之旗艦產品。",
+            "ASTM D4060 Taber 耐磨耗測試（添加 1%，2500 轉）重量損失僅 22.30 mg（原漆 42.30 mg），耐磨耗性高居 MPI 所有細微粉產品之冠，比含 PTFE 陶瓷複合蠟 Polyfluo 900 再改善 10.8%。",
+            "ASTM D3363 鉛筆刮痕測試中，塗膜硬度由 6B 躍升至 B 級，展現媲美 Polyfluo 190 之優異耐刮傷保護能力。"
           ],
           "applications": [
-            "硬質聚氨酯塗層",
-            "工業金屬防護烤漆",
-            "耐磨木器漆",
-            "無 PTFE 環保高性能塗裝"
-          ]
+            "工業重載環氧地坪",
+            "聚胺酯防滑地坪塗層",
+            "耐磨工業設備漆",
+            "船舶甲板塗料。"
+          ],
+          "productGroup": "PolyTuf 抗衝擊高韌性系列"
         },
         {
-          "docId": "MPI-26",
+          "docId": "WAX-SING-12",
           "filename": "TI MPI AquaMatte and PropylMatte Matting Efficiency Study EN.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_PropylMatte 31/TI MPI AquaMatte and PropylMatte Matting Efficiency Study EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Micro Powders",
-          "shortLabel": "AquaMatte 水性消光效率研究",
-          "title": "AquaMatte and PropylMatte Matting Efficiency Study (Study 1501)",
-          "titleEn": "TI MPI AquaMatte and PropylMatte Matting Efficiency Study EN",
-          "model": "AquaMatte",
-          "productGroup": "Matte 消光系列",
-          "origin": "Micro Powders Application Study: 1501 (04/15)",
-          "desc": "深入評估氧化聚乙烯微粉蠟（AquaMatte 22、26HD、31）與聚丙烯微粉蠟（PropylMatte 31HD）在水性體系中消光與流變特性。",
+          "shortLabel": "AquaMatte 水性消光",
+          "title": "AquaMatte and PropylMatte Matting Efficiency Study",
+          "titleEn": "TI MPI AquaMatte and PropylMatte Matting Efficiency Study EN.pdf",
+          "origin": "Product Performance Study - AquaMatte & PropylMatte Matting Efficiency (Micro Powders, Inc.)",
+          "desc": "深入研究聚丙烯微粉 PropylMatte 31HD 與微粉化氧化聚乙烯蠟 AquaMatte 系列在水性塗料中的消光曲線、防分層特性與動摩擦係數（COF）。",
           "advantages": [
-            "AquaMatte 系列在水性體系中展現優異消光效率，能在降低光澤的同時保持漆膜極高通透度與細膩質感。",
-            "26HD 與 31HD 經重力改性（密度 1.07 g/cc），徹底解決普通蠟粉密度偏低（0.89~0.96 g/cc）造成的長期上浮聚集問題。",
-            "提供不同滑爽係數選擇：AquaMatte 22 賦予最極致滑爽手感（COF 最低），PropylMatte 31HD 則兼具消光與適度防滑阻尼。"
+            "PropylMatte 31HD（熔點 160–170°C）與 AquaMatte 26HD 密度均經重質化改質提升至 1.07 g/cm³（大於水），徹底消除微粉蠟在水性與 UV/EB 系統中之浮移分層。",
+            "添加 2% 聚合物蠟可達緞面半光（60° 光澤 45–50 GU），添加 5% 達消光效果（60° 光澤 20–25 GU），其中 PropylMatte 31HD 在 20°/60°/85° 全角度消光效率均居首位。",
+            "動態摩擦係數（COF）對比：AquaMatte 26HD 展現極低動態 COF（0.031，極高滑爽度），而 PropylMatte 31HD 具備較高動態 COF（0.242），提供聚丙烯特有之防滑特性。"
           ],
           "applications": [
-            "水性木器家具消光漆",
-            "水性工業金屬漆",
-            "皮革霧面面漆",
-            "紙張消光保護塗料"
-          ]
+            "木器家具塗料",
+            "皮革頂層塗飾",
+            "塑料消光漆",
+            "自流平地坪塗層。"
+          ],
+          "productGroup": "PropylMatte / AquaMatte 啞光系列"
         },
         {
-          "docId": "MPI-27",
+          "docId": "WAX-SING-13",
           "filename": "TI MPI Superslip 6515AL Superslip 6515AL-EZ Performance Study EN 202412.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI MPI_Superslip 6515 AL/TI MPI Superslip 6515AL Superslip 6515AL-EZ Performance Study EN 202412.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202412",
           "brand": "Micro Powders",
-          "shortLabel": "Superslip 6515AL 耐磨滑爽研究",
-          "title": "Superslip 6515AL & Superslip 6515AL-EZ Product Performance Study",
-          "titleEn": "TI MPI Superslip 6515AL Superslip 6515AL-EZ Performance Study EN 202412",
-          "model": "Superslip 6515AL",
-          "productGroup": "特種微粉系列",
-          "origin": "Micro Powders Product Performance Study (12/2024): Superslip 6515AL & Superslip 6515AL-EZ",
-          "desc": "評估高密度聚乙烯、醯胺蠟與奈米氧化鋁三元複合微粉蠟 Superslip 6515AL 及易分散版 6515AL-EZ 在薄膜塗層中取代 PTFE 的表現。",
+          "shortLabel": "Superslip 6515AL 超滑爽",
+          "title": "Superslip 6515AL and Superslip 6515AL-EZ Product Performance Study",
+          "titleEn": "TI MPI Superslip 6515AL Superslip 6515AL-EZ Performance Study EN 202412.pdf",
+          "origin": "Product Performance Study - Superslip 6515AL & Superslip 6515AL-EZ (Micro Powders, Inc. 2024)",
+          "desc": "評估無氟高滑爽耐磨複合微粉蠟 Superslip 6515AL 與易分散型 6515AL-EZ 在水性工業烤漆與罐頭塗料中替代含 PTFE 添加劑的優異表現。",
           "advantages": [
-            "三元複合配方結合奈米氧化鋁的高硬度與 HDPE/醯胺蠟的優異滑爽度，完全不含 PTFE。",
-            "耐磨耗性能較傳統含氟 Polyfluo 150 提升 10%，同時維持極低且相當的摩擦係數（COF）。",
-            "6515AL-EZ 經專利表面處理，在水性體系中極易潤濕分散，徹底解決常規複合蠟在水相中分散困難的痛點。"
+            "HDPE / 酰胺蠟 / 奈米氧化鋁複合微粉，熔點 139–145°C，密度 0.99 g/cm³，平均粒徑 3.50–5.50 µm（最大粒徑 15.56 µm）；EZ 版本經表面改質，在水性體系中極易潤濕分散。",
+            "ASTM D1894 動摩擦係數（COF）在硬質聚胺酯添加 2% 下達到 0.280（原漆 1.663），滑爽潤滑性完全媲美 PTFE 複合蠟 Polyfluo 150（0.243）。",
+            "耐刮擦與耐磨損卓越：添加 1% 使鉛筆刮痕硬度由 6B 躍升至 B 級（優於 Superslip 6515 之 3B）；Taber 耐磨損（2500 轉）減重僅 29.9 mg，耐磨性比 Polyfluo 150（34.4 mg）再提升 10%。"
           ],
           "applications": [
-            "製罐塗料（Can Coatings）",
-            "卷材塗料（Coil Coatings）",
-            "超薄膜防護塗層",
-            "食品包裝金屬塗裝"
-          ]
+            "罐頭與金屬容器塗料",
+            "卷材工業塗層",
+            "五金工具烤漆",
+            "無氟耐磨工業漆。"
+          ],
+          "productGroup": "Superslip 超滑爽耐磨系列"
         },
         {
-          "docId": "MPI-28",
+          "docId": "WAX-SING-14",
           "filename": "TI MPI Polyfluo 190 and Fluo 300 Abrasion Resistance Study EN.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI_MPI Fluo 300XF/TI MPI Polyfluo 190 and Fluo 300 Abrasion Resistance Study EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Micro Powders",
-          "shortLabel": "Polyfluo 與 Fluo 300 耐磨對比研究",
-          "title": "A Comparison of Abrasion Resistance Using Polyfluo® 190 and Fluo 300",
-          "titleEn": "TI MPI Polyfluo 190 and Fluo 300 Abrasion Resistance Study EN",
-          "model": "Fluo 300XF",
-          "productGroup": "Poly 耐磨系列",
-          "origin": "Micro Powders Application Study: 1502 (04/15 Rev 2)",
-          "desc": "評估 PTFE 改性聚乙烯複合蠟 Polyfluo 190 與 100% 純 PTFE 微粉 Fluo 300 在水性聚氨酯分散液中的耐磨損性及經濟效益對比。",
+          "shortLabel": "Polyfluo 190 / Fluo 300",
+          "title": "Polyfluo 190 and Fluo 300 Abrasion Resistance Study",
+          "titleEn": "TI MPI Polyfluo 190 and Fluo 300 Abrasion Resistance Study EN.pdf",
+          "origin": "Product Performance Study - Polyfluo 190 and Fluo 300 Abrasion Resistance (Micro Powders, Inc.)",
+          "desc": "比較高密度聚乙烯/PTFE 複合微粉 Polyfluo 190 與 100% 純微粉 PTFE（Fluo 300）在工業塗料中對 Taber 耐磨耗減重之性能與成本效益對比。",
           "advantages": [
-            "水性聚氨酯添加 0.5%、1.0% 及 1.5% 劑量測試顯示，Polyfluo 190 耐磨耗性能略優於 100% 純 PTFE 的 Fluo 300。",
-            "實驗確立 Polyfluo 190 的最佳添加劑量約為 1.0%，能以大幅低於純 PTFE 產品的原料成本獲得更優耐磨性。",
-            "相比高密度純 PTFE（2.2 g/cc），Polyfluo 190（0.99 g/cc）在液體塗料中沉底風險顯著降低。"
+            "Polyfluo 190 為微粉 PTFE 改質聚乙烯複合蠟（熔點 121–132°C，密度 0.99 g/cm³，平均粒徑 9.0–12.0 µm）；Fluo 300 為 100% 純微粉 PTFE（熔點 >316°C，密度 2.20 g/cm³，平均粒徑 5.0–6.0 µm）。",
+            "Taber 耐磨測試數據：未加蠟空白組磨耗減重 14.3 mg；添加 0.5% Polyfluo 190 減重降至 10.8 mg；添加 1.0% Polyfluo 190 減重僅 7.8 mg，其耐磨減重改善效果顯著優於 1.0% Fluo 300（8.9 mg）。",
+            "最佳建議添加量約為 1.0%，Polyfluo 190 不僅耐磨耗性能超越純 PTFE 微粉，且因密度較低與聚乙烯複合特性，原料成本大幅降低。"
           ],
           "applications": [
-            "工業木器塗料",
-            "金屬防護塗層",
-            "塑料耐磨塗裝",
-            "印刷油墨耐刮擦改性"
-          ]
+            "工業金屬塗漆",
+            "卷材塗料",
+            "罐頭塗層",
+            "熱固性粉末塗料",
+            "重防腐耐磨面漆。"
+          ],
+          "productGroup": "Polyfluo / Fluo 微粉系列"
         },
         {
-          "docId": "MPI-29",
+          "docId": "WAX-SING-15",
           "filename": "TI MPI MicroTex 950 Performance Study EN 202504.pdf",
           "pdfPath": "techdatadb/5. MPI/4.MPI  wax 單一產品/TI_MPI Microtex 950/TI MPI MicroTex 950 Performance Study EN 202504.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "202504",
           "brand": "Micro Powders",
-          "shortLabel": "MicroTex 950 織紋防滑研究",
+          "shortLabel": "MicroTex 950 紋理防滑",
           "title": "MicroTex® 950 Product Performance Study",
-          "titleEn": "TI MPI MicroTex 950 Performance Study EN 202504",
-          "model": "MicroTex 950",
-          "productGroup": "特種微粉系列",
-          "origin": "Micro Powders Product Performance Study (04/2025): MicroTex® 950",
-          "desc": "評估無 PFAS 改性聚烯烴粉末塗料織紋添加劑 MicroTex 950 在不同樹脂體系中取代 PTFE 織紋劑（Fluo 750TX）之性能研究。",
+          "titleEn": "TI MPI MicroTex 950 Performance Study EN 202504.pdf",
+          "origin": "Product Performance Study - MicroTex® 950 (Micro Powders, Inc. 2025, 5 pages)",
+          "desc": "評估無氟（PFAS-Free）改質聚烯烴紋理劑 MicroTex 950 在多種粉末塗料體系（Hybrid 環氧/聚酯、PE/TGIC、PE/HAA）中替代 PTFE 紋理粉（如 Fluo 750TX）之消光、紋理形成與機械性能。",
           "advantages": [
-            "為 100% 不含 PFAS 的改性聚烯烴微粉，密度 1.22 g/cc，專為取代含氟織紋劑 Fluo 750TX 設計。",
-            "建議添加量為配方總重的 4.0%~6.0%，可在粉末塗層中構建均勻細膩的微觀織紋（Fine Texture）並顯著消光。",
-            "通過衝擊試驗（ASTM D2794）、錐軸彎曲（ASTM D522）及百格附著力（ASTM D3359）測試，塗膜機械韌性優異。"
+            "改質聚烯烴材質，無氟環保，熔點 135–140°C，密度 1.22 g/cc（遠低於 PTFE 的 2.20 g/cc），最大粒徑 74 µm。",
+            "建議添加量為 4.0–6.0 wt%，在 200°C 烘烤 15 分鐘條件下，60° 光澤在 Hybrid 降至 5.3–10.9 GU，PE/TGIC 降至 4.0–9.5 GU，PE/HAA 降至 2.3–7.1 GU，成功形成均勻細緻砂紋外觀。",
+            "機械性能卓越：劃格密著性保持最佳 5B，正向/反向耐衝擊性達到 60–160 in-lb，錐軸彎曲（Mandrel Bend）100% 通過，且熔融微粒流（Pellet Flow）穩定，提供優異邊角覆蓋保護。"
           ],
           "applications": [
-            "粉末塗料（聚酯/TGIC",
+            "無氟環保粉末塗料（聚酯/TGIC",
             "聚酯/HAA",
-            "環氧/聚酯混合體系）",
-            "金屬機箱沙面織紋漆",
-            "戶外五金防滑織紋塗裝"
-          ]
+            "環氧/聚酯混合型）",
+            "五金儀器砂紋塗裝",
+            "戶外建材鋁門窗防護塗層",
+            "金屬傢俱紋理烤漆。"
+          ],
+          "productGroup": "MicroTex 砂紋紋理助劑系列"
         }
       ],
-      "formulation": []
+      "formulation": [
+        {
+          "docId": "WAX-FORM-01",
+          "filename": "Formulation Guide MPI MicroTouch EN.pdf",
+          "pdfPath": "techdatadb/5. MPI/3.Application Note MPI  wax/Formulation Guide MPI MicroTouch EN.pdf",
+          "docType": "5. Formulation 配方指南",
+          "lang": "EN (英文)",
+          "version": "原廠發行版",
+          "brand": "Micro Powders",
+          "shortLabel": "MicroTouch 觸感起始配方",
+          "title": "MicroTouch Soft Touch Additives Formulation Guide",
+          "titleEn": "Formulation Guide MPI MicroTouch EN.pdf",
+          "origin": "MicroTouch Soft Touch Additives Formulation Guide (Micro Powders, Inc.)",
+          "desc": "詳細公開 MicroTouch（800F、800VF、800XF、850XF）搭配多種商用水性聚胺酯分散體（PUD）製造卵石感（Pebbly）、橡膠感（Rubbery）、絨毛感（Fuzzy）與玫瑰花瓣感（Rose Petal）之精確配方比重與混配工藝。",
+          "advantages": [
+            "具體配方比例：結合 Covestro Bayhydrol UH 340/1、Alberdingk U 2101/U 5201 及丁基卡必醇（1.2–1.7%），MicroTouch 添加量精準規範為 11.5 wt%（濕膜厚度 76 µm）。",
+            "混配工藝指引：先加入 PUD 與溶劑擴散至少 3 小時後再加入 MicroTouch 攪拌均勻；在醇類體系中不可直接打漿，需分散於樹脂液中；嚴禁使用 DMF 溶劑以免微粒劇烈膨脹。",
+            "光澤數據：於 76 µm 濕膜厚度下，850XF 配方使 20°/60°/85° 光澤由原漆 39.3/72.9/88.0 降至 0.4/4.3/10.3（玫瑰花瓣觸感），消光與觸感改質同步實現。"
+          ],
+          "applications": [
+            "水性觸感漆",
+            "消費電子軟觸感塗料",
+            "汽車內裝儀錶板塗裝",
+            "高檔紙盒與包裝觸感塗佈。"
+          ]
+        }
+      ]
     }
   },
   "adhesion": {
@@ -2127,137 +2274,140 @@ const TECH_DATABASE = {
       "principles": [],
       "catalog": [
         {
-          "docId": "UNI-01",
+          "docId": "CHA-CATA-01",
           "filename": "Brochure DK Unilink Plus Coatings Line EN 202512.pdf",
           "pdfPath": "techdatadb/3.unilink/2.Unilink Clearlink擴鏈劑目錄/Brochure DK Unilink Plus Coatings Line EN 202512.pdf",
           "docType": "2. Brochure 總覽型錄",
           "lang": "EN (英文)",
           "version": "202512",
           "brand": "Dorf Ketal",
-          "shortLabel": "擴鏈劑塗料系列產品",
-          "title": "Clearlink® & Unilink® Chain Extenders Product Guide",
-          "titleEn": "Brochure DK Unilink Plus Coatings Line",
-          "origin": "Dorf Ketal Product Guide (2025/12): Clearlink® & Unilink® Chain Extenders",
-          "desc": "彙編 Clearlink 脂肪族與 Unilink 芳香族受阻二級二胺擴鏈劑產品線，說明其在聚氨酯/聚脲噴塗、彈性體及泡棉中之反應動力學控制特性。",
+          "shortLabel": "Unilink & Clearlink 型錄",
+          "title": "Clearlink® and Unilink® Chain Extenders Application Guide",
+          "titleEn": "Brochure DK Unilink Plus Coatings Line EN 202512.pdf",
+          "origin": "Clearlink® and Unilink® Chain Extenders Application Guide (Dorf Ketal)",
+          "desc": "介紹 Dorf Ketal 旗下 Unilink 4200 系列（芳香族二級二胺）、Clearlink 1000/1100 系列（脂肪族二級二胺）、Unilink 1080/1136/2130/2200/2500 系列多元醇/胺預聚物擴鏈劑，以及 Unilink 1030 鋯觸媒，在聚脲、聚胺酯彈性塗層、自流平地坪、彈性體及結構密封膠之全系列應用技術。",
           "advantages": [
-            "受阻二級二胺結構（Secondary Diamine）顯著延緩與異氰酸酯（-NCO）的反應速度，提供充裕的操作流平時間。",
-            "Clearlink 1000 專注於脂肪族高耐候不黃變體系；Unilink 4200 適用於芳香族高強度彈性體與泡棉。",
-            "液態低黏度易於計量泵送，且 Ames 試驗為陰性（低毒性），改善現場施工勞安環境。"
+            "二級胺（Secondary Diamine）受立體阻障效應調控，反應活性適度降低，能將聚脲噴塗凝膠時間由數秒延長至可控加工範圍（操作時間延長至數分鐘），賦予優異流平性與基材潤濕。",
+            "構建線性聚合物主鏈網絡，賦予塗膜優異拉伸強度、斷裂伸長率及耐衝擊韌性，並具備優良的配方相容性。",
+            "Clearlink 1000/1100 具備卓越耐光性與抗黃變性；Unilink 4200 則提供極高性價比、高模數與極佳抗水解老化性能；Unilink 1030 可作為無汞環保催化劑替代有機汞。"
           ],
           "applications": [
-            "聚脲防腐噴塗塗層",
-            "澆注聚氨酯彈性體",
-            "高回彈軟質泡棉",
-            "車輛耐磨防撞襯裡"
+            "噴塗聚脲（Truck Bed Liners",
+            "屋頂防水",
+            "儲槽內襯）",
+            "聚胺酯自流平地坪",
+            "彈性塗料",
+            "澆注型彈性體",
+            "接著劑與密封膠。"
           ]
         }
       ],
       "applications": [],
       "single": [
         {
-          "docId": "UNI-02",
+          "docId": "CHA-SING-01",
           "filename": "TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf",
           "pdfPath": "techdatadb/3.unilink/4. Unilink Clearlink擴鏈劑單一產品應用技術資料/TI Clearlink 1000/TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "201707",
           "brand": "Dorf Ketal",
-          "shortLabel": "Clearlink 1000 聚脲塗層擴鏈劑",
-          "title": "CLEARLINK® 1000 Aliphatic Amine Chain Extender for Polyurea Coatings",
-          "titleEn": "TI DK Clearlink 1000 for Polyurea Coatings",
-          "model": "Clearlink 1000",
-          "productGroup": "Clearlink 1000",
-          "origin": "Dorf Ketal Application Data Sheet: SC0031 09/11 (Rev 2017/07)",
-          "desc": "介紹 Clearlink 1000 脂肪族二級二胺擴鏈劑在聚脲噴塗塗料中延長膠凝時間、提供顏色穩定性與耐候性的具體測試配方與力學數據。",
+          "shortLabel": "Clearlink 1000 聚脲塗層",
+          "title": "Clearlink® 1000 Aliphatic Diamine Chain Extender for Polyurea Coatings",
+          "titleEn": "TI DK Clearlink 1000 for Polyurea Coatings EN 201707.pdf",
+          "origin": "Clearlink® 1000 Aliphatic Amine for Polyurea Coatings Application Data Sheet (Dorf Ketal, SC0031)",
+          "desc": "說明 Clearlink 1000 脂肪族受阻二級二胺在脂肪族與芳香族聚脲噴塗系統中作為擴鏈劑的物理化學規格與凝膠時間調控特性。",
           "advantages": [
-            "配合異佛爾酮二異氰酸酯（IPDI）體系，隨添加量自 10% 增至 40%，膠凝時間自 < 1 秒精確延長至 11 秒，不沾手時間延長至 20 秒。",
-            "脂肪族分子結構具備極佳的光穩定性與耐候性，戶外日曬紫外線下不變色不黃變。",
-            "塗層展現優異抗張強度（最高達 2005 psi）、斷裂伸長率（480%~545%）與抗撕裂性能。"
+            "液態透明無色外觀，分子量 322，當量重 161，黏度極低（25°C 下約 25–35 mPa·s），25°C 比重 0.89–0.90，閃火點（Pensky-Martens 閉杯）最低 60.6°C（141°F）。",
+            "顯著延長異氰酸酯預聚體與多胺反應之凝膠時間（Gel time），使噴塗施工時塗膜具備更佳的流動性、光澤平整度與無氣泡缺陷表面。",
+            "賦予固化聚脲優異的耐紫外線（UV）耐候性、耐光黃變性及極高低溫耐衝擊韌性。"
           ],
           "applications": [
-            "戶外耐候聚脲噴塗",
-            "淺色/透明裝飾性防腐塗層",
-            "景觀防水與耐磨面漆"
-          ]
+            "耐候型聚脲噴塗塗料",
+            "貨車斗耐磨襯墊（Truck bed liners）",
+            "戶外防腐耐候塗層",
+            "聚脲地坪頂漆。"
+          ],
+          "productGroup": "Clearlink 耐候脂肪族系列"
         },
         {
-          "docId": "UNI-03",
+          "docId": "CHA-SING-02",
           "filename": "TI DK Unilink 1030 Catalyst for Cast Elastomers EN.pdf",
           "pdfPath": "techdatadb/3.unilink/4. Unilink Clearlink擴鏈劑單一產品應用技術資料/TI Unilink 1030/TI DK Unilink 1030 Catalyst for Cast Elastomers EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "Unilink 1030 澆注彈性體催化劑",
-          "title": "UNILINK® 1030 Polyurethane Catalyst for Cast Elastomers",
-          "titleEn": "TI DK Unilink 1030 Catalyst for Cast Elastomers",
-          "model": "Unilink 1030",
-          "productGroup": "Unilink 1030",
-          "origin": "Dorf Ketal Application Data Sheet: SC0081 02/13",
-          "desc": "介紹 Unilink 1030 專利鋯螯合物聚氨酯催化劑在聚酯澆注彈性體中取代汞催化劑之延遲快速固化（Snap Cure）特性與性能對照。",
+          "shortLabel": "Unilink 1030 澆注彈性體",
+          "title": "Unilink® 1030 Catalyst for Cast Elastomers",
+          "titleEn": "TI DK Unilink 1030 Catalyst for Cast Elastomers EN.pdf",
+          "origin": "Unilink® 1030 Catalyst for Cast Elastomers Application Data Sheet (Dorf Ketal, SC0029)",
+          "desc": "探討 Unilink 1030 專有鋯螯合物（溶解於反應性二醇溶劑中之無汞環保催化系統）在 TDI 及 MDI 澆注型聚胺酯彈性體（Cast Elastomers）製程中對適用期（Pot Life）與脫模時間之催化表現。",
           "advantages": [
-            "為溶解於反應性二醇溶劑中的專利鋯螯合物（含鋯量 11.1 wt%），專為取代毒性汞（Mercury）催化劑而設計。",
-            "提供極為類似汞催化劑的延遲快速固化特性（Delayed 'Snap Cure'），在模具充填階段維持低黏度流動，一旦凝膠則急遽硬化以利快速脫模。",
-            "反應性二醇溶劑完全鍵入聚氨酯骨架無殘留，選擇性催化凝膠反應（水/發泡反應性極低），色澤極淺適合淺色製品。"
+            "具備獨特延遲催化反應特性，於注模初期黏度增長平緩，使膠料流動充模順暢、不易夾帶微氣泡。",
+            "加熱硫化階段反應活性迅速飆升，大幅縮短凝膠後硬化脫模週期，顯著提高模具周轉率與生產效率。",
+            "產出之彈性體製品具備優異回彈性、耐磨耗性、高抗撕裂強度與低壓縮永久變形率。"
           ],
           "applications": [
-            "聚酯多元醇澆注型聚氨酯彈性體（Cast Elastomers）",
-            "無汞環保彈性體製造",
-            "顏色關鍵型聚氨酯模塑製品"
-          ]
+            "澆注型聚胺酯彈性體（CPU）",
+            "工業膠輥",
+            "實心輪胎",
+            "採礦篩板",
+            "高耐磨機械密封零件。"
+          ],
+          "productGroup": "Unilink 催化系統"
         },
         {
-          "docId": "UNI-04",
+          "docId": "CHA-SING-03",
           "filename": "TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams EN.pdf",
           "pdfPath": "techdatadb/3.unilink/4. Unilink Clearlink擴鏈劑單一產品應用技術資料/TI Unilink 4200/TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "Unilink 4200 軟質泡棉擴鏈劑",
-          "title": "UNILINK® 4200 Aromatic Diamine Chain Extender for Flexible Polyurethane Foams",
-          "titleEn": "TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams",
-          "model": "Unilink 4200",
-          "productGroup": "Unilink 4200",
-          "origin": "Dorf Ketal Application Data Sheet: SC0027 09/11",
-          "desc": "探討 Unilink 4200 芳香族受阻二胺擴鏈劑在塊狀軟泡與高回彈（HR）冷模塑泡棉中降低密度、提升承載與撕裂強度的實驗數據。",
+          "shortLabel": "Unilink 4200 軟質泡棉",
+          "title": "Unilink® 4200 Chain Extender for Flexible Polyurethane Foams",
+          "titleEn": "TI DK Unilink 4200 Chain Extender for Flexible Polyurethane Foams EN.pdf",
+          "origin": "Unilink® 4200 Aromatic Diamine - Chain Extender for Flexible Polyurethane Foams (Dorf Ketal, SC0027)",
+          "desc": "研究 Unilink 4200 芳香族二級二胺在標準 TDI 塊狀泡棉、高回彈（HR）泡棉及冷模塑泡棉中對泡孔微觀結構與力學承載性能的改善。",
           "advantages": [
-            "在 TDI 軟質塊狀高回彈泡棉中，添加 1~5 php Unilink 4200 可將泡棉密度由 43 kg/m3 降至 35 kg/m3，同時抗張強度自 172 升至 200 kPa。",
-            "撕裂強度大幅躍升（由 367 N/m 提升至 507 N/m），25% 壓陷硬度（IFD）由 172 提升至 241 kPa。",
-            "使泡棉泡孔更微細均勻且微孔沿發泡方向伸長率降低，顯著提升壓縮強度與尺寸穩定性，並軟化冷模塑泡棉手感。"
+            "液態芳香族二胺，比重 0.98–0.99，當量重約 153，羥值（胺值當量）362，低毒性（Ames negative）且對水分不敏感。",
+            "在高回彈泡棉配方中添加 1–5 php，可細化泡孔構造，減少發泡方向泡孔伸長率，顯著提高壓入硬度（IFD 25% 及 65%）與支撐因子（Sag factor 自 2.5 提升至 2.9）。",
+            "在降低泡棉密度（由 43 kg/m³ 降至 35 kg/m³）的同時，維持或提升抗張強度與撕裂強度（自 367 N/m 增至 507 N/m）。"
           ],
           "applications": [
-            "軟質塊狀泡棉（Slabstock Foam）",
-            "冷模塑高回彈泡棉（Cold Molded HR Foam）",
-            "汽車座椅與家具泡棉"
-          ]
+            "塊狀高回彈軟質聚胺酯泡棉",
+            "冷模塑汽車座椅座墊",
+            "沙發家具軟墊",
+            "聚酯型軟泡。"
+          ],
+          "productGroup": "Unilink 芳香族擴鏈劑系列"
         },
         {
-          "docId": "UNI-05",
+          "docId": "CHA-SING-04",
           "filename": "TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings EN.pdf",
           "pdfPath": "techdatadb/3.unilink/4. Unilink Clearlink擴鏈劑單一產品應用技術資料/TI Unilink 4200/TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings EN.pdf",
           "docType": "4. TI 單一產品技術資料",
           "lang": "EN (英文)",
           "version": "原廠發行版",
           "brand": "Dorf Ketal",
-          "shortLabel": "Unilink 4200 彈性體塗層擴鏈劑",
-          "title": "UNILINK® 4200 Aromatic Diamine Chain Extender for Elastomeric Coatings",
-          "titleEn": "TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings",
-          "model": "Unilink 4200",
-          "productGroup": "Unilink 4200",
-          "origin": "Dorf Ketal Application Data Sheet: SC0028 10/11",
-          "desc": "介紹 Unilink 4200 在聚氨酯與聚脲彈性體塗層中延緩凝膠速度、改善流平與層間附著力及提升動態力學性能的表現。",
+          "shortLabel": "Unilink 4200 彈性體塗層",
+          "title": "Unilink® 4200 Chain Extender for Elastomeric Coatings",
+          "titleEn": "TI DK Unilink 4200 for Chain Extender for Elastomeric Coatings EN.pdf",
+          "origin": "Unilink® 4200 Aromatic Diamine - Chain Extender for Elastomeric Coatings (Dorf Ketal, SC0028)",
+          "desc": "詳述 Unilink 4200 作為擴鏈劑在 TDI / MDI 彈性塗料與雙組分噴塗聚脲中調控凝膠時間、黏度與力學強度的應用數據。",
           "advantages": [
-            "受阻二級芳香族二胺結構具備較低反應活性，在雙組份聚氨酯/聚脲噴塗中提供優異的施工活化期與平整流平性。",
-            "與多種多元醇及異氰酸酯相容性良好，配方師可藉由引入高官能度多元醇自由調節交聯密度。",
-            "液態常溫流動易於泵送，對微量濕氣相對不敏感且 Ames 測試為陰性，固化塗層兼具高硬度、抗衝擊與耐磨耗。"
+            "在聚脲噴塗配方中隨著 Unilink 4200 添加量由 3.3 php 提升至 60.8 php，凝膠時間由 2.3 秒平緩延長至 36.0 秒，不發黏時間由 2.5 秒延長至 70.0 秒。",
+            "低黏度液態特性能改善底材潤濕性與附著力，消弭快速噴塗產生的桔皮與針孔缺陷，形成平整鏡面外觀。",
+            "室溫固化後塗膜展現優異抗張強度（>1700–2400 psi）、伸長率（135–155%）與邵氏 D 硬度（56–65 Shore D）。"
           ],
           "applications": [
-            "聚氨酯/聚脲彈性體保護塗料",
-            "工業耐磨防腐地坪",
-            "卡車貨斗防撞襯裡（Bed Liners）",
-            "管道外防腐塗層"
-          ]
+            "雙組分彈性體噴塗塗料",
+            "防腐與防水聚脲塗層",
+            "自流平彈性地坪",
+            "管道防腐內襯。"
+          ],
+          "productGroup": "Unilink 芳香族擴鏈劑系列"
         }
       ],
       "formulation": []
@@ -2265,9 +2415,116 @@ const TECH_DATABASE = {
   },
   "matting": {
     "slug": "matting",
-    "hasData": false,
+    "hasData": true,
     "tabs": {
-      "principles": [],
+      "principles": [
+        {
+          "docId": "MAT-PRIN-01",
+          "filename": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "pdfPath": "techdatadb/7.Matting Agent/1.原理/技術手冊6 消光粉 2026.07.16 v4.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "其他特化",
+          "shortLabel": "1. 消光散射機理",
+          "title": "消光粉技術手冊：消光原理",
+          "titleEn": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "origin": "技術手冊6 消光粉 2024-07 (Brochure No. 6) - 消光粉的消光原理",
+          "desc": "說明二氧化矽消光劑在漆膜成膜乾燥時的物理微觀機制，透過溶劑揮發與漆膜收縮使消光微粒均勻分佈並形成粗糙表面，促進入射光線散射以達到消光效果。",
+          "advantages": [
+            "漆膜在乾燥成膜過程中，隨著溶劑揮發與漆膜自身體積收縮，消光粉會均勻分佈在整個漆膜當中，形成微觀粗糙表面。",
+            "外部光線照射於漆膜粗糙表面時產生散射效應（漫反射），顯著降低鏡面反射率，使表面光澤低於 100 度。",
+            "消光效果之強弱直接取決於漆膜收縮後顆粒在表面所形成的粗糙程度與光線漫反射比例。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "MAT-PRIN-02",
+          "filename": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "pdfPath": "techdatadb/7.Matting Agent/1.原理/技術手冊6 消光粉 2026.07.16 v4.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "其他特化",
+          "shortLabel": "2. 平均粒徑及分佈",
+          "title": "消光粉技術手冊：平均粒徑",
+          "titleEn": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "origin": "技術手冊6 消光粉 2024-07 - 消光粉選擇重要技術指標：一、平均粒徑 (Average Particle Size)",
+          "desc": "分析消光劑平均粒徑大小與粒徑分佈寬窄對塗料消光效率、黏度負擔、塗膜手感外觀及透明性之平衡控制技術準則。",
+          "advantages": [
+            "消光粉平均粒徑越大則消光效率越高，但粒徑過大會導致漆膜表面過度粗糙並破壞手感與外觀；粒徑太細則消光效率較低且會增加塗料黏度，一般塗料建議平均粒徑以 4–8 µm 為佳。",
+            "粒徑分佈越窄越好，過寬的粒徑分佈含有大量粗顆粒（造成過度粗糙）與細顆粒（造成體系增黏），需依乾膜厚薄匹配適當粒徑。",
+            "在相同添加量前提下，消光粉平均粒徑越小則漆膜透明性越佳，但相應消光效率也會隨之降低。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "MAT-PRIN-03",
+          "filename": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "pdfPath": "techdatadb/7.Matting Agent/1.原理/技術手冊6 消光粉 2026.07.16 v4.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "其他特化",
+          "shortLabel": "3. 孔隙率與微孔容積",
+          "title": "消光粉技術手冊：孔隙率",
+          "titleEn": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "origin": "技術手冊6 消光粉 2024-07 - 消光粉選擇重要技術指標：三、孔隙率 (Pore Volume)",
+          "desc": "闡述消光劑微孔孔隙率（Pore Volume / 微孔容積）與消光性能之正向關係，解析相同粒徑下高孔隙率降低塗膜光澤之微觀機制。",
+          "advantages": [
+            "消光粉的孔隙率越高，消光性能越好；降低光澤度本質上是消光粉粒徑與微孔結構的綜合效應。",
+            "對於相同平均粒徑之消光粉而言，高孔隙率消光粉因粒子所含微孔容積大，消光效果顯著優於低孔隙率產品。",
+            "粒子微孔容積越大則消光性能越強，高孔隙率消光粉能促使漆膜光澤降得更低。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "MAT-PRIN-04",
+          "filename": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "pdfPath": "techdatadb/7.Matting Agent/1.原理/技術手冊6 消光粉 2026.07.16 v4.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "其他特化",
+          "shortLabel": "4. 塗膜膜厚影響",
+          "title": "消光粉技術手冊：膜厚",
+          "titleEn": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "origin": "技術手冊6 消光粉 2024-07 - 消光粉選擇重要技術指標：四、膜厚 (Film Thickness)",
+          "desc": "探討塗層膜厚（Film Thickness）對消光效果之直接影響，說明相同消光劑規格與添加比例下膜厚增厚對光澤消減之阻抗規律。",
+          "advantages": [
+            "在相同孔隙率及粒徑前提下，消光劑添加量相同時，塗膜膜厚越厚，消光度越差（即表面光澤越高）。",
+            "無論消光粉是否有經有機化合物（如高分子蠟）表面處理，膜厚增加對消光度的負面影響規律均維持一致。",
+            "配方設計需根據乾膜厚薄精確選擇不同粒徑之消光粉，以在目標膜厚下達到最佳消光效果。"
+          ],
+          "applications": []
+        },
+        {
+          "docId": "MAT-PRIN-05",
+          "filename": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "pdfPath": "techdatadb/7.Matting Agent/1.原理/技術手冊6 消光粉 2026.07.16 v4.docx",
+          "docType": "1. 原理機制",
+          "lang": "TW (繁體中文)",
+          "version": "2026",
+          "brand": "其他特化",
+          "shortLabel": "5. 樹脂系統與分散工藝",
+          "title": "消光粉技術手冊：樹脂系統",
+          "titleEn": "技術手冊6 消光粉 2026.07.16 v4.docx",
+          "origin": "技術手冊6 消光粉 2024-07 - 五、樹脂系統 (The Resin System) 及 行業應用",
+          "desc": "分析樹脂交聯機制、固成份、溶劑蒸發速率與乾燥方法對塗膜收縮消光之綜合影響，並彙總各樹脂塗料系統之建議消光劑添加量與高速分散工藝。",
+          "advantages": [
+            "消光粉之消光效果受樹脂系統（不同交聯機制）、固含量（揮發物溶劑比例）、溶劑類型（不同蒸發速度）及乾燥方法（快或慢）四大關鍵因素影響。",
+            "各體系建議添加量（按總配方量）：硝化棉（NC）系統為 1.0%–5.0%；聚胺酯（PU）及烤漆系統為 2.0%–12.0%；UV 光固化系統為 2.0%–12.0%；水性系統為 1.0%–12.0%（使用 TS 100 牌號用量可減少一半）；滑劑用途為 1.0%–5.0%。",
+            "分散工藝規範：使用高速攪拌機分散（約 1500 轉/min，時間 15–20 分鐘，溫度嚴格控制在 50°C 以下），一般選用表面經有機處理（高分子蠟處理）之消光粉更易分散且不易產生硬沉澱。"
+          ],
+          "applications": [
+            "硝化棉（NC）塗料",
+            "聚胺酯（PU）塗料",
+            "金屬烤漆系統",
+            "UV 光固化塗料",
+            "水性塗料。"
+          ]
+        }
+      ],
       "catalog": [],
       "applications": [],
       "single": [],
@@ -2286,128 +2543,135 @@ const TECH_DATABASE = {
     }
   }
 };
-
-// 技術專區狀態管理
 const TechState = {
-    activeCategory: 'tyzor',
-    activeSubTab: 'principles', // 'principles', 'catalog', 'applications', 'single', 'formulation'
-    activeDocIndices: {
-        'tyzor': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
-        'carbon-black': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
-        'wax': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
-        'chain': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 }
-    }
+  activeCategory: 'tyzor',
+  activeSubTab: 'principles', // 'principles', 'catalog', 'applications', 'single', 'formulation'
+  activeDocIndices: {
+    'tyzor': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
+    'carbon-black': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
+    'wax': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
+    'chain': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 },
+    'matting': { 'principles': 0, 'catalog': 0, 'applications': 0, 'single': 0, 'formulation': 0 }
+  }
 };
 
 /**
  * 智慧取得特定產品線最佳的預設子分頁 (優先維持當前或選擇有文件的分頁，杜絕空白頁面)
  */
 function getBestSubTabForCategory(slug) {
-    const catData = TECH_DATABASE[slug];
-    if (!catData || !catData.tabs) return 'principles';
+  const catData = TECH_DATABASE[slug];
+  if (!catData || !catData.tabs) return 'principles';
 
-    // 若當前選取的 subTab 在目標類別中有文件，維持當前選取
-    if (TechState.activeSubTab && catData.tabs[TechState.activeSubTab] && catData.tabs[TechState.activeSubTab].length > 0) {
-        return TechState.activeSubTab;
-    }
+  // 若當前選取的 subTab 在目標類別中有文件，維持當前選取
+  if (TechState.activeSubTab && catData.tabs[TechState.activeSubTab] && catData.tabs[TechState.activeSubTab].length > 0) {
+    return TechState.activeSubTab;
+  }
 
-    // 依自然順序 (1.原理 -> 2.目錄 -> 3.應用技術 -> 4.單一產品技術 -> 5.配方) 搜尋首個有資料的維度分頁
-    const candidates = ['principles', 'catalog', 'applications', 'single', 'formulation'];
-    for (const tabKey of candidates) {
-        if (catData.tabs[tabKey] && catData.tabs[tabKey].length > 0) {
-            return tabKey;
-        }
+  // 依自然順序 (1.原理 -> 2.目錄 -> 3.應用技術 -> 4.單一產品技術 -> 5.配方) 搜尋首個有資料的維度分頁
+  const candidates = ['principles', 'catalog', 'applications', 'single', 'formulation'];
+  for (const tabKey of candidates) {
+    if (catData.tabs[tabKey] && catData.tabs[tabKey].length > 0) {
+      return tabKey;
     }
-    return 'principles';
+  }
+  return 'principles';
 }
 
 /**
- * 安全解析靜態資源 URL (支援 baseHref)
+ * 安全解析靜態資源 URL (支援 baseHref 與快取版本號)
  */
 function resolveAssetUrl(relPath) {
-    if (!relPath) return '';
-    if (relPath.startsWith('http://') || relPath.startsWith('https://') || relPath.startsWith('data:')) {
-        return relPath;
-    }
-    const baseHref = window.APP_BASE_HREF || '/';
-    const cleanPath = relPath.replace(/^\.?\//, '');
-    return (baseHref + cleanPath).replace(/\/+/g, '/');
+  if (!relPath) return '';
+  if (relPath.startsWith('http://') || relPath.startsWith('https://') || relPath.startsWith('data:')) {
+    return relPath;
+  }
+  if (typeof window !== 'undefined' && typeof window.resolveAssetUrl === 'function' && window.resolveAssetUrl !== resolveAssetUrl) {
+    return window.resolveAssetUrl(relPath);
+  }
+  const baseHref = window.APP_BASE_HREF || '/';
+  const cleanPath = relPath.replace(/^\.?\//, '');
+  let fullUrl = (baseHref + cleanPath).replace(/\/+/g, '/');
+  const appVer = (typeof window !== 'undefined' && window.APP_VERSION) ? window.APP_VERSION : '20261014_v1';
+  if ((cleanPath.endsWith('.json') || cleanPath.endsWith('.webp') || cleanPath.endsWith('.png')) && !fullUrl.includes('v=')) {
+    fullUrl += (fullUrl.includes('?') ? '&' : '?') + `v=${appVer}`;
+  }
+  return fullUrl;
 }
 
 /**
  * 安全編碼文件 URL (保留斜線但轉義空格與中文)
  */
 function getEncodedPdfUrl(relPath) {
-    if (!relPath) return '';
-    const cleanPath = relPath.replace(/^\.?\//, '');
-    const segments = cleanPath.split('/');
-    const encodedSegments = segments.map(seg => encodeURIComponent(seg));
-    const finalPath = encodedSegments.join('/');
-    return resolveAssetUrl(finalPath) + '#toolbar=0&navpanes=0';
+  if (!relPath) return '';
+  const cleanPath = relPath.replace(/^\.?\//, '');
+  const segments = cleanPath.split('/');
+  const encodedSegments = segments.map(seg => encodeURIComponent(seg));
+  const finalPath = encodedSegments.join('/');
+  return resolveAssetUrl(finalPath) + '#toolbar=0&navpanes=0';
 }
 
 /**
  * 切換技術專區五大維度子分頁
  */
 function switchTechSubTab(subTabKey) {
-    TechState.activeSubTab = subTabKey;
-    const subTabs = ['principles', 'catalog', 'applications', 'single', 'formulation'];
+  TechState.activeSubTab = subTabKey;
+  const subTabs = ['principles', 'catalog', 'applications', 'single', 'formulation'];
 
-    subTabs.forEach(key => {
-        const btn = document.getElementById(`tech-subtab-${key}`);
-        const panel = document.getElementById(`tech-panel-${key}`);
+  subTabs.forEach(key => {
+    const btn = document.getElementById(`tech-subtab-${key}`);
+    const panel = document.getElementById(`tech-panel-${key}`);
 
-        if (btn) {
-            if (key === subTabKey) {
-                btn.className = "tech-subtab-btn active";
-            } else {
-                btn.className = "tech-subtab-btn";
-            }
+    if (btn) {
+      if (key === subTabKey) {
+        btn.className = "tech-subtab-btn active";
+      } else {
+        btn.className = "tech-subtab-btn";
+      }
+    }
+
+    if (panel) {
+      if (key === subTabKey) {
+        panel.classList.remove('hidden');
+        // 若包含未渲染的 PDF 容器，觸發渲染
+        const viewer = panel.querySelector('.pdf-viewer-container');
+        if (viewer && !viewer.querySelector('canvas')) {
+          const pdfUrl = viewer.getAttribute('data-pdf-url');
+          if (pdfUrl && viewer.id) {
+            renderPdfDocumentToContainer(viewer.id, pdfUrl);
+          }
         }
-
-        if (panel) {
-            if (key === subTabKey) {
-                panel.classList.remove('hidden');
-                // 若包含未渲染的 PDF 容器，觸發渲染
-                const viewer = panel.querySelector('.pdf-viewer-container');
-                if (viewer && !viewer.querySelector('canvas')) {
-                    const pdfUrl = viewer.getAttribute('data-pdf-url');
-                    if (pdfUrl && viewer.id) {
-                        renderPdfDocumentToContainer(viewer.id, pdfUrl);
-                    }
-                }
-            } else {
-                panel.classList.add('hidden');
-            }
-        }
-    });
+      } else {
+        panel.classList.add('hidden');
+      }
+    }
+  });
 }
 
 /**
  * 建立五大子分頁單行標籤列 HTML
  */
 function buildSubTabNavHtml(activeKey, hasData = true) {
-    const tabs = [
-        { key: 'principles', label: '1. 原理', icon: 'fa-atom' },
-        { key: 'catalog', label: '2. 目錄', icon: 'fa-list-check' },
-        { key: 'applications', label: '3. 應用技術', icon: 'fa-industry' },
-        { key: 'single', label: '4. 單一產品技術', icon: 'fa-flask-vial' },
-        { key: 'formulation', label: '5. 配方', icon: 'fa-clipboard-list' }
-    ];
+  const tabs = [
+    { key: 'principles', label: '1. 原理', icon: 'fa-atom' },
+    { key: 'catalog', label: '2. 目錄', icon: 'fa-list-check' },
+    { key: 'applications', label: '3. 應用技術', icon: 'fa-industry' },
+    { key: 'single', label: '4. 單一產品技術', icon: 'fa-flask-vial' },
+    { key: 'formulation', label: '5. 配方', icon: 'fa-clipboard-list' }
+  ];
 
-    return `
+  return `
         <div class="tech-subtab-strip" role="tablist" aria-label="技術專題五大核心維度導覽">
             ${tabs.map(tab => {
-        const isActive = (tab.key === activeKey);
-        const activeCls = isActive ? "active" : "";
-        return `
+    const isActive = (tab.key === activeKey);
+    const activeCls = isActive ? "active" : "";
+    return `
                     <button type="button" onclick="switchTechSubTab('${tab.key}')" id="tech-subtab-${tab.key}"
                             class="tech-subtab-btn ${activeCls}">
                         <i class="fa-solid ${tab.icon} text-xs"></i>
                         <span>${tab.label}</span>
                     </button>
                 `;
-    }).join('')}
+  }).join('')}
         </div>
     `;
 }
@@ -2416,69 +2680,69 @@ function buildSubTabNavHtml(activeKey, hasData = true) {
  * 切換特定分頁中的當前選取文件 (Munzing 風格下拉選單連動，立即觸發 PDF Canvas 載入)
  */
 function selectTechDoc(slug, tabKey, docIdx) {
-    if (!TechState.activeDocIndices[slug]) {
-        TechState.activeDocIndices[slug] = {
-            'principles': 0,
-            'catalog': 0,
-            'applications': 0,
-            'single': 0,
-            'formulation': 0
-        };
+  if (!TechState.activeDocIndices[slug]) {
+    TechState.activeDocIndices[slug] = {
+      'principles': 0,
+      'catalog': 0,
+      'applications': 0,
+      'single': 0,
+      'formulation': 0
+    };
+  }
+  TechState.activeDocIndices[slug][tabKey] = docIdx;
+
+  const catData = TECH_DATABASE[slug];
+  if (!catData || !catData.tabs[tabKey]) return;
+  const docs = catData.tabs[tabKey];
+  if (!docs || docIdx >= docs.length) return;
+
+  // 1. 同步更新下拉式選單值 (Munzing 下拉式卷軸選單)
+  const selectElem = document.getElementById(`doc-select-${slug}-${tabKey}`);
+  if (selectElem && selectElem.value !== String(docIdx)) {
+    selectElem.value = String(docIdx);
+  }
+
+  // 2. 更新篇數指示器與 Prev/Next 按鈕狀態
+  const countElem = document.getElementById(`doc-count-current-${slug}-${tabKey}`);
+  if (countElem) {
+    countElem.textContent = String(docIdx + 1);
+  }
+  const prevBtn = document.getElementById(`doc-prev-btn-${slug}-${tabKey}`);
+  const nextBtn = document.getElementById(`doc-next-btn-${slug}-${tabKey}`);
+  if (prevBtn) prevBtn.disabled = (docIdx <= 0);
+  if (nextBtn) nextBtn.disabled = (docIdx >= docs.length - 1);
+
+  // 3. 更新內容檢視器 (雙欄視圖：左欄 PDF Canvas 線上預覽 + 右欄技術摘要重點)
+  const viewerContainer = document.getElementById(`viewer-${slug}-${tabKey}`);
+  if (viewerContainer) {
+    const doc = docs[docIdx];
+    viewerContainer.innerHTML = buildSingleDocLayoutHtml(doc, slug, tabKey);
+
+    // 重要修復：立即為新選取的文件觸發 PDF.js 渲染任務
+    const newViewer = viewerContainer.querySelector('.pdf-viewer-container');
+    if (newViewer) {
+      const pdfUrl = newViewer.getAttribute('data-pdf-url');
+      if (pdfUrl && newViewer.id) {
+        renderPdfDocumentToContainer(newViewer.id, pdfUrl);
+      }
     }
-    TechState.activeDocIndices[slug][tabKey] = docIdx;
-
-    const catData = TECH_DATABASE[slug];
-    if (!catData || !catData.tabs[tabKey]) return;
-    const docs = catData.tabs[tabKey];
-    if (!docs || docIdx >= docs.length) return;
-
-    // 1. 同步更新下拉式選單值 (Munzing 下拉式卷軸選單)
-    const selectElem = document.getElementById(`doc-select-${slug}-${tabKey}`);
-    if (selectElem && selectElem.value !== String(docIdx)) {
-        selectElem.value = String(docIdx);
-    }
-
-    // 2. 更新篇數指示器與 Prev/Next 按鈕狀態
-    const countElem = document.getElementById(`doc-count-current-${slug}-${tabKey}`);
-    if (countElem) {
-        countElem.textContent = String(docIdx + 1);
-    }
-    const prevBtn = document.getElementById(`doc-prev-btn-${slug}-${tabKey}`);
-    const nextBtn = document.getElementById(`doc-next-btn-${slug}-${tabKey}`);
-    if (prevBtn) prevBtn.disabled = (docIdx <= 0);
-    if (nextBtn) nextBtn.disabled = (docIdx >= docs.length - 1);
-
-    // 3. 更新內容檢視器 (雙欄視圖：左欄 PDF Canvas 線上預覽 + 右欄技術摘要重點)
-    const viewerContainer = document.getElementById(`viewer-${slug}-${tabKey}`);
-    if (viewerContainer) {
-        const doc = docs[docIdx];
-        viewerContainer.innerHTML = buildSingleDocLayoutHtml(doc, slug, tabKey);
-
-        // 重要修復：立即為新選取的文件觸發 PDF.js 渲染任務
-        const newViewer = viewerContainer.querySelector('.pdf-viewer-container');
-        if (newViewer) {
-            const pdfUrl = newViewer.getAttribute('data-pdf-url');
-            if (pdfUrl && newViewer.id) {
-                renderPdfDocumentToContainer(newViewer.id, pdfUrl);
-            }
-        }
-    }
+  }
 }
 
 /**
  * 快速前後切換文件 (上一篇 / 下一篇)
  */
 function navigateTechDoc(slug, tabKey, step) {
-    const catData = TECH_DATABASE[slug];
-    if (!catData || !catData.tabs[tabKey]) return;
-    const docs = catData.tabs[tabKey];
-    if (!docs || docs.length <= 1) return;
+  const catData = TECH_DATABASE[slug];
+  if (!catData || !catData.tabs[tabKey]) return;
+  const docs = catData.tabs[tabKey];
+  if (!docs || docs.length <= 1) return;
 
-    const currentIdx = (TechState.activeDocIndices[slug] && TechState.activeDocIndices[slug][tabKey]) || 0;
-    const newIdx = currentIdx + step;
-    if (newIdx >= 0 && newIdx < docs.length) {
-        selectTechDoc(slug, tabKey, newIdx);
-    }
+  const currentIdx = (TechState.activeDocIndices[slug] && TechState.activeDocIndices[slug][tabKey]) || 0;
+  const newIdx = currentIdx + step;
+  if (newIdx >= 0 && newIdx < docs.length) {
+    selectTechDoc(slug, tabKey, newIdx);
+  }
 }
 
 // 全域快取 PDF.js 渲染任務與 PDF Document 物件
@@ -2489,208 +2753,208 @@ const techPdfDocCache = {};
  * 使用 PDF.js 將 PDF 多頁渲染至 Canvas 容器 (完全防右鍵另存新檔、高解析度抗模糊、流暢滾動)
  */
 async function renderPdfDocumentToContainer(containerId, pdfUrl) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+  const container = document.getElementById(containerId);
+  if (!container) return;
 
-    if (techPdfRenderTasks[containerId]) {
-        techPdfRenderTasks[containerId].cancelled = true;
+  if (techPdfRenderTasks[containerId]) {
+    techPdfRenderTasks[containerId].cancelled = true;
+  }
+  const currentTask = { cancelled: false };
+  techPdfRenderTasks[containerId] = currentTask;
+
+  const cleanPdfUrl = pdfUrl.split('#')[0];
+
+  try {
+    if (typeof window.pdfjsLib === 'undefined') {
+      console.warn('PDF.js 未就緒');
+      return;
     }
-    const currentTask = { cancelled: false };
-    techPdfRenderTasks[containerId] = currentTask;
 
-    const cleanPdfUrl = pdfUrl.split('#')[0];
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = (window.APP_BASE_HREF || '/') + 'js/vendor/pdf.worker.min.js';
 
-    try {
-        if (typeof window.pdfjsLib === 'undefined') {
-            console.warn('PDF.js 未就緒');
-            return;
-        }
-
-        window.pdfjsLib.GlobalWorkerOptions.workerSrc = (window.APP_BASE_HREF || '/') + 'js/vendor/pdf.worker.min.js';
-
-        let pdf = techPdfDocCache[cleanPdfUrl];
-        if (!pdf) {
-            const loadingTask = window.pdfjsLib.getDocument(cleanPdfUrl);
-            pdf = await loadingTask.promise;
-            techPdfDocCache[cleanPdfUrl] = pdf;
-        }
-        if (currentTask.cancelled) return;
-
-        // 僅渲染第 1 頁作為技術文件封面 (Cover)，計算等比例縮放，絕不拉伸變形
-        const page = await pdf.getPage(1);
-        if (currentTask.cancelled) return;
-
-        let containerWidth = container.clientWidth;
-        let containerHeight = container.clientHeight;
-        if (!containerWidth || containerWidth < 200) {
-            containerWidth = container.offsetWidth || Math.min(520, window.innerWidth - 48);
-        }
-        if (!containerHeight || containerHeight < 300) {
-            containerHeight = container.offsetHeight || (window.innerWidth >= 640 ? 640 : 580);
-        }
-        const availWidth = Math.max(200, containerWidth - 24);
-        const availHeight = Math.max(300, containerHeight - 24);
-
-        const unscaledViewport = page.getViewport({ scale: 1 });
-
-        // 嚴格等比例縮放：取寬與高容納比率的較小者，保證完整保留原文件版面比例，完全不拉伸
-        const scaleW = availWidth / unscaledViewport.width;
-        const scaleH = availHeight / unscaledViewport.height;
-        const fitScale = Math.min(scaleW, scaleH);
-
-        const dpr = window.devicePixelRatio || 1;
-        const viewport = page.getViewport({ scale: fitScale * dpr });
-
-        const canvasWrapper = document.createElement('div');
-        canvasWrapper.className = 'cover-canvas-wrapper w-full h-full flex items-center justify-center p-2 select-none pointer-events-none';
-        canvasWrapper.setAttribute('oncontextmenu', 'return false;');
-        canvasWrapper.setAttribute('draggable', 'false');
-
-        const canvas = document.createElement('canvas');
-        canvas.className = 'rounded-lg shadow-sm border border-slate-200 bg-white block transition-transform duration-200 group-hover:scale-[1.01] pointer-events-none select-none';
-        canvas.style.userSelect = 'none';
-        canvas.style.webkitUserSelect = 'none';
-        const cssW = Math.floor(unscaledViewport.width * fitScale);
-        const cssH = Math.floor(unscaledViewport.height * fitScale);
-        canvas.style.width = cssW + 'px';
-        canvas.style.height = cssH + 'px';
-        canvas.style.maxWidth = '100%';
-        canvas.style.maxHeight = '100%';
-        canvas.style.objectFit = 'contain';
-        canvas.style.aspectRatio = `${unscaledViewport.width} / ${unscaledViewport.height}`;
-
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        await page.render({
-            canvasContext: context,
-            viewport: viewport
-        }).promise;
-
-        if (currentTask.cancelled) return;
-
-        // 移除載入轉圈文字及可能存在的舊 canvas
-        container.querySelectorAll('.loading-spinner, .text-slate-400, .cover-canvas-wrapper').forEach(el => el.remove());
-
-        // 插入封面 Canvas
-        canvasWrapper.appendChild(canvas);
-        container.appendChild(canvasWrapper);
-    } catch (err) {
-        console.error('PDF.js cover render error:', err);
+    let pdf = techPdfDocCache[cleanPdfUrl];
+    if (!pdf) {
+      const loadingTask = window.pdfjsLib.getDocument(cleanPdfUrl);
+      pdf = await loadingTask.promise;
+      techPdfDocCache[cleanPdfUrl] = pdf;
     }
+    if (currentTask.cancelled) return;
+
+    // 僅渲染第 1 頁作為技術文件封面 (Cover)，計算等比例縮放，絕不拉伸變形
+    const page = await pdf.getPage(1);
+    if (currentTask.cancelled) return;
+
+    let containerWidth = container.clientWidth;
+    let containerHeight = container.clientHeight;
+    if (!containerWidth || containerWidth < 200) {
+      containerWidth = container.offsetWidth || Math.min(520, window.innerWidth - 48);
+    }
+    if (!containerHeight || containerHeight < 300) {
+      containerHeight = container.offsetHeight || (window.innerWidth >= 640 ? 640 : 580);
+    }
+    const availWidth = Math.max(200, containerWidth - 24);
+    const availHeight = Math.max(300, containerHeight - 24);
+
+    const unscaledViewport = page.getViewport({ scale: 1 });
+
+    // 嚴格等比例縮放：取寬與高容納比率的較小者，保證完整保留原文件版面比例，完全不拉伸
+    const scaleW = availWidth / unscaledViewport.width;
+    const scaleH = availHeight / unscaledViewport.height;
+    const fitScale = Math.min(scaleW, scaleH);
+
+    const dpr = window.devicePixelRatio || 1;
+    const viewport = page.getViewport({ scale: fitScale * dpr });
+
+    const canvasWrapper = document.createElement('div');
+    canvasWrapper.className = 'cover-canvas-wrapper w-full h-full flex items-center justify-center p-2 select-none pointer-events-none';
+    canvasWrapper.setAttribute('oncontextmenu', 'return false;');
+    canvasWrapper.setAttribute('draggable', 'false');
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'rounded-lg shadow-sm border border-slate-200 bg-white block transition-transform duration-200 group-hover:scale-[1.01] pointer-events-none select-none';
+    canvas.style.userSelect = 'none';
+    canvas.style.webkitUserSelect = 'none';
+    const cssW = Math.floor(unscaledViewport.width * fitScale);
+    const cssH = Math.floor(unscaledViewport.height * fitScale);
+    canvas.style.width = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    canvas.style.maxWidth = '100%';
+    canvas.style.maxHeight = '100%';
+    canvas.style.objectFit = 'contain';
+    canvas.style.aspectRatio = `${unscaledViewport.width} / ${unscaledViewport.height}`;
+
+    const context = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    await page.render({
+      canvasContext: context,
+      viewport: viewport
+    }).promise;
+
+    if (currentTask.cancelled) return;
+
+    // 移除載入轉圈文字及可能存在的舊 canvas
+    container.querySelectorAll('.loading-spinner, .text-slate-400, .cover-canvas-wrapper').forEach(el => el.remove());
+
+    // 插入封面 Canvas
+    canvasWrapper.appendChild(canvas);
+    container.appendChild(canvasWrapper);
+  } catch (err) {
+    console.error('PDF.js cover render error:', err);
+  }
 }
 
 async function renderPdfFullscreen(container, pdfUrl, scaleMultiplier = 1.0) {
-    const cleanPdfUrl = pdfUrl.split('#')[0];
-    currentModalScaleMultiplier = scaleMultiplier;
-    currentModalPdfUrl = pdfUrl;
+  const cleanPdfUrl = pdfUrl.split('#')[0];
+  currentModalScaleMultiplier = scaleMultiplier;
+  currentModalPdfUrl = pdfUrl;
 
-    const zoomIndicator = document.getElementById('tech-modal-zoom-val');
-    if (zoomIndicator) {
-        zoomIndicator.textContent = `${Math.round(scaleMultiplier * 100)}%`;
+  const zoomIndicator = document.getElementById('tech-modal-zoom-val');
+  if (zoomIndicator) {
+    zoomIndicator.textContent = `${Math.round(scaleMultiplier * 100)}%`;
+  }
+
+  try {
+    if (typeof window.pdfjsLib === 'undefined') {
+      container.innerHTML = `<iframe src="${cleanPdfUrl}#toolbar=0&navpanes=0" class="w-full h-full border-0"></iframe>`;
+      return;
     }
 
-    try {
-        if (typeof window.pdfjsLib === 'undefined') {
-            container.innerHTML = `<iframe src="${cleanPdfUrl}#toolbar=0&navpanes=0" class="w-full h-full border-0"></iframe>`;
-            return;
-        }
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = (window.APP_BASE_HREF || '/') + 'js/vendor/pdf.worker.min.js';
 
-        window.pdfjsLib.GlobalWorkerOptions.workerSrc = (window.APP_BASE_HREF || '/') + 'js/vendor/pdf.worker.min.js';
+    let pdf = techPdfDocCache[cleanPdfUrl];
+    if (!pdf) {
+      const loadingTask = window.pdfjsLib.getDocument(cleanPdfUrl);
+      pdf = await loadingTask.promise;
+      techPdfDocCache[cleanPdfUrl] = pdf;
+    }
 
-        let pdf = techPdfDocCache[cleanPdfUrl];
-        if (!pdf) {
-            const loadingTask = window.pdfjsLib.getDocument(cleanPdfUrl);
-            pdf = await loadingTask.promise;
-            techPdfDocCache[cleanPdfUrl] = pdf;
-        }
+    container.innerHTML = '';
+    const modalWidth = container.clientWidth || window.innerWidth || 1200;
+    // 全畫面模式下，提供寬廣舒適的滿版閱讀視野 (桌面滿版達 1180px，自適應且支援放大縮小)
+    const baseTargetWidth = Math.min(1180, Math.max(680, modalWidth - 64));
+    const targetWidth = Math.max(320, baseTargetWidth * scaleMultiplier);
+    const dpr = window.devicePixelRatio || 1;
 
-        container.innerHTML = '';
-        const modalWidth = container.clientWidth || window.innerWidth || 1200;
-        // 全畫面模式下，提供寬廣舒適的滿版閱讀視野 (桌面滿版達 1180px，自適應且支援放大縮小)
-        const baseTargetWidth = Math.min(1180, Math.max(680, modalWidth - 64));
-        const targetWidth = Math.max(320, baseTargetWidth * scaleMultiplier);
-        const dpr = window.devicePixelRatio || 1;
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      const page = await pdf.getPage(pageNum);
+      const unscaledViewport = page.getViewport({ scale: 1 });
+      const scale = targetWidth / unscaledViewport.width;
+      const finalScale = Math.max(1.0, scale);
+      const viewport = page.getViewport({ scale: finalScale * dpr });
 
-        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            const page = await pdf.getPage(pageNum);
-            const unscaledViewport = page.getViewport({ scale: 1 });
-            const scale = targetWidth / unscaledViewport.width;
-            const finalScale = Math.max(1.0, scale);
-            const viewport = page.getViewport({ scale: finalScale * dpr });
+      const canvasWrapper = document.createElement('div');
+      canvasWrapper.className = 'w-full flex flex-col items-center mb-8 select-none';
+      canvasWrapper.setAttribute('oncontextmenu', 'return false;');
+      canvasWrapper.setAttribute('draggable', 'false');
 
-            const canvasWrapper = document.createElement('div');
-            canvasWrapper.className = 'w-full flex flex-col items-center mb-8 select-none';
-            canvasWrapper.setAttribute('oncontextmenu', 'return false;');
-            canvasWrapper.setAttribute('draggable', 'false');
+      const pageLabel = document.createElement('div');
+      pageLabel.className = 'text-[11px] font-bold text-slate-400 mb-2 px-3 py-0.5 rounded-full bg-slate-900 border border-slate-800 shadow-sm';
+      pageLabel.textContent = `第 ${pageNum} 頁 / 共 ${pdf.numPages} 頁`;
 
-            const pageLabel = document.createElement('div');
-            pageLabel.className = 'text-[11px] font-bold text-slate-400 mb-2 px-3 py-0.5 rounded-full bg-slate-900 border border-slate-800 shadow-sm';
-            pageLabel.textContent = `第 ${pageNum} 頁 / 共 ${pdf.numPages} 頁`;
+      const canvas = document.createElement('canvas');
+      canvas.className = 'rounded-md shadow-2xl bg-white block max-w-none border border-slate-700/60';
+      canvas.style.pointerEvents = 'none';
+      canvas.style.userSelect = 'none';
+      canvas.style.webkitUserSelect = 'none';
+      canvas.style.width = Math.floor(unscaledViewport.width * finalScale) + 'px';
+      canvas.style.height = Math.floor(unscaledViewport.height * finalScale) + 'px';
 
-            const canvas = document.createElement('canvas');
-            canvas.className = 'rounded-md shadow-2xl bg-white block max-w-none border border-slate-700/60';
-            canvas.style.pointerEvents = 'none';
-            canvas.style.userSelect = 'none';
-            canvas.style.webkitUserSelect = 'none';
-            canvas.style.width = Math.floor(unscaledViewport.width * finalScale) + 'px';
-            canvas.style.height = Math.floor(unscaledViewport.height * finalScale) + 'px';
+      const context = canvas.getContext('2d');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
 
-            const context = canvas.getContext('2d');
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
+      await page.render({
+        canvasContext: context,
+        viewport: viewport
+      }).promise;
 
-            await page.render({
-                canvasContext: context,
-                viewport: viewport
-            }).promise;
-
-            canvasWrapper.appendChild(pageLabel);
-            canvasWrapper.appendChild(canvas);
-            container.appendChild(canvasWrapper);
-        }
-    } catch (err) {
-        console.error('Fullscreen render error:', err);
-        container.innerHTML = `
+      canvasWrapper.appendChild(pageLabel);
+      canvasWrapper.appendChild(canvas);
+      container.appendChild(canvasWrapper);
+    }
+  } catch (err) {
+    console.error('Fullscreen render error:', err);
+    container.innerHTML = `
             <div class="text-center py-16 text-slate-400">
                 <i class="fa-solid fa-triangle-exclamation text-3xl text-amber-500 mb-3"></i>
                 <p class="text-base font-semibold">文件載入失敗，請檢查網路連線或稍後重試。</p>
             </div>
         `;
-    }
+  }
 }
 
 /**
  * 全螢幕放大縮放控制
  */
 function changeFullscreenZoom(delta) {
-    let newMultiplier = currentModalScaleMultiplier + delta;
-    newMultiplier = Math.max(0.5, Math.min(3.0, newMultiplier));
-    const container = document.getElementById('tech-modal-pdf-container');
-    if (container && currentModalPdfUrl) {
-        renderPdfFullscreen(container, currentModalPdfUrl, newMultiplier);
-    }
+  let newMultiplier = currentModalScaleMultiplier + delta;
+  newMultiplier = Math.max(0.5, Math.min(3.0, newMultiplier));
+  const container = document.getElementById('tech-modal-pdf-container');
+  if (container && currentModalPdfUrl) {
+    renderPdfFullscreen(container, currentModalPdfUrl, newMultiplier);
+  }
 }
 
 function resetFullscreenZoom() {
-    const container = document.getElementById('tech-modal-pdf-container');
-    if (container && currentModalPdfUrl) {
-        renderPdfFullscreen(container, currentModalPdfUrl, 1.0);
-    }
+  const container = document.getElementById('tech-modal-pdf-container');
+  if (container && currentModalPdfUrl) {
+    renderPdfFullscreen(container, currentModalPdfUrl, 1.0);
+  }
 }
 
 /**
  * 開啟 PDF 全螢幕滿版檢視模態視窗 (真正全畫面滿版閱讀，支援縮放與鍵盤導航)
  */
 function openPdfFullscreenModal(pdfUrl, title) {
-    let modal = document.getElementById('tech-pdf-fullscreen-modal');
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'tech-pdf-fullscreen-modal';
-        modal.style.cssText = 'position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;margin:0!important;padding:0!important;z-index:99999!important;background:#0f172a!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important;';
-        modal.setAttribute('oncontextmenu', 'return false;');
-        modal.innerHTML = `
+  let modal = document.getElementById('tech-pdf-fullscreen-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'tech-pdf-fullscreen-modal';
+    modal.style.cssText = 'position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;margin:0!important;padding:0!important;z-index:99999!important;background:#0f172a!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important;';
+    modal.setAttribute('oncontextmenu', 'return false;');
+    modal.innerHTML = `
             <div class="tech-modal-inner relative w-screen h-screen flex flex-col bg-slate-900 overflow-hidden"
                  style="z-index:100000!important;width:100vw!important;height:100vh!important;max-width:100vw!important;max-height:100vh!important;border-radius:0!important;border:none!important;"
                  onclick="event.stopPropagation();">
@@ -2745,59 +3009,59 @@ function openPdfFullscreenModal(pdfUrl, title) {
                 </div>
             </div>
         `;
-        document.body.appendChild(modal);
+    document.body.appendChild(modal);
 
-        // 綁定 ESC 鍵關閉
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closePdfFullscreenModal();
-        });
-    }
+    // 綁定 ESC 鍵關閉
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePdfFullscreenModal();
+    });
+  }
 
-    modal.classList.remove('hidden');
-    modal.style.setProperty('display', 'flex', 'important');
-    modal.style.setProperty('z-index', '99999', 'important');
-    document.body.style.overflow = 'hidden';
+  modal.classList.remove('hidden');
+  modal.style.setProperty('display', 'flex', 'important');
+  modal.style.setProperty('z-index', '99999', 'important');
+  document.body.style.overflow = 'hidden';
 
-    const titleEl = document.getElementById('tech-modal-title');
-    if (titleEl) titleEl.textContent = title || '原廠技術文件';
+  const titleEl = document.getElementById('tech-modal-title');
+  if (titleEl) titleEl.textContent = title || '原廠技術文件';
 
-    const container = document.getElementById('tech-modal-pdf-container');
-    if (container) {
-        container.innerHTML = `
+  const container = document.getElementById('tech-modal-pdf-container');
+  if (container) {
+    container.innerHTML = `
             <div class="flex flex-col items-center justify-center h-full py-16 text-slate-400 gap-2">
                 <i class="fa-solid fa-circle-notch fa-spin text-2xl text-blue-400"></i>
                 <span class="text-sm font-semibold text-slate-300">正在以高解析度渲染全畫面文件...</span>
             </div>
         `;
-        renderPdfFullscreen(container, pdfUrl, 1.0);
-    }
+    renderPdfFullscreen(container, pdfUrl, 1.0);
+  }
 }
 
 function closePdfFullscreenModal() {
-    const modal = document.getElementById('tech-pdf-fullscreen-modal');
-    if (modal) {
-        modal.classList.add('hidden');
-        modal.style.setProperty('display', 'none', 'important');
-    }
-    document.body.style.overflow = '';
+  const modal = document.getElementById('tech-pdf-fullscreen-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.style.setProperty('display', 'none', 'important');
+  }
+  document.body.style.overflow = '';
 }
 
 // 全面攔截在 PDF 預覽與技術專區的右鍵選單與快捷鍵另存
 document.addEventListener('contextmenu', function (e) {
-    if (e.target.closest('.pdf-viewer-container') || e.target.closest('.tech-principles-grid') || e.target.closest('#tech-pdf-fullscreen-modal')) {
-        e.preventDefault();
-        return false;
-    }
+  if (e.target.closest('.pdf-viewer-container') || e.target.closest('.tech-principles-grid') || e.target.closest('#tech-pdf-fullscreen-modal')) {
+    e.preventDefault();
+    return false;
+  }
 }, true);
 
 window.addEventListener('keydown', function (e) {
-    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P')) {
-        const viewer = document.querySelector('.pdf-viewer-container') || document.getElementById('tech-pdf-fullscreen-modal');
-        if (viewer) {
-            e.preventDefault();
-            return false;
-        }
+  if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P')) {
+    const viewer = document.querySelector('.pdf-viewer-container') || document.getElementById('tech-pdf-fullscreen-modal');
+    if (viewer) {
+      e.preventDefault();
+      return false;
     }
+  }
 });
 
 
@@ -2805,27 +3069,29 @@ window.addEventListener('keydown', function (e) {
  * 建立單一文件左右雙欄檢視視圖 HTML (比照原理排版架構，線上預覽不開放下載)
  */
 function buildSingleDocLayoutHtml(doc, slug, tabKey) {
-    const cat = TECH_CATEGORIES.find(c => c.slug === slug) || { name: '特用化學品', productLink: 'products/' };
-    const pdfUrl = getEncodedPdfUrl(doc.pdfPath);
-    const isTyzorPrinciple = (slug === 'tyzor' && tabKey === 'principles' && doc.mechImg);
-    const escapedTitle = (doc.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const cat = TECH_CATEGORIES.find(c => c.slug === slug) || { name: '特用化學品', productLink: 'products/' };
+  const pdfUrl = getEncodedPdfUrl(doc.pdfPath);
+  const hasMechImg = Boolean(doc.mechImg);
+  const isPdf = Boolean(doc.pdfPath && doc.pdfPath.toLowerCase().endsWith('.pdf'));
+  const escapedTitle = (doc.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
-    let previewBoxHtml = '';
-    if (isTyzorPrinciple) {
-        // 圖 2：Tyzor 反應機制圖 (純靜態展示，不需要點擊放大支援)
-        previewBoxHtml = `
+  let previewBoxHtml = '';
+  if (hasMechImg) {
+    // 原廠技術機制圖 (高清示意圖展示)
+    previewBoxHtml = `
             <div class="h-full flex flex-col justify-center">
                 <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-2xs flex flex-col items-center justify-center min-h-[460px] sm:min-h-[560px] overflow-hidden select-none" oncontextmenu="return false;">
                     
-                    <img src="${resolveAssetUrl(doc.mechImg)}" alt="${doc.title} 反應機制圖"
+                    <img src="${resolveAssetUrl(doc.mechImg)}" alt="${escapedTitle} 反應機制圖"
                          class="w-full max-h-[420px] sm:max-h-[500px] object-contain rounded select-none pointer-events-none"
                          draggable="false">
                 </div>
             </div>
         `;
-    } else {
-        const viewerId = `pdf-canvas-viewer-${slug}-${tabKey}`;
-        previewBoxHtml = `
+  } else if (isPdf) {
+    // 文件封面卡片：第一頁作為封面 (等比例不拉伸)，點擊封面直接開啟全螢幕放大閱讀
+    const viewerId = `pdf-canvas-viewer-${slug}-${tabKey}`;
+    previewBoxHtml = `
             <div class="h-full flex flex-col justify-center">
                 <div id="${viewerId}"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
@@ -2843,24 +3109,74 @@ function buildSingleDocLayoutHtml(doc, slug, tabKey) {
                 </div>
             </div>
         `;
-    }
+  } else {
+    // 原廠技術手冊專題章節卡片 (原理專題文字圖解，實事求是)
+    previewBoxHtml = `
+            <div class="h-full flex flex-col justify-center">
+                <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-2xs flex flex-col justify-between min-h-[460px] sm:min-h-[560px] select-none" oncontextmenu="return false;">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                            <div class="flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-lg bg-blue-900/10 text-blue-900 flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-atom"></i>
+                                </span>
+                                <div>
+                                    <span class="text-xs font-bold text-blue-950 uppercase tracking-wide">原廠技術原理專題</span>
+                                    <div class="text-[11px] text-slate-500 font-medium">Technical Principle & Mechanism</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 text-[11px] font-bold border border-blue-200/60">原廠手冊規範</span>
+                        </div>
+                        
+                        <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2">
+                            <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-book-bookmark text-blue-900 text-xs"></i>
+                                <span>文獻出處與專題章節：</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed font-mono">
+                                ${doc.origin || ''}
+                            </p>
+                        </div>
+                        
+                        <div class="p-4 rounded-xl bg-gradient-to-br from-slate-900 to-blue-950 text-white space-y-2 shadow-xs">
+                            <div class="flex items-center gap-2 text-xs font-bold text-blue-300">
+                                <i class="fa-solid fa-microscope text-sm"></i>
+                                <span>核心作用機理要點</span>
+                            </div>
+                            <div class="text-xs text-slate-200 leading-relaxed font-normal">
+                                ${doc.desc || ''}
+                            </div>
+                        </div>
+                    </div>
 
-    const advantagesHtml = (doc.advantages || []).map((adv, idx) => `
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-check text-emerald-600"></i>
+                            <span class="font-semibold text-slate-700">實事求是原廠資料庫</span>
+                        </span>
+                        <span class="text-[11px] font-medium text-slate-400">宏威應用材料技術中心</span>
+                    </div>
+                </div>
+            </div>
+        `;
+  }
+
+  const advantagesHtml = (doc.advantages || []).map((adv, idx) => `
         <li class="flex items-start gap-1.5">
             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">${idx + 1}</span>
             <span>${adv}</span>
         </li>
     `).join('');
 
-    const applicationsHtml = (doc.applications || []).map(app => `
+  const applicationsHtml = (doc.applications || []).map(app => `
         <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">${app}</span>
     `).join('');
 
-    const docTitleClean = (doc.title || '').replace(/"/g, '&quot;');
-    const inquiryParam = encodeURIComponent(`${cat.name}-${doc.title || ''}`);
-    const productLink = cat.productLink || 'products/';
+  const docTitleClean = (doc.title || '').replace(/"/g, '&quot;');
+  const inquiryParam = encodeURIComponent(`${cat.name}-${doc.title || ''}`);
+  const productLink = cat.productLink || 'products/';
 
-    return `
+  return `
         <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件封面預覽 (點擊封面直接全螢幕放大閱讀，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
@@ -2869,12 +3185,11 @@ function buildSingleDocLayoutHtml(doc, slug, tabKey) {
 
             <!-- 右欄：文件檔案屬性與技術重點摘要 (依圖 1 指示：移除被劃掉的語言/版本標籤與檔案名字串) -->
             <div class="space-y-2 pl-0 sm:pl-2.5">
-                <!--<div>
+                <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                         ${docTitleClean}
                     </h3>
-                    
-                </div>-->
+                </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
                     ${doc.desc || doc.summary || ''}
@@ -2925,19 +3240,19 @@ function buildSingleDocLayoutHtml(doc, slug, tabKey) {
  * 建立無公開資料提示區塊 HTML (實事求是、誠實告知、不杜撰)
  */
 function buildEmptyTabHtml(cat, tabKey) {
-    const tabNames = {
-        principles: '原理機制',
-        catalog: '總覽目錄',
-        applications: '應用技術資料',
-        single: '單一產品技術資料',
-        formulation: '配方'
-    };
-    const name = tabNames[tabKey] || '技術資料';
-    const catName = cat.name || '特用化學品';
-    const inquiryParam = encodeURIComponent(catName);
-    const productLink = cat.productLink || 'products/';
+  const tabNames = {
+    principles: '原理機制',
+    catalog: '總覽目錄',
+    applications: '應用技術資料',
+    single: '單一產品技術資料',
+    formulation: '配方'
+  };
+  const name = tabNames[tabKey] || '技術資料';
+  const catName = cat.name || '特用化學品';
+  const inquiryParam = encodeURIComponent(catName);
+  const productLink = cat.productLink || 'products/';
 
-    return `
+  return `
         <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-6 text-center space-y-2.5">
             <div class="flex items-center justify-center gap-2">
                 <i class="fa-solid fa-folder-open text-slate-400 text-base"></i>
@@ -2964,59 +3279,59 @@ function buildEmptyTabHtml(cat, tabKey) {
 }
 
 function buildCategoryContentHtml(cat) {
-    const slug = cat.slug;
-    const catData = TECH_DATABASE[slug] || { tabs: {} };
-    const subTabs = ['principles', 'catalog', 'applications', 'single', 'formulation'];
+  const slug = cat.slug;
+  const catData = TECH_DATABASE[slug] || { tabs: {} };
+  const subTabs = ['principles', 'catalog', 'applications', 'single', 'formulation'];
 
-    const panelsHtml = subTabs.map(tabKey => {
-        const docs = catData.tabs[tabKey] || [];
-        const isHidden = (TechState.activeSubTab !== tabKey);
-        const hiddenCls = isHidden ? 'hidden ' : '';
+  const panelsHtml = subTabs.map(tabKey => {
+    const docs = catData.tabs[tabKey] || [];
+    const isHidden = (TechState.activeSubTab !== tabKey);
+    const hiddenCls = isHidden ? 'hidden ' : '';
 
-        if (docs.length === 0) {
-            return `
+    if (docs.length === 0) {
+      return `
                 <div id="tech-panel-${tabKey}" class="${hiddenCls}space-y-2">
                     ${buildEmptyTabHtml(cat, tabKey)}
                 </div>
             `;
-        }
+    }
 
-        const activeIdx = (TechState.activeDocIndices[slug] && TechState.activeDocIndices[slug][tabKey]) || 0;
-        const validIdx = activeIdx < docs.length ? activeIdx : 0;
-        const currentDoc = docs[validIdx];
+    const activeIdx = (TechState.activeDocIndices[slug] && TechState.activeDocIndices[slug][tabKey]) || 0;
+    const validIdx = activeIdx < docs.length ? activeIdx : 0;
+    const currentDoc = docs[validIdx];
 
-        if (docs.length > 1) {
-            let optionsHtml = '';
-            if (tabKey === 'single') {
-                // 單一產品：依相同產品系列分組 optgroup
-                const groups = {};
-                const groupNames = [];
-                docs.forEach((doc, idx) => {
-                    const grp = doc.productGroup || '其他';
-                    if (!groups[grp]) {
-                        groups[grp] = [];
-                        groupNames.push(grp);
-                    }
-                    groups[grp].push({ doc, idx });
-                });
+    if (docs.length > 1) {
+      let optionsHtml = '';
+      if (tabKey === 'single') {
+        // 單一產品：依相同產品系列分組 optgroup
+        const groups = {};
+        const groupNames = [];
+        docs.forEach((doc, idx) => {
+          const grp = doc.productGroup || '其他';
+          if (!groups[grp]) {
+            groups[grp] = [];
+            groupNames.push(grp);
+          }
+          groups[grp].push({ doc, idx });
+        });
 
-                optionsHtml = groupNames.map(grpName => {
-                    const list = groups[grpName];
-                    const optLines = list.map(({ doc, idx }) => {
-                        const selectedAttr = (idx === validIdx) ? ' selected' : '';
-                        return `<option value="${idx}"${selectedAttr}>${doc.shortLabel || doc.title}</option>`;
-                    }).join('');
-                    return `<optgroup label="── ${grpName} (${list.length} 篇) ──">${optLines}</optgroup>`;
-                }).join('');
-            } else {
-                // 一般條列 option
-                optionsHtml = docs.map((doc, idx) => {
-                    const selectedAttr = (idx === validIdx) ? ' selected' : '';
-                    return `<option value="${idx}"${selectedAttr}>${doc.shortLabel || doc.title}</option>`;
-                }).join('');
-            }
+        optionsHtml = groupNames.map(grpName => {
+          const list = groups[grpName];
+          const optLines = list.map(({ doc, idx }) => {
+            const selectedAttr = (idx === validIdx) ? ' selected' : '';
+            return `<option value="${idx}"${selectedAttr}>${doc.shortLabel || doc.title}</option>`;
+          }).join('');
+          return `<optgroup label="── ${grpName} (${list.length} 篇) ──">${optLines}</optgroup>`;
+        }).join('');
+      } else {
+        // 一般條列 option
+        optionsHtml = docs.map((doc, idx) => {
+          const selectedAttr = (idx === validIdx) ? ' selected' : '';
+          return `<option value="${idx}"${selectedAttr}>${doc.shortLabel || doc.title}</option>`;
+        }).join('');
+      }
 
-            return `
+      return `
                 <div id="tech-panel-${tabKey}" class="${hiddenCls}space-y-3">
                     <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
                     <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
@@ -3061,19 +3376,19 @@ function buildCategoryContentHtml(cat) {
                     </div>
                 </div>
             `;
-        } else {
-            // 僅 1 篇文件時直接滿版展示
-            return `
+    } else {
+      // 僅 1 篇文件時直接滿版展示
+      return `
                 <div id="tech-panel-${tabKey}" class="${hiddenCls}space-y-2">
                     <div id="viewer-${slug}-${tabKey}" class="w-full">
                         ${buildSingleDocLayoutHtml(currentDoc, slug, tabKey)}
                     </div>
                 </div>
             `;
-        }
-    }).join('');
+    }
+  }).join('');
 
-    return `
+  return `
         <section class="bg-white border border-slate-200 rounded-xl shadow-xs p-3 sm:p-4 space-y-2.5">
             <!-- 專題標題與頂部操作列 (依圖 1 指示：改成產品類別名稱 cat.name) -->
             <div class="flex items-center justify-between gap-3 pb-2 border-b border-slate-100">
@@ -3093,8 +3408,10 @@ function buildCategoryContentHtml(cat) {
                 </div>
             </div>
 
-           
-            
+            <!-- 專題核心技術簡介 (實事求是依據技術資料庫精確摘要) -->
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-0.5 pb-0.5">
+                ${cat.desc}
+            </p>
 
             <!-- 瀏覽器書籤風格容器 -->
             <div class="tech-bookmark-wrapper mt-1">
@@ -3112,89 +3429,89 @@ function buildCategoryContentHtml(cat) {
  * 切換技術產品分類 (11 大專題)
  */
 function switchTechCategory(slug, updateUrl = true) {
-    const cat = TECH_CATEGORIES.find(c => c.slug === slug);
-    if (!cat) return;
+  const cat = TECH_CATEGORIES.find(c => c.slug === slug);
+  if (!cat) return;
 
-    TechState.activeCategory = slug;
-    if (typeof AppState !== 'undefined') {
-        AppState.activeTechCategory = slug;
+  TechState.activeCategory = slug;
+  if (typeof AppState !== 'undefined') {
+    AppState.activeTechCategory = slug;
+  }
+
+  // 1. 更新左側 Sidebar 按鈕樣式
+  document.querySelectorAll('.tech-sidebar-btn').forEach(btn => {
+    const btnSlug = btn.getAttribute('data-tech-slug');
+    const numBadge = btn.querySelector('.tech-num-badge');
+    const titleEl = btn.querySelector('.tech-btn-title');
+    const subEl = btn.querySelector('.tech-btn-sub');
+
+    if (btnSlug === slug) {
+      btn.className = "tech-sidebar-btn group flex items-center p-2.5 rounded-xl bg-blue-50/90 border-2 border-blue-600/80 text-blue-950 no-underline shadow-xs transition-all";
+      if (numBadge) numBadge.className = "tech-num-badge w-5 h-5 rounded-md bg-blue-900 text-white text-xs font-black flex items-center justify-center shrink-0 shadow-2xs";
+      if (titleEl) titleEl.className = "tech-btn-title text-sm font-bold text-blue-950 truncate leading-snug";
+      if (subEl) subEl.className = "tech-btn-sub text-xs font-medium text-blue-800/80 truncate";
+    } else {
+      btn.className = "tech-sidebar-btn group flex items-center p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all";
+      if (numBadge) numBadge.className = "tech-num-badge w-5 h-5 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors";
+      if (titleEl) titleEl.className = "tech-btn-title text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug";
+      if (subEl) subEl.className = "tech-btn-sub text-xs font-normal text-slate-500 group-hover:text-slate-600 truncate";
     }
+  });
 
-    // 1. 更新左側 Sidebar 按鈕樣式
-    document.querySelectorAll('.tech-sidebar-btn').forEach(btn => {
-        const btnSlug = btn.getAttribute('data-tech-slug');
-        const numBadge = btn.querySelector('.tech-num-badge');
-        const titleEl = btn.querySelector('.tech-btn-title');
-        const subEl = btn.querySelector('.tech-btn-sub');
+  // 2. 更新頂部麵包屑
+  const breadcrumbCurrent = document.getElementById('tech-breadcrumb-current');
+  if (breadcrumbCurrent) {
+    breadcrumbCurrent.innerText = cat.name;
+  }
 
-        if (btnSlug === slug) {
-            btn.className = "tech-sidebar-btn group flex items-center p-2.5 rounded-xl bg-blue-50/90 border-2 border-blue-600/80 text-blue-950 no-underline shadow-xs transition-all";
-            if (numBadge) numBadge.className = "tech-num-badge w-5 h-5 rounded-md bg-blue-900 text-white text-xs font-black flex items-center justify-center shrink-0 shadow-2xs";
-            if (titleEl) titleEl.className = "tech-btn-title text-sm font-bold text-blue-950 truncate leading-snug";
-            if (subEl) subEl.className = "tech-btn-sub text-xs font-medium text-blue-800/80 truncate";
-        } else {
-            btn.className = "tech-sidebar-btn group flex items-center p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 text-slate-800 hover:text-blue-950 no-underline transition-all";
-            if (numBadge) numBadge.className = "tech-num-badge w-5 h-5 rounded-md bg-slate-100 group-hover:bg-blue-50 text-slate-500 group-hover:text-blue-700 text-xs font-bold flex items-center justify-center shrink-0 transition-colors";
-            if (titleEl) titleEl.className = "tech-btn-title text-sm font-bold text-slate-800 group-hover:text-blue-950 truncate leading-snug";
-            if (subEl) subEl.className = "tech-btn-sub text-xs font-normal text-slate-500 group-hover:text-slate-600 truncate";
-        }
-    });
+  // 3. 渲染右側內容區塊
+  const mainContainer = document.getElementById('tech-content-display');
+  if (mainContainer) {
+    mainContainer.innerHTML = buildCategoryContentHtml(cat);
+    const bestTab = getBestSubTabForCategory(slug);
+    switchTechSubTab(bestTab);
+  }
 
-    // 2. 更新頂部麵包屑
-    const breadcrumbCurrent = document.getElementById('tech-breadcrumb-current');
-    if (breadcrumbCurrent) {
-        breadcrumbCurrent.innerText = cat.name;
+  // 4. 更新 URL (若為 SPA 模式)
+  if (updateUrl && typeof updateUrlRoute === 'function') {
+    try {
+      updateUrlRoute(true);
+    } catch (err) {
+      console.warn('URL route update skipped:', err);
     }
-
-    // 3. 渲染右側內容區塊
-    const mainContainer = document.getElementById('tech-content-display');
-    if (mainContainer) {
-        mainContainer.innerHTML = buildCategoryContentHtml(cat);
-        const bestTab = getBestSubTabForCategory(slug);
-        switchTechSubTab(bestTab);
-    }
-
-    // 4. 更新 URL (若為 SPA 模式)
-    if (updateUrl && typeof updateUrlRoute === 'function') {
-        try {
-            updateUrlRoute(true);
-        } catch (err) {
-            console.warn('URL route update skipped:', err);
-        }
-    }
+  }
 }
 
 // 當 DOM 載入完成或腳本就緒時初始化技術專區
 function initTechnologyModule() {
-    const display = document.getElementById('tech-content-display');
-    if (!display) return;
-    const currentSlug = document.body.getAttribute('data-tech-slug') || 'tyzor';
+  const display = document.getElementById('tech-content-display');
+  if (!display) return;
+  const currentSlug = document.body.getAttribute('data-tech-slug') || 'tyzor';
 
-    // 若頁面已由伺服器或靜態建置產生完成 (獨立子頁面)，維持既有 DOM 完整性，僅同步狀態與啟動首頁 PDF 封面渲染！
-    const visiblePanel = display.querySelector('.tech-bookmark-body > div:not(.hidden)');
-    if (visiblePanel) {
-        TechState.activeCategory = currentSlug;
-        const panelId = visiblePanel.id || '';
-        const currentTabKey = panelId.replace('tech-panel-', '');
-        if (currentTabKey) {
-            TechState.activeSubTab = currentTabKey;
-        }
-        const activeViewer = visiblePanel.querySelector('.pdf-viewer-container');
-        if (activeViewer && !activeViewer.querySelector('canvas')) {
-            const pdfUrl = activeViewer.getAttribute('data-pdf-url');
-            if (pdfUrl && activeViewer.id) {
-                renderPdfDocumentToContainer(activeViewer.id, pdfUrl);
-            }
-        }
-        return;
+  // 若頁面已由伺服器或靜態建置產生完成 (獨立子頁面)，維持既有 DOM 完整性，僅同步狀態與啟動首頁 PDF 封面渲染！
+  const visiblePanel = display.querySelector('.tech-bookmark-body > div:not(.hidden)');
+  if (visiblePanel) {
+    TechState.activeCategory = currentSlug;
+    const panelId = visiblePanel.id || '';
+    const currentTabKey = panelId.replace('tech-panel-', '');
+    if (currentTabKey) {
+      TechState.activeSubTab = currentTabKey;
     }
+    const activeViewer = visiblePanel.querySelector('.pdf-viewer-container');
+    if (activeViewer && !activeViewer.querySelector('canvas')) {
+      const pdfUrl = activeViewer.getAttribute('data-pdf-url');
+      if (pdfUrl && activeViewer.id) {
+        renderPdfDocumentToContainer(activeViewer.id, pdfUrl);
+      }
+    }
+    return;
+  }
 
-    // SPA 模式或主頁模式下需要動態渲染
-    switchTechCategory(currentSlug, false);
+  // SPA 模式或主頁模式下需要動態渲染
+  switchTechCategory(currentSlug, false);
 }
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTechnologyModule);
+  document.addEventListener('DOMContentLoaded', initTechnologyModule);
 } else {
-    initTechnologyModule();
+  initTechnologyModule();
 }

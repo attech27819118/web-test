@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <script>
         (function () {
             var baseHref = '/';
@@ -167,8 +170,8 @@
         }
     </script>
 
-    <link rel="stylesheet" href="css/output.css?v=20261002_v1">
-    <link rel="stylesheet" href="css/style.css?v=20261002_v1">
+    <link rel="stylesheet" href="css/output.css?v=20261014_v1">
+    <link rel="stylesheet" href="css/style.css?v=20261014_v1">
 
     <!-- 搜尋即時排版與全幅展示樣式 & 隱藏 reCAPTCHA 浮動徽章 -->
     <style>
@@ -1102,7 +1105,7 @@
             </div>
         </section>
 
-                                                                                                                                                                                                                    <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
+                                                                                                                                                                                                                                                                    <!-- Tab: 技術專區 (Technology) - 獨立分頁一頁式緊湊呈現 (統一白色風格：左側條列式切換，右側資料顯示) -->
     <section id="tab-technology" class="tab-content active" role="tabpanel" aria-labelledby="nav-technology">
         <style>
         .tech-layout-container {
@@ -1562,6 +1565,11 @@
                     </div>
                 </div>
 
+                <!-- 專題核心技術簡介 (實事求是依據技術資料庫精確摘要) -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-0.5 pb-0.5">
+                    Orion Engineered Carbons 為全球特級碳黑領導品牌，提供卓越黑度、分散流變性與耐候堅牢度，廣泛應用於高階塗料、油墨與塑料。
+                </p>
+
                 <!-- 瀏覽器書籤風格容器 -->
                 <div class="tech-bookmark-wrapper mt-1">
                 <!-- 瀏覽器書籤樣式：五大核心維度標籤列 -->
@@ -1605,10 +1613,10 @@
                                 <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
                                     <select id="doc-select-carbon-black-principles" onchange="selectTechDoc('carbon-black', 'principles', parseInt(this.value, 10))"
                                             class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
-                                <option value="0" selected>平均原生粒徑機制</option>
+                                <option value="0" selected>平均原生粒徑</option>
                                 <option value="1">聚集體結構形態</option>
-                                <option value="2">表面氧化化學處理</option>
-                                <option value="3">三大核心製程工藝</option>
+                                <option value="2">表面處理</option>
+                                <option value="3">製程差異</option>
                                     </select>
                                 </div>
                             </div>
@@ -1641,21 +1649,15 @@
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
             <div class="h-full pr-0 sm:pr-2.5 border-b sm:border-b-0 sm:border-r border-slate-200/80 pb-2.5 sm:pb-0">
             <div class="h-full flex flex-col justify-center">
-                <div id="pdf-canvas-viewer-carbon-black-principles"
-                     class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
-                     data-pdf-url="techdatadb/4.Orion/1.%E5%8E%9F%E7%90%86/%E5%B9%B3%E5%9D%87%E5%8E%9F%E7%94%9F%E7%B2%92%E5%BE%91.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="碳黑重要技術指標：平均原生粒徑與比表面積原理"
-                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/1.%E5%8E%9F%E7%90%86/%E5%B9%B3%E5%9D%87%E5%8E%9F%E7%94%9F%E7%B2%92%E5%BE%91.pdf#toolbar=0&navpanes=0', '碳黑重要技術指標：平均原生粒徑與比表面積原理')"
-                     title="點擊全螢幕放大閱讀"
-                     oncontextmenu="return false;"
-                     onselectstart="return false;">
-                    
-                    <div class="flex flex-col items-center justify-center h-full text-slate-400 gap-2">
-                        <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
-                        <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
+                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-2xs flex flex-col items-center justify-center min-h-[460px] sm:min-h-[560px] overflow-hidden select-none" oncontextmenu="return false;">
+                    <div class="text-xs font-bold text-slate-500 mb-3 self-start flex items-center gap-1.5">
+                        <i class="fa-solid fa-atom text-blue-900"></i>
+                        <span>原廠技術原理機制圖</span>
                     </div>
-
-                    </div>
+                    <img src="techdatadb/4.Orion/1.原理/particle size.png" alt="特種碳黑技術手冊：碳黑的重要技術指標 反應機制圖"
+                         class="w-full max-h-[420px] sm:max-h-[500px] object-contain rounded select-none pointer-events-none"
+                         draggable="false">
+                </div>
             </div>
             </div>
 
@@ -1663,12 +1665,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        碳黑重要技術指標：平均原生粒徑與比表面積原理
+                        特種碳黑技術手冊：碳黑的重要技術指標
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    探討碳黑原生粒徑（Primary Particle Size）與 BET 比表面積之物理作用機制。粒徑大小直接決定光學黑度（Jetness）、色調底相（Undertone）、著色力及抗紫外線能力，並深入剖析微細粒徑對塗料油墨潤濕分散流變特性的關鍵影響。
+                    說明碳黑核心指標「平均原生粒徑」與比表面積（BET）、黑度（Jetness）及抗紫外線防護力之正相關物理機制。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1680,19 +1682,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>黑度與原生粒徑直接相關：粒徑越小（10~20 nm），BET 比表面積越大，光線吸收率越高，呈現之黑度越深邃且抗紫外線老化性能更佳。</span>
+                            <span>黑度直接取決於碳黑之平均原生粒徑；粒徑越小，比表面積愈大，所顯現之碳黑黑度越高。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>色相與底色調控：微細小粒徑碳黑展現高級深藍色相（Blue Undertone），而粗粒徑大粒徑碳黑則偏向棕色調（Brown Tone）。</span>
+                            <span>原生粒子在生成時會聚集成原生凝聚體（Aggregate），原生粒子越小則凝聚體比表面積越大，其抗紫外線（防 UV）作用更佳。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>凝聚體比表面積效應：原生粒子熔結成凝聚體後，微細粒子依然保持極高有效比表面積，對塗膜提供頂級著色力與光學反射密度。</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</span>
-                            <span>分散工藝關聯性：比表面積越大，分子間吸引力越強且吸油量增加，需搭配適當高分子分散劑與研磨剪切力以確保最佳展色穩定性。</span>
+                            <span>碳黑比表面積透過 BET 氮氣吸附方法測定，測定結果以每克樣品所具有之表面積（m²/g）定量表示。</span>
                         </li>
                     </ul>
                 </div>
@@ -1701,17 +1699,13 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">頂級汽車原廠漆</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高光修補漆</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高光學密度噴墨油墨</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">抗UV耐候塑料母粒</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">防腐防護塗料</span>
+
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-%E7%A2%B3%E9%BB%91%E9%87%8D%E8%A6%81%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%EF%BC%9A%E5%B9%B3%E5%9D%87%E5%8E%9F%E7%94%9F%E7%B2%92%E5%BE%91%E8%88%87%E6%AF%94%E8%A1%A8%E9%9D%A2%E7%A9%8D%E5%8E%9F%E7%90%86"
+                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-%E7%89%B9%E7%A8%AE%E7%A2%B3%E9%BB%91%E6%8A%80%E8%A1%93%E6%89%8B%E5%86%8A%EF%BC%9A%E7%A2%B3%E9%BB%91%E7%9A%84%E9%87%8D%E8%A6%81%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1738,8 +1732,8 @@
                                 <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
                                     <select id="doc-select-carbon-black-catalog" onchange="selectTechDoc('carbon-black', 'catalog', parseInt(this.value, 10))"
                                             class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
-                                <option value="0" selected>特種碳黑產品技術指標(中)</option>
-                                <option value="1">特種碳黑產品技術指標(英)</option>
+                                <option value="0" selected>特種碳黑型錄 (中)</option>
+                                <option value="1">特種碳黑型錄 (英)</option>
                                     </select>
                                 </div>
                             </div>
@@ -1775,8 +1769,8 @@
                 <div id="pdf-canvas-viewer-carbon-black-catalog"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/4.Orion/2.Orion%20Carbon%20Black%20%E7%A2%B3%E9%BB%91%20%E7%9B%AE%E9%8C%84%20%EF%BC%8816%EF%BC%89%E5%86%8A/Brochure%20Orion%20Carbon%20Black%20CN.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="特种炭黑 产品技术指标 / 亚太地区"
-                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/2.Orion%20Carbon%20Black%20%E7%A2%B3%E9%BB%91%20%E7%9B%AE%E9%8C%84%20%EF%BC%8816%EF%BC%89%E5%86%8A/Brochure%20Orion%20Carbon%20Black%20CN.pdf#toolbar=0&navpanes=0', '特种炭黑 产品技术指标 / 亚太地区')"
+                     data-pdf-title="Orion 特種碳黑 產品目錄（中文版）"
+                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/2.Orion%20Carbon%20Black%20%E7%A2%B3%E9%BB%91%20%E7%9B%AE%E9%8C%84%20%EF%BC%8816%EF%BC%89%E5%86%8A/Brochure%20Orion%20Carbon%20Black%20CN.pdf#toolbar=0&navpanes=0', 'Orion 特種碳黑 產品目錄（中文版）')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1785,8 +1779,7 @@
                         <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
                         <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
                     </div>
-
-                    </div>
+                </div>
             </div>
             </div>
 
@@ -1794,12 +1787,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        特种炭黑 产品技术指标 / 亚太地区
+                        Orion 特種碳黑 產品目錄（中文版）
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    彙編 Orion 亞太地區供應之全系列特種碳黑產品物理化學指標，涵蓋氣黑、爐黑及燈黑在塗料、油墨與塑料中的關鍵參數。
+                    彙整 Orion 氣法碳黑（Gas Black）、爐法碳黑（Furnace Black）、燈黑（Lamp Black）、乙炔黑（Acetylene Black）及特種導電碳黑在塗料、塑料與印刷油墨系統之產品分類、技術規格與核心性能指標。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1811,15 +1804,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>完整列出各牌號之 BET 比表面積、吸油值（OAN）、黑度值（My/Mc）及原生粒徑對照表。</span>
+                            <span>產品涵蓋 Colour Black（如 FW 310/255/171/200）、Special Black（如 6/5/4/4A/100）、Nerox（如 600/505）、Printex（如 95/300/U/V）、HiBlack 系列、Lamp Black 101，以及超高導電碳黑 Printex XE2 B（比表面積 1000 m²/g）與 Printex kappa 系列。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>依據氣黑（Gas Black）、爐黑（Furnace Black）及燈黑（Lamp Black）不同製程工藝劃分性能特點與著色強度。</span>
+                            <span>說明原生粒徑（11–95 nm）、BET 比表面積（26–1000 m²/g）、OAN 吸油值（42–420 ml/100g）與 950°C 揮發份含量（含氧酸性官能基，最高 20%）對黑度（Jetness My 最高 310）、分散性、流變行為與底色相的決定性影響。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>針對不同極性溶劑、水性樹脂及聚合物體系提供後處理（氧化表面）與未後處理牌號推薦。</span>
+                            <span>氣黑法氧化後處理產品表面富含羧基與酚羥基，在極性塗料與溶劑體系中具備優異潤濕相容性、儲存黏度穩定性與藍相高黑度。</span>
                         </li>
                     </ul>
                 </div>
@@ -1828,17 +1821,21 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">汽車面漆/修補漆</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">工業防腐塗料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">包裝印刷油墨</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">塑料色母粒</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">合成纖維紡絲著色</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">汽車 OEM 及修補漆</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">電泳塗料</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">一般工業塗料</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">粉末塗料；聚烯烴/工程塑膠/化纖母粒</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">電線電纜</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">管材</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">農膜；膠印</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">凹版</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">柔版包裝印刷油墨及 UV/水性噴墨墨水。</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-%E7%89%B9%E7%A7%8D%E7%82%AD%E9%BB%91%20%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87%20/%20%E4%BA%9A%E5%A4%AA%E5%9C%B0%E5%8C%BA"
+                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-Orion%20%E7%89%B9%E7%A8%AE%E7%A2%B3%E9%BB%91%20%E7%94%A2%E5%93%81%E7%9B%AE%E9%8C%84%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -1865,18 +1862,18 @@
                                 <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
                                     <select id="doc-select-carbon-black-applications" onchange="selectTechDoc('carbon-black', 'applications', parseInt(this.value, 10))"
                                             class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
-                                <option value="0" selected>特種碳黑耐光耐候堅牢度</option>
-                                <option value="1">碳黑安全裝卸指南</option>
-                                <option value="2">現代塗料碳黑顏料應用</option>
-                                <option value="3">合成纖維原液著色碳黑</option>
-                                <option value="4">塗料碳黑潤濕分散指南</option>
-                                <option value="5">工業防護塗料專用碳黑</option>
-                                <option value="6">數位噴墨墨水專用碳黑</option>
-                                <option value="7">粉體塗料專用碳黑</option>
-                                <option value="8">印刷油墨專用碳黑</option>
-                                <option value="9">調色與底漆專用碳黑</option>
-                                <option value="10">食品包裝油墨碳黑合規</option>
-                                <option value="11">低多環芳烴環保碳黑</option>
+                                <option value="0" selected>碳黑堅牢度 (TI 1460)</option>
+                                <option value="1">碳黑安全裝卸 (TI 1451)</option>
+                                <option value="2">現代塗料系統 (0402)</option>
+                                <option value="3">纖維紡絲碳黑 (TI 1377)</option>
+                                <option value="4">潤濕分散指引 (TI 1375)</option>
+                                <option value="5">工業防護塗料 (TI 1458)</option>
+                                <option value="6">數位噴墨油墨 (TI 1482)</option>
+                                <option value="7">粉體塗料碳黑 (TI 1456)</option>
+                                <option value="8">包裝印刷油墨 (TI 1452)</option>
+                                <option value="9">調色塗料碳黑 (TI 1459)</option>
+                                <option value="10">食品包裝油墨 (TI 1453)</option>
+                                <option value="11">低 PAHs 環保碳黑 (TI 1483)</option>
                                     </select>
                                 </div>
                             </div>
@@ -1912,8 +1909,8 @@
                 <div id="pdf-canvas-viewer-carbon-black-applications"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/4.Orion/3.Orion%20Application%20Note/Application%20Note%20Orion%20Fastness%20of%20Specialty%20Carbon%20Blacks%20EN.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="Fastness and Resistance Properties of Specialty Carbon Blacks"
-                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/3.Orion%20Application%20Note/Application%20Note%20Orion%20Fastness%20of%20Specialty%20Carbon%20Blacks%20EN.pdf#toolbar=0&navpanes=0', 'Fastness and Resistance Properties of Specialty Carbon Blacks')"
+                     data-pdf-title="Fastness Properties of Specialty Carbon Blacks"
+                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/3.Orion%20Application%20Note/Application%20Note%20Orion%20Fastness%20of%20Specialty%20Carbon%20Blacks%20EN.pdf#toolbar=0&navpanes=0', 'Fastness Properties of Specialty Carbon Blacks')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -1922,8 +1919,7 @@
                         <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
                         <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
                     </div>
-
-                    </div>
+                </div>
             </div>
             </div>
 
@@ -1931,12 +1927,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        Fastness and Resistance Properties of Specialty Carbon Blacks
+                        Fastness Properties of Specialty Carbon Blacks
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    評估特種碳黑顏料在極端光照、耐候、高溫熱穩定性及耐酸鹼化學品介質侵蝕下的牢度與耐抗性能。
+                    分析特種碳黑顏料相較於有機黑色顏料在耐光性、耐候性、耐化學性、耐溫性及耐遷移性（Bleeding）等各項堅牢度（Fastness）指標的絕對優勢。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -1948,15 +1944,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>碳黑由無定形碳組成，具備耐日光、耐紫外線（UV）及耐候老化的極致牢度（耐光等級達最高級 Blue Wool 8 級）。</span>
+                            <span>爐黑與氣黑歸類為 Pigment Black #7（PBk7），燈黑歸類為 Pigment Black #6（PBk6），C.I. 結構編號均為 77266；耐光牢度達 BSI 標準 7–8 級（優異 Excellent）。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>具備卓越的熱穩定性，在惰性氣氛下高溫耐受超過 1000°C，遠勝所有有機黑色顏料。</span>
+                            <span>耐水、耐酸、耐鹼、耐有機溶劑、可塑劑、油脂與熱蠟牢度均達最高級（No bleed or discoloration，完全不滲色、不變色）。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>耐強酸、耐強鹼及有機溶劑浸泡侵蝕，在嚴苛腐蝕環境下不褪色、不遷移、不滲色。</span>
+                            <span>原文特別指出：若含碳黑塗料或油墨之耐性表現不良，其根本限制通常來自黏結劑樹脂系統（Binder system），而非特種碳黑本身。</span>
                         </li>
                     </ul>
                 </div>
@@ -1965,16 +1961,17 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高階汽車塗料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">建築外牆氟碳塗料</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高耐候農膜</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">極端高溫工業設備防護塗層</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">車輛外裝塗料</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">工程塑膠部件</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">建築外牆氟碳烤漆</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">農用防老化黑膜</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">耐高溫塗層。</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-Fastness%20and%20Resistance%20Properties%20of%20Specialty%20Carbon%20Blacks"
+                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-Fastness%20Properties%20of%20Specialty%20Carbon%20Blacks"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -2001,9 +1998,9 @@
                                 <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
                                     <select id="doc-select-carbon-black-single" onchange="selectTechDoc('carbon-black', 'single', parseInt(this.value, 10))"
                                             class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
-                                <optgroup label="── FW 310 (2 篇) ──">
-                                    <option value="0" selected>FW 310 超高黑度塗料(中)</option>
-                                    <option value="1">FW 310 超高黑度塗料(英)</option>
+                                <optgroup label="── Colour Black 超高色素氣黑系列 (2 篇) ──">
+                                    <option value="0" selected>FW 310 超高黑度碳黑在水性及油性塗料中應用(中文版)</option>
+                                    <option value="1">FW 310 超高黑度碳黑在水性及油性塗料中應用(英文版)</option>
                                 </optgroup>
                                     </select>
                                 </div>
@@ -2040,8 +2037,8 @@
                 <div id="pdf-canvas-viewer-carbon-black-single"
                      class="pdf-viewer-container group relative w-full h-[580px] sm:h-[640px] rounded-xl border border-slate-200 bg-white p-3 flex items-center justify-center overflow-hidden select-none cursor-pointer transition-all duration-200 hover:border-blue-500 hover:shadow-lg"
                      data-pdf-url="techdatadb/4.Orion/4.Orion%20Carbon%20Black%20%E7%A2%B3%E9%BB%91%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81/TI%20Orion%20Colour%20Black%20FW%20310%20in%20Coating%20CN.pdf#toolbar=0&navpanes=0"
-                     data-pdf-title="COLOUR BLACK FW 310 水性和溶剂型涂料用超高黑度特种炭黑"
-                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/4.Orion%20Carbon%20Black%20%E7%A2%B3%E9%BB%91%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81/TI%20Orion%20Colour%20Black%20FW%20310%20in%20Coating%20CN.pdf#toolbar=0&navpanes=0', 'COLOUR BLACK FW 310 水性和溶剂型涂料用超高黑度特种炭黑')"
+                     data-pdf-title="Colour Black FW 310 在塗料中的應用技術資料（中文版）"
+                     onclick="openPdfFullscreenModal('techdatadb/4.Orion/4.Orion%20Carbon%20Black%20%E7%A2%B3%E9%BB%91%20%E5%96%AE%E4%B8%80%E7%94%A2%E5%93%81/TI%20Orion%20Colour%20Black%20FW%20310%20in%20Coating%20CN.pdf#toolbar=0&navpanes=0', 'Colour Black FW 310 在塗料中的應用技術資料（中文版）')"
                      title="點擊全螢幕放大閱讀"
                      oncontextmenu="return false;"
                      onselectstart="return false;">
@@ -2050,8 +2047,7 @@
                         <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
                         <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
                     </div>
-
-                    </div>
+                </div>
             </div>
             </div>
 
@@ -2059,12 +2055,12 @@
             <div class="space-y-2 pl-0 sm:pl-2.5">
                 <div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                        COLOUR BLACK FW 310 水性和溶剂型涂料用超高黑度特种炭黑
+                        Colour Black FW 310 在塗料中的應用技術資料（中文版）
                     </h3>
                 </div>
 
                 <p class="text-sm text-slate-700 leading-relaxed font-normal bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
-                    介紹 Colour Black FW 310 後處理高色素爐黑在汽車面漆與高檔工業塗料中實現超深黑度（Ultra-High Jetness）與深藍相的技術特性。
+                    Colour Black FW 310 在汽車面漆、高檔工業塗料及消費性電子產品中實現超深黑度（Ultra-High Jetness）與深藍相的特性。
                 </p>
 
                 <!-- 主要技術特點 -->
@@ -2076,15 +2072,15 @@
                     <ul class="space-y-1 text-sm text-slate-700">
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</span>
-                            <span>原生粒徑僅 13 nm，經高程度後表面氧化處理，賦予塗層無與倫比的超高黑度值（My > 300）與強烈深藍相（dM > 0）。</span>
+                            <span>平均原生粒徑約 11 nm 且粒徑呈單峰分佈，賦予塗層無與倫比的超高黑度值（My > 310）與強烈深藍相（dM）。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</span>
-                            <span>表面富含氧官能基，在高極性溶劑及水性丙烯酸/聚氨酯分散液中展現絕佳的潤濕性與相容性。</span>
+                            <span>表面富含含氧極性官能基，展現絕佳的潤濕性與樹脂相容性，且能同時適用於水性體系與溶劑型體系。</span>
                         </li>
                         <li class="flex items-start gap-1.5">
                             <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</span>
-                            <span>展現優異抗絮凝與耐光老化穩定性，滿足頂級豪華汽車外觀面漆最嚴苛的光澤與鏡面黑度要求。</span>
+                            <span>展現優異抗絮凝與耐光性，滿足頂級外觀面漆最嚴苛的光澤與鏡面黑度要求。</span>
                         </li>
                     </ul>
                 </div>
@@ -2093,16 +2089,16 @@
                 <div class="space-y-1 pt-0.5">
                     <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">豪華汽車面漆</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">汽車面漆</span>
                             <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">汽車修補漆</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高端消費電子高光黑色外殼</span>
-                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">鋼琴黑裝飾塗料</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">高端消費性產品</span>
+                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">鋼琴裝飾塗料。</span>
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
                 <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-COLOUR%20BLACK%20FW%20310%20%E6%B0%B4%E6%80%A7%E5%92%8C%E6%BA%B6%E5%89%82%E5%9E%8B%E6%B6%82%E6%96%99%E7%94%A8%E8%B6%85%E9%AB%98%E9%BB%91%E5%BA%A6%E7%89%B9%E7%A7%8D%E7%82%AD%E9%BB%91"
+                    <a href="contact/?mode=detailed&inquiry=Special%20Carbon%20Black-Colour%20Black%20FW%20310%20%E5%9C%A8%E5%A1%97%E6%96%99%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E6%8A%80%E8%A1%93%E8%B3%87%E6%96%99%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
@@ -3234,17 +3230,17 @@
     <!-- ==========================================
      前端模組化 JavaScript 腳本庫 (含版本號快取破壞)
      ========================================== -->
-    <script src="js/state.js?v=20260929_v2"></script>
-    <script src="js/search-engine.js?v=20260929_v2"></script>
-    <script src="js/data-repo.js?v=20260929_v2"></script>
-    <script src="js/filter-engine.js?v=20260929_v2"></script>
-    <script src="js/table-renderer.js?v=20261007_outlook2"></script>
-    <script src="js/compare.js?v=20260929_v2"></script>
-    <script src="js/contact.js?v=20260929_v2"></script>
+    <script src="js/state.js?v=20261014_v1"></script>
+    <script src="js/search-engine.js?v=20261014_v1"></script>
+    <script src="js/data-repo.js?v=20261014_v1"></script>
+    <script src="js/filter-engine.js?v=20261014_v1"></script>
+    <script src="js/table-renderer.js?v=20261014_v1"></script>
+    <script src="js/compare.js?v=20261014_v1"></script>
+    <script src="js/contact.js?v=20261014_v1"></script>
     <script src="js/vendor/pdf.min.js"></script>
-    <script src="js/technology.js?v=20261007_fullscreen1"></script>
-    <script src="js/router.js?v=20261007_cover1"></script>
-    <script src="js/app.js?v=20260929_v2"></script>
+    <script src="js/technology.js?v=20261014_v1"></script>
+    <script src="js/router.js?v=20261014_v1"></script>
+    <script src="js/app.js?v=20261014_v1"></script>
 
 </body>
 

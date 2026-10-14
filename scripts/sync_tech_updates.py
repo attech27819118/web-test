@@ -12,6 +12,9 @@ import sys
 import json
 import re
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JSON_PATH = os.path.join(ROOT_DIR, "json", "tech_database.json")
 JS_PATH = os.path.join(ROOT_DIR, "js", "technology.js")

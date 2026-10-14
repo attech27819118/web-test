@@ -20,6 +20,7 @@ if hasattr(sys.stderr, 'reconfigure'):
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://www.attech.com.tw"
+CACHE_VERSION = "20261014_v1"
 
 # 載入原廠技術資料庫 (由 build_tech_json.py 產生)
 JSON_PATH = os.path.join(ROOT_DIR, "json", "tech_database.json")
@@ -195,8 +196,8 @@ TECH_ITEMS = [
         "brand_tag": "其他特化",
         "product_link": "products/others/matting_agent/",
         "product_link_text": "瀏覽消光粉規格",
-        "description": "特種沉澱與氣相二氧化矽消光粉技術專題。",
-        "has_data": False,
+        "description": "特種沉澱與氣相二氧化矽消光粉技術專題，包含消光原理、粒徑分佈、孔隙率、膜厚影響與各樹脂體系之分散工藝指引。",
+        "has_data": True,
         "inquiry_param": "Matting-Agent-Tech",
         "meta_desc": "宏威應用材料二氧化矽消光粉技術專題與技術諮詢。"
     },
@@ -322,24 +323,25 @@ def build_subtab_nav(has_data=True, active_key="principles"):
 def build_single_doc_layout_html(doc, slug, tab_key, item):
     """產生單一文件左右雙欄檢視視圖 (封面式預覽，點擊封面即開啟全螢幕高解析閱讀器，無多餘獨立按鈕)"""
     pdf_url = get_encoded_pdf_url(doc.get("pdfPath", ""))
-    is_tyzor_principle = (slug == "tyzor" and tab_key == "principles" and doc.get("mechImg"))
+    has_mech_img = bool(doc.get("mechImg"))
+    is_pdf = bool(doc.get("pdfPath", "").lower().endswith(".pdf"))
     doc_title_clean = doc.get("title", "").replace('"', '&quot;').replace("'", "&#39;")
 
-    if is_tyzor_principle:
-        # 圖 2：Tyzor 反應機制圖 (純靜態呈現，不需要點擊放大支援)
+    if has_mech_img:
+        # 原廠技術機制圖 (高清示意圖展示)
         preview_box_html = f'''            <div class="h-full flex flex-col justify-center">
                 <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-2xs flex flex-col items-center justify-center min-h-[460px] sm:min-h-[560px] overflow-hidden select-none" oncontextmenu="return false;">
                     <div class="text-xs font-bold text-slate-500 mb-3 self-start flex items-center gap-1.5">
                         <i class="fa-solid fa-atom text-blue-900"></i>
-                        <span>原廠化學反應機制</span>
+                        <span>原廠技術原理機制圖</span>
                     </div>
                     <img src="{doc.get("mechImg")}" alt="{doc.get("title")} 反應機制圖"
                          class="w-full max-h-[420px] sm:max-h-[500px] object-contain rounded select-none pointer-events-none"
                          draggable="false">
                 </div>
             </div>'''
-    else:
-        # 文件封面卡片：第一頁作為封面 (等比例不拉伸)，點擊封面直接開啟全螢幕放大閱讀，完全移除獨立放大按鈕
+    elif is_pdf:
+        # 文件封面卡片：第一頁作為封面 (等比例不拉伸)，點擊封面直接開啟全螢幕放大閱讀
         viewer_id = f"pdf-canvas-viewer-{slug}-{tab_key}"
         preview_box_html = f'''            <div class="h-full flex flex-col justify-center">
                 <div id="{viewer_id}"
@@ -355,8 +357,55 @@ def build_single_doc_layout_html(doc, slug, tab_key, item):
                         <i class="fa-solid fa-circle-notch fa-spin text-xl text-blue-900"></i>
                         <span class="text-xs font-semibold text-slate-600">文件封面載入中...</span>
                     </div>
-
+                </div>
+            </div>'''
+    else:
+        # 原廠技術手冊專題章節卡片 (原理專題文字圖解，實事求是)
+        preview_box_html = f'''            <div class="h-full flex flex-col justify-center">
+                <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-2xs flex flex-col justify-between min-h-[460px] sm:min-h-[560px] select-none" oncontextmenu="return false;">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                            <div class="flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-lg bg-blue-900/10 text-blue-900 flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-atom"></i>
+                                </span>
+                                <div>
+                                    <span class="text-xs font-bold text-blue-950 uppercase tracking-wide">原廠技術原理專題</span>
+                                    <div class="text-[11px] text-slate-500 font-medium">Technical Principle & Mechanism</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 text-[11px] font-bold border border-blue-200/60">原廠手冊規範</span>
+                        </div>
+                        
+                        <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2">
+                            <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-book-bookmark text-blue-900 text-xs"></i>
+                                <span>文獻出處與專題章節：</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed font-mono">
+                                {doc.get('origin', '')}
+                            </p>
+                        </div>
+                        
+                        <div class="p-4 rounded-xl bg-gradient-to-br from-slate-900 to-blue-950 text-white space-y-2 shadow-xs">
+                            <div class="flex items-center gap-2 text-xs font-bold text-blue-300">
+                                <i class="fa-solid fa-microscope text-sm"></i>
+                                <span>核心作用機理要點</span>
+                            </div>
+                            <div class="text-xs text-slate-200 leading-relaxed font-normal">
+                                {doc.get('desc', '')}
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-check text-emerald-600"></i>
+                            <span class="font-semibold text-slate-700">實事求是原廠資料庫</span>
+                        </span>
+                        <span class="text-[11px] font-medium text-slate-400">宏威應用材料技術中心</span>
+                    </div>
+                </div>
             </div>'''
 
     advantages_items = []
@@ -601,6 +650,11 @@ def build_category_content_section(item, active_subtab="principles"):
                         </a>
                     </div>
                 </div>
+
+                <!-- 專題核心技術簡介 (實事求是依據技術資料庫精確摘要) -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-0.5 pb-0.5">
+                    {item["description"]}
+                </p>
 
                 <!-- 瀏覽器書籤風格容器 -->
                 <div class="tech-bookmark-wrapper mt-1">
@@ -930,8 +984,9 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
     )
 
     # 快取版本破壞
-    page_html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261007_fullscreen1', page_html)
-    page_html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261007_cover1', page_html)
+    page_html = re.sub(r'css/output\.css\?v=[^"]*', f'css/output.css?v={CACHE_VERSION}', page_html)
+    page_html = re.sub(r'css/style\.css\?v=[^"]*', f'css/style.css?v={CACHE_VERSION}', page_html)
+    page_html = re.sub(r'js/([^"]+?\.js)\?v=[^"]*', rf'js/\1?v={CACHE_VERSION}', page_html)
 
     # 確保注入 pdf.min.js
     if 'js/vendor/pdf.min.js' not in page_html:
@@ -1032,8 +1087,9 @@ def sync_root_index_technology():
     html = html.replace('href="technology/" id="mobile-nav-technology"', 'href="technology/tyzor/" id="mobile-nav-technology"')
 
     # 確保快取版本破壞
-    html = re.sub(r'js/technology\.js\?v=[^"]*', 'js/technology.js?v=20261007_fullscreen1', html)
-    html = re.sub(r'js/router\.js\?v=[^"]*', 'js/router.js?v=20261007_cover1', html)
+    html = re.sub(r'css/output\.css\?v=[^"]*', f'css/output.css?v={CACHE_VERSION}', html)
+    html = re.sub(r'css/style\.css\?v=[^"]*', f'css/style.css?v={CACHE_VERSION}', html)
+    html = re.sub(r'js/([^"]+?\.js)\?v=[^"]*', rf'js/\1?v={CACHE_VERSION}', html)
 
     # 確保引入 pdf.min.js
     if 'js/vendor/pdf.min.js' not in html:

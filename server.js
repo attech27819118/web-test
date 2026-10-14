@@ -60,14 +60,21 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// 靜態資源目錄（提供 doc, tds, img 下載與靜態託管，並配置快取）
+// 靜態資源目錄（提供 doc, tds, img 下載與靜態託管，並配置防呆快取策略）
 app.use(express.static(path.join(__dirname), {
-    maxAge: '1d',
+    maxAge: 0,
     setHeaders: (res, filePath) => {
         if (filePath.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.setHeader('Pragma', 'no-cache');
+            res.setHeader('Expires', '0');
+        } else if (filePath.endsWith('.json')) {
             res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+            res.setHeader('Pragma', 'no-cache');
+        } else if (filePath.match(/\.(js|css)$/)) {
+            res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate');
         } else if (filePath.match(/\.(jpg|jpeg|png|gif|webp|svg|pdf|docx|woff2?)$/)) {
-            res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
+            res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
         }
     }
 }));
