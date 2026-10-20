@@ -2,7 +2,7 @@
 """
 Build Technology Subpages & Technology Index
 為 11 大特用化學品產品線建立獨立技術專頁 (Independent Subpages)，
-五大核心維度一覽卡片 (1.原理、2.目錄、3.應用技術、4.單一產品技術、5.配方)，
+三大核心維度一覽卡片 (1.原理、2.目錄、3.單一產品技術)，
 依據 techdatadb 原廠資料庫，比照原理排版架構，線上預覽不開放下載。
 實事求是：無公開資料之分頁誠實告知，絕不憑空杜撰！
 """
@@ -295,13 +295,11 @@ def build_category_switcher(current_slug, is_index=False):
                 </aside>'''
 
 def build_subtab_nav(has_data=True, active_key="principles"):
-    """五大核心維度純單行標籤列"""
+    """三大核心維度純單行標籤列"""
     tabs = [
         ("principles", "1. 原理", "fa-atom"),
         ("catalog", "2. 目錄", "fa-list-check"),
-        ("applications", "3. 應用技術", "fa-industry"),
-        ("single", "4. 單一產品技術", "fa-flask-vial"),
-        ("formulation", "5. 配方", "fa-clipboard-list")
+        ("single", "3. 單一產品技術", "fa-flask-vial")
     ]
 
     buttons = []
@@ -315,26 +313,124 @@ def build_subtab_nav(has_data=True, active_key="principles"):
                     </button>'''
         buttons.append(btn)
 
-    return f'''                <!-- 瀏覽器書籤樣式：五大核心維度標籤列 -->
-                <div class="tech-subtab-strip" role="tablist" aria-label="技術專題五大核心維度導覽">
+    return f'''                <!-- 瀏覽器書籤樣式：四大核心維度標籤列 -->
+                <div class="tech-subtab-strip" role="tablist" aria-label="技術專題四大核心維度導覽">
 {chr(10).join(buttons)}
                 </div>'''
 
 def build_single_doc_layout_html(doc, slug, tab_key, item):
-    """產生單一文件左右雙欄檢視視圖 (封面式預覽，點擊封面即開啟全螢幕高解析閱讀器，無多餘獨立按鈕)"""
+    """產生單一文件檢視視圖 (封面式預覽或純文字專題卡片)"""
     pdf_url = get_encoded_pdf_url(doc.get("pdfPath", ""))
     has_mech_img = bool(doc.get("mechImg"))
     is_pdf = bool(doc.get("pdfPath", "").lower().endswith(".pdf"))
     doc_title_clean = doc.get("title", "").replace('"', '&quot;').replace("'", "&#39;")
+    inquiry_title = f"{item['menu_name']}-{doc.get('title')}"
+    encoded_inquiry = urllib.parse.quote(inquiry_title)
+    product_link = item.get("product_link", "products/")
+
+    advantages_items = []
+    for idx, adv in enumerate(doc.get("advantages", [])):
+        adv_li = f'''                        <li class="flex items-start gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">{idx + 1}</span>
+                            <span>{adv}</span>
+                        </li>'''
+        advantages_items.append(adv_li)
+    advantages_html = "\n".join(advantages_items)
+
+    apps_items = []
+    for app in doc.get("applications", []):
+        app_span = f'''                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">{app}</span>'''
+        apps_items.append(app_span)
+    apps_html = "\n".join(apps_items)
+
+    # 若該技術文件無圖片亦無 PDF 封面（例如純文字手冊章節）：
+    # 採滿版對稱佈局，徹底解決畫面左半邊為空卡片、右半邊單邊擠壓之問題
+    if not has_mech_img and not is_pdf:
+        origin_html = f'''                <div class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-mono shrink-0">
+                    <i class="fa-solid fa-book-bookmark text-blue-900 mr-1"></i>
+                    <span>{doc.get('origin', '')}</span>
+                </div>''' if doc.get('origin') else '''                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 text-[11px] font-bold border border-blue-200/60 shrink-0">技術手冊規範</span>'''
+
+        desc_html = f'''            <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+                <div class="text-xs font-bold text-blue-950 mb-1 flex items-center gap-1.5">
+                    <i class="fa-solid fa-microscope text-blue-900 text-xs"></i>
+                    <span>核心作用原理與機制：</span>
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed font-normal">
+                    {doc.get('desc') or doc.get('summary') or ''}
+                </p>
+            </div>''' if (doc.get('desc') or doc.get('summary')) else ''
+
+        apps_block = apps_html if apps_html else '<span class="text-xs text-slate-400">詳見技術手冊各行業應用章節</span>'
+        adv_block = f'''                    <ul class="space-y-1.5 text-sm text-slate-700">
+{advantages_html}
+                    </ul>''' if advantages_html else '<p class="text-xs text-slate-400">詳見技術手冊內文規範</p>'
+
+        return f'''        <div class="bg-slate-50/70 rounded-xl border border-slate-200 p-4 sm:p-5 space-y-3.5">
+            <!-- 頂部：專題標題與手冊來源徽章 -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-200/80 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-lg bg-blue-900/10 text-blue-900 flex items-center justify-center font-bold text-sm shrink-0">
+                        <i class="fa-solid fa-atom"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                            {doc_title_clean}
+                        </h3>
+                        <div class="text-[11px] text-slate-500 font-medium">技術原理與手冊章節規範</div>
+                    </div>
+                </div>
+{origin_html}
+            </div>
+
+            <!-- 核心作用原理說明 (滿版清晰舒適) -->
+{desc_html}
+
+            <!-- 下半部：左右雙欄平衡展示技術特點與適用範疇 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-0.5">
+                <!-- 主要技術特點 -->
+                <div class="space-y-2 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-2xs">
+                    <div class="flex items-center gap-1.5 text-xs font-bold text-blue-950">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
+                        <span>主要內容與技術特點：</span>
+                    </div>
+{adv_block}
+                </div>
+
+                <!-- 適用範疇與動作 -->
+                <div class="space-y-3 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                            <i class="fa-solid fa-layer-group text-blue-900 text-xs"></i>
+                            <span>適用範疇 / 相關領域：</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+{apps_block}
+                        </div>
+                    </div>
+
+                    <!-- 諮詢動作列 -->
+                    <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-100">
+                        <a href="contact/?mode=detailed&inquiry={encoded_inquiry}"
+                           class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
+                            <i class="fa-solid fa-envelope text-xs"></i>
+                            <span>索取規格諮詢 / 申請樣品</span>
+                        </a>
+                        <a href="{product_link}"
+                           class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
+                            <i class="fa-solid fa-table-list text-xs"></i>
+                            <span>查看相關產品列表</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>'''
 
     if has_mech_img:
         # 原廠技術機制圖 (高清示意圖展示)
         preview_box_html = f'''            <div class="h-full flex flex-col justify-center">
                 <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-2xs flex flex-col items-center justify-center min-h-[460px] sm:min-h-[560px] overflow-hidden select-none" oncontextmenu="return false;">
-                    <div class="text-xs font-bold text-slate-500 mb-3 self-start flex items-center gap-1.5">
-                        <i class="fa-solid fa-atom text-blue-900"></i>
-                        <span>原廠技術原理機制圖</span>
-                    </div>
+                    
                     <img src="{doc.get("mechImg")}" alt="{doc.get("title")} 反應機制圖"
                          class="w-full max-h-[420px] sm:max-h-[500px] object-contain rounded select-none pointer-events-none"
                          draggable="false">
@@ -360,70 +456,7 @@ def build_single_doc_layout_html(doc, slug, tab_key, item):
                 </div>
             </div>'''
     else:
-        # 原廠技術手冊專題章節卡片 (原理專題文字圖解，實事求是)
-        preview_box_html = f'''            <div class="h-full flex flex-col justify-center">
-                <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-2xs flex flex-col justify-between min-h-[460px] sm:min-h-[560px] select-none" oncontextmenu="return false;">
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
-                            <div class="flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-lg bg-blue-900/10 text-blue-900 flex items-center justify-center font-bold text-sm">
-                                    <i class="fa-solid fa-atom"></i>
-                                </span>
-                                <div>
-                                    <span class="text-xs font-bold text-blue-950 uppercase tracking-wide">原廠技術原理專題</span>
-                                    <div class="text-[11px] text-slate-500 font-medium">Technical Principle & Mechanism</div>
-                                </div>
-                            </div>
-                            <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 text-[11px] font-bold border border-blue-200/60">原廠手冊規範</span>
-                        </div>
-                        
-                        <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2">
-                            <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                                <i class="fa-solid fa-book-bookmark text-blue-900 text-xs"></i>
-                                <span>文獻出處與專題章節：</span>
-                            </div>
-                            <p class="text-xs text-slate-600 leading-relaxed font-mono">
-                                {doc.get('origin', '')}
-                            </p>
-                        </div>
-                        
-                        <div class="p-4 rounded-xl bg-gradient-to-br from-slate-900 to-blue-950 text-white space-y-2 shadow-xs">
-                            <div class="flex items-center gap-2 text-xs font-bold text-blue-300">
-                                <i class="fa-solid fa-microscope text-sm"></i>
-                                <span>核心作用機理要點</span>
-                            </div>
-                            <div class="text-xs text-slate-200 leading-relaxed font-normal">
-                                {doc.get('desc', '')}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span class="flex items-center gap-1.5">
-                            <i class="fa-solid fa-shield-check text-emerald-600"></i>
-                            <span class="font-semibold text-slate-700">實事求是原廠資料庫</span>
-                        </span>
-                        <span class="text-[11px] font-medium text-slate-400">宏威應用材料技術中心</span>
-                    </div>
-                </div>
-            </div>'''
-
-    advantages_items = []
-    for idx, adv in enumerate(doc.get("advantages", [])):
-        adv_li = f'''                        <li class="flex items-start gap-1.5">
-                            <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">{idx + 1}</span>
-                            <span>{adv}</span>
-                        </li>'''
-        advantages_items.append(adv_li)
-    advantages_html = "\n".join(advantages_items)
-
-    apps_items = []
-    for app in doc.get("applications", []):
-        app_span = f'''                            <span class="px-2 py-0.5 rounded bg-white text-slate-700 text-xs font-medium border border-slate-200">{app}</span>'''
-        apps_items.append(app_span)
-    apps_html = "\n".join(apps_items)
-
-    inquiry_title = f"{item['menu_name']}-{doc.get('title')}"
+        preview_box_html = ''
 
     return f'''        <div class="tech-principles-grid bg-slate-50/70 rounded-xl border border-slate-200 p-3 sm:p-3.5">
             <!-- 左欄：線上文件瀏覽視窗 (視窗拉長補滿空白，無下載按鈕，徹底防止右鍵另存) -->
@@ -456,20 +489,20 @@ def build_single_doc_layout_html(doc, slug, tab_key, item):
 
                 <!-- 適用範疇標籤 -->
                 <div class="space-y-1 pt-0.5">
-                    <span class="text-xs font-bold text-slate-700">原廠適用範疇 / 相關領域：</span>
+                    <span class="text-xs font-bold text-slate-700">適用範疇 / 相關領域：</span>
                     <div class="flex flex-wrap gap-1">
 {apps_html}
                     </div>
                 </div>
 
                 <!-- 諮詢動作列 -->
-                <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-200">
-                    <a href="contact/?mode=detailed&inquiry={urllib.parse.quote(inquiry_title)}"
+                <div class="pt-2 flex flex-wrap items-center gap-2 border-t border-slate-100">
+                    <a href="contact/?mode=detailed&inquiry={encoded_inquiry}"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg shadow-2xs transition-all active:scale-95">
                         <i class="fa-solid fa-envelope text-xs"></i>
                         <span>索取規格諮詢 / 申請樣品</span>
                     </a>
-                    <a href="{item["product_link"]}"
+                    <a href="{product_link}"
                        class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-all">
                         <i class="fa-solid fa-table-list text-xs"></i>
                         <span>查看相關產品列表</span>
@@ -483,9 +516,7 @@ def build_empty_tab_html(item, tab_key):
     tab_names = {
         "principles": "原理機制",
         "catalog": "總覽目錄",
-        "applications": "應用技術資料",
         "single": "單一產品技術資料",
-        "formulation": "配方指南"
     }
     name = tab_names.get(tab_key, "技術資料")
 
@@ -513,11 +544,11 @@ def build_empty_tab_html(item, tab_key):
         </div>'''
 
 def get_best_subtab_for_category(slug):
-    """取得特定產品線最佳的預設子分頁 (按 1.原理 -> 2.目錄 -> 3.應用技術 -> 4.單一產品技術 自然順序)"""
+    """取得特定產品線最佳的預設子分頁 (按 1.原理 -> 2.目錄 -> 3.單一產品技術 自然順序)"""
     cat_data = TECH_DATABASE.get(slug, {"tabs": {}})
     tabs = cat_data.get("tabs", {})
     
-    order = ["principles", "catalog", "applications", "single", "formulation"]
+    order = ["principles", "catalog", "single"]
     for tab_key in order:
         if tabs.get(tab_key) and len(tabs[tab_key]) > 0:
             return tab_key
@@ -525,11 +556,11 @@ def get_best_subtab_for_category(slug):
 
 def build_category_content_section(item, active_subtab="principles"):
     """
-    產生特定技術類別的完整 HTML 內容 (五大子分頁，比照原理排版架構，線上預覽不開放下載)
+    產生特定技術類別的完整 HTML 內容 (四大子分頁，比照原理排版架構，線上預覽不開放下載)
     """
     slug = item["slug"]
     cat_data = TECH_DATABASE.get(slug, {"tabs": {}})
-    sub_tabs = ["principles", "catalog", "applications", "single", "formulation"]
+    sub_tabs = ["principles", "catalog", "single"]
 
     panels_html = []
     for tab_key in sub_tabs:
@@ -548,7 +579,38 @@ def build_category_content_section(item, active_subtab="principles"):
             doc_view_html = build_single_doc_layout_html(first_doc, slug, tab_key, item)
 
             if len(docs) > 1:
-                if tab_key == "single":
+                if tab_key == "principles":
+                    # 原理維度：依圖 2 指示改成一塊一塊按鈕切換
+                    blocks = []
+                    for idx, doc in enumerate(docs):
+                        is_selected = (idx == 0)
+                        active_cls = "bg-blue-900 text-white font-bold border-blue-900 shadow-2xs ring-2 ring-blue-900/20 active" if is_selected else "bg-white hover:bg-blue-50 text-slate-700 hover:text-blue-950 border-slate-200 hover:border-blue-300 font-semibold"
+                        label = doc.get('shortLabel') or doc.get('title')
+                        blocks.append(f'''                                <button type="button"
+                                        data-doc-idx="{idx}"
+                                        onclick="selectTechDoc('{slug}', 'principles', {idx})"
+                                        class="tech-doc-block-btn tech-doc-block-btn-{slug}-principles inline-flex items-center justify-center px-2 py-1 rounded-md border text-xs transition-all duration-150 cursor-pointer {active_cls}">
+                                    <span>{label}</span>
+                                </button>''')
+                    blocks_str = "\n".join(blocks)
+                    panel = f'''                    <div id="tech-panel-principles" class="{hidden_cls}space-y-3">
+                        <!-- 一塊一塊技術文件選擇列 (依圖 2 指示：原理專用區塊按鈕) -->
+                        <div class="tech-principles-blocks-bar bg-slate-50 border border-slate-200/90 rounded-lg p-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shadow-2xs">
+                            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                <span>選擇技術文件：</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-1.5 flex-1">
+{blocks_str}
+                            </div>
+                        </div>
+
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-{slug}-principles" class="w-full">
+{doc_view_html}
+                        </div>
+                    </div>'''
+                elif tab_key == "single":
                     # 單一產品依相同產品系列分組排列 optgroup
                     groups = {}
                     group_names = []
@@ -569,6 +631,50 @@ def build_category_content_section(item, active_subtab="principles"):
                         opt_lines_str = "\n".join(opt_lines)
                         group_opts.append(f'                                <optgroup label="── {grp} ({len(groups[grp])} 篇) ──">\n{opt_lines_str}\n                                </optgroup>')
                     options_html = "\n".join(group_opts)
+
+                    panel = f'''                    <div id="tech-panel-{tab_key}" class="{hidden_cls}space-y-3">
+                        <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
+                        <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+                            <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <label for="doc-select-{slug}-{tab_key}" class="flex items-center gap-1.5 text-xs font-bold text-slate-800 shrink-0">
+                                    <i class="fa-solid fa-file-lines text-blue-900 text-sm"></i>
+                                    <span>選擇技術文件：</span>
+                                </label>
+                                <div class="relative flex-1 min-w-0 max-w-full sm:max-w-xl">
+                                    <select id="doc-select-{slug}-{tab_key}" onchange="selectTechDoc('{slug}', '{tab_key}', parseInt(this.value, 10))"
+                                            class="w-full bg-white hover:bg-slate-50/50 border border-slate-300 hover:border-blue-500 focus:border-blue-900 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs cursor-pointer transition-all truncate">
+{options_html}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 篇數統計與上一篇/下一篇快速切換按鈕 -->
+                            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    第 <strong id="doc-count-current-{slug}-{tab_key}" class="text-blue-950 font-bold">1</strong> / {len(docs)} 篇
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button type="button" id="doc-prev-btn-{slug}-{tab_key}" onclick="navigateTechDoc('{slug}', '{tab_key}', -1)"
+                                            disabled
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="上一篇技術文件">
+                                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button type="button" id="doc-next-btn-{slug}-{tab_key}" onclick="navigateTechDoc('{slug}', '{tab_key}', 1)"
+                                            {'disabled' if len(docs) <= 1 else ''}
+                                            class="w-8 h-8 rounded-lg bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-900 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-2xs"
+                                            title="下一篇技術文件">
+                                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 100% 滿版雙欄核心展示區 -->
+                        <div id="viewer-{slug}-{tab_key}" class="w-full">
+{doc_view_html}
+                        </div>
+                    </div>'''
                 else:
                     opt_lines = []
                     for idx, doc in enumerate(docs):
@@ -577,7 +683,7 @@ def build_category_content_section(item, active_subtab="principles"):
                         opt_lines.append(f'                                <option value="{idx}"{selected_attr}>{label}</option>')
                     options_html = "\n".join(opt_lines)
 
-                panel = f'''                    <div id="tech-panel-{tab_key}" class="{hidden_cls}space-y-3">
+                    panel = f'''                    <div id="tech-panel-{tab_key}" class="{hidden_cls}space-y-3">
                         <!-- 下拉式卷軸選單列 (Munzing 風格：精緻簡潔、完全不佔據兩側版面空間) -->
                         <div class="tech-doc-selector-bar bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
                             <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
@@ -780,79 +886,75 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
             background: #94a3b8;
         }}
         .tech-bookmark-wrapper {{
-            position: relative;
             width: 100%;
+            margin-top: 0.5rem;
+            position: relative;
         }}
         .tech-subtab-strip {{
-            display: grid !important;
-            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+            display: flex;
+            align-items: flex-end;
             gap: 0.375rem;
-            width: 100%;
+            padding-left: 0.5rem;
+            margin-bottom: -1px;
             position: relative;
             z-index: 10;
-            margin-bottom: -1px !important;
         }}
         @media (max-width: 640px) {{
             .tech-subtab-strip {{
-                display: flex !important;
                 overflow-x: auto;
-                gap: 0.25rem;
-                padding-bottom: 0;
                 scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 1px;
             }}
             .tech-subtab-strip::-webkit-scrollbar {{
                 display: none;
             }}
-            .tech-subtab-btn {{
-                flex: 0 0 auto;
-                white-space: nowrap;
-            }}
         }}
         .tech-subtab-btn {{
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.375rem;
-            padding: 0.55rem 0.5rem 0.45rem 0.5rem;
+            padding: 0.625rem 1.125rem 0.5rem 1.125rem;
             border-top-left-radius: 0.625rem !important;
             border-top-right-radius: 0.625rem !important;
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
             border: 1px solid #cbd5e1 !important;
             border-bottom: 1px solid #cbd5e1 !important;
             background: #f1f5f9 !important;
             color: #475569 !important;
-            text-align: center;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.2;
             white-space: nowrap;
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
             position: relative;
             z-index: 5;
+            margin-bottom: 0;
         }}
         .tech-subtab-btn:hover {{
             background: #e2e8f0 !important;
-            border-color: #94a3b8 !important;
             color: #0f172a !important;
         }}
         .tech-subtab-btn.active {{
             background: #ffffff !important;
             color: #1e3a8a !important;
             font-weight: 800 !important;
+            border: 1px solid #cbd5e1 !important;
             border-top: 3px solid #1e3a8a !important;
-            border-left: 1px solid #cbd5e1 !important;
-            border-right: 1px solid #cbd5e1 !important;
             border-bottom: 2px solid #ffffff !important;
             margin-bottom: -1px !important;
+            padding-bottom: calc(0.5rem + 2px) !important;
             position: relative;
             z-index: 20 !important;
-            box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.04) !important;
+            box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.05) !important;
         }}
         .tech-bookmark-body {{
             background: #ffffff;
             border: 1px solid #cbd5e1;
-            border-radius: 0 0 0.875rem 0.875rem;
+            border-radius: 0 0.75rem 0.75rem 0.75rem;
             padding: 1rem;
             position: relative;
             z-index: 1;
@@ -860,8 +962,21 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
         }}
         @media (max-width: 640px) {{
             .tech-bookmark-body {{
+                border-radius: 0 0 0.75rem 0.75rem;
                 padding: 0.75rem;
             }}
+        }}
+        /* 原理維度專用：一塊一塊技術文件切換按鈕 */
+        .tech-doc-block-btn {{
+            font-weight: 600;
+            transition: all 0.15s ease;
+        }}
+        .tech-doc-block-btn.active {{
+            background-color: #1e3a8a !important;
+            color: #ffffff !important;
+            border-color: #1e3a8a !important;
+            font-weight: 700 !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
         }}
         /* 核心原理 2-Column Split 左右分欄雙翼佈局 (重要資訊首屏完全可見) */
                 /* 全螢幕技術文件預覽模態視窗 (全畫面滿版沉浸式閱讀，絕不被任何元素遮擋) */
@@ -1019,11 +1134,39 @@ def build_full_tech_page_html(item, template_shell, is_index=False):
     return page_html
 
 def build_all():
-    print("🚀 開始建置 11 大特用化學品獨立技術分頁（五大維度原廠技術資料庫一覽）...")
+    # 優先調用 Node.js 建置腳本 (以 js/technology.js 為唯一真實來源)
+    node_script = os.path.join(ROOT_DIR, 'scripts', 'build_technology_subpages.js')
+    if os.path.exists(node_script):
+        import subprocess
+        subprocess.run(["node", node_script], cwd=ROOT_DIR, check=True)
+        return
+
+    global TECH_DATABASE
+    print("==================================================")
+    print("🚀 ATTech 技術專區 - 一鍵全自動同步與建置流程")
+    print("==================================================")
+
+    # 1. 自動檢查並從 techdatadb/技術文件摘要與重點.md 萃取最新資料庫
+    md_file = os.path.join(ROOT_DIR, 'techdatadb', '技術文件摘要與重點.md')
+    if os.path.exists(md_file):
+        try:
+            from build_tech_json import build_database_from_md
+            print("📦 [1/4] 自動從技術文件摘要提取最新資料庫 (build_tech_json)...")
+            TECH_DATABASE = build_database_from_md()
+        except Exception as e:
+            print(f"⚠️ 解析 markdown 失敗，使用現有 JSON: {e}")
+            if os.path.exists(JSON_PATH):
+                with open(JSON_PATH, "r", encoding="utf-8") as f:
+                    TECH_DATABASE = json.load(f)
+    elif os.path.exists(JSON_PATH):
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            TECH_DATABASE = json.load(f)
+
+    print("📄 [2/4] 開始建置 11 大特用化學品獨立技術分頁（五大維度一覽）...")
     with open(os.path.join(ROOT_DIR, 'index.html'), 'r', encoding='utf-8') as f:
         template_shell = f.read()
 
-    # 1. 產生 11 個獨立子頁面資料夾與 index.html
+    # 2. 產生 11 個獨立子頁面資料夾與 index.html
     for item in TECH_ITEMS:
         slug = item["slug"]
         sub_dir = os.path.join(ROOT_DIR, 'technology', slug)
@@ -1075,7 +1218,102 @@ def build_all():
 
     # 4. 同步更新 sitemap.xml
     update_sitemap()
-    print("🎉 11 項技術獨立分頁已全部建置完成！")
+
+    # 5. 自動同步最新版型與資料庫至 js/technology.js (方案 A：單一事實來源)
+    sync_to_technology_js()
+
+    print("🎉 11 項技術獨立分頁與前端 JS 已全部同步建置完成！")
+
+def sync_to_technology_js():
+    """
+    自動同步至 js/technology.js (方案 A：單一事實來源)
+    1. 同步 TECH_DATABASE 資料庫 (與 json/tech_database.json 保持完全一致)
+    2. 自動提取 build_single_doc_layout_html 的右欄底部自訂區塊 (如諮詢動作列)，同步至 js/technology.js
+    3. 自動同步 build_empty_tab_html 的底部動作按鈕
+    """
+    js_path = os.path.join(ROOT_DIR, "js", "technology.js")
+    if not os.path.exists(js_path):
+        return
+
+    with open(js_path, "r", encoding="utf-8") as f:
+        js_code = f.read()
+
+    # 1. 同步 TECH_DATABASE 資料庫
+    if os.path.exists(JSON_PATH):
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            tech_db = json.load(f)
+        db_json_str = json.dumps(tech_db, ensure_ascii=False, indent=2)
+        new_db_decl = f"const TECH_DATABASE = {db_json_str};\n"
+
+        start_marker = "const TECH_DATABASE = {"
+        start_idx = js_code.find(start_marker)
+        if start_idx != -1:
+            end_marker = "const TechState = {"
+            end_idx = js_code.find(end_marker, start_idx)
+            if end_idx != -1:
+                js_code = js_code[:start_idx] + new_db_decl + js_code[end_idx:]
+
+    # 2. 同步 build_single_doc_layout_html 的右欄底部附加內容 (例如諮詢動作列)
+    with open(__file__, "r", encoding="utf-8") as pf:
+        py_code = pf.read()
+
+    py_marker_start = '<!-- 適用範疇標籤 -->'
+    py_pos = py_code.find(py_marker_start)
+    if py_pos != -1:
+        div_end = py_code.find('</div>\n                </div>', py_pos)
+        if div_end != -1:
+            div_end += len('</div>\n                </div>')
+            py_col_end = py_code.find("</div>\n        </div>'''", div_end)
+            if py_col_end != -1:
+                extra_block = py_code[div_end:py_col_end].strip()
+                js_extra = ""
+                if extra_block:
+                    converted = extra_block
+                    converted = re.sub(r'\{urllib\.parse\.quote\([^\)]+\)\}', '${inquiryParam}', converted)
+                    converted = re.sub(r'\{item\[["\']product_link["\']\]\}', '${productLink}', converted)
+                    converted = re.sub(r'\{item\[["\']product_link_text["\']\]\}', '${productLinkText}', converted)
+                    converted = re.sub(r'\{item\[["\']menu_name["\']\]\}', '${cat.name}', converted)
+                    converted = re.sub(r'\{doc\.get\(["\']title["\']\)\}', '${docTitleClean}', converted)
+                    converted = re.sub(r'\{doc\.get\(["\']desc["\'][^\)]*\)\}', '${doc.desc || ""}', converted)
+                    js_extra = "\n\n                " + "\n                ".join(converted.split("\n"))
+
+                js_app_marker = '<!-- 適用範疇標籤 -->'
+                js_app_pos = js_code.find(js_app_marker)
+                if js_app_pos != -1:
+                    js_app_end = js_code.find("` : ''}", js_app_pos)
+                    if js_app_end != -1:
+                        js_app_end += len("` : ''}")
+                        js_target_end = js_code.find('</div>\n        </div>\n    `;', js_app_end)
+                        if js_target_end != -1:
+                            js_code = js_code[:js_app_end] + js_extra + "\n            " + js_code[js_target_end:]
+
+    # 3. 同步 build_empty_tab_html 動作按鈕列
+    empty_marker = 'def build_empty_tab_html'
+    empty_pos = py_code.find(empty_marker)
+    if empty_pos != -1:
+        btn_start_marker = '<div class="pt-1 flex items-center justify-center gap-2.5">'
+        b_pos = py_code.find(btn_start_marker, empty_pos)
+        if b_pos != -1:
+            b_end = py_code.find("</div>\n        </div>'''", b_pos)
+            if b_end != -1:
+                b_block = py_code[b_pos:b_end].strip()
+                b_converted = b_block
+                b_converted = re.sub(r'\{urllib\.parse\.quote\([^\)]+\)\}', '${inquiryParam}', b_converted)
+                b_converted = re.sub(r'\{item\[["\']product_link["\']\]\}', '${productLink}', b_converted)
+                b_converted = re.sub(r'\{item\[["\']menu_name["\']\]\}', '${catName}', b_converted)
+
+                js_empty_func = 'function buildEmptyTabHtml'
+                j_pos = js_code.find(js_empty_func)
+                if j_pos != -1:
+                    j_b_start = js_code.find(btn_start_marker, j_pos)
+                    if j_b_start != -1:
+                        j_b_end = js_code.find('</div>\n        </div>\n    `;', j_b_start)
+                        if j_b_end != -1:
+                            js_code = js_code[:j_b_start] + b_converted + "\n        " + js_code[j_b_end:]
+
+    with open(js_path, "w", encoding="utf-8") as f:
+        f.write(js_code)
+    print("  [SYNC] ✅ 已自動將最新版型與資料庫同步至 js/technology.js！")
 
 def sync_root_index_technology():
     root_index_path = os.path.join(ROOT_DIR, 'index.html')
@@ -1186,79 +1424,75 @@ def sync_root_index_technology():
         }}
         /* 瀏覽器書籤風格容器與標籤列 */
         .tech-bookmark-wrapper {{
-            position: relative;
             width: 100%;
+            margin-top: 0.5rem;
+            position: relative;
         }}
         .tech-subtab-strip {{
-            display: grid !important;
-            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+            display: flex;
+            align-items: flex-end;
             gap: 0.375rem;
-            width: 100%;
+            padding-left: 0.5rem;
+            margin-bottom: -1px;
             position: relative;
             z-index: 10;
-            margin-bottom: -1px !important;
         }}
         @media (max-width: 640px) {{
             .tech-subtab-strip {{
-                display: flex !important;
                 overflow-x: auto;
-                gap: 0.25rem;
-                padding-bottom: 0;
                 scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 1px;
             }}
             .tech-subtab-strip::-webkit-scrollbar {{
                 display: none;
             }}
-            .tech-subtab-btn {{
-                flex: 0 0 auto;
-                white-space: nowrap;
-            }}
         }}
         .tech-subtab-btn {{
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.375rem;
-            padding: 0.55rem 0.5rem 0.45rem 0.5rem;
+            padding: 0.625rem 1.125rem 0.5rem 1.125rem;
             border-top-left-radius: 0.625rem !important;
             border-top-right-radius: 0.625rem !important;
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
             border: 1px solid #cbd5e1 !important;
             border-bottom: 1px solid #cbd5e1 !important;
             background: #f1f5f9 !important;
             color: #475569 !important;
-            text-align: center;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.2;
             white-space: nowrap;
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
             position: relative;
             z-index: 5;
+            margin-bottom: 0;
         }}
         .tech-subtab-btn:hover {{
             background: #e2e8f0 !important;
-            border-color: #94a3b8 !important;
             color: #0f172a !important;
         }}
         .tech-subtab-btn.active {{
             background: #ffffff !important;
             color: #1e3a8a !important;
             font-weight: 800 !important;
+            border: 1px solid #cbd5e1 !important;
             border-top: 3px solid #1e3a8a !important;
-            border-left: 1px solid #cbd5e1 !important;
-            border-right: 1px solid #cbd5e1 !important;
             border-bottom: 2px solid #ffffff !important;
             margin-bottom: -1px !important;
+            padding-bottom: calc(0.5rem + 2px) !important;
             position: relative;
             z-index: 20 !important;
-            box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.04) !important;
+            box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.05) !important;
         }}
         .tech-bookmark-body {{
             background: #ffffff;
             border: 1px solid #cbd5e1;
-            border-radius: 0 0 0.875rem 0.875rem;
+            border-radius: 0 0.75rem 0.75rem 0.75rem;
             padding: 1rem;
             position: relative;
             z-index: 1;
@@ -1266,8 +1500,21 @@ def sync_root_index_technology():
         }}
         @media (max-width: 640px) {{
             .tech-bookmark-body {{
+                border-radius: 0 0 0.75rem 0.75rem;
                 padding: 0.75rem;
             }}
+        }}
+        /* 原理維度專用：一塊一塊技術文件切換按鈕 */
+        .tech-doc-block-btn {{
+            font-weight: 600;
+            transition: all 0.15s ease;
+        }}
+        .tech-doc-block-btn.active {{
+            background-color: #1e3a8a !important;
+            color: #ffffff !important;
+            border-color: #1e3a8a !important;
+            font-weight: 700 !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
         }}
         /* 核心原理 2-Column Split 左右分欄雙翼佈局 (重要資訊首屏完全可見) */
         .tech-principles-grid {{

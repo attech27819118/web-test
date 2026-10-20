@@ -171,11 +171,11 @@ def determine_labels_and_meta(slug, tab, fn, title, origin, clean_p=""):
             break
 
     doc_type_map = {
-        "principles": "1. 原理機制",
-        "catalog": "2. Brochure 總覽型錄",
-        "applications": "3. Application Note 應用技術手冊",
-        "single": "4. TI 單一產品技術資料",
-        "formulation": "5. Formulation 配方指南"
+        "principles": "原理機制",
+        "catalog": "Brochure 總覽型錄",
+        "applications": "Application Note 應用技術手冊",
+        "single": "I 單一產品技術資料",
+        "formulation": "Formulation 配方指南"
     }
 
     short_label = title
@@ -201,7 +201,7 @@ def determine_labels_and_meta(slug, tab, fn, title, origin, clean_p=""):
                 mech_img = "techdatadb/2.Tyzor/1.原理/adhesion.webp"
         elif tab == "catalog":
             if "Adhesive Plus Coatings" in fn:
-                short_label = "膠黏與塗料"
+                short_label = "膠黏劑與密封膠"
             elif "Polyols Polymers" in fn:
                 short_label = "多元醇聚合物"
             elif "General CN" in fn:
@@ -267,15 +267,15 @@ def determine_labels_and_meta(slug, tab, fn, title, origin, clean_p=""):
     elif slug == "carbon-black":
         if tab == "principles":
             if "平均原生粒徑" in title or "平均原生粒徑" in origin:
-                short_label = "平均原生粒徑"
+                short_label = "平均原生粒徑(Average primary particle size)"
                 mech_img = "techdatadb/4.Orion/1.原理/particle size.png"
             elif "結構" in title or "結構" in origin:
-                short_label = "聚集體結構形態"
+                short_label = "結構(Structure)"
                 mech_img = "techdatadb/4.Orion/1.原理/property comparison chart.png"
             elif "表面處理" in title or "表面處理" in origin:
-                short_label = "表面處理"
+                short_label = "表面處理(Surface treatment)"
             elif "製程差異" in title or "製程差異" in origin:
-                short_label = "製程差異"
+                short_label = "製程差異(Process difference)"
                 mech_img = "techdatadb/4.Orion/1.原理/processes_comparison.png"
         elif tab == "catalog":
             if "CN" in fn:
@@ -314,17 +314,19 @@ def determine_labels_and_meta(slug, tab, fn, title, origin, clean_p=""):
     elif slug == "wax":
         if tab == "principles":
             if "作用原理" in title:
-                short_label = "1. 作用原理機制"
+                short_label = "作用原理"
+                mech_img = "techdatadb/5. MPI/1.原理/作用原理.png"
             elif "品種及功能" in title:
-                short_label = "2. 微粉蠟品種與功能"
+                short_label = "微粉蠟品種及功能"
+                mech_img = "techdatadb/5. MPI/1.原理/指標.png"
             elif "粒徑" in title:
-                short_label = "3. 粒徑及分佈效應"
+                short_label = "粒徑及粒徑分布"
             elif "分散性" in title:
-                short_label = "4. 分散性與工藝操作"
+                short_label = "分散性及應用方便性"
             elif "熔點" in title:
-                short_label = "5. 熔點與表面性能"
+                short_label = "熔點對其表面性能的影響"
             elif "極性" in title:
-                short_label = "6. 極性改質與性能"
+                short_label = "極性對其表面性能的影響"
         elif tab == "catalog":
             if "PTFE Alternatives" in fn:
                 short_label = "PTFE 無氟替代指南"
@@ -407,15 +409,22 @@ def determine_labels_and_meta(slug, tab, fn, title, origin, clean_p=""):
     elif slug == "matting":
         if tab == "principles":
             if "消光原理" in title:
-                short_label = "1. 消光散射機理"
+                short_label = "消光原理"
+                mech_img = "techdatadb/7.Matting Agent/1.原理/消光原理.png"
             elif "平均粒徑" in title:
-                short_label = "2. 平均粒徑及分佈"
+                short_label = "平均粒徑"
+                mech_img = "techdatadb/7.Matting Agent/1.原理/Average Particle Size.png"
+            elif "表面處理" in title:
+                short_label = "表面處理"
+                mech_img = "techdatadb/7.Matting Agent/1.原理/表面處理.png"
             elif "孔隙率" in title:
-                short_label = "3. 孔隙率與微孔容積"
+                short_label = "孔隙率"
+                mech_img = "techdatadb/7.Matting Agent/1.原理/孔隙率.png"
             elif "膜厚" in title:
-                short_label = "4. 塗膜膜厚影響"
+                short_label = "膜厚"
+                mech_img = "techdatadb/7.Matting Agent/1.原理/膜厚.png"
             elif "樹脂系統" in title:
-                short_label = "5. 樹脂系統與分散工藝"
+                short_label = "樹脂系統"
 
     return {
         "lang": lang,
@@ -425,6 +434,107 @@ def determine_labels_and_meta(slug, tab, fn, title, origin, clean_p=""):
         "productGroup": product_group,
         "mechImg": mech_img
     }
+
+def clean_wrapped_text(text):
+    """
+    清理因編輯器自動折行 (Line Wrap) 造成的換行與縮排，智能保持單詞間距
+    """
+    lines = [line.strip() for line in text.strip().splitlines() if line.strip()]
+    if not lines:
+        return ""
+    result = lines[0]
+    for nxt in lines[1:]:
+        if re.search(r'[a-zA-Z0-9]$', result) and re.search(r'^[a-zA-Z0-9]', nxt):
+            result += ' ' + nxt
+        else:
+            result += nxt
+    return result
+
+def load_existing_images():
+    """
+    從現有 js/technology.js 或 json/tech_database.json 中提取手動設定的 mechImg，
+    建立映射表以便在新資料萃取時完整繼承保留，絕不覆蓋手動新增的圖片網址。
+    """
+    existing_imgs = {}
+
+    # 1. 優先從 js/technology.js 讀取
+    js_path = os.path.join(ROOT_DIR, 'js', 'technology.js')
+    if os.path.exists(js_path):
+        try:
+            with open(js_path, 'r', encoding='utf-8') as f:
+                js_code = f.read()
+            start_marker = 'const TECH_DATABASE = {'
+            start_idx = js_code.find(start_marker)
+            if start_idx != -1:
+                end_marker = 'const TechState = {'
+                end_idx = js_code.find(end_marker, start_idx)
+                if end_idx != -1:
+                    raw_json = js_code[start_idx + len('const TECH_DATABASE = '):end_idx].strip().rstrip(';')
+                    db = json.loads(raw_json)
+                    for slug, v in db.items():
+                        for tab, docs in v.get('tabs', {}).items():
+                            for d in docs:
+                                img = d.get('mechImg')
+                                if img:
+                                    if d.get('shortLabel'):
+                                        existing_imgs[f"{slug}:{tab}:lbl:{d['shortLabel']}"] = img
+                                    if d.get('title'):
+                                        existing_imgs[f"{slug}:{tab}:title:{d['title']}"] = img
+                                    if d.get('docId'):
+                                        existing_imgs[f"{slug}:{tab}:id:{d['docId']}"] = img
+        except Exception as e:
+            print(f"⚠️ 讀取現有 JS 圖片失敗: {e}")
+
+    # 2. 若 JSON 有現存資料也補充載入
+    json_path = os.path.join(ROOT_DIR, 'json', 'tech_database.json')
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                db = json.load(f)
+            for slug, v in db.items():
+                for tab, docs in v.get('tabs', {}).items():
+                    for d in docs:
+                        img = d.get('mechImg')
+                        if img:
+                            k_lbl = f"{slug}:{tab}:lbl:{d.get('shortLabel')}"
+                            if k_lbl not in existing_imgs and d.get('shortLabel'):
+                                existing_imgs[k_lbl] = img
+                            k_title = f"{slug}:{tab}:title:{d.get('title')}"
+                            if k_title not in existing_imgs and d.get('title'):
+                                existing_imgs[k_title] = img
+                            k_id = f"{slug}:{tab}:id:{d.get('docId')}"
+                            if k_id not in existing_imgs and d.get('docId'):
+                                existing_imgs[k_id] = img
+        except Exception as e:
+            pass
+
+    return existing_imgs
+
+def sync_to_technology_js(database):
+    """
+    同步更新 js/technology.js 中的 const TECH_DATABASE = { ... };
+    確保前後端與備份 JSON 保持完全一致
+    """
+    js_path = os.path.join(ROOT_DIR, 'js', 'technology.js')
+    if not os.path.exists(js_path):
+        return
+
+    with open(js_path, 'r', encoding='utf-8') as f:
+        js_code = f.read()
+
+    db_json_str = json.dumps(database, ensure_ascii=False, indent=2)
+    new_db_decl = f"const TECH_DATABASE = {db_json_str};\n"
+
+    start_marker = "const TECH_DATABASE = {"
+    start_idx = js_code.find(start_marker)
+    if start_idx != -1:
+        end_marker = "const TechState = {"
+        end_idx = js_code.find(end_marker, start_idx)
+        if end_idx != -1:
+            js_code = js_code[:start_idx] + new_db_decl + js_code[end_idx:]
+            with open(js_path, 'w', encoding='utf-8') as f:
+                f.write(js_code)
+            print("  [SYNC] ✅ 已同步更新最新資料庫至 js/technology.js！")
 
 def build_database_from_md():
     database = {}
@@ -441,6 +551,9 @@ def build_database_from_md():
             }
         }
 
+    # 智能保留現有 JS / JSON 中手動設定的圖片網址
+    existing_imgs = load_existing_images()
+
     # 解析 技術文件摘要與重點.md
     if not os.path.exists(MD_FILE):
         raise FileNotFoundError(f"Markdown file not found: {MD_FILE}")
@@ -448,20 +561,62 @@ def build_database_from_md():
     with open(MD_FILE, 'r', encoding='utf-8') as f:
         md_text = f.read()
 
-    pattern = r'###\s+([^\n]+)\s*\n+-\s+\*\*檔案\*\*：([^\n]+)\s*\n+-\s+\*\*路徑\*\*：([^\n]+)\s*\n+-\s+\*\*原文出處\*\*：([^\n]+)\s*\n+-\s+\*\*重點\*\*：\s*\n+\s+-\s+\*\*摘要\*\*：([^\n]+)\s*\n+\s+-\s+\*\*核心重點\*\*：\s*\n+((?:\s+\d+\.\s+[^\n]+\n)+)-\s+\*\*應用\*\*：([^\n]*)'
-    matches = list(re.finditer(pattern, md_text))
+    # 切割個別文件區塊 (以 ### 標題且緊隨 - **檔案** 為界)
+    doc_chunks = re.split(r'\n(?=###\s+[^\n]+\n+-\s+\*\*檔案\*\*：)', md_text)[1:]
 
-    print(f"📖 Successfully parsed {len(matches)} document entries directly from {MD_FILE}")
+    print(f"📖 Successfully parsed {len(doc_chunks)} document entries directly from {MD_FILE}")
 
-    for idx, m in enumerate(matches, 1):
-        raw_title = m.group(1).strip()
-        fn = m.group(2).replace(chr(96), '').strip()
-        raw_path = m.group(3).strip()
-        origin = m.group(4).strip()
-        desc = m.group(5).strip()
-        points = [re.sub(r'^\d+\.\s*', '', p.strip()) for p in m.group(6).strip().split('\n') if p.strip()]
-        apps_raw = m.group(7).strip()
-        apps = [a.strip() for a in re.split(r'[,、，]', apps_raw) if a.strip()]
+    for idx, chunk in enumerate(doc_chunks, 1):
+        # 移除區塊結尾可能附帶的大章節標題 (例如 ### （二）... 或 ---)
+        chunk_clean = re.split(r'\n\s*###\s+[（\(][一二三四五六七八九十0-9]+[）\)]', chunk)[0]
+        chunk_clean = re.split(r'\n\s*---', chunk_clean)[0]
+
+        # 標題
+        m_title = re.search(r'###\s+([^\n]+)', chunk_clean)
+        raw_title = m_title.group(1).strip() if m_title else ''
+
+        # 檔案名稱
+        m_fn = re.search(r'-\s+\*\*檔案\*\*：[ \t]*([^\n]+)', chunk_clean)
+        fn = m_fn.group(1).replace('`', '').strip() if m_fn else ''
+
+        # 檔案路徑 (支援跨行折行)
+        m_path = re.search(r'-\s+\*\*路徑\*\*：[ \t]*([\s\S]+?)(?=\n\s*-\s+\*\*原文出處\*\*：)', chunk_clean)
+        raw_path = m_path.group(1).replace('`', '').strip() if m_path else ''
+        path_lines = [l.strip() for l in raw_path.splitlines() if l.strip()]
+        raw_path = ''.join(path_lines)
+
+        # 原文出處
+        m_origin = re.search(r'-\s+\*\*原文出處\*\*：[ \t]*([^\n]+)', chunk_clean)
+        origin = m_origin.group(1).strip() if m_origin else ''
+
+        # 圖表 / 圖片 (可選，支援在 markdown 直接設定 - **圖表**： 或 - **圖片**：)
+        m_img = re.search(r'-\s+\*\*(?:圖表|圖片|附圖)\*\*：[ \t]*`?([^`\n]+)`?', chunk_clean)
+        explicit_img = m_img.group(1).strip() if m_img else None
+
+        # 摘要 (支援跨行折行)
+        m_summary = re.search(r'-\s+\*\*摘要\*\*：[ \t]*([\s\S]+?)(?=\n\s*-\s+\*\*核心重點\*\*：)', chunk_clean)
+        desc_raw = m_summary.group(1).strip() if m_summary else ''
+        desc = clean_wrapped_text(desc_raw)
+
+        # 核心重點 (支援編號條列與跨行折行)
+        m_core = re.search(r'-\s+\*\*核心重點\*\*：[ \t]*([\s\S]+?)(?=\n\s*-\s+\*\*應用\*\*：|\Z)', chunk_clean)
+        points = []
+        if m_core:
+            core_raw = m_core.group(1).strip()
+            items = re.split(r'\n\s*\d+\.\s*', '\n' + core_raw)
+            for it in items:
+                cleaned = clean_wrapped_text(it)
+                if cleaned:
+                    cleaned = re.sub(r'^\d+\.\s*', '', cleaned)
+                    points.append(cleaned)
+
+        # 應用領域 (支援跨行折行與逗號分隔)
+        m_apps = re.search(r'-\s+\*\*應用\*\*：[ \t]*(.*)', chunk_clean, re.DOTALL)
+        apps = []
+        if m_apps:
+            app_raw = clean_wrapped_text(m_apps.group(1).strip())
+            if app_raw:
+                apps = [a.strip() for a in re.split(r'[,、，]', app_raw) if a.strip()]
 
         slug, tab, clean_rel_path = classify_doc(raw_path, fn)
         if slug == "unknown":
@@ -497,8 +652,20 @@ def build_database_from_md():
         if tab == "single":
             doc_item["productGroup"] = meta_info["productGroup"]
 
-        if meta_info.get("mechImg"):
-            doc_item["mechImg"] = meta_info["mechImg"]
+        # 決定圖片路徑優先級：
+        # 1. Markdown 中明確宣告的 - **圖表**： 或 - **圖片**：
+        # 2. 內建預設圖片映射表 (determine_labels_and_meta)
+        # 3. 現有 js/technology.js / JSON 中手動填寫的自訂 mechImg (依 shortLabel / title 繼承保留)
+        mech_img = explicit_img
+        if not mech_img:
+            mech_img = (
+                meta_info.get("mechImg") or
+                existing_imgs.get(f"{slug}:{tab}:lbl:{meta_info['shortLabel']}") or
+                existing_imgs.get(f"{slug}:{tab}:title:{raw_title}")
+            )
+
+        if mech_img:
+            doc_item["mechImg"] = mech_img
 
         database[slug]["tabs"][tab].append(doc_item)
 
@@ -512,6 +679,9 @@ def build_database_from_md():
     for slug, data in database.items():
         counts = {k: len(v) for k, v in data["tabs"].items()}
         print(f"  [{slug:14s}] (hasData={data['hasData']}): {counts}")
+
+    # 同步注入 js/technology.js
+    sync_to_technology_js(database)
 
     return database
 

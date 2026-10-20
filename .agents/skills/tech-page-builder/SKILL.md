@@ -26,32 +26,29 @@ description: >-
      - **右翼 (技術資訊區)**：包含專業摘要卡片、綠色勾選編號核心特點 (Checkmark List)、適用範疇標籤 (Pills)，以及規格諮詢/產品列表動作列。
 
 3. **瀏覽器書籤樣式標籤列 (Browser Bookmark Tabs)**
-   - 五大維度使用統一單行書籤樣式 (`tech-subtab-strip`)。
-   - 頂部帶圓角 (`rounded-t-lg`)、底部接合無縫線 (`margin-bottom: -1px`)。
-   - 啟動狀態 (`active`) 具備純白底色、深藍文字 (`#1e3a8a`) 與頂部 3px 品牌裝飾飾條 (`border-t-3 border-blue-900`)。
+   - 四大維度使用統一單行書籤樣式 (`tech-subtab-strip`)。
+   - 頂部帶圓角 (`border-top-left-radius`, `border-top-right-radius`)、底部接合無縫線 (`margin-bottom: -1px`, `border-bottom: 2px solid #ffffff`)。
+   - 啟動狀態 (`active`) 具備純白底色、深藍文字 (`#1e3a8a`) 與頂部 3px 品牌裝飾飾條 (`border-t-3 border-blue-900`)，與下方卡片邊界無縫接軌。
 
 4. **安全沈浸式在線預覽 (Protected Document Preview)**
    - **線上高清閱讀，不開放下載**：全面停用右鍵選單 (`contextmenu` 攔截)、禁用文字選取 (`select-none`)、攔截另存與列印快捷鍵 (`Ctrl+S`, `Ctrl+P`)。
    - **全螢幕模態視窗 (`#tech-pdf-fullscreen-modal`)**：深灰黑背景 (`#0f172a`)，滿版沉浸式，支援多頁滾動、縮放放大 (+0.2)、縮小 (-0.2)、重設 100% 及 ESC 鍵快捷關閉。
 
-5. **Munzing 風格下拉選單 (Compact Document Selector)**
-   - 多篇文件時，於內容上方提供緊湊的下拉切換列 (`tech-doc-selector-bar`)。
-   - 單一產品技術資料 (Single) 支援按產品系列分組 (`<optgroup>`)。
-   - 右側顯示「第 X / 共 Y 篇」徽章，並提供上一篇 / 下一篇箭頭導航按鈕。
+5. **技術文件切換列 (Document Selector)**
+   - **1. 原理機制**：採用「一塊一塊」直覺區塊按鈕 (`tech-principles-blocks-bar` + `.tech-doc-block-btn`)，點擊立即切換。
+   - **2. 目錄 / 3. 單一產品技術**：維持 Munzing 風格緊湊下拉選單 (`tech-doc-selector-bar`)，單一產品支援按產品系列分組 (`<optgroup>`)，右側附「第 X / 共 Y 篇」與上一篇/下一篇導航按鈕。
 
 ---
 
-## 五大核心維度架構 (The 5 Core Dimensions)
+## 三大核心維度架構 (The 3 Core Dimensions)
 
-每個技術產品線嚴格劃分為五大維度：
+每個技術產品線嚴格劃分為三大核心維度：
 
 | 維度 Key | 標籤名稱 | 圖示 (FontAwesome) | 內容定位 |
 | :--- | :--- | :--- | :--- |
-| `principles` | 1. 原理機制 | `fa-atom` | 化學反應機制圖、架橋/催化/表面改性/附著力分子作用原理 |
-| `catalog` | 2. 總覽目錄 | `fa-list-check` | 原廠綜合型錄 (Brochures)、選型指南、物理化學參數對照表 |
-| `applications` | 3. 應用技術 | `fa-industry` | 應用技術手冊 (Application Notes)、工藝建議、大宗儲運與操作指南 |
-| `single` | 4. 單一產品技術 | `fa-flask-vial` | 個別型號技術資訊 (TI / TDS)、依產品系列分組 (`optgroup`) |
-| `formulation` | 5. 配方指南 | `fa-clipboard-list` | 參考配方、添加比例、測試條件與耐候/物性評估報告 |
+| `principles` | 1. 原理 | `fa-atom` | 化學反應機制圖、架橋/催化/表面改性/附著力分子作用原理（一塊一塊按鈕切換） |
+| `catalog` | 2. 目錄 | `fa-list-check` | 原廠綜合型錄 (Brochures)、選型指南、物理化學參數對照表（Munzing 下拉選單） |
+| `single` | 3. 單一產品技術 | `fa-flask-vial` | 個別型號技術資訊 (TI / TDS)、依產品系列分組 (`optgroup`)（Munzing 下拉選單） |
 
 ---
 
@@ -186,36 +183,83 @@ description: >-
     }
 }
 
-/* 瀏覽器書籤風格單行標籤按鈕 */
-.tech-subtab-strip {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: 0.375rem;
+/* 瀏覽器書籤風格容器與標籤列 */
+.tech-bookmark-wrapper {
     width: 100%;
-    margin-bottom: -1px !important;
+    margin-top: 0.5rem;
+    position: relative;
+}
+.tech-subtab-strip {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.375rem;
+    padding-left: 0.5rem;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 10;
 }
 .tech-subtab-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.375rem;
-    padding: 0.55rem 0.5rem 0.45rem 0.5rem;
+    padding: 0.625rem 1.125rem 0.5rem 1.125rem;
     border-top-left-radius: 0.625rem !important;
     border-top-right-radius: 0.625rem !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: 1px solid #cbd5e1 !important;
     border-bottom: 1px solid #cbd5e1 !important;
     background: #f1f5f9 !important;
     color: #475569 !important;
     font-size: 0.8125rem;
     font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    position: relative;
+    z-index: 5;
+    margin-bottom: 0;
+}
+.tech-subtab-btn:hover {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
 }
 .tech-subtab-btn.active {
     background: #ffffff !important;
     color: #1e3a8a !important;
     font-weight: 800 !important;
+    border: 1px solid #cbd5e1 !important;
     border-top: 3px solid #1e3a8a !important;
     border-bottom: 2px solid #ffffff !important;
     margin-bottom: -1px !important;
+    padding-bottom: calc(0.5rem + 2px) !important;
+    position: relative;
     z-index: 20 !important;
+    box-shadow: 0 -2px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+.tech-bookmark-body {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 0 0.75rem 0.75rem 0.75rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* 原理維度專用：一塊一塊技術文件切換按鈕 */
+.tech-doc-block-btn {
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+.tech-doc-block-btn.active {
+    background-color: #1e3a8a !important;
+    color: #ffffff !important;
+    border-color: #1e3a8a !important;
+    font-weight: 700 !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
 /* 核心雙欄翼狀網格 */
@@ -254,7 +298,7 @@ description: >-
 
 每次修改技術頁面模組或重新編譯時，必須逐項核對：
 - [ ] 11 大產品線側邊欄順序與圖示統一。
-- [ ] 五大核心維度（原理、目錄、應用技術、單一產品、配方）名稱、順序與 Icon 嚴格一致。
+- [ ] 三大核心維度（原理、目錄、單一產品技術）名稱、順序與 Icon 嚴格一致。
 - [ ] 桌面端側邊欄寬度為 310px，且具備 Sticky 懸浮效果。
 - [ ] 單一產品技術資料 (Single) 之下拉選單正確使用 `<optgroup>` 按產品系列分組。
 - [ ] 無資料分頁誠實顯示「資料整理中」，文字無臆測內容，且諮詢參數正確編碼。
